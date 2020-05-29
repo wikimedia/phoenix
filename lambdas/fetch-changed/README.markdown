@@ -4,7 +4,7 @@ fetch-changed
 An AWS Lambda subscribed to an SNS topic that receives page edit events.  The function downloads the
 corresponding Parsoid HTML to an S3 bucket.
 
-Deployment (requires `aws`):
+Deployment (requires [`aws`][1]):
 
 ```
 $ make deploy
@@ -22,3 +22,6 @@ Issues
 ------
 
 - [ ] Hardcodes runtime values (S3 bucket, region, etc)
+
+
+[1]: https://aws.amazon.com/cli/
