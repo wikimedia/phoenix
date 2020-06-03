@@ -1,14 +1,13 @@
 event-bridge
 ============
 
-Send [Wikimedia `recentchange` events][1] to an SNS topic.
+Support for sending Wikimedia change events to the Project Phoenix.
 
 
-Known issues
-------------
-
-- [ ] Hardcodes runtime values (S3 bucket & region, target wiki & namespace, etc)
-- [ ] Should block indefinitely; Exits after a short time (exit status 0)
+|      | Description |
+| ---- | ----------- |
+| `stream`  | Subscribes to the [`recentchange` event stream][1], and publishes change events to an SNS topic |
+| `publish` | Publishes ad hoc change events to an SNS topic |
 
 
 [1]: https://wikitech.wikimedia.org/wiki/Event_Platform/EventStreams
