@@ -1,4 +1,4 @@
-[![status badge](https://img.shields.io/badge/Dev status-Works For Me-red.svg)](https://shields.io/)
+[![this is fine](https://img.shields.io/badge/Dev%20status-Works%20For%20Me-red.svg)](https://media.giphy.com/media/z9AUvhAEiXOqA/source.gif)
 
 allpages
 ========
