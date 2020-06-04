@@ -1,4 +1,4 @@
-[![this is fine](https://img.shields.io/badge/Dev%20status-Works%20For%20Me-red.svg)](https://media.giphy.com/media/z9AUvhAEiXOqA/source.gif)
+[![this is fine](https://img.shields.io/badge/Dev%20status-Works%20For%20Me-red.svg)](../../docs/Status.md#works-for-me)
 
 fetch-changed
 =============
