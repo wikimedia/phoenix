@@ -7,10 +7,8 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/sns"
+	"github.com/wikimedia/phoenix/env"
 )
-
-const topic string = "arn:aws:sns:us-east-2:113698225543:scpoc-event-streams-bridge"
-const region string = "us-east-2"
 
 // Message represents the JSON object published to SNS.
 type Message struct {
@@ -33,7 +31,7 @@ func (p *Publisher) Send(serverName string, title string, revision int) (*sns.Pu
 		return nil, fmt.Errorf("Error marshalling SNS event: %s", err)
 	}
 
-	input := &sns.PublishInput{Message: aws.String(string(b)), TopicArn: aws.String(topic)}
+	input := &sns.PublishInput{Message: aws.String(string(b)), TopicArn: aws.String(env.SNSEventStreamsBridge().ARN())}
 
 	result, err := p.client.Publish(input)
 	if err != nil {
@@ -44,7 +42,7 @@ func (p *Publisher) Send(serverName string, title string, revision int) (*sns.Pu
 
 // NewPublisher creates a Publisher
 func NewPublisher() (*Publisher, error) {
-	config := &aws.Config{Region: aws.String(region)}
+	config := &aws.Config{Region: aws.String(env.SNSEventStreamsBridge().AWSConfig().Region())}
 	sess, err := session.NewSession(config)
 	if err != nil {
 		return nil, fmt.Errorf("Error creating AWS session: %s", err)
