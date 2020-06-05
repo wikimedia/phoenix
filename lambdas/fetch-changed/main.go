@@ -32,7 +32,7 @@ type eventMessage struct {
 }
 
 func keyf(msg eventMessage) string {
-	return fmt.Sprintf("%s/%s-%d", folderName, msg.Title, msg.Revision)
+	return fmt.Sprintf("%s/%s/%s-%d", folderName, msg.ServerName, msg.Title, msg.Revision)
 }
 
 func urlf(msg eventMessage) string {
