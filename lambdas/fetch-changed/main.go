@@ -18,11 +18,10 @@ import (
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/wikimedia/phoenix/env"
 )
 
-const bucketName string = "scpoc-raw-content-store"
 const folderName string = "incoming"
-const region string = "us-east-2"
 
 var debug bool = false
 
@@ -62,7 +61,7 @@ func logDebug(format string, v ...interface{}) {
 
 func handleRequest(ctx context.Context, event events.SNSEvent) {
 	s3client := s3.New(session.New(&aws.Config{
-		Region: aws.String(region),
+		Region: aws.String(env.S3RawContentStorage().AWSConfig().Region()),
 	}))
 
 	for _, record := range event.Records {
@@ -86,7 +85,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 		input := &s3.PutObjectInput{
 			Body:   aws.ReadSeekCloser(bytes.NewReader(page)),
-			Bucket: aws.String(bucketName),
+			Bucket: aws.String(env.S3RawContentStorage().Name()),
 			Key:    aws.String(keyf(msg)),
 		}
 
