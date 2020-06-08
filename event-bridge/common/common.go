@@ -24,8 +24,11 @@ type Publisher struct {
 
 // Send publishes an SNS message
 func (p *Publisher) Send(serverName string, title string, revision int) (*sns.PublishOutput, error) {
-	msg := Message{Title: title, ServerName: serverName, Revision: revision}
+	return p.SendMessage(&Message{Title: title, ServerName: serverName, Revision: revision})
+}
 
+// SendMessage publishes an SNS message
+func (p *Publisher) SendMessage(msg *Message) (*sns.PublishOutput, error) {
 	b, err := json.Marshal(msg)
 	if err != nil {
 		return nil, fmt.Errorf("Error marshalling SNS event: %s", err)
