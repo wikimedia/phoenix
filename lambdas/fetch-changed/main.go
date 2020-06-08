@@ -87,6 +87,11 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			Body:   aws.ReadSeekCloser(bytes.NewReader(page)),
 			Bucket: aws.String(env.S3RawContentStorage().Name()),
 			Key:    aws.String(keyf(msg)),
+			Metadata: map[string]*string{
+				"title":       aws.String(msg.Title),
+				"server_name": aws.String(msg.ServerName),
+				"revision":    aws.String(fmt.Sprintf("%d", msg.Revision)),
+			},
 		}
 
 		logDebug("%+v", input)
