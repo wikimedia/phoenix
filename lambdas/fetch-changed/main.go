@@ -110,7 +110,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 		logDebug("%+v", result)
 
-		output, err := snsPub.Send(msg)
+		output, err := snsPub.SendChangeEvent(msg)
 		if err != nil {
 			fmt.Printf("[Error] Unable to send SNS change event: %s", err)
 			continue

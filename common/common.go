@@ -16,8 +16,8 @@ type Publisher struct {
 	topicARN string
 }
 
-// Send publishes an SNS message
-func (p *Publisher) Send(msg *ChangeEvent) (*sns.PublishOutput, error) {
+// SendChangeEvent publishes an SNS message for a ChangeEvent
+func (p *Publisher) SendChangeEvent(msg *ChangeEvent) (*sns.PublishOutput, error) {
 	b, err := json.Marshal(msg)
 	if err != nil {
 		return nil, fmt.Errorf("Error marshalling SNS event: %s", err)
