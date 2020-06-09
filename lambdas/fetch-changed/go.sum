@@ -15,12 +15,17 @@ github.com/shurcooL/sanitized_anchor_name v1.0.0/go.mod h1:1NzhyTcUVG4SuEtjjoZeV
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
+github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/urfave/cli/v2 v2.1.1/go.mod h1:SE9GqnLQmjVa0iPEY0f1w3ygNIYcIJ0OKPMoW2caLfQ=
 github.com/wikimedia/phoenix v0.0.0-20200605200612-df5b6ccb7ddc h1:AZ9iUXv3xtw/d57c0/7XzWH69DX9fEOMBt1D4m5GDEE=
 github.com/wikimedia/phoenix v0.0.0-20200605200612-df5b6ccb7ddc/go.mod h1:8lVuMOQrd6sOQC7ebZ9p2NQ31Le5KgafkkkNAquski4=
+github.com/wikimedia/phoenix v0.0.0-20200608214426-3743a8354dcf h1:2MdoIwCq/hq+bb8iYZkVaQQk+I9KBF+KsuO4Tp6nm9Y=
+github.com/wikimedia/phoenix/common v0.0.0-20200609010611-bb8da71cf72d h1:DN7qr02YLJADSVN8rkDwQPuL4UpecrYQazZVbtStOL8=
+github.com/wikimedia/phoenix/common v0.0.0-20200609010611-bb8da71cf72d/go.mod h1:/RU0mNGifpHMU6n/n0DPmOsT6GnD/HWeRqZNjY8qjHk=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
 golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/yaml.v2 v2.2.2/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
+gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=

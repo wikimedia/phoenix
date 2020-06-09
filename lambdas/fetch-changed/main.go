@@ -18,6 +18,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/wikimedia/phoenix/common"
 	"github.com/wikimedia/phoenix/env"
 )
 
@@ -25,21 +26,15 @@ const folderName string = "incoming"
 
 var debug bool = false
 
-type eventMessage struct {
-	Title      string `json:"title"`
-	ServerName string `json:"server_name"`
-	Revision   int    `json:"revision"`
-}
-
-func keyf(msg eventMessage) string {
+func keyf(msg *common.ChangeEvent) string {
 	return fmt.Sprintf("%s/%s/%s-%d", folderName, msg.ServerName, msg.Title, msg.Revision)
 }
 
-func urlf(msg eventMessage) string {
+func urlf(msg *common.ChangeEvent) string {
 	return fmt.Sprintf("https://%s/api/rest_v1/page/html/%s/%d", msg.ServerName, url.PathEscape(msg.Title), msg.Revision)
 }
 
-func getPage(msg eventMessage) ([]byte, error) {
+func getPage(msg *common.ChangeEvent) ([]byte, error) {
 	res, err := http.Get(urlf(msg))
 	if err != nil {
 		return nil, err
@@ -64,11 +59,13 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 		Region: aws.String(env.S3RawContentStorage().AWSConfig().Region()),
 	}))
 
+	snsPub := common.NewPublisher(env.SNSRawContentIncoming().ARN())
+
 	for _, record := range event.Records {
 		snsRecord := record.SNS
 
-		msg := eventMessage{}
-		if err := json.Unmarshal([]byte(snsRecord.Message), &msg); err != nil {
+		msg := &common.ChangeEvent{}
+		if err := json.Unmarshal([]byte(snsRecord.Message), msg); err != nil {
 			fmt.Println("[Error] Unable to deserialize message payload:", err)
 			continue
 		}
@@ -111,7 +108,15 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			continue
 		}
 
-		fmt.Println(result)
+		logDebug("%+v", result)
+
+		output, err := snsPub.Send(msg)
+		if err != nil {
+			fmt.Printf("[Error] Unable to send SNS change event: %s", err)
+			continue
+		}
+
+		logDebug("%+v", output)
 	}
 }
 
