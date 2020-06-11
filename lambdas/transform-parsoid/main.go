@@ -11,12 +11,13 @@ import (
 
 // Content represents a piece of content on a page
 type Content struct {
-	Schema     string            `json:"schema"`
-	Version    int               `json:"version"`
-	Text       string            `json:"text,omitempty"`
-	Attributes map[string]string `json:"attributes,omitempty"`
-	Parent     *Content          `json:"-"`
-	Children   []*Content        `json:"content,omitempty"`
+	Schema   string     `json:"schema,omitempty"`
+	Rel      string     `json:"rel,omitempty"`
+	TypeOf   string     `json:"typeOf,omitempty"`
+	Text     string     `json:"text,omitempty"`
+	DataMW   string     `json:"attributes,omitempty"`
+	Parent   *Content   `json:"-"`
+	Children []*Content `json:"content,omitempty"`
 }
 
 // AddChild to content
@@ -24,16 +25,34 @@ func (content *Content) AddChild(child *Content) {
 	content.Children = append(content.Children, child)
 }
 
-//AddAttribtues to content
-func (content *Content) AddAttribtues(token html.Token) {
-	for _, attr := range token.Attr {
-		// multiple attributes can have the same name so this might overwrite but not sure if it matters for our use case
-		content.Attributes[attr.Key] = attr.Val
-	}
+var includedAttributes = map[string]bool{
+	"rel":     true,
+	"typeof":  true,
+	"data-mw": true,
 }
 
-func newContent(schema string, parent *Content) *Content {
-	new := Content{schema, 0, "", map[string]string{}, parent, []*Content{}}
+func getAttribtues(token html.Token) map[string]string {
+	attributes := map[string]string{}
+	for _, attr := range token.Attr {
+		if !includedAttributes[attr.Key] {
+			continue
+		}
+		// multiple attributes can have the same name so this might overwrite but not sure if it matters for our use case
+		attributes[attr.Key] = attr.Val
+	}
+	return attributes
+}
+
+//AddAttribtues to content
+func (content *Content) AddAttribtues(token html.Token) {
+	attributes := getAttribtues(token)
+	content.Rel = attributes["rel"]
+	content.TypeOf = attributes["typeof"]
+	content.DataMW = attributes["data-mw"]
+}
+
+func newContent(tagName string, parent *Content) *Content {
+	new := Content{tagName, "", "", "", "", parent, []*Content{}}
 	if parent != nil {
 		parent.AddChild(&new)
 	}
