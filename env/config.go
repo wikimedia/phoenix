@@ -33,6 +33,16 @@ func SNSRawContentIncoming() *AWSResource {
 	}
 }
 
+// SNSRawContentSchemaOrg returns metadata for the topic that receives events when new JSON-LD
+// output is added to the "raw content" bucket
+func SNSRawContentSchemaOrg() *AWSResource {
+	return &AWSResource{
+		name:      "scpoc-sns-raw-content-schemaorg",
+		awsConfig: Config(),
+		kind:      "sns",
+	}
+}
+
 // S3RawContentStorage returns metadata for the "raw content" S3 bucket
 func S3RawContentStorage() *AWSResource {
 	return &AWSResource{
