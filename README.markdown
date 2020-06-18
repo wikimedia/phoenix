@@ -29,5 +29,9 @@ Phoenix
       <td nowrap><a href="/wikimedia/phoenix/blob/master/lambdas/fetch-schema.org"><code>lambdas/fetch-schema.org</code></a></td>
       <td>Create schema.org JSON-LD output from Wikidata, and upload to S3. Triggered when HTML is added to <code>incoming/</code> (see <a href="/wikimedia/phoenix/blob/master/lambdas/fetch-changed"><code>lambdas/fetch-changed</code></a>)</td>
     </tr>
+    <tr>
+      <td nowrap><a href="/wikimedia/phoenix/blob/master/lambdas/merge-schema.org"><code>lambdas/merge-schema.org</code></a></td>
+      <td>Merge JSON-LD with HTML documents, and upload to S3. Triggered when linked data is added to <code>schema.org/</code> (see <a href="/wikimedia/phoenix/blob/master/lambdas/fetch-schema.org"><code>lambdas/fetch-schema.org</code></a>)</td>
+    </tr>
   </tbody>
 </table>
