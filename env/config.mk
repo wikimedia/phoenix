@@ -1,0 +1,51 @@
+
+PHX_ACCOUNT_ID               = 113698225543
+PHX_DEFAULT_REGION           = us-east-2
+
+######
+# SNS resources
+######
+
+# Topic that receives change events originating from the Wikimedia
+# Event Streams service.
+PHX_SNS_EVENT_STREAMS_BRIDGE      = scpoc-event-streams-bridge
+PHX_SNS_EVENT_STREAMS_BRIDGE_ARN  = $(shell printf "$(_BASE_ARN)" sns "$(PHX_SNS_EVENT_STREAMS_BRIDGE)")
+
+# Topic that receives events when new HTML is added to incoming (see
+# PHX_S3_RAW_CONTENT_INCOMING).
+PHX_SNS_RAW_CONTENT_INCOMING      = scpoc-sns-raw-content-incoming
+PHX_SNS_RAW_CONTENT_INCOMING_ARN  = $(shell printf "$(_BASE_ARN)" sns "$(PHX_SNS_RAW_CONTENT_INCOMING)")
+
+# Topic that receives events when new linked-data (Wikidata) is added
+# to the raw content store (see PHX_S3_RAW_CONTENT_WD_LINKED)
+PHX_SNS_RAW_CONTENT_WD_LINKED     = scpoc-sns-raw-content-schemaorg
+PHX_SNS_RAW_CONTENT_WD_LINKED_ARN = $(shell printf "$(_BASE_ARN)" sns "$(PHX_SNS_RAW_CONTENT_WD_LINKED)")
+
+######
+# S3 resources
+######
+
+# The "raw content" bucket; Corresponds with uses of "raw content
+# store" in the architecture documents.
+PHX_S3_RAW_CONTENT_BUCKET      = scpoc-raw-content-store
+
+# Folder where HTML documents of a corresponding revision are
+# downloaded to after a change event is received.
+PHX_S3_RAW_CONTENT_INCOMING    = incoming
+
+# Folder where linked data (in the schema.org vocabulary) is stored.
+PHX_S3_RAW_CONTENT_WD_LINKED   = schema.org
+
+# Folder where HTML augmented with linked data is stored.
+PHX_S3_RAW_CONTENT_LINKED_HTML = linked-html
+
+######
+# Lambda resources
+######
+
+PHX_LAMBDA_MERGE_SCHEMAORG = "scpoc-lambda-merge-schemaorg"
+
+
+# For internal use in ARN string formatting
+_BASE_ARN = $(shell printf "arn:aws:%%s:%s:%s:%%s" "$(PHX_DEFAULT_REGION)" "$(PHX_ACCOUNT_ID)")
+
