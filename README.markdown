@@ -10,7 +10,7 @@ Phoenix
   </thead>
   <tbody>
     <tr>
-      <td nowrap><a href="/wikimedia/phoenix/blob/master/common"><code>common</code></a></td>
+      <td nowrap><a href="/wikimedia/phoenix/tree/master/common"><code>common</code></a></td>
       <td>Common structures, helpers, etc</td>
     </tr>
     <tr>
