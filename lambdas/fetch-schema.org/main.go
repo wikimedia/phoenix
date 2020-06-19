@@ -65,7 +65,7 @@ func putObject(msg *common.ChangeEvent, thing *Thing) (*s3.PutObjectOutput, erro
 	var s3res *s3.PutObjectOutput
 
 	// Serialize the Thing to JSON
-	if b, err = json.MarshalIndent(thing, "", "  "); err != nil {
+	if b, err = json.Marshal(thing); err != nil {
 		return nil, fmt.Errorf("Unable to marshal JSON: %w", err)
 	}
 
