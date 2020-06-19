@@ -7,23 +7,25 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/sns"
-	"github.com/wikimedia/phoenix/env"
 )
 
-// Publisher wraps the AWS SDK for publishing Message structs
-type Publisher struct {
+// ChangeEventPublisher wraps the AWS SDK for publishing Message structs
+type ChangeEventPublisher struct {
 	client   *sns.SNS
+	account  string
+	region   string
+	topic    string
 	topicARN string
 }
 
-// SendChangeEvent publishes an SNS message for a ChangeEvent
-func (p *Publisher) SendChangeEvent(msg *ChangeEvent) (*sns.PublishOutput, error) {
+// Send publishes an SNS message for a ChangeEvent
+func (p *ChangeEventPublisher) Send(msg *ChangeEvent) (*sns.PublishOutput, error) {
 	b, err := json.Marshal(msg)
 	if err != nil {
 		return nil, fmt.Errorf("Error marshalling SNS event: %s", err)
 	}
 
-	input := &sns.PublishInput{Message: aws.String(string(b)), TopicArn: aws.String(p.topicARN)}
+	input := &sns.PublishInput{Message: aws.String(string(b)), TopicArn: aws.String(p.arn())}
 
 	result, err := p.client.Publish(input)
 	if err != nil {
@@ -32,13 +34,17 @@ func (p *Publisher) SendChangeEvent(msg *ChangeEvent) (*sns.PublishOutput, error
 	return result, nil
 }
 
-// NewPublisher creates a Publisher
-func NewPublisher(topicARN string) *Publisher {
-	config := &aws.Config{Region: aws.String(env.SNSEventStreamsBridge().AWSConfig().Region())}
+func (p *ChangeEventPublisher) arn() string {
+	return fmt.Sprintf("arn:aws:sns:%s:%s:%s", p.region, p.account, p.topic)
+}
+
+// NewChangeEventPublisher returns an initialized ChangeEventPublisher
+func NewChangeEventPublisher(account string, region string, topic string) *ChangeEventPublisher {
+	config := &aws.Config{Region: aws.String(region)}
 	sess, err := session.NewSession(config)
 	if err != nil {
 		panic(err)
 	}
 
-	return &Publisher{client: sns.New(sess), topicARN: topicARN}
+	return &ChangeEventPublisher{client: sns.New(sess), account: account, region: region, topic: topic}
 }

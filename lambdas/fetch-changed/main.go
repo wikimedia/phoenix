@@ -17,18 +17,22 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/wikimedia/phoenix/common"
-	"github.com/wikimedia/phoenix/env"
 )
 
-const folderName string = "incoming"
-
 var (
+	// These values are passed in at build-time w/ -ldflags (see: Makefile)
+	awsAccount string
+	awsRegion  string
+	snsTopic   string
+	s3Bucket   string
+	s3Folder   string
+
 	debug bool = false
 	log   *common.Logger
 )
 
 func keyf(msg *common.ChangeEvent) string {
-	return fmt.Sprintf("%s/%s/%s-%d", folderName, msg.ServerName, msg.Title, msg.Revision)
+	return fmt.Sprintf("%s/%s/%s-%d", s3Folder, msg.ServerName, msg.Title, msg.Revision)
 }
 
 func urlf(msg *common.ChangeEvent) string {
@@ -51,16 +55,14 @@ func getPage(msg *common.ChangeEvent) ([]byte, error) {
 
 func handleRequest(ctx context.Context, event events.SNSEvent) {
 	s3client := s3.New(session.New(&aws.Config{
-		Region: aws.String(env.S3RawContentStorage().AWSConfig().Region()),
+		Region: aws.String(awsRegion),
 	}))
 
-	snsPub := common.NewPublisher(env.SNSRawContentIncoming().ARN())
+	snsChangePub := common.NewChangeEventPublisher(awsAccount, awsRegion, snsTopic)
 
 	for _, record := range event.Records {
-		snsRecord := record.SNS
-
 		msg := &common.ChangeEvent{}
-		if err := json.Unmarshal([]byte(snsRecord.Message), msg); err != nil {
+		if err := json.Unmarshal([]byte(record.SNS.Message), msg); err != nil {
 			log.Error("Unable to deserialize message payload:", err)
 			continue
 		}
@@ -78,7 +80,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 		result, err := s3client.PutObject(
 			&s3.PutObjectInput{
 				Body:        aws.ReadSeekCloser(bytes.NewReader(page)),
-				Bucket:      aws.String(env.S3RawContentStorage().Name()),
+				Bucket:      aws.String(s3Bucket),
 				Key:         aws.String(keyf(msg)),
 				ContentType: aws.String("text/html"),
 				Metadata: map[string]*string{
@@ -94,7 +96,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 		log.Debug("HTML upload complete: %+v", result)
 
-		output, err := snsPub.SendChangeEvent(msg)
+		output, err := snsChangePub.Send(msg)
 		if err != nil {
 			log.Error("Unable to send SNS change event: %s", err)
 			continue
@@ -114,6 +116,12 @@ func init() {
 	// Initialize the logger
 	log = common.NewLogger(level)
 	log.Warn("%s LOGGING ENABLED (use LOG_LEVEL env var to configure)", common.LevelString(log.Level))
+
+	log.Debug("AWS account ..........: %s", awsAccount)
+	log.Debug("AWS region ...........: %s", awsRegion)
+	log.Debug("SNS topic ............: %s", snsTopic)
+	log.Debug("S3 bucket ............: %s", s3Bucket)
+	log.Debug("S3 folder ............: %s", s3Folder)
 }
 
 func main() {

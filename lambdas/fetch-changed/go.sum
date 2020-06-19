@@ -1,10 +1,10 @@
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/aws/aws-lambda-go v1.17.0 h1:Ogihmi8BnpmCNktKAGpNwSiILNNING1MiosnKUfU8m0=
 github.com/aws/aws-lambda-go v1.17.0/go.mod h1:FEwgPLE6+8wcGBTe5cJN3JWurd1Ztm9zN4jsXsjzKKw=
-github.com/aws/aws-sdk-go v1.31.14 h1:uRC2riabEXPMHl1CDylsfCod5DKjiOSXhYvxg/Eb9V8=
-github.com/aws/aws-sdk-go v1.31.14/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
 github.com/aws/aws-sdk-go v1.32.5 h1:Sz0C7deIoMu5lFGTVkIN92IEZrUz1AWIDDW+9p6n1Rk=
 github.com/aws/aws-sdk-go v1.32.5/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
+github.com/aws/aws-sdk-go v1.32.6 h1:HoswAabUWgnrUF7X/9dr4WRgrr8DyscxXvTDm7Qw/5c=
+github.com/aws/aws-sdk-go v1.32.6/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
 github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsrgA7czyZG/E6dU=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -22,14 +22,6 @@ github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5
 github.com/stretchr/testify v1.6.1 h1:hDPOHmpOpP40lSULcqw7IrRb/u7w6RpDC9399XyoNd0=
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/urfave/cli/v2 v2.1.1/go.mod h1:SE9GqnLQmjVa0iPEY0f1w3ygNIYcIJ0OKPMoW2caLfQ=
-github.com/wikimedia/phoenix v0.0.0-20200609131158-30bf4af733a0 h1:2XRdMa95ngVsIHFr0A8EzWjqFm6P8Ny7m3Q1DsQMqF0=
-github.com/wikimedia/phoenix v0.0.0-20200609131158-30bf4af733a0/go.mod h1:8lVuMOQrd6sOQC7ebZ9p2NQ31Le5KgafkkkNAquski4=
-github.com/wikimedia/phoenix/common v0.0.0-20200618202914-adb30df4b50f h1:fhFPQo83S4uqQNQsd2Qd5hThudfc2mEybHtCc9za8Yk=
-github.com/wikimedia/phoenix/common v0.0.0-20200618202914-adb30df4b50f/go.mod h1:4YjqspEIEVIE30jdxPIFuyHLhuYRe521WkqVAYGhz88=
-github.com/wikimedia/phoenix/env v0.0.0-20200616230439-c417d62079bc h1:heKUIQrbLENloIf6aGJ2UZye7JH0U0x3M1wqBKRtRHM=
-github.com/wikimedia/phoenix/env v0.0.0-20200616230439-c417d62079bc/go.mod h1:EI0a7s7uWpUwI0WhhdfsaOymSOefUakTVVj+Um9eqgY=
-github.com/wikimedia/phoenix/env v0.0.0-20200618202914-adb30df4b50f h1:+ey0mOMo38zs2BIE5cUU1kVGvHQ/9fTqByPHiZvXPFA=
-github.com/wikimedia/phoenix/env v0.0.0-20200618202914-adb30df4b50f/go.mod h1:EI0a7s7uWpUwI0WhhdfsaOymSOefUakTVVj+Um9eqgY=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2 h1:CCH4IOTTfewWjGOlSp+zGcjutRKlBEZQ6wTn8ozI/nI=
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=

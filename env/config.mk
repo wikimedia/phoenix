@@ -43,7 +43,24 @@ PHX_S3_RAW_CONTENT_LINKED_HTML = linked-html
 # Lambda resources
 ######
 
-PHX_LAMBDA_MERGE_SCHEMAORG = "scpoc-lambda-merge-schemaorg"
+# Lambda function subscribed to Wikimedia Event Stream change events.
+# Downloads the corresponding HTML (revision) and writes it to S3 (see
+# PHX_S3_RAW_CONTENT_INCOMING)
+PHX_LAMBDA_FETCH_CHANGED   = scpoc-fetch-changed
+
+
+# Function invoked when new content has been added to incoming
+# (PHX_SNS_RAW_CONTENT_INCOMING).  Downloads corresponding Wikidata
+# information, constructs linked data (JSON-LD) in the schema.org
+# vocabulary, and uploads to S3 (PHX_S3_RAW_CONTENT_WD_LINKED)
+PHX_LAMBDA_FETCH_SCHEMAORG = scpoc-lambda-fetch-schemaorg
+
+# Lambda subscribed to events that signal the creation of new Wikidata
+# linked data (PHX_SNS_RAW_CONTENT_WD_LINKED).  Transforms the HTML
+# from incoming (PHX_S3_RAW_CONTENT_INCOMING) to include the linked
+# data (as JSON-LD), and uploads the result
+# (PHX_S3_RAW_CONTENT_LINKED_HTML)
+PHX_LAMBDA_MERGE_SCHEMAORG = scpoc-lambda-merge-schemaorg
 
 
 # For internal use in ARN string formatting

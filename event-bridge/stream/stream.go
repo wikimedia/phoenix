@@ -8,14 +8,20 @@ import (
 	"time"
 
 	"github.com/eevans/wikimedia/streams"
-	"github.com/wikimedia/phoenix/event-bridge/common"
+	"github.com/wikimedia/phoenix/common"
 )
 
 // Event streams attributes
 const namespace int = 0
 const wiki string = "simplewiki"
 
-var since = flag.String("since", "", "Offset to begin stream from (ISO8601 timestamp or milliseconds since epoch)")
+var (
+	awsAccount string
+	awsRegion  string
+	snsTopic   string
+
+	since = flag.String("since", "", "Offset to begin stream from (ISO8601 timestamp or milliseconds since epoch)")
+)
 
 func main() {
 	flag.Parse()
@@ -35,14 +41,9 @@ func main() {
 		events.Since = *since
 	}
 
-	client, err := common.NewPublisher()
+	client := common.NewChangeEventPublisher(awsAccount, awsRegion, snsTopic)
 
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Unable to create publisher: %s\n", err)
-		os.Exit(1)
-	}
-
-	err = events.RecentChanges(func(event streams.RecentChangeEvent) {
+	err := events.RecentChanges(func(event streams.RecentChangeEvent) {
 		fmt.Printf("Change event captured!\n")
 		fmt.Printf("  Title ............: %s\n", event.Title)
 		fmt.Printf("  Server name ......: %s\n", event.ServerName)
@@ -52,7 +53,12 @@ func main() {
 		fmt.Printf("  Revision .........: %d\n", event.Revision.New)
 		fmt.Printf("  Timestamp ........: %s\n", event.Meta.Dt)
 
-		result, err := client.Send(event.ServerName, event.Title, event.Revision.New)
+		result, err := client.Send(
+			&common.ChangeEvent{
+				ServerName: event.ServerName,
+				Title:      event.Title,
+				Revision:   event.Revision.New,
+			})
 		if err != nil {
 			fmt.Printf("Error enqueuing %s (%s)\n", event.Title, err)
 			return

@@ -17,16 +17,19 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/aws/aws-sdk-go/service/sns"
 	"github.com/wikimedia/phoenix/common"
-	"github.com/wikimedia/phoenix/env"
 )
 
-const folderName string = "schema.org"
 const userAgent string = "Phoenix_lambda/0.0.0"
 
 var (
 	s3client  *s3.S3
 	snsclient *common.Publisher
 	log       *common.Logger
+
+	awsRegion string
+	s3Bucket  string
+	s3Folder  string
+	snsTopic  string
 )
 
 // Convenience for performing HTTP GETs and returning the entire page as []byte
@@ -73,8 +76,8 @@ func putObject(msg *common.ChangeEvent, thing *Thing) (*s3.PutObjectOutput, erro
 	s3res, err = s3client.PutObject(
 		&s3.PutObjectInput{
 			Body:        aws.ReadSeekCloser(bytes.NewReader(b)),
-			Bucket:      aws.String(env.S3RawContentStorage().Name()),
-			Key:         aws.String(fmt.Sprintf("%s/%s/%s-%d.json", folderName, msg.ServerName, msg.Title, msg.Revision)),
+			Bucket:      aws.String(s3Bucket),
+			Key:         aws.String(fmt.Sprintf("%s/%s/%s-%d.json", s3Folder, msg.ServerName, msg.Title, msg.Revision)),
 			ContentType: aws.String("application/json"),
 			Metadata: map[string]*string{
 				"title":       aws.String(msg.Title),
@@ -147,12 +150,10 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 func init() {
 	// AWS S3 client obj
-	region := env.S3RawContentStorage().AWSConfig().Region()
-	s3client = s3.New(session.New(&aws.Config{Region: aws.String(region)}))
+	s3client = s3.New(session.New(&aws.Config{Region: aws.String(awsRegion)}))
 
 	// AWS SNS client obj
-	topic := env.SNSRawContentSchemaOrg().ARN()
-	snsclient = common.NewPublisher(topic)
+	snsclient = common.NewPublisher(snsTopic)
 
 	// Determine logging level
 	var level string = "ERROR"
