@@ -5,7 +5,6 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 
 	"github.com/PuerkitoBio/goquery"
 	"golang.org/x/net/html"
@@ -18,57 +17,6 @@ const (
 	ParagrpaphSection
 	ReferencesSection
 )
-
-type Paragraph struct {
-	Name    string     `json:"name"`
-	Content []*Content `json:"content"`
-}
-
-func newParagraph(name string, content []*Content) *Paragraph {
-	return &Paragraph{name, content}
-}
-
-type Header struct {
-	Content []*Content `json:"content"`
-}
-
-type Reference struct {
-}
-
-type Page struct {
-	Header     []*Content   `json:"header,omitempty"`
-	Paragraphs []*Paragraph `json:"paragraphs,omitempty"`
-	References []*Reference `json:"references,omitempty"`
-}
-
-func newPage() *Page {
-	new := Page{nil, []*Paragraph{}, []*Reference{}}
-	return &new
-}
-
-func (page *Page) AddParagraph(paragraph *Paragraph) {
-	page.Paragraphs = append(page.Paragraphs, paragraph)
-}
-
-func (page *Page) SetHeader(header []*Content) {
-	page.Header = header
-}
-
-// Content represents a piece of content on a page
-type Content struct {
-	Schema   string     `json:"schema,omitempty"`
-	Rel      string     `json:"rel,omitempty"`
-	TypeOf   string     `json:"typeOf,omitempty"`
-	Text     string     `json:"text,omitempty"`
-	DataMW   string     `json:"attributes,omitempty"`
-	Parent   *Content   `json:"-"`
-	Children []*Content `json:"content,omitempty"`
-}
-
-// AddChild to content
-func (content *Content) AddChild(child *Content) {
-	content.Children = append(content.Children, child)
-}
 
 var includedAttributes = map[string]bool{
 	"rel":     true,
@@ -86,22 +34,6 @@ func getAttribtues(token html.Token) map[string]string {
 		attributes[attr.Key] = attr.Val
 	}
 	return attributes
-}
-
-//AddAttribtues to content
-func (content *Content) AddAttribtues(token html.Token) {
-	attributes := getAttribtues(token)
-	content.Rel = attributes["rel"]
-	content.TypeOf = attributes["typeof"]
-	content.DataMW = attributes["data-mw"]
-}
-
-func newContent(tagName string, parent *Content) *Content {
-	new := Content{tagName, "", "", "", "", parent, []*Content{}}
-	if parent != nil {
-		parent.AddChild(&new)
-	}
-	return &new
 }
 
 // Use the existing endpoint for now for testing
@@ -129,44 +61,8 @@ func sectionType(section *goquery.Selection) {
 
 }
 
-func parseParsoid(r io.Reader) (page *Page, err error) {
-	doc, err := goquery.NewDocumentFromReader(r)
-	if err != nil {
-		return nil, err
-	}
-	//page := newPage()
-	sections := doc.Find("html body section[data-mw-section-id]")
-	for i := range sections.Nodes {
-		fmt.Printf("Review %d:\n", i)
-		section := sections.Eq(i)
-		html, err := section.Html()
-		if err != nil {
-			continue
-		}
+func parseReferences(reference *goquery.Selection) {
 
-		content, err := tokenizeHtml(strings.NewReader(html))
-		if err != nil {
-			continue
-		}
-		page := newPage()
-		name := section.Find("h2").First()
-		if len(name.Nodes) == 0 {
-			page.SetHeader(content.Children)
-			fmt.Println("header")
-		} else {
-			id, exists := name.Attr("id")
-			if !exists {
-				continue
-			}
-			if id == "Reference" {
-
-			} else {
-				page.AddParagraph(newParagraph(name.Text(), content.Children))
-			}
-		}
-
-	}
-	return page, nil
 }
 
 func processParsoid(domain string, title string) (page *Page, err error) {
