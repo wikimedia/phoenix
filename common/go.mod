@@ -4,5 +4,6 @@ go 1.14
 
 require (
 	github.com/aws/aws-sdk-go v1.32.5
-	github.com/stretchr/testify v1.6.1 // indirect
+	github.com/google/uuid v1.1.1
+	github.com/stretchr/testify v1.6.1
 )
