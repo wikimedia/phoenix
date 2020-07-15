@@ -8,7 +8,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
-	"strings"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
@@ -18,15 +17,20 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/aws/aws-sdk-go/service/sns"
 	"github.com/wikimedia/phoenix/common"
-	"github.com/wikimedia/phoenix/env"
 )
 
-const folderName string = "schema.org"
 const userAgent string = "Phoenix_lambda/0.0.0"
 
-var s3client *s3.S3
-var snsclient *common.Publisher
-var debug bool = false
+var (
+	s3client  *s3.S3
+	snsclient *common.Publisher
+	log       *common.Logger
+
+	awsRegion string
+	s3Bucket  string
+	s3Folder  string
+	snsTopic  string
+)
 
 // Convenience for performing HTTP GETs and returning the entire page as []byte
 func request(page string) ([]byte, error) {
@@ -57,38 +61,30 @@ func request(page string) ([]byte, error) {
 	return body, nil
 }
 
-// Copy-pasta from fetch-changed
-func logDebug(format string, v ...interface{}) {
-	if debug {
-		fmt.Printf("[DEBUG] %s\n", fmt.Sprintf(strings.TrimSuffix(format, "\n"), v...))
-	}
-}
-
 // Handle upload to AWS S3
 func putObject(msg *common.ChangeEvent, thing *Thing) (*s3.PutObjectOutput, error) {
 	var b []byte
 	var err error
-	var input *s3.PutObjectInput
 	var s3res *s3.PutObjectOutput
 
 	// Serialize the Thing to JSON
-	if b, err = json.MarshalIndent(thing, "", "  "); err != nil {
+	if b, err = json.Marshal(thing); err != nil {
 		return nil, fmt.Errorf("Unable to marshal JSON: %w", err)
 	}
 
 	// Upload to S3
-	input = &s3.PutObjectInput{
-		Body:   aws.ReadSeekCloser(bytes.NewReader(b)),
-		Bucket: aws.String(env.S3RawContentStorage().Name()),
-		Key:    aws.String(fmt.Sprintf("%s/%s/%s-%d.json", folderName, msg.ServerName, msg.Title, msg.Revision)),
-		Metadata: map[string]*string{
-			"title":       aws.String(msg.Title),
-			"server_name": aws.String(msg.ServerName),
-			"revision":    aws.String(fmt.Sprintf("%d", msg.Revision)),
-		},
-	}
-
-	s3res, err = s3client.PutObject(input)
+	s3res, err = s3client.PutObject(
+		&s3.PutObjectInput{
+			Body:        aws.ReadSeekCloser(bytes.NewReader(b)),
+			Bucket:      aws.String(s3Bucket),
+			Key:         aws.String(fmt.Sprintf("%s/%s/%s-%d.json", s3Folder, msg.ServerName, msg.Title, msg.Revision)),
+			ContentType: aws.String("application/json"),
+			Metadata: map[string]*string{
+				"title":       aws.String(msg.Title),
+				"server_name": aws.String(msg.ServerName),
+				"revision":    aws.String(fmt.Sprintf("%d", msg.Revision)),
+			},
+		})
 	if err != nil {
 		if aerr, ok := err.(awserr.Error); ok {
 			return nil, fmt.Errorf("%s: %s (%+v)", aerr.Code(), aerr.Message(), aerr.OrigErr())
@@ -111,63 +107,63 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 		msg = &common.ChangeEvent{}
 		if err := json.Unmarshal([]byte(record.SNS.Message), msg); err != nil {
-			fmt.Println("[Error] Unable to deserialize change message payload:", err)
+			log.Error("Unable to deserialize change message payload: %s", err)
 			continue
 		}
 
-		logDebug("Change event received: %+v", msg)
+		log.Debug("Processing change event: %+v", msg)
 
 		// Get wikibase_item
 		if wdItem, err = wikibaseItemID(msg.ServerName, msg.Title); err != nil {
-			fmt.Println("[Error] Unable to retrieve wikibase_item:", err)
+			log.Error("Unable to retrieve wikibase_item: %s", err)
 			continue
 		}
 
-		logDebug("Found wikibase_item: %s", wdItem)
+		log.Debug("Found wikibase_item: %s", wdItem)
 
 		// Query Wikidata & create JSON+LD output
 		if thing, err = schemaOrgItem(wdItem); err != nil {
-			fmt.Println("[Error] Unable to retrieve schema.org item:", err)
+			log.Error("Unable to query schema.org item attributes: %s", err)
 			continue
 		}
 
-		logDebug("Mapped %s to schema.org/Thing: %+v", wdItem, thing)
+		log.Debug("Mapped %s to schema.org/Thing: %+v", wdItem, thing)
 
 		if s3res, err = putObject(msg, thing); err != nil {
-			fmt.Println("[Error] Unable to upload S3 object:", err)
+			log.Error("Unable to upload JSON object to S3: %s", err)
 			continue
 		}
 
-		logDebug("Uploaded JSON-LD: %+v", s3res)
+		log.Debug("Uploaded JSON-LD to S3: %+v", s3res)
 
 		// Publish SNS event
 		snsres, err = snsclient.SendChangeEvent(msg)
 		if err != nil {
-			fmt.Printf("[Error] Unable to send SNS change event: %s", err)
+			log.Error("Unable to send SNS change event: %s", err)
 			continue
 		}
 
-		logDebug("Published SNS event: %+v", snsres)
+		log.Debug("Published SNS event: %+v", snsres)
 
 	}
 }
 
 func init() {
 	// AWS S3 client obj
-	region := env.S3RawContentStorage().AWSConfig().Region()
-	s3client = s3.New(session.New(&aws.Config{Region: aws.String(region)}))
+	s3client = s3.New(session.New(&aws.Config{Region: aws.String(awsRegion)}))
 
 	// AWS SNS client obj
-	topic := env.SNSRawContentSchemaOrg().ARN()
-	snsclient = common.NewPublisher(topic)
+	snsclient = common.NewPublisher(snsTopic)
 
-	// Enable debug output if env var set
-	if val, ok := os.LookupEnv("WMDEBUG"); ok {
-		if val != "0" || strings.ToLower(val) != "false" {
-			debug = true
-			fmt.Println("DEBUG LOGGING ENABLED (unset WMDEBUG env var to disable)")
-		}
+	// Determine logging level
+	var level string = "ERROR"
+	if v, ok := os.LookupEnv("LOG_LEVEL"); ok {
+		level = v
 	}
+
+	// Initialize the logger
+	log = common.NewLogger(level)
+	log.Warn("%s LOGGING ENABLED (use LOG_LEVEL env var to configure)", common.LevelString(log.Level))
 }
 
 func main() {

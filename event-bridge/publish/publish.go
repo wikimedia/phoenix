@@ -7,7 +7,13 @@ import (
 	"strconv"
 	"strings"
 
-	common "github.com/wikimedia/phoenix/event-bridge/common"
+	"github.com/wikimedia/phoenix/common"
+)
+
+var (
+	awsAccount string
+	awsRegion  string
+	snsTopic   string
 )
 
 func printUsage() {
@@ -15,11 +21,7 @@ func printUsage() {
 }
 
 func main() {
-	client, err := common.NewPublisher()
-	if err != nil {
-		fmt.Printf("Unable to create publisher: %s\n", err)
-		os.Exit(1)
-	}
+	client := common.NewChangeEventPublisher(awsAccount, awsRegion, snsTopic)
 
 	var serverName, title, revision string
 
@@ -40,7 +42,7 @@ func main() {
 				continue
 			}
 
-			result, err := client.Send(serverName, title, revNum)
+			result, err := client.Send(&common.ChangeEvent{ServerName: serverName, Title: title, Revision: revNum})
 			if err != nil {
 				fmt.Printf("Error enqueuing %s (%s)\n", title, err)
 				continue
@@ -65,7 +67,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		result, err := client.Send(serverName, title, revNum)
+		result, err := client.Send(&common.ChangeEvent{ServerName: serverName, Title: title, Revision: revNum})
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error enqueuing %s (%s)\n", title, err)
 			os.Exit(1)

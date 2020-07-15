@@ -16,14 +16,7 @@ $ make deploy
 Troubleshooting
 ---------------
 
-Set the `WMDEBUG` environment variable (to something other than `0` or `false`) to enable
-verbose debug logging.
-
-
-Issues
-------
-
-- [ ] Hardcodes runtime values (S3 bucket, region, etc)
+Set the `LOG_LEVEL` environment variable (to one of `ERROR`, `WARN`, `INFO`, or `DEBUG`).
 
 
 [1]: https://aws.amazon.com/cli/
