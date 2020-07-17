@@ -2,8 +2,6 @@ package common
 
 import (
 	"time"
-
-	"github.com/google/uuid"
 )
 
 // Page represents the root node of a document graph
@@ -48,16 +46,16 @@ type Source struct {
 	Authority string `json:"authority"`
 }
 
-// Section represents a section node of the document graph
-type Section struct {
+// Node represents a node in the document graph
+type Node struct {
 	// Globally unique identifier
 	ID string `json:"id"`
 
-	// Section name (corresponds with schema.org/Thing#name).  Corresponds to the text of the first header
-	// of a section in Parsoid HTML output.
+	// Node name (corresponds with schema.org/Thing#name).  For a section, corresponds to the text of
+	// the first header (Parsoid HTML output).
 	Name string `json:"name,omitempty"`
 
-	// URLs of content that this section is a part of.  Loosely corresponds with
+	// URLs of content that this node is a part of.  Loosely corresponds with
 	// schema.org/CreativeWork#isPartOf, yet unlike its namesake, this attribute serves as an adjacency
 	// list of nodes in the document graph.
 	IsPartOf []string `json:"isPartOf"`
@@ -65,14 +63,14 @@ type Section struct {
 	// Date and time of last modification (corresponds with schema.org/CreativeWork#dateModified)
 	DateModified time.Time `json:"dateModified"`
 
-	// The raw HTML context of the corresponding section.
+	// The raw HTML context of the corresponding node.
 	Unsafe string `json:"unsafe"`
 }
 
 type metadata struct {
-	ID      uuid.UUID `json:"-"`
-	Context string    `json:"@context"`
-	Type    string    `json:"@type"`
+	ID      string `json:"-"`
+	Context string `json:"@context"`
+	Type    string `json:"@type"`
 }
 
 // Thing corresponds to https://schema.org/Thing
