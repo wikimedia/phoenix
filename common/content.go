@@ -1,7 +1,6 @@
 package common
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/google/uuid"
@@ -22,7 +21,7 @@ type Page struct {
 	URL string `json:"url"`
 
 	// Date and time of last modification (corresponds with schema.org/CreativeWork#dateModified)
-	DateModified JSONTime `json:"dateModified"`
+	DateModified time.Time `json:"dateModified"`
 
 	// URLs of content which are a part of this one.  Loosely corresponds with schema.org/CreativeWork#hasPart,
 	// but unlike its namesake, this attribute serves as an adjacency list of nodes in the document graph.
@@ -64,7 +63,7 @@ type Section struct {
 	IsPartOf []string `json:"isPartOf"`
 
 	// Date and time of last modification (corresponds with schema.org/CreativeWork#dateModified)
-	DateModified JSONTime `json:"dateModified"`
+	DateModified time.Time `json:"dateModified"`
 
 	// The raw HTML context of the corresponding section.
 	Unsafe string `json:"unsafe"`
@@ -89,12 +88,4 @@ type Thing struct {
 // NewThing returns an initialized Thing
 func NewThing() *Thing {
 	return &Thing{metadata: metadata{Context: "https://schema.org", Type: "Thing"}}
-}
-
-// JSONTime is a timestamp that serializes to RFC3339 when marshaled to JSON
-type JSONTime time.Time
-
-// MarshalJSON returns t as the JSON encoding of t
-func (t JSONTime) MarshalJSON() ([]byte, error) {
-	return []byte(fmt.Sprintf("\"%s\"", time.Time(t).Format(time.RFC3339))), nil
 }
