@@ -60,6 +60,6 @@ func parseParsoid(r io.Reader) (page *Page, err error) {
 	return page, nil
 }
 
-func parseReferences(reference *goquery.Selection) {
+// func parseReferences(reference *goquery.Selection) {
 
-}
+// }
