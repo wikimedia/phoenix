@@ -2,8 +2,6 @@ module github.com/wikimedia/phoenix/storage
 
 go 1.14
 
-replace github.com/wikimedia/phoenix/common => ../common
-
 require (
 	github.com/aws/aws-sdk-go v1.33.5
 	github.com/google/uuid v1.1.1
