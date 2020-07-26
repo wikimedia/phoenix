@@ -1,10 +1,7 @@
 package common
 
 import (
-	"fmt"
 	"time"
-
-	"github.com/google/uuid"
 )
 
 // Page represents the root node of a document graph
@@ -22,7 +19,7 @@ type Page struct {
 	URL string `json:"url"`
 
 	// Date and time of last modification (corresponds with schema.org/CreativeWork#dateModified)
-	DateModified JSONTime `json:"dateModified"`
+	DateModified time.Time `json:"dateModified"`
 
 	// URLs of content which are a part of this one.  Loosely corresponds with schema.org/CreativeWork#hasPart,
 	// but unlike its namesake, this attribute serves as an adjacency list of nodes in the document graph.
@@ -49,31 +46,31 @@ type Source struct {
 	Authority string `json:"authority"`
 }
 
-// Section represents a section node of the document graph
-type Section struct {
+// Node represents a node in the document graph
+type Node struct {
 	// Globally unique identifier
 	ID string `json:"id"`
 
-	// Section name (corresponds with schema.org/Thing#name).  Corresponds to the text of the first header
-	// of a section in Parsoid HTML output.
+	// Node name (corresponds with schema.org/Thing#name).  For a section, corresponds to the text of
+	// the first header (Parsoid HTML output).
 	Name string `json:"name,omitempty"`
 
-	// URLs of content that this section is a part of.  Loosely corresponds with
+	// URLs of content that this node is a part of.  Loosely corresponds with
 	// schema.org/CreativeWork#isPartOf, yet unlike its namesake, this attribute serves as an adjacency
 	// list of nodes in the document graph.
 	IsPartOf []string `json:"isPartOf"`
 
 	// Date and time of last modification (corresponds with schema.org/CreativeWork#dateModified)
-	DateModified JSONTime `json:"dateModified"`
+	DateModified time.Time `json:"dateModified"`
 
-	// The raw HTML context of the corresponding section.
+	// The raw HTML context of the corresponding node.
 	Unsafe string `json:"unsafe"`
 }
 
 type metadata struct {
-	ID      uuid.UUID `json:"-"`
-	Context string    `json:"@context"`
-	Type    string    `json:"@type"`
+	ID      string `json:"-"`
+	Context string `json:"@context"`
+	Type    string `json:"@type"`
 }
 
 // Thing corresponds to https://schema.org/Thing
@@ -89,12 +86,4 @@ type Thing struct {
 // NewThing returns an initialized Thing
 func NewThing() *Thing {
 	return &Thing{metadata: metadata{Context: "https://schema.org", Type: "Thing"}}
-}
-
-// JSONTime is a timestamp that serializes to RFC3339 when marshaled to JSON
-type JSONTime time.Time
-
-// MarshalJSON returns t as the JSON encoding of t
-func (t JSONTime) MarshalJSON() ([]byte, error) {
-	return []byte(fmt.Sprintf("\"%s\"", time.Time(t).Format(time.RFC3339))), nil
 }
