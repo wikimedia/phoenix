@@ -8,5 +8,5 @@ require (
 	github.com/google/uuid v1.1.1
 	github.com/wikimedia/phoenix/common v0.0.0-20200724214431-a5c24d2b74e9
 	github.com/wikimedia/phoenix/storage v0.0.0-20200724214431-a5c24d2b74e9
-	golang.org/x/net v0.0.0-20200625001655-4c5254603344
+	golang.org/x/net v0.0.0-20200625001655-4c5254603344 // indirect
 )

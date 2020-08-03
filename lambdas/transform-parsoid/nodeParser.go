@@ -8,9 +8,14 @@ import (
 	"github.com/wikimedia/phoenix/common"
 )
 
-func getSectionName(section *goquery.Selection) (string, error) {
-	name := section.Find("h2").First().Text()
-	return name, nil
+var (
+	ignoredNodes = map[string]bool{
+		"References": true,
+	}
+)
+
+func getSectionName(section *goquery.Selection) string {
+	return section.Find("h2").First().Text()
 }
 
 func parseParsoidDocumentNodes(document *goquery.Document, modified time.Time) (nodes []common.Node, err error) {
@@ -22,11 +27,14 @@ func parseParsoidDocumentNodes(document *goquery.Document, modified time.Time) (
 
 		node := common.Node{}
 		node.ID = uuid.New().String()
-		if node.Name, err = getSectionName(section); err != nil {
+		node.Name = getSectionName(section)
+
+		if val, ok := ignoredNodes[node.Name]; !(val && ok) {
 			continue
 		}
+
 		if node.Unsafe, err = section.Html(); err != nil {
-			continue
+			return []common.Node{}, err
 		}
 		nodes = append(nodes, node)
 	}

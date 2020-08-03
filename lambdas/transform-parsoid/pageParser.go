@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 	"time"
@@ -10,13 +11,22 @@ import (
 )
 
 func getPageName(head *goquery.Selection) (string, error) {
-	title := head.Find("title").First().Text()
-	return title, nil
+	title := head.Find("title").First()
+	if len(title.Nodes) == 0 {
+		return "", fmt.Errorf("No `title` tag found")
+	}
+	return title.Text(), nil
 }
 
 func getPageUrl(head *goquery.Selection) (string, error) {
 	base := head.Find("base").First()
-	url := base.AttrOr("href", "")
+	if len(base.Nodes) == 0 {
+		return "", fmt.Errorf("No `base` tag found")
+	}
+	url, exists := base.Attr("href")
+	if !exists {
+
+	}
 	return url, nil
 }
 
@@ -28,20 +38,44 @@ func getPageModified(head *goquery.Selection) (time.Time, error) {
 
 func getPageSourceId(head *goquery.Selection) (int, error) {
 	meta := head.Find("meta[property=\"mw:pageId\"]").First()
-	value := meta.AttrOr("content", "")
-	return strconv.Atoi(value)
+	if len(meta.Nodes) == 0 {
+		return 0, fmt.Errorf("No `meta` tag with property=\"mw:pageId\" found.")
+	}
+	value, exists := meta.Attr("content")
+	if !exists {
+		return 0, fmt.Errorf("No `content` for `meta` tag with property=\"mw:pageId\" found")
+	}
+	sourceId, err := strconv.Atoi(value)
+	if err != nil {
+		return 0, fmt.Errorf("Unable to parse sourceId: %s", err)
+	}
+	return sourceId, nil
+
 }
 
 func getPageSourceTimeUuid(head *goquery.Selection) (string, error) {
 	meta := head.Find("meta[property=\"mw:TimeUuid\"]").First()
-	value := meta.AttrOr("content", "")
+	if len(meta.Nodes) == 0 {
+		return "", fmt.Errorf("No `meta` tag property=\"mw:TimeUuid\" found")
+	}
+	value, exists := meta.Attr("content")
+	if !exists {
+		return "", fmt.Errorf("No `content` for `meta` tag property=\"mw:TimeUuid\" found")
+	}
 	return value, nil
 }
 
 func getPageSourceRevision(html *goquery.Selection) (int, error) {
-	about := html.AttrOr("about", "")
-	revision := about[strings.LastIndex(about, "/")+1:]
-	return strconv.Atoi(revision)
+	about, exits := html.Attr("about")
+	if !exits {
+		return 0, fmt.Errorf("No `about` html ")
+	}
+	revisionStr := about[strings.LastIndex(about, "/")+1:]
+	revision, err := strconv.Atoi(revisionStr)
+	if err != nil {
+		return 0, fmt.Errorf("Unable to parse revision: %s", err)
+	}
+	return revision, nil
 }
 
 func parseParsoidDocumentPage(document *goquery.Document) (page *common.Page, err error) {

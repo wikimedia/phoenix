@@ -5,6 +5,7 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"os"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/aws/aws-sdk-go/aws"
@@ -16,11 +17,10 @@ import (
 
 var (
 	// These values are passed in at build-time w/ -ldflags (see: Makefile)
-	awsAccount string
-	awsRegion  string
-	snsTopic   string
-	s3Bucket   string
-	s3Folder   string
+	awsRegion string = "us-east-1"
+	snsTopic  string
+	s3Bucket  string = "storage.bucket.peter-test"
+	s3Folder  string
 
 	debug bool = false
 	log   *common.Logger
@@ -41,14 +41,25 @@ func requestParsoid(domain string, title string) (body io.ReadCloser, err error)
 
 func main() {
 
+	var level string = "ERROR"
+	if v, ok := os.LookupEnv("LOG_LEVEL"); ok {
+		level = v
+	}
+
+	// Initialize the logger
+	log = common.NewLogger(level)
+
+	log.Debug("Starts page processing")
 	bodyReader, err := requestParsoid("simple.wikipedia.org", "Mars")
 	if err != nil {
+		log.Error("Unable to load page with error: %s", err)
 		return
 	}
 	defer bodyReader.Close()
 
 	document, err := goquery.NewDocumentFromReader(bodyReader)
 	if err != nil {
+		log.Error("Unable to parse html with error: %s", err)
 		return
 	}
 
@@ -62,7 +73,9 @@ func main() {
 	}
 
 	page, nodes, err := parseParsoidDocument(document)
+
 	if err != nil {
+		log.Error("Unable to parse parsoid documet with error: %s", err)
 		return
 	}
 
@@ -71,7 +84,13 @@ func main() {
 		Nodes:  nodes,
 		Abouts: map[string]common.Thing{},
 	})
+
 	if saveError != nil {
-		println(saveError)
+		log.Error("Unable to save to strage: %s", saveError)
+		return
 	}
+
+	log.Debug("Save page successfully")
+	log.Debug("Well done")
+
 }
