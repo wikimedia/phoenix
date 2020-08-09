@@ -29,7 +29,7 @@ func parseParsoidDocumentNodes(document *goquery.Document, modified time.Time) (
 		node.ID = uuid.New().String()
 		node.Name = getSectionName(section)
 
-		if val, ok := ignoredNodes[node.Name]; !(val && ok) {
+		if val, ok := ignoredNodes[node.Name]; ok && val {
 			continue
 		}
 

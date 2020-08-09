@@ -1,13 +1,13 @@
 package main
 
 import (
+	"context"
+	"encoding/json"
 	"fmt"
-	"io"
-	"net/http"
-	"net/url"
-	"os"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/aws/aws-lambda-go/events"
+	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
@@ -17,80 +17,78 @@ import (
 
 var (
 	// These values are passed in at build-time w/ -ldflags (see: Makefile)
-	awsRegion string = "us-east-1"
-	snsTopic  string
-	s3Bucket  string = "storage.bucket.peter-test"
-	s3Folder  string
+	awsRegion       string = "us-east-1"
+	awsAccount      string
+	s3StorageBucket string = "storage.bucket.peter-test"
+	s3RawBucket     string
+	s3RawForlder    string
 
 	debug bool = false
 	log   *common.Logger
 )
 
-// Use the existing endpoint for now for testing
-func urlf(domain string, title string) string {
-	return fmt.Sprintf("https://%s/api/rest_v1/page/html/%s", domain, url.PathEscape(title))
+func keyf(msg *common.ChangeEvent) string {
+	return fmt.Sprintf("%s/%s/%s-%d", s3RawForlder, msg.ServerName, msg.Title, msg.Revision)
 }
 
-func requestParsoid(domain string, title string) (body io.ReadCloser, err error) {
-	res, err := http.Get(urlf(domain, title))
-	if err != nil {
-		return nil, err
-	}
-	return res.Body, nil
-}
-
-func main() {
-
-	var level string = "ERROR"
-	if v, ok := os.LookupEnv("LOG_LEVEL"); ok {
-		level = v
-	}
-
-	// Initialize the logger
-	log = common.NewLogger(level)
-
-	log.Debug("Starts page processing")
-	bodyReader, err := requestParsoid("simple.wikipedia.org", "Mars")
-	if err != nil {
-		log.Error("Unable to load page with error: %s", err)
-		return
-	}
-	defer bodyReader.Close()
-
-	document, err := goquery.NewDocumentFromReader(bodyReader)
-	if err != nil {
-		log.Error("Unable to parse html with error: %s", err)
-		return
-	}
-
+func handleRequest(ctx context.Context, event events.SNSEvent) {
 	s3client := s3.New(session.New(&aws.Config{
 		Region: aws.String(awsRegion),
 	}))
 
 	repo := storage.Repository{
 		Store:  s3client,
-		Bucket: s3Bucket,
+		Bucket: s3StorageBucket,
 	}
 
-	page, nodes, err := parseParsoidDocument(document)
+	for _, record := range event.Records {
+		msg := &common.ChangeEvent{}
+		if err := json.Unmarshal([]byte(record.SNS.Message), msg); err != nil {
+			log.Error("Unable to deserialize message payload:", err)
+			continue
+		}
+		log.Debug("Processing change event: %+v", msg)
 
-	if err != nil {
-		log.Error("Unable to parse parsoid documet with error: %s", err)
-		return
+		data, err := s3client.GetObject(
+			&s3.GetObjectInput{
+				Bucket: aws.String(s3RawBucket),
+				Key:    aws.String(keyf(msg)),
+			})
+
+		if err != nil {
+			log.Error("Unable to retrieve HTML document from S3: %s", err)
+			continue
+		}
+
+		log.Debug("Create html doc")
+		document, err := goquery.NewDocument(data.String())
+		if err != nil {
+			log.Error("Unable to create html document with error: %s", err)
+			return
+		}
+
+		page, nodes, err := parseParsoidDocument(document)
+
+		if err != nil {
+			log.Error("Unable to parse parsoid documet with error: %s", err)
+			return
+		}
+
+		saveError := repo.Apply(&storage.Update{
+			Page:   *page,
+			Nodes:  nodes,
+			Abouts: map[string]common.Thing{},
+		})
+
+		if saveError != nil {
+			log.Error("Unable to save to strage: %s", saveError)
+			return
+		}
+
+		log.Debug("Save page successfully")
 	}
+}
 
-	saveError := repo.Apply(&storage.Update{
-		Page:   *page,
-		Nodes:  nodes,
-		Abouts: map[string]common.Thing{},
-	})
-
-	if saveError != nil {
-		log.Error("Unable to save to strage: %s", saveError)
-		return
-	}
-
-	log.Debug("Save page successfully")
-	log.Debug("Well done")
-
+func main() {
+	lambda.Start(handleRequest)
 }

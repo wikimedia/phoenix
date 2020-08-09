@@ -62,6 +62,10 @@ PHX_LAMBDA_FETCH_SCHEMAORG = scpoc-lambda-fetch-schemaorg
 # (PHX_S3_RAW_CONTENT_LINKED_HTML)
 PHX_LAMBDA_MERGE_SCHEMAORG = scpoc-lambda-merge-schemaorg
 
+# Lambda subscribed to evenets that signal the saving raw content to S3 
+# storage, transform in into canonical tructure as save to storage (See
+# PHX_SNS_RAW_CONTENT_INCOMING)
+PHX_LAMBDA_TRANFORM_PARSOUD   = scpoc-transform-parsoid
 
 # For internal use in ARN string formatting
 _BASE_ARN = $(shell printf "arn:aws:%%s:%s:%s:%%s" "$(PHX_DEFAULT_REGION)" "$(PHX_ACCOUNT_ID)")
