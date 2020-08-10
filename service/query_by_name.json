@@ -1,0 +1,4 @@
+{
+  "query": "query Page($name: String!) { pageByName(name: $name) { name dateModified hasPart about { key val } } }",
+  "variables": { "name": "Foobar" }
+}
