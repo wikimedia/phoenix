@@ -20,3 +20,10 @@ To run the tests against Amazon S3 storage:
 
 When unset, `AWS_REGION` defaults to `us-east-2`
 When unset, `AWS_BUCKET` defaults to `scpoc-structured-content-store`.
+
+### Elasticsearch
+
+To run the tests against Elasticsearch
+
+    $ curl -D - -XPUT -H 'Content-Type: application/json' -d @page_name_mapping.json http://localhost:9200/page_name; echo
+    $ TESTS_USE_ELASTICSEARCH=1 go test

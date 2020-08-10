@@ -24,6 +24,7 @@ type Store interface {
 // Repository provides read/write access to the Phoenix Content Repository.
 type Repository struct {
 	Store  Store
+	Index  Index
 	Bucket string
 }
 
@@ -213,6 +214,13 @@ func (r *Repository) DeleteAbout(id string) {
 	// TODO: Do.
 }
 
+// Update encapsulates the parts of a document involved in an update of the content repository.
+type Update struct {
+	Page   common.Page
+	Nodes  []common.Node
+	Abouts map[string]common.Thing
+}
+
 // Apply updates a document in the content repository.
 func (r *Repository) Apply(update *Update) error {
 	var prevPage *common.Page
@@ -288,16 +296,8 @@ func (r *Repository) Apply(update *Update) error {
 		}
 	}
 
-	// TODO: Index in Elasticsearch
-
-	return nil
-}
-
-// Update encapsulates the parts of a document involved in an update of the content repository.
-type Update struct {
-	Page   common.Page
-	Nodes  []common.Node
-	Abouts map[string]common.Thing
+	// Perform indexing
+	return r.Index.Apply(&update.Page)
 }
 
 // Helpers are helpful.

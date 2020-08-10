@@ -17,6 +17,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
+	elasticsearch "github.com/elastic/go-elasticsearch/v7"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -210,9 +211,21 @@ func GetTestStore() Store {
 	return NewMockStore()
 }
 
+// Depending on the environment, return an Index to use in tests (either for Elasticsearch or a mock)
+func GetTestIndex() Index {
+	useES, _ := strconv.ParseBool(Getenv("TESTS_USE_ELASTICSEARCH", "false"))
+
+	if useES {
+		client, _ := elasticsearch.NewDefaultClient()
+		return &ElasticsearchIndex{Client: client}
+	}
+
+	return NewMockIndex()
+}
+
 // Tests
 func TestRepository(t *testing.T) {
-	repo := Repository{Store: GetTestStore(), Bucket: Getenv("AWS_BUCKET", "scpoc-structured-content-store")}
+	repo := Repository{Store: GetTestStore(), Index: GetTestIndex(), Bucket: Getenv("AWS_BUCKET", "scpoc-structured-content-store")}
 
 	// Page
 	t.Run("PutPage", func(t *testing.T) {
@@ -258,7 +271,7 @@ func TestRepository(t *testing.T) {
 }
 
 func TestRepositoryApply(t *testing.T) {
-	repo := Repository{Store: GetTestStore(), Bucket: Getenv("AWS_BUCKET", "scpoc-structured-content-store")}
+	repo := Repository{Store: GetTestStore(), Index: GetTestIndex(), Bucket: Getenv("AWS_BUCKET", "scpoc-structured-content-store")}
 
 	t.Run("Apply", func(t *testing.T) {
 		update := &Update{
@@ -295,6 +308,10 @@ func TestRepositoryApply(t *testing.T) {
 		assert.Equal(t, testAbout.Name, about.Name)
 		assert.Equal(t, testAbout.SameAs, about.SameAs)
 		assert.Equal(t, testAbout.Type, about.Type)
+
+		id, err := repo.Index.PageIDForName(testPage.Name)
+		require.Nil(t, err)
+		assert.Equal(t, testPage.ID, id, "By-name lookup of the Page failed (indexing)")
 	})
 }
 
