@@ -1,0 +1,24 @@
+schema {
+  query: Query
+}
+
+type Query {
+  page(id: ID!): Page
+  pageByName(name: String!): Page
+}
+
+type Page {
+  id: ID!
+  name: String!
+  url: String!
+  dateModified: String!
+  hasPart: [String!]!
+  # We had this as an associative array, (which GraphQL doesn't support); This
+  # gets us close, but we should rethink.
+  about: [Tuple!]!
+}
+
+type Tuple {
+  key: String!
+  val: String!
+}

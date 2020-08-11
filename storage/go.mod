@@ -7,5 +7,5 @@ require (
 	github.com/google/uuid v1.1.1
 	github.com/spaolacci/murmur3 v1.1.0
 	github.com/stretchr/testify v1.6.1
-	github.com/wikimedia/phoenix/common v0.0.0-20200715133353-6f3f1820ae66
+	github.com/wikimedia/phoenix/common v0.0.0-20200724214431-a5c24d2b74e9
 )

@@ -284,6 +284,7 @@ func TestRepositoryApply(t *testing.T) {
 		assert.Equal(t, testNode.Name, node.Name)
 		assert.Equal(t, testNode.Unsafe, node.Unsafe)
 		assert.Equal(t, testNode.DateModified, node.DateModified)
+		assert.Equal(t, testPage.ID, node.IsPartOf[0])
 
 		about, err := repo.GetAbout(page.About["//schema.org"])
 		require.Nil(t, err)

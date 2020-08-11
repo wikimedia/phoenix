@@ -252,6 +252,7 @@ func (r *Repository) Apply(update *Update) error {
 	for _, node := range update.Nodes {
 		var id string
 		var err error
+		node.IsPartOf = []string{update.Page.ID}
 		if id, err = r.PutNode(&node); err != nil {
 			return fmt.Errorf("error storing node: %w", err)
 		}
