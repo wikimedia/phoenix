@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"os"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/aws/aws-lambda-go/events"
@@ -17,9 +18,9 @@ import (
 
 var (
 	// These values are passed in at build-time w/ -ldflags (see: Makefile)
-	awsRegion       string = "us-east-1"
+	awsRegion       string
 	awsAccount      string
-	s3StorageBucket string = "storage.bucket.peter-test"
+	s3StorageBucket string
 	s3RawBucket     string
 	s3RawForlder    string
 
@@ -87,6 +88,24 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 		log.Debug("Save page successfully")
 	}
+}
+
+func init() {
+	// Determine logging level
+	var level string = "ERROR"
+	if v, ok := os.LookupEnv("LOG_LEVEL"); ok {
+		level = v
+	}
+
+	// Initialize the logger
+	log = common.NewLogger(level)
+	log.Warn("%s LOGGING ENABLED (use LOG_LEVEL env var to configure)", common.LevelString(log.Level))
+
+	log.Debug("AWS account ..........: %s", awsAccount)
+	log.Debug("AWS region ...........: %s", awsRegion)
+	log.Debug("SNS topic ............: %s", s3StorageBucket)
+	log.Debug("S3 bucket ............: %s", s3RawBucket)
+	log.Debug("S3 folder ............: %s", s3RawForlder)
 }
 
 func main() {
