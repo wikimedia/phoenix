@@ -22,14 +22,14 @@ var (
 	awsAccount      string
 	s3StorageBucket string
 	s3RawBucket     string
-	s3RawForlder    string
+	s3RawFolder     string
 
 	debug bool = false
 	log   *common.Logger
 )
 
 func keyf(msg *common.ChangeEvent) string {
-	return fmt.Sprintf("%s/%s/%s-%d", s3RawForlder, msg.ServerName, msg.Title, msg.Revision)
+	return fmt.Sprintf("%s/%s/%s-%d", s3RawFolder, msg.ServerName, msg.Title, msg.Revision)
 }
 
 func handleRequest(ctx context.Context, event events.SNSEvent) {
@@ -58,16 +58,19 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 		if err != nil {
 			log.Error("Unable to retrieve HTML document from S3: %s", err)
+			log.Error("Bucket %s, Key: %s", s3RawBucket, keyf(msg))
 			continue
 		}
 
 		log.Debug("Create html doc")
-		document, err := goquery.NewDocument(data.String())
+		defer data.Body.Close()
+		document, err := goquery.NewDocumentFromReader(data.Body)
 		if err != nil {
 			log.Error("Unable to create html document with error: %s", err)
 			return
 		}
 
+		log.Debug("Parse html parsoid document")
 		page, nodes, err := parseParsoidDocument(document)
 
 		if err != nil {
@@ -75,6 +78,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			return
 		}
 
+		log.Debug("Save canonical data")
 		saveError := repo.Apply(&storage.Update{
 			Page:   *page,
 			Nodes:  nodes,
@@ -82,7 +86,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 		})
 
 		if saveError != nil {
-			log.Error("Unable to save to strage: %s", saveError)
+			log.Error("Unable to save to storage: %s", saveError)
 			return
 		}
 
@@ -103,9 +107,9 @@ func init() {
 
 	log.Debug("AWS account ..........: %s", awsAccount)
 	log.Debug("AWS region ...........: %s", awsRegion)
-	log.Debug("SNS topic ............: %s", s3StorageBucket)
-	log.Debug("S3 bucket ............: %s", s3RawBucket)
-	log.Debug("S3 folder ............: %s", s3RawForlder)
+	log.Debug("SNS storage bucket ............: %s", s3StorageBucket)
+	log.Debug("S3 raw bucket ............: %s", s3RawBucket)
+	log.Debug("S3 raw income folder ............: %s", s3RawFolder)
 }
 
 func main() {

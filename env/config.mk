@@ -1,7 +1,7 @@
 
-PHX_ACCOUNT_ID               = 113698225543
+PHX_ACCOUNT_ID               = 195062990486
 PHX_DEFAULT_REGION           = us-east-2
-PHX_PREFIX                   = spov
+PHX_PREFIX                   = scpoc
 
 ######
 # SNS resources
