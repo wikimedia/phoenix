@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"os"
 
 	"github.com/PuerkitoBio/goquery"
@@ -22,14 +23,38 @@ var (
 	awsAccount                string
 	s3StructuredContentBucket string
 	s3RawBucket               string
-	s3RawFolder               string
+	s3RawIncomeFolder         string
+	s3RawLinkedFolder         string
 
 	debug bool = false
 	log   *common.Logger
 )
 
 func keyf(msg *common.ChangeEvent) string {
-	return fmt.Sprintf("%s/%s/%s-%d", s3RawFolder, msg.ServerName, msg.Title, msg.Revision)
+	return fmt.Sprintf("%s/%s/%s-%d", s3RawIncomeFolder, msg.ServerName, msg.Title, msg.Revision)
+}
+
+func readLinkedData(s3client *s3.S3, msg *common.ChangeEvent) (*common.Thing, error) {
+	meta, err := s3client.GetObject(
+		&s3.GetObjectInput{
+			Bucket: aws.String(s3RawBucket),
+			Key:    aws.String(fmt.Sprintf("%s/%s/%s-%d.json", s3RawLinkedFolder, msg.ServerName, msg.Title, msg.Revision)),
+		})
+	if err != nil {
+		return nil, fmt.Errorf("Unable to retrieve linked-data (Wikidata) from S3: %s", err)
+	}
+	defer meta.Body.Close()
+
+	body, err := ioutil.ReadAll(meta.Body)
+	if err != nil {
+		return nil, fmt.Errorf("Error reading response body: %w", err)
+	}
+
+	thing := &common.Thing{}
+	if err := json.Unmarshal(body, thing); err != nil {
+		return nil, fmt.Errorf("Error unmarshalling JSON: %w", err)
+	}
+	return thing, nil
 }
 
 func handleRequest(ctx context.Context, event events.SNSEvent) {
@@ -78,11 +103,18 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			continue
 		}
 
+		log.Debug("Load linked meta info from s3")
+		thing, err := readLinkedData(s3client, msg)
+		if err != nil {
+			log.Error("Unable to load linked data with error: %s", err)
+			continue
+		}
+
 		log.Debug("Save canonical data")
 		saveError := repo.Apply(&storage.Update{
 			Page:   *page,
 			Nodes:  nodes,
-			Abouts: map[string]common.Thing{},
+			Abouts: map[string]common.Thing{"//schema.org": *thing},
 		})
 
 		if saveError != nil {
@@ -109,7 +141,8 @@ func init() {
 	log.Debug("AWS region ...........: %s", awsRegion)
 	log.Debug("S3 structured content bucket ............: %s", s3StructuredContentBucket)
 	log.Debug("S3 raw bucket ............: %s", s3RawBucket)
-	log.Debug("S3 raw income folder ............: %s", s3RawFolder)
+	log.Debug("S3 raw income folder ............: %s", s3RawIncomeFolder)
+	log.Debug("S3 raw linked folder ............: %s", s3RawLinkedFolder)
 }
 
 func main() {
