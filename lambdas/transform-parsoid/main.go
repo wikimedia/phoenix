@@ -67,7 +67,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 		document, err := goquery.NewDocumentFromReader(data.Body)
 		if err != nil {
 			log.Error("Unable to create html document with error: %s", err)
-			return
+			continue
 		}
 
 		log.Debug("Parse html parsoid document")
@@ -75,7 +75,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 		if err != nil {
 			log.Error("Unable to parse parsoid documet with error: %s", err)
-			return
+			continue
 		}
 
 		log.Debug("Save canonical data")
@@ -87,7 +87,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 		if saveError != nil {
 			log.Error("Unable to save to storage: %s", saveError)
-			return
+			continue
 		}
 
 		log.Debug("Save page successfully")
