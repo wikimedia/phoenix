@@ -12,7 +12,7 @@ LDFLAGS += -X main.awsRegion=$(PHX_DEFAULT_REGION)
 LDFLAGS += -X main.s3RawBucket=$(PHX_S3_RAW_CONTENT_BUCKET)
 LDFLAGS += -X main.s3RawFolder=$(PHX_S3_RAW_CONTENT_INCOMING)
 
-LDFLAGS += -X main.s3StorageBucket=$(PHX_S3_CANONICAL_CONTENT_BUCKET)
+LDFLAGS += -X main.s3StructuredContentBucket=$(PHX_S3_CANONICAL_CONTENT_BUCKET)
 
 
 

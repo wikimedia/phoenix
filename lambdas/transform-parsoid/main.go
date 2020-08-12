@@ -18,11 +18,11 @@ import (
 
 var (
 	// These values are passed in at build-time w/ -ldflags (see: Makefile)
-	awsRegion       string
-	awsAccount      string
-	s3StorageBucket string
-	s3RawBucket     string
-	s3RawFolder     string
+	awsRegion                 string
+	awsAccount                string
+	s3StructuredContentBucket string
+	s3RawBucket               string
+	s3RawFolder               string
 
 	debug bool = false
 	log   *common.Logger
@@ -39,7 +39,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 	repo := storage.Repository{
 		Store:  s3client,
-		Bucket: s3StorageBucket,
+		Bucket: s3StructuredContentBucket,
 	}
 
 	for _, record := range event.Records {
@@ -107,7 +107,7 @@ func init() {
 
 	log.Debug("AWS account ..........: %s", awsAccount)
 	log.Debug("AWS region ...........: %s", awsRegion)
-	log.Debug("SNS storage bucket ............: %s", s3StorageBucket)
+	log.Debug("S3 structured content bucket ............: %s", s3StructuredContentBucket)
 	log.Debug("S3 raw bucket ............: %s", s3RawBucket)
 	log.Debug("S3 raw income folder ............: %s", s3RawFolder)
 }

@@ -28,21 +28,21 @@ PHX_SNS_RAW_CONTENT_WD_LINKED_ARN = $(shell printf "$(_BASE_ARN)" sns "$(PHX_SNS
 
 # The "raw content" bucket; Corresponds with uses of "raw content
 # store" in the architecture documents.
-PHX_S3_RAW_CONTENT_BUCKET      = $(PHX_PREFIX)-raw-content-store
+PHX_S3_RAW_CONTENT_BUCKET        = $(PHX_PREFIX)-raw-content-store
 
 # Folder where HTML documents of a corresponding revision are
 # downloaded to after a change event is received.
-PHX_S3_RAW_CONTENT_INCOMING    = incoming
+PHX_S3_RAW_CONTENT_INCOMING      = incoming
 
 # Folder where linked data (in the schema.org vocabulary) is stored.
-PHX_S3_RAW_CONTENT_WD_LINKED   = schema.org
+PHX_S3_RAW_CONTENT_WD_LINKED     = schema.org
 
 # Folder where HTML augmented with linked data is stored.
-PHX_S3_RAW_CONTENT_LINKED_HTML = linked-html
+PHX_S3_RAW_CONTENT_LINKED_HTML   = linked-html
 
-# The "canonical content" bucket, where parsed and transformed data are
+# The "structured content" bucket, where parsed and transformed data are
 # stored in canonical format
-PHX_S3_CANONICAL_CONTENT_BUCKET      = $(PHX_PREFIX)-canonical-content-store
+PHX_S3_STRUCTURED_CONTENT_BUCKET = $(PHX_PREFIX)-structured-content-store
 
 ######
 # Lambda resources
