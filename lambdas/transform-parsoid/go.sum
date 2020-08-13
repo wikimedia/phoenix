@@ -9,6 +9,8 @@ github.com/aws/aws-sdk-go v1.32.5 h1:Sz0C7deIoMu5lFGTVkIN92IEZrUz1AWIDDW+9p6n1Rk
 github.com/aws/aws-sdk-go v1.32.5/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
 github.com/aws/aws-sdk-go v1.33.5 h1:p2fr1ryvNTU6avUWLI+/H7FGv0TBIjzVM5WDgXBBv4U=
 github.com/aws/aws-sdk-go v1.33.5/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
+github.com/aws/aws-sdk-go v1.34.3 h1:pkbLkV9Q/KY86rbV/WG+yzjNektJbjNRdsTNGtNDZcY=
+github.com/aws/aws-sdk-go v1.34.3/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
 github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsrgA7czyZG/E6dU=
 github.com/cpuguy83/go-md2man/v2 v2.0.0/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsrgA7czyZG/E6dU=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -33,8 +35,12 @@ github.com/wikimedia/phoenix v0.0.0-20200724214431-a5c24d2b74e9 h1:sh5J7XLLThlRM
 github.com/wikimedia/phoenix/common v0.0.0-20200715133353-6f3f1820ae66/go.mod h1:BOA0zor/KerFMtMPQGZfXwdaZ+dGW9RDG6Ozs0ZPyOY=
 github.com/wikimedia/phoenix/common v0.0.0-20200724214431-a5c24d2b74e9 h1:3Rb3C9uWfPuGA4CWCeqrhR6QPKylBsVR7VOS/HH5IQw=
 github.com/wikimedia/phoenix/common v0.0.0-20200724214431-a5c24d2b74e9/go.mod h1:nPnr5gQAnKu5QRqZWwLHVizXBTZUIgkdOZX/VOeb85A=
+github.com/wikimedia/phoenix/common v0.0.0-20200812190033-6f8a5662d4a3 h1:cLxlPjOtguG+ghRu0L5DIxlvLHkdsBUvwbe2nYQLFPA=
+github.com/wikimedia/phoenix/common v0.0.0-20200812190033-6f8a5662d4a3/go.mod h1:nPnr5gQAnKu5QRqZWwLHVizXBTZUIgkdOZX/VOeb85A=
 github.com/wikimedia/phoenix/storage v0.0.0-20200724214431-a5c24d2b74e9 h1:0An4bCA7POJZ3k6yy61t+0EWfjxcE4f1mrVnh1SXMoo=
 github.com/wikimedia/phoenix/storage v0.0.0-20200724214431-a5c24d2b74e9/go.mod h1:XhEjddPUgnL2UoOt5hAWZKSqQIm28U1u+37I/Uo7eEw=
+github.com/wikimedia/phoenix/storage v0.0.0-20200812190033-6f8a5662d4a3 h1:rQaB9HGTaxcO40F4PKrHjXCSAja7VbOhe84kDkUsER8=
+github.com/wikimedia/phoenix/storage v0.0.0-20200812190033-6f8a5662d4a3/go.mod h1:n5Go2TuR4EsSFHHpWtjPx9av8qWKlXzD+FwMNlTxtfM=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/net v0.0.0-20180218175443-cbe0f9307d01/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
@@ -43,6 +49,8 @@ golang.org/x/net v0.0.0-20200202094626-16171245cfb2 h1:CCH4IOTTfewWjGOlSp+zGcjut
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
 golang.org/x/net v0.0.0-20200625001655-4c5254603344 h1:vGXIOMxbNfDTk/aXCmfdLgkrSV+Z2tcbze+pEc3v5W4=
 golang.org/x/net v0.0.0-20200625001655-4c5254603344/go.mod h1:/O7V0waA8r7cgGh81Ro3o1hOxt32SMVPicZroKQ2sZA=
+golang.org/x/net v0.0.0-20200707034311-ab3426394381 h1:VXak5I6aEWmAXeQjA+QSZzlgNrpq9mjcfDemuexIKsU=
+golang.org/x/net v0.0.0-20200707034311-ab3426394381/go.mod h1:/O7V0waA8r7cgGh81Ro3o1hOxt32SMVPicZroKQ2sZA=
 golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20190412213103-97732733099d/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200323222414-85ca7c5b95cd/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=

@@ -23,13 +23,14 @@ const userAgent string = "Phoenix_lambda/0.0.0"
 
 var (
 	s3client  *s3.S3
-	snsclient *common.Publisher
+	snsclient *common.ChangeEventPublisher
 	log       *common.Logger
 
-	awsRegion string
-	s3Bucket  string
-	s3Folder  string
-	snsTopic  string
+	awsAccount string
+	awsRegion  string
+	s3Bucket   string
+	s3Folder   string
+	snsTopic   string
 )
 
 // Convenience for performing HTTP GETs and returning the entire page as []byte
@@ -137,7 +138,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 		log.Debug("Uploaded JSON-LD to S3: %+v", s3res)
 
 		// Publish SNS event
-		snsres, err = snsclient.SendChangeEvent(msg)
+		snsres, err = snsclient.Send(msg)
 		if err != nil {
 			log.Error("Unable to send SNS change event: %s", err)
 			continue
@@ -153,7 +154,7 @@ func init() {
 	s3client = s3.New(session.New(&aws.Config{Region: aws.String(awsRegion)}))
 
 	// AWS SNS client obj
-	snsclient = common.NewPublisher(snsTopic)
+	snsclient = common.NewChangeEventPublisher(awsAccount, awsRegion, snsTopic)
 
 	// Determine logging level
 	var level string = "ERROR"
