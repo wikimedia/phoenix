@@ -11,6 +11,7 @@ import (
 	"github.com/gorilla/handlers"
 	graphql "github.com/graph-gophers/graphql-go"
 	"github.com/graph-gophers/graphql-go/relay"
+	"github.com/rs/cors"
 	"github.com/wikimedia/phoenix/common"
 )
 
@@ -120,14 +121,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	// CORS middleware
-	corsHandler := func(next http.Handler) http.Handler {
-		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			w.Header().Set("Access-Control-Allow-Origin", "*")
-			next.ServeHTTP(w, r)
-		})
-	}
+	handler := cors.Default().Handler(&relay.Handler{Schema: schema})
 
-	handler := corsHandler(&relay.Handler{Schema: schema})
 	log.Fatal(http.ListenAndServe(":8080", handlers.LoggingHandler(os.Stdout, handler)))
 }
