@@ -9,6 +9,7 @@ SOURCES     := main.go mw.go schema_org.go
 
 # Configuration
 LDFLAGS  = -X main.awsRegion=$(PHX_DEFAULT_REGION)
+LDFLAGS += -X main.awsAccount=$(PHX_ACCOUNT_ID)
 LDFLAGS += -X main.s3Bucket=$(PHX_S3_RAW_CONTENT_BUCKET)
 LDFLAGS += -X main.s3Folder=$(PHX_S3_RAW_CONTENT_WD_LINKED)
 LDFLAGS += -X main.snsTopic=$(PHX_SNS_RAW_CONTENT_WD_LINKED_ARN)
