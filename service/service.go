@@ -120,6 +120,14 @@ func main() {
 		os.Exit(1)
 	}
 
-	http.Handle("/query", &relay.Handler{Schema: schema})
-	log.Fatal(http.ListenAndServe(":8080", handlers.LoggingHandler(os.Stdout, http.DefaultServeMux)))
+	// CORS middleware
+	corsHandler := func(next http.Handler) http.Handler {
+		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Set("Access-Control-Allow-Origin", "*")
+			next.ServeHTTP(w, r)
+		})
+	}
+
+	handler := corsHandler(&relay.Handler{Schema: schema})
+	log.Fatal(http.ListenAndServe(":8080", handlers.LoggingHandler(os.Stdout, handler)))
 }
