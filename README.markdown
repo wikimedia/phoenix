@@ -41,7 +41,7 @@ Phoenix
 * Create  `.\env\env.mk` file. You may use prepared template: `.\env\env.mk.tlp` for that. Say, by run command in terminal:  
 ```cp .\env\env.mk.tlp .\env\env.mk```
 
-* Fill the following fields in create file:
+* Fill the following fields in created file:
   - PHX_ACCOUNT_ID = `<Your AWS account id>`
   - PHX_DEFAULT_REGION = `<AWS region you want to deploy env in>`
   - PHX_PREFIX = `<Prefix to be added to all your resource names not to intersect with other deployed instances>`
