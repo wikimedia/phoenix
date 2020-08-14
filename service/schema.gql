@@ -5,6 +5,7 @@ schema {
 type Query {
   page(id: ID!): Page
   pageByName(name: String!): Page
+  node(id: ID!): Node
 }
 
 type Page {
@@ -16,6 +17,14 @@ type Page {
   # We had this as an associative array, (which GraphQL doesn't support); This
   # gets us close, but we should rethink.
   about: [Tuple!]!
+}
+
+type Node {
+  id: ID!
+  name: String!
+  isPartOf: [ID!]!
+  dateModified: String!
+  unsafe: String!
 }
 
 type Tuple {
