@@ -3,23 +3,26 @@
     <v-form v-model="valid">
       <v-container>
         <v-row>
-        <v-text-field
-          v-model="pageName"
-          :rules="pageRules"
-          label="Page name"
-          required
+          <v-text-field
+            v-model="pageName"
+            :rules="pageRules"
+            label="Page name"
+            required
           ></v-text-field>
-          <v-btn color="secondary" :disbled="!valid"
+          <v-btn
+            color="secondary"
+            :disbled="!valid"
             :loading="loading"
             @click="fetch"
-          >Fetch</v-btn>
+            >Fetch</v-btn
+          >
         </v-row>
       </v-container>
     </v-form>
-    <v-container v-show="result">{{result}}</v-container>
-    <v-alert v-show="error">{{error}}</v-alert>
+    <v-container v-show="result">{{ result }}</v-container>
+    <v-alert v-show="error">{{ error }}</v-alert>
   </div>
- </template>
+</template>
 
 <script>
 import axios from 'axios'
@@ -38,27 +41,34 @@ export default {
     ]
   }),
   methods: {
-    fetch () {
+    fetch() {
       this.loading = true
       this.result = null
       this.error = null
-      axios.post('http://localhost:8080/query', {
-        query: 'query Page($name: String!) { pageByName(name: $name) { name dateModified hasPart about { key val } } }',
-        // TODO: The name should come from the search input
-        variables: { name: 'Foobar' }
-      },
-      {
-        headers: { 'Content-Type': 'application/json' }
-      })
+      axios
+        .post(
+          'http://localhost:8080/query',
+          {
+            query:
+              'query Page($name: String!) { pageByName(name: $name) { name dateModified hasPart about { key val } } }',
+            // TODO: The name should come from the search input
+            variables: { name: 'Foobar' }
+          },
+          {
+            headers: { 'Content-Type': 'application/json' }
+          }
+        )
         .then(res => {
           // TODO: Actually do something with this result
           this.result = res
-          this.loading = false
           console.log(res)
         })
         .catch(e => {
           this.error = e
           console.log(e)
+        })
+        .then(() => {
+          // always trigger
           this.loading = false
         })
     }
