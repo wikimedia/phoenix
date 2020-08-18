@@ -69,7 +69,7 @@ PHX_LAMBDA_MERGE_SCHEMAORG = $(PHX_PREFIX)-lambda-merge-schemaorg
 
 # Lambda subscribed to events that signal the saving raw content to S3 
 # storage, transforms raw content into canonical tructure and save to S3 
-# storage (See PHX_S3_CANONICAL_CONTENT_BUCKET)
+# storage (See PHX_S3_STRUCTURED_CONTENT_BUCKET)
 PHX_LAMBDA_TRANSFORM_PARSOID = $(PHX_PREFIX)-transform-parsoid
 
 # For internal use in ARN string formatting
