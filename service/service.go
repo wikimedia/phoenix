@@ -11,24 +11,32 @@ import (
 	"github.com/gorilla/handlers"
 	graphql "github.com/graph-gophers/graphql-go"
 	"github.com/graph-gophers/graphql-go/relay"
+	"github.com/rs/cors"
 	"github.com/wikimedia/phoenix/common"
 )
 
-var mockPage = &common.Page{
-	ID:           "abcdefghijklmn",
-	Name:         "Foobar",
-	URL:          "//en.wikipedia.org/wiki/Foobar",
-	DateModified: time.Now(),
-	HasPart: []string{
-		"/page/385d6436a06b99d",
-		"/page/644ed20cc75621c",
-		"/page/42945840d44937c",
-	},
-	About: map[string]string{
-		"//schema.org":        "/data/b6f7c05a-d367-11ea-af5c-2b020c033632",
-		"//purl.org/dc/terms": "/data/b6f7c05a-d367-11ea-af5c-2b020c033632",
-	},
-}
+var (
+	mockPage = &common.Page{
+		ID:           "/page/abcdefghijklmn",
+		Name:         "Foobar",
+		URL:          "//en.wikipedia.org/wiki/Foobar",
+		DateModified: time.Now(),
+		HasPart: []string{
+			"/node/365154aa-de4a-11ea-a27b-33aa6523fd57",
+		},
+		About: map[string]string{
+			"//schema.org":        "/data/b6f7c05a-d367-11ea-af5c-2b020c033632",
+			"//purl.org/dc/terms": "/data/b6f7c05a-d367-11ea-af5c-2b020c033632",
+		},
+	}
+	mockNode = &common.Node{
+		ID:           "/node/365154aa-de4a-11ea-a27b-33aa6523fd57",
+		Name:         "",
+		IsPartOf:     []string{"/page/abcdefghijklmn"},
+		DateModified: time.Now(),
+		Unsafe:       "<p>The rain in Spain falls mostly on the plains.</p>",
+	}
+)
 
 // RootResolver is the top-level GraphQL resolver
 type RootResolver struct{}
@@ -45,6 +53,11 @@ func (r *RootResolver) PageByName(args struct{ Name string }) (*PageResolver, er
 		return &PageResolver{mockPage}, nil
 	}
 	return nil, nil
+}
+
+// Node returns a Node given its ID
+func (r *RootResolver) Node(args struct{ ID graphql.ID }) (*NodeResolver, error) {
+	return &NodeResolver{mockNode}, nil
 }
 
 // PageResolver resolves a GraphQL page type
@@ -102,6 +115,40 @@ func (r *TupleResolver) Val() string {
 	return r.val
 }
 
+// NodeResolver resolves a GraphQL node type
+type NodeResolver struct {
+	n *common.Node
+}
+
+// ID resolves a node id attribute
+func (r *NodeResolver) ID() graphql.ID {
+	return graphql.ID(r.n.ID)
+}
+
+// Name resolves a node name attribute
+func (r *NodeResolver) Name() string {
+	return r.n.Name
+}
+
+// IsPartOf resolves a node isPartOf attribute
+func (r *NodeResolver) IsPartOf() []graphql.ID {
+	parents := make([]graphql.ID, len(r.n.IsPartOf))
+	for _, id := range r.n.IsPartOf {
+		parents = append(parents, graphql.ID(id))
+	}
+	return parents
+}
+
+// DateModified resolves a node dateModified attribute
+func (r *NodeResolver) DateModified() string {
+	return r.n.DateModified.Format(time.RFC3339)
+}
+
+// Unsafe resolves a node unsafe attribute
+func (r *NodeResolver) Unsafe() string {
+	return r.n.Unsafe
+}
+
 func main() {
 	var b []byte
 	var schema *graphql.Schema
@@ -115,11 +162,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	if schema, err = graphql.ParseSchema(string(b), &RootResolver{}); err != nil {
+	if schema, err = graphql.ParseSchema(string(b), &RootResolver{}, graphql.UseFieldResolvers()); err != nil {
 		fmt.Fprintf(os.Stderr, "Error parsing schema: %s", err)
 		os.Exit(1)
 	}
 
-	http.Handle("/query", &relay.Handler{Schema: schema})
-	log.Fatal(http.ListenAndServe(":8080", handlers.LoggingHandler(os.Stdout, http.DefaultServeMux)))
+	handler := cors.Default().Handler(&relay.Handler{Schema: schema})
+
+	log.Fatal(http.ListenAndServe(":8080", handlers.LoggingHandler(os.Stdout, handler)))
 }
