@@ -73,6 +73,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			log.Error("Unable to deserialize message payload:", err)
 			continue
 		}
+
 		log.Debug("Processing change event: %+v", msg)
 
 		data, err := s3client.GetObject(
@@ -82,35 +83,39 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			})
 
 		if err != nil {
-			log.Error("Unable to retrieve HTML document from S3: %s", err)
-			log.Error("Bucket %s, Key: %s", s3RawBucket, keyf(msg))
+			log.Error("Unable to retrieve %s/%s from S3: %s", s3RawBucket, keyf(msg), err)
 			continue
 		}
 
-		log.Debug("Create html doc")
 		defer data.Body.Close()
+
+		log.Debug("Creating html document...")
+
 		document, err := goquery.NewDocumentFromReader(data.Body)
 		if err != nil {
 			log.Error("Unable to create html document with error: %s", err)
 			continue
 		}
 
-		log.Debug("Parse html parsoid document")
+		log.Debug("Parsing html parsoid document...")
+
 		page, nodes, err := parseParsoidDocument(document)
 
 		if err != nil {
-			log.Error("Unable to parse parsoid documet with error: %s", err)
+			log.Error("Unable to parse parsoid document with error: %s", err)
 			continue
 		}
 
-		log.Debug("Load linked meta info from s3")
+		log.Debug("Loading JSON-LD output from S3...")
+
 		thing, err := readLinkedData(s3client, msg)
 		if err != nil {
 			log.Error("Unable to load linked data with error: %s", err)
 			continue
 		}
 
-		log.Debug("Save canonical data")
+		log.Debug("Saving document in canonical format...")
+
 		saveError := repo.Apply(&storage.Update{
 			Page:   *page,
 			Nodes:  nodes,
@@ -122,7 +127,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			continue
 		}
 
-		log.Debug("Save page successfully")
+		log.Debug("Page saved successfully")
 	}
 }
 
@@ -137,12 +142,12 @@ func init() {
 	log = common.NewLogger(level)
 	log.Warn("%s LOGGING ENABLED (use LOG_LEVEL env var to configure)", common.LevelString(log.Level))
 
-	log.Debug("AWS account ..........: %s", awsAccount)
-	log.Debug("AWS region ...........: %s", awsRegion)
-	log.Debug("S3 structured content bucket ............: %s", s3StructuredContentBucket)
-	log.Debug("S3 raw bucket ............: %s", s3RawBucket)
-	log.Debug("S3 raw income folder ............: %s", s3RawIncomeFolder)
-	log.Debug("S3 raw linked folder ............: %s", s3RawLinkedFolder)
+	log.Debug("AWS account ......................: %s", awsAccount)
+	log.Debug("AWS region .......................: %s", awsRegion)
+	log.Debug("S3 structured content bucket .....: %s", s3StructuredContentBucket)
+	log.Debug("S3 raw content bucket ............: %s", s3RawBucket)
+	log.Debug("S3 raw content incoming folder ...: %s", s3RawIncomeFolder)
+	log.Debug("S3 raw content linked folder .....: %s", s3RawLinkedFolder)
 }
 
 func main() {

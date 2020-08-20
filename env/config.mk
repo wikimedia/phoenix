@@ -70,7 +70,7 @@ PHX_LAMBDA_MERGE_SCHEMAORG = $(PHX_PREFIX)-lambda-merge-schemaorg
 # Lambda subscribed to events that signal the saving raw content to S3 
 # storage, transforms raw content into canonical tructure and save to S3 
 # storage (See PHX_S3_STRUCTURED_CONTENT_BUCKET)
-PHX_LAMBDA_TRANSFORM_PARSOID = $(PHX_PREFIX)-transform-parsoid
+PHX_LAMBDA_TRANSFORM_PARSOID = $(PHX_PREFIX)-lambda-transform-parsoid
 
 # For internal use in ARN string formatting
 _BASE_ARN = $(shell printf "arn:aws:%%s:%s:%s:%%s" "$(PHX_DEFAULT_REGION)" "$(PHX_ACCOUNT_ID)")
