@@ -8,6 +8,7 @@ require (
 	github.com/aws/aws-sdk-go v1.34.3
 	github.com/google/uuid v1.1.1
 	github.com/wikimedia/phoenix/common v0.0.0-20200812190033-6f8a5662d4a3
+	// NOTE: Upgrading the version will require initializing an Index
 	github.com/wikimedia/phoenix/storage v0.0.0-20200812190033-6f8a5662d4a3
 	golang.org/x/net v0.0.0-20200707034311-ab3426394381 // indirect
 )
