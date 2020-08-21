@@ -7,4 +7,5 @@ all: clean
 clean:
 	rm -f $(BINARY)
 
+
 .PHONY: all clean
