@@ -23,7 +23,7 @@ deploy: build
 	aws lambda update-function-code --function-name $(PHX_LAMBDA_FETCH_SCHEMAORG) --zip-file fileb://function.zip
 
 clean:
-	rm -f function.zip $(BINARY) -ldflags '$(LDFLAGS)'
+	rm -f function.zip $(BINARY)
 
 test:
 	go test
