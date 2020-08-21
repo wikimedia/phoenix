@@ -1,6 +1,3 @@
-
-
-
 clean:
 	$(MAKE) -c storage clean
 	$(MAKE) -c common clean
