@@ -95,6 +95,18 @@ func (r *Repository) GetPage(id string) (*common.Page, error) {
 	return &page, nil
 }
 
+// GetPageByName returns a Page by its authority and name
+func (r *Repository) GetPageByName(authority, name string) (*common.Page, error) {
+	var id string
+	var err error
+
+	if id, err = r.Index.PageIDForName(authority, name); err != nil {
+		return nil, err
+	}
+
+	return r.GetPage(id)
+}
+
 // GetNode returns a Node by its ID
 func (r *Repository) GetNode(id string) (*common.Node, error) {
 	var data *json.Decoder

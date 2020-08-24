@@ -2,10 +2,24 @@
 
 # service
 
+Building:
+
+```sh-session
+$ make
+```
+
 Running:
 
 ```sh-session
-$ go run service.go
+$ ./service
+```
+
+Default values for the Amazon Web Services region, and S3 bucket names are drawn from the project's
+settings (see: `../env/config.mk`), and are passed in at compile-time. If necessary these can be
+overriden at runtime using environment variables.
+
+```sh-session
+$ AWS_REGION=us-west-2 AWS_BUCKET=sumbucket ./service
 ```
 
 ```sh-session

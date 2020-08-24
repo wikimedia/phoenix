@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -16,6 +17,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/s3"
 	elasticsearch "github.com/elastic/go-elasticsearch/v7"
 	"github.com/google/uuid"
@@ -214,10 +216,16 @@ func GetTestStore() Store {
 // Depending on the environment, return an Index to use in tests (either for Elasticsearch or a mock)
 func GetTestIndex() Index {
 	useES, _ := strconv.ParseBool(Getenv("TESTS_USE_ELASTICSEARCH", "false"))
+	useDynamoDB, _ := strconv.ParseBool(Getenv("TESTS_USE_DYNAMODB", "false"))
 
 	if useES {
 		client, _ := elasticsearch.NewDefaultClient()
 		return &ElasticsearchIndex{Client: client}
+	}
+
+	if useDynamoDB {
+		region := Getenv("AWS_REGION", "us-east-2")
+		return &DynamoDBIndex{dynamodb.New(session.New(&aws.Config{Region: aws.String(region)}))}
 	}
 
 	return NewMockIndex()
@@ -237,6 +245,13 @@ func TestRepository(t *testing.T) {
 		page, err := repo.GetPage(testPage.ID)
 		require.Nil(t, err)
 		assert.Equal(t, &testPage, page)
+	})
+	t.Run("GetPage (not found)", func(t *testing.T) {
+		_, err := repo.GetPage("/page/bogus")
+		require.NotNil(t, err)
+		var s3err awserr.Error
+		require.True(t, errors.As(err, &s3err))
+		assert.Equal(t, s3.ErrCodeNoSuchKey, s3err.Code())
 	})
 
 	// Node
@@ -292,6 +307,10 @@ func TestRepositoryApply(t *testing.T) {
 		assert.Len(t, page.HasPart, 1)
 		assert.Len(t, page.About, 1)
 
+		page, err = repo.GetPageByName(testPage.Source.Authority, testPage.Name)
+		require.Nil(t, err)
+		assert.Equal(t, testPage.ID, page.ID, "By-name lookup of the Page failed (indexing)")
+
 		node, err := repo.GetNode(page.HasPart[0])
 		require.Nil(t, err)
 		assert.Equal(t, testNode.Name, node.Name)
@@ -308,10 +327,6 @@ func TestRepositoryApply(t *testing.T) {
 		assert.Equal(t, testAbout.Name, about.Name)
 		assert.Equal(t, testAbout.SameAs, about.SameAs)
 		assert.Equal(t, testAbout.Type, about.Type)
-
-		id, err := repo.Index.PageIDForName(testPage.Source.Authority, testPage.Name)
-		require.Nil(t, err)
-		assert.Equal(t, testPage.ID, id, "By-name lookup of the Page failed (indexing)")
 	})
 }
 
