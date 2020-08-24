@@ -25,4 +25,7 @@ deploy: build
 clean:
 	rm -f function.zip $(BINARY)
 
+test:
+	go test
+
 .PHONY: build clean deploy
