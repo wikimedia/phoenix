@@ -7,6 +7,8 @@ import (
 	"net/url"
 	"strings"
 
+	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/service/dynamodb"
 	elasticsearch "github.com/elastic/go-elasticsearch/v7"
 	"github.com/elastic/go-elasticsearch/v7/esapi"
 	"github.com/wikimedia/phoenix/common"
@@ -23,10 +25,13 @@ type Index interface {
 
 // ErrNameNotFound is an Error returned when a lookup by name fails
 type ErrNameNotFound struct {
-	Name string
+	Authority string
+	Name      string
 }
 
-func (e *ErrNameNotFound) Error() string { return e.Name + ": not found" }
+func (e *ErrNameNotFound) Error() string {
+	return fmt.Sprintf("(%s, %s): not found", e.Authority, e.Name)
+}
 
 // MockIndex is a memory-backed Index used in testing
 type MockIndex struct {
@@ -45,12 +50,58 @@ func (i *MockIndex) PageIDForName(authority, name string) (string, error) {
 		return v, nil
 	}
 
-	return "", &ErrNameNotFound{Name: name}
+	return "", &ErrNameNotFound{Authority: authority, Name: name}
 }
 
 // NewMockIndex creates a new MockIndex
 func NewMockIndex() *MockIndex {
 	return &MockIndex{make(map[string]string)}
+}
+
+// DynamoDBIndex is a Phoenix document indexer backed by DynamoDB
+type DynamoDBIndex struct {
+	Client *dynamodb.DynamoDB
+}
+
+// Apply updates the index with new Phoenix document data
+func (i *DynamoDBIndex) Apply(page *common.Page) error {
+	_, err := i.Client.PutItem(
+		&dynamodb.PutItemInput{
+			Item: map[string]*dynamodb.AttributeValue{
+				"Title":     {S: aws.String(page.Name)},
+				"Authority": {S: aws.String(page.Source.Authority)},
+				"ID":        {S: aws.String(page.ID)},
+			},
+			TableName: aws.String("PageTitles"),
+		})
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// PageIDForName queries the index for page ID matching authority (wiki) and name
+func (i *DynamoDBIndex) PageIDForName(authority, name string) (string, error) {
+	result, err := i.Client.GetItem(
+		&dynamodb.GetItemInput{
+			Key: map[string]*dynamodb.AttributeValue{
+				"Title":     {S: aws.String(name)},
+				"Authority": {S: aws.String(authority)},
+			},
+			TableName: aws.String("PageTitles"),
+		})
+
+	if err != nil {
+		return "", err
+	}
+
+	if result.Item == nil {
+		return "", &ErrNameNotFound{Authority: authority, Name: name}
+	}
+
+	return *result.Item["ID"].S, nil
 }
 
 // ElasticsearchIndex is a Phoenix document indexer backed by Elasticsearch

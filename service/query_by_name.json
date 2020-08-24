@@ -1,4 +1,4 @@
 {
-  "query": "query Page($name: String!) { pageByName(name: $name) { name dateModified hasPart about { key val } } }",
-  "variables": { "name": "Foobar" }
+  "query": "query Page($authority: String!, $name: String!) { pageByName(authority: $authority, name: $name) { name dateModified hasPart about { key val } } }",
+  "variables": { "authority": "en.wikipedia.org", "name": "Foobar" }
 }

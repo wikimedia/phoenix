@@ -4,7 +4,8 @@ schema {
 
 type Query {
   page(id: ID!): Page
-  pageByName(name: String!): Page
+  # NOTE: authority is the complete hostname of the wiki (e.g. simple.wikipedia.org)
+  pageByName(authority: String!, name: String!): Page
   node(id: ID!): Node
 }
 

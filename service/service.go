@@ -1,63 +1,112 @@
 package main
 
 import (
+	"errors"
+	"flag"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"time"
 
+	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/awserr"
+	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/dynamodb"
+	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/gorilla/handlers"
 	graphql "github.com/graph-gophers/graphql-go"
 	"github.com/graph-gophers/graphql-go/relay"
 	"github.com/rs/cors"
 	"github.com/wikimedia/phoenix/common"
+	"github.com/wikimedia/phoenix/storage"
 )
 
 var (
-	mockPage = &common.Page{
-		ID:           "/page/abcdefghijklmn",
-		Name:         "Foobar",
-		URL:          "//en.wikipedia.org/wiki/Foobar",
-		DateModified: time.Now(),
-		HasPart: []string{
-			"/node/365154aa-de4a-11ea-a27b-33aa6523fd57",
-		},
-		About: map[string]string{
-			"//schema.org":        "/data/b6f7c05a-d367-11ea-af5c-2b020c033632",
-			"//purl.org/dc/terms": "/data/b6f7c05a-d367-11ea-af5c-2b020c033632",
-		},
-	}
-	mockNode = &common.Node{
-		ID:           "/node/365154aa-de4a-11ea-a27b-33aa6523fd57",
-		Name:         "",
-		IsPartOf:     []string{"/page/abcdefghijklmn"},
-		DateModified: time.Now(),
-		Unsafe:       "<p>The rain in Spain falls mostly on the plains.</p>",
-	}
+	errorLogName  = flag.String("error-log", "error.log", "Path to the error log.")
+	accessLogName = flag.String("access-log", "-", "Path to the access log.")
+
+	// These values are passed in at build-time using -ldflags (see: Makefile)
+	awsRegion string
+	s3Bucket  string
 )
 
+// True if err is an awserr.Error, AND its code is s3.ErrCodeNoSuchKey, false otherwise.
+func isS3NotFound(err error) bool {
+	var s3err awserr.Error
+	if errors.As(err, &s3err) {
+		if s3err.Code() == s3.ErrCodeNoSuchKey {
+			return true
+		}
+	}
+	return false
+}
+
 // RootResolver is the top-level GraphQL resolver
-type RootResolver struct{}
+type RootResolver struct {
+	Repository *storage.Repository
+	Logger     *common.Logger
+}
 
 // Page returns a Page given its ID
 func (r *RootResolver) Page(args struct{ ID graphql.ID }) (*PageResolver, error) {
-	// TODO: This should retrieve the common.Page object from storage
-	return &PageResolver{mockPage}, nil
+	var page *common.Page
+	var err error
+
+	if page, err = r.Repository.GetPage(string(args.ID)); err != nil {
+		// If this was an error returned by S3 (it is an awserr.Error), and its code is s3.ErrCodeNoSuchKey
+		// then the object was simply not found (read: this is not an error per say).
+		if isS3NotFound(err) {
+			return nil, nil
+		}
+
+		r.Logger.Error("Unable to retrieve Page (ID=%s): %s", string(args.ID), err)
+		return nil, err
+	}
+
+	return &PageResolver{page}, nil
 }
 
 // PageByName returns a Page given its Name
-func (r *RootResolver) PageByName(args struct{ Name string }) (*PageResolver, error) {
-	if args.Name == mockPage.Name {
-		return &PageResolver{mockPage}, nil
+func (r *RootResolver) PageByName(args struct {
+	Authority string
+	Name      string
+}) (*PageResolver, error) {
+	var page *common.Page
+	var err error
+
+	if page, err = r.Repository.GetPageByName(args.Authority, args.Name); err != nil {
+		// If err is of type ErrNameNotFound, then this is not an error per say.
+		if _, ok := err.(*storage.ErrNameNotFound); ok {
+			return nil, nil
+		}
+
+		r.Logger.Error("Unable to retrieve Page (authority=%s, name=%s): %s", args.Authority, args.Name, err)
+		return nil, err
 	}
-	return nil, nil
+
+	return &PageResolver{page}, nil
 }
 
 // Node returns a Node given its ID
 func (r *RootResolver) Node(args struct{ ID graphql.ID }) (*NodeResolver, error) {
-	return &NodeResolver{mockNode}, nil
+	var node *common.Node
+	var err error
+
+	if node, err = r.Repository.GetNode(string(args.ID)); err != nil {
+		// If this was an error returned by S3 (it is an awserr.Error) and its code is s3.ErrCodeNoSuchKey
+		// then the object was simply not found (read: this is not an error per say).
+		if isS3NotFound(err) {
+			return nil, nil
+		}
+
+		r.Logger.Error("Unable to retrieve Node (ID=%s): %s", string(args.ID), err)
+		return nil, err
+	}
+
+	return &NodeResolver{node}, nil
 }
 
 // PageResolver resolves a GraphQL page type
@@ -149,10 +198,50 @@ func (r *NodeResolver) Unsafe() string {
 	return r.n.Unsafe
 }
 
+// Return configuration variables that are the union of defaults, and any values passed in the environment
+func config() (region, bucket string) {
+	// Retrieve environment variables
+	env := func(name string, def string) string {
+		if v := os.Getenv(name); v != "" {
+			return v
+		}
+		return def
+	}
+
+	region = env("AWS_REGION", awsRegion)
+	bucket = env("AWS_BUCKET", s3Bucket)
+
+	return region, bucket
+}
+
 func main() {
+	var accessLog io.Writer
 	var b []byte
-	var schema *graphql.Schema
 	var err error
+	var logger *common.Logger
+	var resolver *RootResolver
+	var schema *graphql.Schema
+
+	var region, bucket = config()
+	var awsSession = session.New(&aws.Config{Region: aws.String(region)})
+
+	flag.Parse()
+
+	// Setup the error logger
+	if logger, err = common.NewFileLogger("INFO", *errorLogName); err != nil {
+		fmt.Fprintf(os.Stderr, "Unable to open error log: %s", err)
+		os.Exit(1)
+	}
+
+	// Setup the access log
+	if *accessLogName == "-" {
+		accessLog = os.Stdout
+	} else {
+		if accessLog, err = os.OpenFile(*accessLogName, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666); err != nil {
+			fmt.Fprintf(os.Stderr, "Error opening %s for writing: %s\n", *accessLogName, err)
+			os.Exit(1)
+		}
+	}
 
 	// FIXME: Keeping the schema in a separate file could be convenient during early development (VS Code's
 	// GraphQL editor addon has been pretty handy, for example), but at some point practical considerations
@@ -162,12 +251,21 @@ func main() {
 		os.Exit(1)
 	}
 
-	if schema, err = graphql.ParseSchema(string(b), &RootResolver{}, graphql.UseFieldResolvers()); err != nil {
+	resolver = &RootResolver{
+		Repository: &storage.Repository{
+			Store:  s3.New(awsSession),
+			Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession)},
+			Bucket: bucket,
+		},
+		Logger: logger,
+	}
+
+	if schema, err = graphql.ParseSchema(string(b), resolver, graphql.UseFieldResolvers()); err != nil {
 		fmt.Fprintf(os.Stderr, "Error parsing schema: %s", err)
 		os.Exit(1)
 	}
 
 	handler := cors.Default().Handler(&relay.Handler{Schema: schema})
 
-	log.Fatal(http.ListenAndServe(":8080", handlers.LoggingHandler(os.Stdout, handler)))
+	log.Fatal(http.ListenAndServe(":8080", handlers.LoggingHandler(accessLog, handler)))
 }
