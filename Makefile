@@ -1,10 +1,4 @@
-clean:
-	$(MAKE) -c storage clean
-	$(MAKE) -c common clean
-	$(MAKE) -c fetch-changed clean
-	$(MAKE) -c fetch-schema.org clean
-	$(MAKE) -c merge-schema.org clean
-	$(MAKE) -c transform-parsoid clean
+
 
 build: 
 	$(MAKE) -C storage build
@@ -13,6 +7,14 @@ build:
 	$(MAKE) -C lambdas/fetch-schema.org  build
 	$(MAKE) -C lambdas/merge-schema.org  build
 	$(MAKE) -C lambdas/transform-parsoid build
+
+clean:
+	$(MAKE) -C storage clean
+	$(MAKE) -C common clean
+	$(MAKE) -C lambdas/fetch-changed clean
+	$(MAKE) -C lambdas/fetch-schema.org clean
+	$(MAKE) -C lambdas/merge-schema.org clean
+	$(MAKE) -C lambdas/transform-parsoid clean
 
 deploy: 
 	$(MAKE) -C lambdas/fetch-changed deploy
