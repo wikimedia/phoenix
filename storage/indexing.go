@@ -18,7 +18,7 @@ type Index interface {
 	Apply(page *common.Page) error
 
 	// PageIDForName queries the index for page ID matching name
-	PageIDForName(name string) (string, error)
+	PageIDForName(authority, name string) (string, error)
 }
 
 // ErrNameNotFound is an Error returned when a lookup by name fails
@@ -35,13 +35,13 @@ type MockIndex struct {
 
 // Apply updates the index with new Phoenix document data
 func (i *MockIndex) Apply(page *common.Page) error {
-	i.pages[page.Name] = page.ID
+	i.pages[fmt.Sprintf("%s:%s", page.Source.Authority, page.Name)] = page.ID
 	return nil
 }
 
 // PageIDForName queries the index for page ID matching name
-func (i *MockIndex) PageIDForName(name string) (string, error) {
-	if v, ok := i.pages[name]; ok {
+func (i *MockIndex) PageIDForName(authority, name string) (string, error) {
+	if v, ok := i.pages[fmt.Sprintf("%s:%s", authority, name)]; ok {
 		return v, nil
 	}
 
@@ -74,7 +74,7 @@ func (i *ElasticsearchIndex) Apply(page *common.Page) error {
 
 	req := esapi.IndexRequest{
 		Index:      "page_name",
-		DocumentID: url.PathEscape(page.Name),
+		DocumentID: url.PathEscape(fmt.Sprintf("%s:%s", page.Source.Authority, page.Name)),
 		Body:       strings.NewReader(string(b)),
 		Refresh:    "true",
 	}
@@ -93,11 +93,11 @@ func (i *ElasticsearchIndex) Apply(page *common.Page) error {
 }
 
 // PageIDForName queries the index for page ID matching name
-func (i *ElasticsearchIndex) PageIDForName(name string) (string, error) {
+func (i *ElasticsearchIndex) PageIDForName(authority, name string) (string, error) {
 	var err error
 	var res *esapi.Response
 
-	req := esapi.GetRequest{Index: "page_name", DocumentID: name}
+	req := esapi.GetRequest{Index: "page_name", DocumentID: fmt.Sprintf("%s:%s", authority, name)}
 	if res, err = req.Do(context.Background(), i.Client); err != nil {
 		return "", fmt.Errorf("Elasticsearch response error: %w", err)
 	}

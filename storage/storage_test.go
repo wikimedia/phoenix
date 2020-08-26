@@ -309,7 +309,7 @@ func TestRepositoryApply(t *testing.T) {
 		assert.Equal(t, testAbout.SameAs, about.SameAs)
 		assert.Equal(t, testAbout.Type, about.Type)
 
-		id, err := repo.Index.PageIDForName(testPage.Name)
+		id, err := repo.Index.PageIDForName(testPage.Source.Authority, testPage.Name)
 		require.Nil(t, err)
 		assert.Equal(t, testPage.ID, id, "By-name lookup of the Page failed (indexing)")
 	})
