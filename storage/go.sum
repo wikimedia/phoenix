@@ -28,6 +28,10 @@ github.com/wikimedia/phoenix/common v0.0.0-20200810165010-f838f4dfabde h1:XzgDN5
 github.com/wikimedia/phoenix/common v0.0.0-20200810165010-f838f4dfabde/go.mod h1:nPnr5gQAnKu5QRqZWwLHVizXBTZUIgkdOZX/VOeb85A=
 github.com/wikimedia/phoenix/common v0.0.0-20200824191515-10e3f49dcaa0 h1:bmO2Tcwa9N8XdmchcArqwuzjgatd0SgwbfHraFxhR7A=
 github.com/wikimedia/phoenix/common v0.0.0-20200824191515-10e3f49dcaa0/go.mod h1:nPnr5gQAnKu5QRqZWwLHVizXBTZUIgkdOZX/VOeb85A=
+github.com/wikimedia/phoenix/common v0.0.0-20200827002854-376ee76d287d h1:AZt1CqNQ2u9DOcbXCq4xmlylGkDzsYunbDjgtapd8yM=
+github.com/wikimedia/phoenix/common v0.0.0-20200827002854-376ee76d287d/go.mod h1:nPnr5gQAnKu5QRqZWwLHVizXBTZUIgkdOZX/VOeb85A=
+github.com/wikimedia/phoenix/common v0.0.0-20200827231743-9e338ede5a54 h1:I60PAGoPJPbVr4GyLNoSEYicZyH+jk+MfeOmtzlZbSY=
+github.com/wikimedia/phoenix/common v0.0.0-20200827231743-9e338ede5a54/go.mod h1:nPnr5gQAnKu5QRqZWwLHVizXBTZUIgkdOZX/VOeb85A=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2 h1:CCH4IOTTfewWjGOlSp+zGcjutRKlBEZQ6wTn8ozI/nI=
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
