@@ -12,6 +12,7 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/wikimedia/phoenix/common"
 	"github.com/wikimedia/phoenix/storage"
@@ -58,12 +59,12 @@ func readLinkedData(s3client *s3.S3, msg *common.ChangeEvent) (*common.Thing, er
 }
 
 func handleRequest(ctx context.Context, event events.SNSEvent) {
-	s3client := s3.New(session.New(&aws.Config{
-		Region: aws.String(awsRegion),
-	}))
+	awsSession := session.New(&aws.Config{Region: aws.String(awsRegion)})
+	s3client := s3.New(awsSession)
 
 	repo := storage.Repository{
 		Store:  s3client,
+		Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession)},
 		Bucket: s3StructuredContentBucket,
 	}
 

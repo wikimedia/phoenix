@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net/url"
 	"strconv"
 	"strings"
 	"time"
@@ -18,16 +19,28 @@ func getPageName(head *goquery.Selection) (string, error) {
 	return title.Text(), nil
 }
 
-func getPageUrl(head *goquery.Selection) (string, error) {
-	base := head.Find("base").First()
-	if len(base.Nodes) == 0 {
-		return "", fmt.Errorf("No `base` tag found")
-	}
-	url, exists := base.Attr("href")
-	if !exists {
+func getPageUrl(head *goquery.Selection) (*url.URL, error) {
+	var base *goquery.Selection
+	var err error
+	var exists bool
+	var href string
+	var urlObj *url.URL
 
+	base = head.Find("base").First()
+
+	if len(base.Nodes) == 0 {
+		return nil, fmt.Errorf("No element named 'base' found")
 	}
-	return url, nil
+
+	if href, exists = base.Attr("href"); !exists {
+		return nil, fmt.Errorf("'base' element contained no 'html' attribute")
+	}
+
+	if urlObj, err = url.Parse(href); err != nil {
+		return nil, fmt.Errorf("Unable to parse URL: %w", err)
+	}
+
+	return urlObj, nil
 }
 
 func getPageModified(head *goquery.Selection) (time.Time, error) {
@@ -78,25 +91,30 @@ func getPageSourceRevision(html *goquery.Selection) (int, error) {
 	return revision, nil
 }
 
-func parseParsoidDocumentPage(document *goquery.Document) (page *common.Page, err error) {
-	page = &common.Page{}
-	page.HasPart = []string{}
+func parseParsoidDocumentPage(document *goquery.Document) (*common.Page, error) {
+	var head, html *goquery.Selection
+	var page = &common.Page{}
+	var pageURL *url.URL
+	var err error
 
-	head := document.Find("html>head")
+	page.HasPart = make([]string, 0)
+	page.Source = common.Source{}
+
+	head = document.Find("html>head")
 
 	if page.Name, err = getPageName(head); err != nil {
 		return nil, err
 	}
 
-	if page.URL, err = getPageUrl(head); err != nil {
+	if pageURL, err = getPageUrl(head); err != nil {
 		return nil, err
 	}
+
+	page.URL = pageURL.String()
 
 	if page.DateModified, err = getPageModified(head); err != nil {
 		return nil, err
 	}
-
-	page.Source = common.Source{}
 
 	if page.Source.ID, err = getPageSourceId(head); err != nil {
 		return nil, err
@@ -106,10 +124,13 @@ func parseParsoidDocumentPage(document *goquery.Document) (page *common.Page, er
 		return nil, err
 	}
 
-	html := document.Find("html")
+	html = document.Find("html")
+
 	if page.Source.Revision, err = getPageSourceRevision(html); err != nil {
 		return nil, err
 	}
-	return page, nil
 
+	page.Source.Authority = pageURL.Hostname()
+
+	return page, nil
 }
