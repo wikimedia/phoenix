@@ -1,5 +1,24 @@
 Phoenix
 =======
+## Goal
+Explore emerging patterns for building systems that manage and distribute content<sup>[[1]](#ref1)</sup>.
+
+## Focus
+Canonical data modeling: defining a predictable structure using industry-standard formats like schema.org and Wikidata. This allows content to be understood by people, programs and machines outside the traditional boundaries of MediaWiki. It also allows people and services to request only what they need.
+
+Can we model the HTML document as structured, distributable data? We have no idea if this is humanly possible. We are identifying Root Problems so we can being addressing and resolving them organizationally.
+
+[Patterns](https://google.com)
+
+Why this implementation?
+Via Api calls that can wrap multiple calls into a single payload (or not)
+
+## Implementation
+We have purposefully defined the implementation toolset for this PoV. Our next step is *not* to then put these into production.
+
+## Definitions and resources
+<a name="ref1">[1]</a>: Content: the free knowledge being shared on a wiki page about a subject
+
 
 # Terminology
 Define the terms you'll use in this statement
@@ -28,8 +47,8 @@ Visual representation of the problem/opportunity
 Specific questions that would need to be answered during this decision process
 
 # Resources
-[Initial Executive Summary](https://docs.google.com/document/d/1lS9V_knDSIA2Boyax93BFW6MmPlfTAQ-TdI-QshoOHU)
-[Model your application domain, not your JSON structures](http://www.markus-lanthaler.com/research/model-your-application-domain-not-your-json-structures.pdf)
+- [Initial Executive Summary](https://docs.google.com/document/d/1lS9V_knDSIA2Boyax93BFW6MmPlfTAQ-TdI-QshoOHU)
+- [Model your application domain, not your JSON structures](http://www.markus-lanthaler.com/research/model-your-application-domain-not-your-json-structures.pdf)
 
 # Content descriptions
 <table>
