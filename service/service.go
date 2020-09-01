@@ -29,8 +29,9 @@ var (
 	accessLogName = flag.String("access-log", "-", "Path to the access log.")
 
 	// These values are passed in at build-time using -ldflags (see: Makefile)
-	awsRegion string
-	s3Bucket  string
+	awsRegion          string
+	dynamoDBPageTitles string
+	s3Bucket           string
 )
 
 // True if err is an awserr.Error, AND its code is s3.ErrCodeNoSuchKey, false otherwise.
@@ -199,7 +200,7 @@ func (r *NodeResolver) Unsafe() string {
 }
 
 // Return configuration variables that are the union of defaults, and any values passed in the environment
-func config() (region, bucket string) {
+func config() (region, titlesTable, bucket string) {
 	// Retrieve environment variables
 	env := func(name string, def string) string {
 		if v := os.Getenv(name); v != "" {
@@ -209,9 +210,10 @@ func config() (region, bucket string) {
 	}
 
 	region = env("AWS_REGION", awsRegion)
+	titlesTable = env("AWS_DYNAMODB_PAGE_TITLES_TABLE", dynamoDBPageTitles)
 	bucket = env("AWS_BUCKET", s3Bucket)
 
-	return region, bucket
+	return region, titlesTable, bucket
 }
 
 func main() {
@@ -222,7 +224,7 @@ func main() {
 	var resolver *RootResolver
 	var schema *graphql.Schema
 
-	var region, bucket = config()
+	var region, titlesTable, bucket = config()
 	var awsSession = session.New(&aws.Config{Region: aws.String(region)})
 
 	flag.Parse()
@@ -254,7 +256,7 @@ func main() {
 	resolver = &RootResolver{
 		Repository: &storage.Repository{
 			Store:  s3.New(awsSession),
-			Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession)},
+			Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession), TitlesTable: titlesTable},
 			Bucket: bucket,
 		},
 		Logger: logger,

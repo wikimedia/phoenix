@@ -2,6 +2,8 @@ module github.com/wikimedia/phoenix/service
 
 go 1.14
 
+replace github.com/wikimedia/phoenix/storage => ../storage
+
 require (
 	github.com/aws/aws-sdk-go v1.34.12
 	github.com/elastic/go-elasticsearch/v7 v7.9.0 // indirect

@@ -2,6 +2,8 @@ module transform-parsoid
 
 go 1.14
 
+replace github.com/wikimedia/phoenix/storage => ../../storage
+
 require (
 	github.com/PuerkitoBio/goquery v1.5.1
 	github.com/andybalholm/cascadia v1.2.0 // indirect

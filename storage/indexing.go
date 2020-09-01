@@ -60,7 +60,8 @@ func NewMockIndex() *MockIndex {
 
 // DynamoDBIndex is a Phoenix document indexer backed by DynamoDB
 type DynamoDBIndex struct {
-	Client *dynamodb.DynamoDB
+	Client      *dynamodb.DynamoDB
+	TitlesTable string
 }
 
 // Apply updates the index with new Phoenix document data
@@ -72,7 +73,7 @@ func (i *DynamoDBIndex) Apply(page *common.Page) error {
 				"Authority": {S: aws.String(page.Source.Authority)},
 				"ID":        {S: aws.String(page.ID)},
 			},
-			TableName: aws.String("PageTitles"),
+			TableName: aws.String(i.TitlesTable),
 		})
 
 	if err != nil {
@@ -90,7 +91,7 @@ func (i *DynamoDBIndex) PageIDForName(authority, name string) (string, error) {
 				"Title":     {S: aws.String(name)},
 				"Authority": {S: aws.String(authority)},
 			},
-			TableName: aws.String("PageTitles"),
+			TableName: aws.String(i.TitlesTable),
 		})
 
 	if err != nil {

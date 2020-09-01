@@ -225,7 +225,8 @@ func GetTestIndex() Index {
 
 	if useDynamoDB {
 		region := Getenv("AWS_REGION", "us-east-2")
-		return &DynamoDBIndex{dynamodb.New(session.New(&aws.Config{Region: aws.String(region)}))}
+		table := Getenv("AWS_DYNAMODB_PAGE_TITLES_TABLE", "scpoc-dynamodb-page-titles")
+		return &DynamoDBIndex{Client: dynamodb.New(session.New(&aws.Config{Region: aws.String(region)})), TitlesTable: table}
 	}
 
 	return NewMockIndex()

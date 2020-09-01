@@ -25,7 +25,7 @@ When unset, `AWS_BUCKET` defaults to `scpoc-structured-content-store`.
 
 To run the tests against DynamoDB (indexing tests):
 
-    $ TESTS_USE_DYNAMODB=1 go test
+    $ TESTS_USE_DYNAMODB=1 AWS_DYNAMODB_PAGE_TITLES_TABLE=test-table go test
 
 ### Elasticsearch
 

@@ -72,5 +72,11 @@ PHX_LAMBDA_MERGE_SCHEMAORG = $(PHX_PREFIX)-lambda-merge-schemaorg
 # storage (See PHX_S3_STRUCTURED_CONTENT_BUCKET)
 PHX_LAMBDA_TRANSFORM_PARSOID = $(PHX_PREFIX)-lambda-transform-parsoid
 
+######
+# DynamoDB resources
+######
+PHX_DYNAMODB_PAGE_TITLES = $(PHX_PREFIX)-dynamodb-page-titles
+
+
 # For internal use in ARN string formatting
 _BASE_ARN = $(shell printf "arn:aws:%%s:%s:%s:%%s" "$(PHX_DEFAULT_REGION)" "$(PHX_ACCOUNT_ID)")

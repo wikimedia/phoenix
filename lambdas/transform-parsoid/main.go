@@ -22,6 +22,7 @@ var (
 	// These values are passed in at build-time w/ -ldflags (see: Makefile)
 	awsRegion                 string
 	awsAccount                string
+	dynamoDBPageTitles        string
 	s3StructuredContentBucket string
 	s3RawBucket               string
 	s3RawIncomeFolder         string
@@ -64,7 +65,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 	repo := storage.Repository{
 		Store:  s3client,
-		Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession)},
+		Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession), TitlesTable: dynamoDBPageTitles},
 		Bucket: s3StructuredContentBucket,
 	}
 
