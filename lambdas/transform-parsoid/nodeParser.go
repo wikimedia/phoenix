@@ -4,7 +4,6 @@ import (
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/google/uuid"
 	"github.com/wikimedia/phoenix/common"
 )
 
@@ -26,7 +25,6 @@ func parseParsoidDocumentNodes(document *goquery.Document, modified time.Time) (
 		section := sections.Eq(i)
 
 		node := common.Node{}
-		node.ID = uuid.New().String()
 		node.Name = getSectionName(section)
 		node.DateModified = modified
 

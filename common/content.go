@@ -9,7 +9,7 @@ type Page struct {
 	// Globally unique identifier
 	ID string `json:"identifier"`
 
-	// Source data for this page
+	// Source (MediaWiki) metadata for this page
 	Source Source `json:"_source"`
 
 	// The Page name (corresponds with schema.org/Thing#name)
@@ -50,6 +50,9 @@ type Source struct {
 type Node struct {
 	// Globally unique identifier
 	ID string `json:"id"`
+
+	// Source (MediaWiki) metadata for this node
+	Source Source `json:"_source"`
 
 	// Node name (corresponds with schema.org/Thing#name).  For a section, corresponds to the text of
 	// the first header (Parsoid HTML output).
