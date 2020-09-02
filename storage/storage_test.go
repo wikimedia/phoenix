@@ -30,6 +30,7 @@ import (
 var testAbout common.Thing
 var testNode common.Node
 var testPage common.Page
+var testSource common.Source
 
 // Initialization of test data...
 func setup() {
@@ -50,8 +51,17 @@ func setup() {
 		panic(err)
 	}
 
+	// Source
+	testSource = common.Source{
+		ID:        1,
+		Revision:  1,
+		TimeUUID:  uuid.Must(uuid.NewUUID()).String(),
+		Authority: "fake.wikipedia.org",
+	}
+
 	// Node
 	testNode = common.Node{
+		Source:       testSource,
 		Name:         "History",
 		IsPartOf:     []string{},
 		DateModified: now,
@@ -60,12 +70,7 @@ func setup() {
 
 	// Page
 	testPage = common.Page{
-		Source: common.Source{
-			ID:        1,
-			Revision:  1,
-			TimeUUID:  uuid.Must(uuid.NewUUID()).String(),
-			Authority: "fake.wikipedia.org",
-		},
+		Source:       testSource,
 		Name:         "San Antonio",
 		URL:          "//fake.wikipedia.org/wiki/San_Antonio",
 		DateModified: now,
@@ -328,6 +333,34 @@ func TestRepositoryApply(t *testing.T) {
 		assert.Equal(t, testAbout.Name, about.Name)
 		assert.Equal(t, testAbout.SameAs, about.SameAs)
 		assert.Equal(t, testAbout.Type, about.Type)
+	})
+}
+
+func TestValidation(t *testing.T) {
+	t.Run("Source", func(t *testing.T) {
+		require.Nil(t, validateSource(&common.Source{ID: 1, Revision: 1, TimeUUID: "61e16274-ed75-11ea-a791-9fba67228067", Authority: "s.wp.o"}))
+		require.NotNil(t, validateSource(&common.Source{Revision: 1, TimeUUID: "61e16274-ed75-11ea-a791-9fba67228067", Authority: "s.wp.o"}))
+		require.NotNil(t, validateSource(&common.Source{ID: 1, TimeUUID: "61e16274-ed75-11ea-a791-9fba67228067", Authority: "s.wp.o"}))
+		require.NotNil(t, validateSource(&common.Source{ID: 1, Revision: 1, Authority: "s.wp.o"}))
+		require.NotNil(t, validateSource(&common.Source{ID: 1, Revision: 1, TimeUUID: "61e16274-ed75-11ea-a791-9fba67228067"}))
+	})
+
+	t.Run("Page", func(t *testing.T) {
+		s := common.Source{ID: 1, Revision: 1, TimeUUID: "61e16274-ed75-11ea-a791-9fba67228067", Authority: "s.wp.o"}
+		require.Nil(t, validatePage(&common.Page{Name: "Foo", URL: "//s.wp.o", DateModified: time.Now(), HasPart: []string{"/n/a"}, Source: s}))
+		require.NotNil(t, validatePage(&common.Page{URL: "//s.wp.o", DateModified: time.Now(), HasPart: []string{"/n/a"}, Source: s}))
+		require.NotNil(t, validatePage(&common.Page{Name: "Foo", DateModified: time.Now(), HasPart: []string{"/n/a"}, Source: s}))
+		require.NotNil(t, validatePage(&common.Page{Name: "Foo", URL: "//s.wp.o", HasPart: []string{"/n/a"}, Source: s}))
+		require.NotNil(t, validatePage(&common.Page{Name: "Foo", URL: "//s.wp.o", DateModified: time.Now(), Source: s}))
+		require.NotNil(t, validatePage(&common.Page{Name: "Foo", URL: "//s.wp.o", DateModified: time.Now(), HasPart: []string{"/n/a"}}))
+	})
+
+	t.Run("Node", func(t *testing.T) {
+		s := common.Source{ID: 1, Revision: 1, TimeUUID: "61e16274-ed75-11ea-a791-9fba67228067", Authority: "s.wp.o"}
+		require.Nil(t, validateNode(&common.Node{DateModified: time.Now(), Unsafe: "<p>...</p>", Source: s}))
+		require.NotNil(t, validateNode(&common.Node{Unsafe: "<p>...</p>", Source: s}))
+		require.NotNil(t, validateNode(&common.Node{DateModified: time.Now(), Source: s}))
+		require.NotNil(t, validateNode(&common.Node{DateModified: time.Now(), Unsafe: "<p>...</p>"}))
 	})
 }
 

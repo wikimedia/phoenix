@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"hash"
+	"regexp"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
@@ -154,6 +156,10 @@ func (r *Repository) PutPage(page *common.Page) (string, error) {
 	var data []byte
 	var err error
 
+	if err = validatePage(page); err != nil {
+		return "", err
+	}
+
 	page.ID = pagef(makePageID(page))
 
 	if data, err = encodeJSON(page); err != nil {
@@ -175,7 +181,11 @@ func (r *Repository) PutNode(node *common.Node) (string, error) {
 	var data []byte
 	var err error
 
-	node.ID = nodef(makeRandomID())
+	if err = validateNode(node); err != nil {
+		return "", err
+	}
+
+	node.ID = nodef(makeNodeID(node))
 
 	if data, err = encodeJSON(node); err != nil {
 		return "", err
@@ -235,6 +245,7 @@ type Update struct {
 
 // Apply updates a document in the content repository.
 func (r *Repository) Apply(update *Update) error {
+	var prePID, postPID string
 	var prevPage *common.Page
 	var err error
 
@@ -243,14 +254,10 @@ func (r *Repository) Apply(update *Update) error {
 	// also be made for handling some of these steps concurrently (we could easily parallelize
 	// uploads of Node & Things, for example), but we're not going there yet either.
 
-	// A zero-length ID might mean that this a first-time write, but if not, we'd miss an
-	// opportunity to clean up referenced values.
-	if update.Page.ID == "" {
-		p := update.Page
-		update.Page.ID = pagef(makePageID(&p))
-	}
+	validateSource(&update.Page.Source)
+	prePID = pagef(makePageID(&update.Page))
 
-	if prevPage, err = r.GetPage(update.Page.ID); err != nil {
+	if prevPage, err = r.GetPage(prePID); err != nil {
 		// Continue for ErrCodeNoSuchKey (first write?), return any other error.
 		var aerr awserr.Error
 		if errors.As(err, &aerr) {
@@ -272,10 +279,14 @@ func (r *Repository) Apply(update *Update) error {
 	for _, node := range update.Nodes {
 		var id string
 		var err error
-		node.IsPartOf = []string{update.Page.ID}
+
+		node.IsPartOf = []string{prePID}
+		node.Source = update.Page.Source
+
 		if id, err = r.PutNode(&node); err != nil {
 			return fmt.Errorf("error storing node: %w", err)
 		}
+
 		update.Page.HasPart = append(update.Page.HasPart, id)
 	}
 
@@ -291,19 +302,19 @@ func (r *Repository) Apply(update *Update) error {
 		update.Page.About[k] = id
 	}
 
-	// TODO: Overwrite the Page object
-	if _, err = r.PutPage(&update.Page); err != nil {
+	// Overwrite the Page object
+	if postPID, err = r.PutPage(&update.Page); err != nil {
 		return err
 	}
 
-	// Delete previous Node and linked-data objects
+	// This should NEVER happen (so it probably will).
+	if postPID != prePID {
+		return fmt.Errorf("committed Page ID does not match precalculated value: %s != %s", postPID, prePID)
+	}
+
+	// Delete previous linked-data objects (if any)
 	if prevPage != nil {
-		for _, id := range prevPage.HasPart {
-			// TODO: Do.
-			r.DeleteNode(id)
-		}
 		for _, id := range prevPage.About {
-			// TODO: Do.
 			r.DeleteAbout(id)
 		}
 	}
@@ -311,6 +322,11 @@ func (r *Repository) Apply(update *Update) error {
 	// Perform indexing
 	return r.Index.Apply(&update.Page)
 }
+
+var (
+	// Regular expression that matches UUIDs
+	tidRegexp = regexp.MustCompile("[A-Za-z0-9]{8}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{12}")
+)
 
 // Helpers are helpful.
 func encodeJSON(v interface{}) ([]byte, error) {
@@ -331,16 +347,74 @@ func encodeJSON(v interface{}) ([]byte, error) {
 	return buffer.Bytes(), err
 }
 
+func validateSource(source *common.Source) error {
+	if source.ID <= 0 {
+		return fmt.Errorf("uninitialized common.Source.ID attribute")
+	}
+	if source.Revision <= 0 {
+		return fmt.Errorf("uninitialized common.Source.Revision attribute")
+	}
+	if !tidRegexp.Match([]byte(source.TimeUUID)) {
+		return fmt.Errorf("invalid common.Source.TimeUUID attribute")
+	}
+	if source.Authority == "" {
+		return fmt.Errorf("uninitialized common.Source.Authority attribute")
+	}
+	return nil
+}
+
+func validatePage(page *common.Page) error {
+	if page.Name == "" {
+		return fmt.Errorf("uninitialized page.Name attribute")
+	}
+	if page.URL == "" {
+		return fmt.Errorf("uninitialized page.URL attribute")
+	}
+	if page.DateModified.IsZero() {
+		return fmt.Errorf("uninitialized page.DateModified attribute")
+	}
+	if len(page.HasPart) < 1 {
+		return fmt.Errorf("zero-length page.HasPart attribute")
+	}
+	return validateSource(&page.Source)
+}
+
+func validateNode(node *common.Node) error {
+	if node.DateModified.IsZero() {
+		return fmt.Errorf("uninitialized node.DateModified attribute")
+	}
+	if node.Unsafe == "" {
+		return fmt.Errorf("uninitialized node.Unsafe attribute")
+	}
+	return validateSource(&node.Source)
+}
+
 func makeRandomID() string {
 	return uuid.New().String()
 }
 
-// To maintain page ID stability, we fake a globally unique generated ID using a hash of the
-// underlying wiki and page ID.
+func newHash64() hash.Hash64 {
+	return murmur3.New64()
+}
+
+func asHex(v uint64) string {
+	return fmt.Sprintf("%x", v)
+}
+
+// To maintain page ID stability, we fake a globally unique (and opaque) ID using a hash of
+// the underlying wiki and page ID.
 func makePageID(page *common.Page) string {
-	hasher := murmur3.New64()
+	hasher := newHash64()
 	hasher.Write([]byte(fmt.Sprintf("%s-%d", page.Source.Authority, page.Source.ID)))
-	return fmt.Sprintf("%x", hasher.Sum64())
+	return asHex(hasher.Sum64())
+}
+
+// To maintain node ID stability, we create a globally unique (and opaque) ID from a hash of
+// the underlying wiki, page ID, and node name.
+func makeNodeID(node *common.Node) string {
+	hasher := newHash64()
+	hasher.Write([]byte(fmt.Sprintf("%s-%d-%s", node.Source.Authority, node.Source.ID, node.Name)))
+	return asHex(hasher.Sum64())
 }
 
 // Return formatted keys for page, node, and data objects.
