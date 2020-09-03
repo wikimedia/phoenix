@@ -17,7 +17,7 @@ Building this model requires defining boundaries around parts and their interrel
 
 [Working draft of our CDM](https://docs.google.com/spreadsheets/d/1ZWuczQQ0XpzCYS92PKXpIP3FM4ds0XPQyz7q9xR5GuE)
 
-*Note: Honestly, we don't know if it's humanly possible to "structure" Wikipedia documents. We are identifying the Biggest Challenges so we can raise them and resolve them organizationally.* x
+*Note: Honestly, we don't know if it's humanly possible to "structure" Wikipedia documents. We are identifying the Biggest Challenges so we can raise them and resolve them organizationally.* 
 
 ## Secondary focus
 
