@@ -3,52 +3,54 @@ Phoenix
 ## Goal
 Explore emerging patterns for building systems that manage and distribute content<sup>[[1]](#ref1)</sup>.
 
-## Focus
-Canonical data modeling: defining a predictable structure using industry-standard formats like schema.org and Wikidata. This allows content to be understood by people, programs and machines outside the traditional boundaries of MediaWiki. It also allows people and services to request only what they need.
+The jump from wiki software to modern web architecture (for example, a [reactive](https://www.reactivemanifesto.org/) system) is huge and difficult to conceptualize. Experimenting with core patterns enables us to gain insight into the possibilities and potential impossibilities.
 
-Can we model the HTML document as structured, distributable data? We have no idea if this is humanly possible. We are identifying Root Problems so we can being addressing and resolving them organizationally.
+## Primary focus
+**Canonical data modeling**<sup>[[2]](#ref2)</sup><sup>[[3]](#ref3)</sup> allows content to be understood by people, programs and machines outside the traditional boundaries of MediaWiki. And, as far as possible, allows consumers<sup>[[4]](#ref4)</sup> to request only what they need.
 
-[Patterns](https://google.com)
+Building this model requires defining boundaries around parts and their interrelationships. For example, a page has parts (sections) and is also part of collections (about the same topic). Our work here includes:
 
-Why this implementation?
-Via Api calls that can wrap multiple calls into a single payload (or not)
+- Define a predictable structure<sup>[[5]](#ref5)</sup> using industry-standard formats like schema.org (to support predictability and reusability)
+- Break down prexisting structures (all the content on the Philadephia page) into parts (a section on the History of Philadephia) and establish interrelationships between the parts (to support "only what they need") using hypermedia linking.<sup>[[6]](#ref6)</sup>
+- Enhance the structure with contextual information by associating parts with Wikidata (to enable natural collections like US Cities) and indexing collections with [Elasticsearch](https://www.elastic.co/elasticsearch).
+- Enable interaction with the structure via [API calls](https://graphql.org/). Multiple API calls can be wrapped into a single payload -- or not.
+
+[Working draft of our CDM](https://docs.google.com/spreadsheets/d/1ZWuczQQ0XpzCYS92PKXpIP3FM4ds0XPQyz7q9xR5GuE)
+
+*Note: Honestly, we don't know if it's humanly possible to "structure" Wikipedia documents. We are identifying the Biggest Challenges so we can raise them and resolve them organizationally.* x
+
+## Secondary focus
+
+**Loose coupling:**<sup>[[7]](#ref7)</sup> New ways to interact with, enhance or process content (capabilities) operate independently and are built on top of (or adjacent to) the data model.
+
+**Event-based interactions:**<sup>[[8]](#ref8)</sup> activities in the system happen only when they need to happen (asynchronously) with only the information they need to accomplish their aim.
+
+**CQRS**:<sup>[[9]](#ref9)</sup> The current structure inside of MediaWiki is left alone. When changes happen in MW, the new system reacts by getting the necessary information and translating it into the canonical data model.
+
+[Initial Model of how this works](https://app.lucidchart.com/documents/view/f283e649-cdb6-4275-9452-7114571a82e7/Q3nNnx6PpfFM)
 
 ## Implementation
-We have purposefully defined the implementation toolset for this PoV. Our next step is *not* to then put these into production.
+We have purposefully defined the implementation toolset for this PoV. We did this so we can focus on the patterns, which present signification challenges, *before deciding which are valuable long term.* By working in AWS, we don't need to build that toolset.
+
+Our next step is not to put this exact toolset into production. Our next step is to collectively design an infrastructure that supports the value while also considering the tradeoffs.
+
+## What about editing?
+We are beginning to model editing events now. This approach is designed to work *with* any CMS, as part of a system, not replace it. We will be carefully thinking through which patterns apply, which don't, and which need to be included that aren't here.
+
+## Upcoming use case
+We've modeled a number of use cases, some in partnership with the Structured Data Across Wikipedia team, that will benefit from these patterns. When our initial work is complete, we will be prototyping with the Mobile team, specifically focused on References.
 
 ## Definitions and resources
-<a name="ref1">[1]</a>: Content: the free knowledge being shared on a wiki page about a subject
+- <a name="ref1">[1]</a>: **Content** is the free knowledge / information being shared on a wiki page about a subject.[↩](#goal)
+- <a name="ref2">[2]</a>: [Enterprise Integration Patterns: CDM](https://www.enterpriseintegrationpatterns.com/patterns/messaging/CanonicalDataModel.html)[↩](#primary-focus)
+- <a name="ref3">[3]</a>: [CDM pitfalls and approaches](https://www.innoq.com/en/blog/thoughts-on-a-canonical-data-model/)[↩](#primary-focus))
+- <a name="ref4">[4]</a>: **Consumers** are people, programs (like a front-end application) and machines who are using content outside the context of MediaWiki. MediaWiki could also be a consumer.[↩](#primary-focus)
+- <a name="ref5">[5]</a>: [Model your Application Domain, not your JSON structures](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.1066.5369&rep=rep1&type=pdf)[↩](#primary-focus)
+- <a name="ref6">[6]</a>: [Hypermedia linking](https://www.narwhl.com/hypermedia-linking)[↩](#primary-focus)
+- <a name="ref7">[7]</a>: **Loose coupling** is an approach to interconnecting the components in a system so that those componentsdepend on each other to the least extent practicable.[↩](#secondary-focus)
+- <a name="ref8">[8]</a>: [Event-driven architecture on English Wikipedia](https://en.wikipedia.org/wiki/Event-driven_architecture)[↩](#secondary-focus)
+- <a name="ref9">[9]</a>: Command Query Responsibility Segregation (**CQRS**) means that the data model for reading doesn't have to be the same as the model for updating.[↩](#secondary-focus)
 
-
-# Terminology
-Define the terms you'll use in this statement
-
-# What?
-What is the problem or opportunity? What does it look like if we made this decision and executed on it?
-
-# Why?
-Why is this valuable? What organizational objective does this support? And how? What if we do nothing?
-
-# Who?
-Can you calculate the RACI? Who is working on the project directly? Who is maintaining a product or code which will be impacted? Who has an operational responsibility which will be impacted?
-
-## Responsible
-- Accountable (Who is overseeing the work)
-- Consulted (Who do you need to talk to and why. How do they intersect with this problem or - opportunity? Why consulted? What is the level of impact?)
-- Informed (For example, program managers/project with dependencies on this work)
-
-# When
-What is the timeframe for making this decision. Are there already known milestones?
-
-# Models
-Visual representation of the problem/opportunity
-
-# Unresolved Questions
-Specific questions that would need to be answered during this decision process
-
-# Resources
-- [Initial Executive Summary](https://docs.google.com/document/d/1lS9V_knDSIA2Boyax93BFW6MmPlfTAQ-TdI-QshoOHU)
-- [Model your application domain, not your JSON structures](http://www.markus-lanthaler.com/research/model-your-application-domain-not-your-json-structures.pdf)
 
 # Content descriptions
 <table>
