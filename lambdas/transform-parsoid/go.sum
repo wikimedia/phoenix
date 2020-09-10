@@ -48,10 +48,15 @@ github.com/wikimedia/phoenix/common v0.0.0-20200827231743-9e338ede5a54 h1:I60PAG
 github.com/wikimedia/phoenix/common v0.0.0-20200827231743-9e338ede5a54/go.mod h1:nPnr5gQAnKu5QRqZWwLHVizXBTZUIgkdOZX/VOeb85A=
 github.com/wikimedia/phoenix/common v0.0.0-20200901205227-2ea7e5ee03f6 h1:FiQSha+183EGOfHvuytLKDTDdBYlLD4ryxZlwsN7DZU=
 github.com/wikimedia/phoenix/common v0.0.0-20200901205227-2ea7e5ee03f6/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
+github.com/wikimedia/phoenix/common v0.0.0-20200903151746-9d927d1c330f/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
+github.com/wikimedia/phoenix/common v0.0.0-20200910205631-5d7c37364c8d h1:XSohc2otQVlXfQBgSBZeLqL/R5ow+8qmUwXV1dg+KaI=
+github.com/wikimedia/phoenix/common v0.0.0-20200910205631-5d7c37364c8d/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
 github.com/wikimedia/phoenix/storage v0.0.0-20200827231743-9e338ede5a54 h1:DlWqKJ60qgUyIBARWPFmPFqYKhL7IHVBWhK7G00E0SY=
 github.com/wikimedia/phoenix/storage v0.0.0-20200827231743-9e338ede5a54/go.mod h1:vL5PuuEOoUgmBE0wOirHZ14VECdsr56Au3jHJFCe3vM=
 github.com/wikimedia/phoenix/storage v0.0.0-20200901205227-2ea7e5ee03f6 h1:10Q6bx/NmmcdDelcWHrnTm6lr7lBsid15wpAZkBuwQU=
 github.com/wikimedia/phoenix/storage v0.0.0-20200901205227-2ea7e5ee03f6/go.mod h1:HNgJUEPuRYWclcP9/lkvgHtVq3bv0quTHh6ceQ8LOb0=
+github.com/wikimedia/phoenix/storage v0.0.0-20200903151746-9d927d1c330f h1:5L8NFfiU1WIckMOUaco0vFJc7uy9+z9r/THvwvr6HvQ=
+github.com/wikimedia/phoenix/storage v0.0.0-20200903151746-9d927d1c330f/go.mod h1:HNgJUEPuRYWclcP9/lkvgHtVq3bv0quTHh6ceQ8LOb0=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/net v0.0.0-20180218175443-cbe0f9307d01/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=

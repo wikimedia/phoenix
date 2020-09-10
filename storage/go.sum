@@ -23,6 +23,8 @@ github.com/stretchr/testify v1.6.1 h1:hDPOHmpOpP40lSULcqw7IrRb/u7w6RpDC9399XyoNd
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/wikimedia/phoenix/common v0.0.0-20200903151746-9d927d1c330f h1:LojU49FaChXZtxckF+zMAEeiJilQQi1JxgkB2NJvGjM=
 github.com/wikimedia/phoenix/common v0.0.0-20200903151746-9d927d1c330f/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
+github.com/wikimedia/phoenix/common v0.0.0-20200910205631-5d7c37364c8d h1:XSohc2otQVlXfQBgSBZeLqL/R5ow+8qmUwXV1dg+KaI=
+github.com/wikimedia/phoenix/common v0.0.0-20200910205631-5d7c37364c8d/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2 h1:CCH4IOTTfewWjGOlSp+zGcjutRKlBEZQ6wTn8ozI/nI=
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=

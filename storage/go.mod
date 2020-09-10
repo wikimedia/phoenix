@@ -8,5 +8,5 @@ require (
 	github.com/google/uuid v1.1.2
 	github.com/spaolacci/murmur3 v1.1.0
 	github.com/stretchr/testify v1.6.1
-	github.com/wikimedia/phoenix/common v0.0.0-20200903151746-9d927d1c330f
+	github.com/wikimedia/phoenix/common v0.0.0-20200910205631-5d7c37364c8d
 )
