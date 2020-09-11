@@ -75,7 +75,12 @@ PHX_LAMBDA_TRANSFORM_PARSOID = $(PHX_PREFIX)-lambda-transform-parsoid
 ######
 # DynamoDB resources
 ######
+
+# Table used to index page titles
 PHX_DYNAMODB_PAGE_TITLES = $(PHX_PREFIX)-dynamodb-page-titles
+
+# Table used to index node names
+PHX_DYNAMODB_NODE_NAMES  = $(PHX_PREFIX)-dynamodb-node-names
 
 
 # For internal use in ARN string formatting

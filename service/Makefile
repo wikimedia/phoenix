@@ -10,6 +10,7 @@ SOURCES     := service.go
 # Configuration
 LDFLAGS  = -X main.awsRegion=$(PHX_DEFAULT_REGION)
 LDFLAGS += -X main.dynamoDBPageTitles=$(PHX_DYNAMODB_PAGE_TITLES)
+LDFLAGS += -X main.dynamoDBNodeNames=$(PHX_DYNAMODB_NODE_NAMES)
 LDFLAGS += -X main.s3Bucket=$(PHX_S3_STRUCTURED_CONTENT_BUCKET)
 
 

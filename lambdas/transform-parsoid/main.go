@@ -23,6 +23,7 @@ var (
 	awsRegion                 string
 	awsAccount                string
 	dynamoDBPageTitles        string
+	dynamoDBNodeNames         string
 	s3StructuredContentBucket string
 	s3RawBucket               string
 	s3RawIncomeFolder         string
@@ -65,7 +66,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 	repo := storage.Repository{
 		Store:  s3client,
-		Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession), TitlesTable: dynamoDBPageTitles},
+		Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession), TitlesTable: dynamoDBPageTitles, NamesTable: dynamoDBNodeNames},
 		Bucket: s3StructuredContentBucket,
 	}
 
@@ -146,6 +147,8 @@ func init() {
 
 	log.Debug("AWS account ......................: %s", awsAccount)
 	log.Debug("AWS region .......................: %s", awsRegion)
+	log.Debug("DynamoDB page titles table .......: %s", dynamoDBPageTitles)
+	log.Debug("DynamoDB node names table ........: %s", dynamoDBNodeNames)
 	log.Debug("S3 structured content bucket .....: %s", s3StructuredContentBucket)
 	log.Debug("S3 raw content bucket ............: %s", s3RawBucket)
 	log.Debug("S3 raw content incoming folder ...: %s", s3RawIncomeFolder)

@@ -1,8 +1,6 @@
 package main
 
 import (
-	"time"
-
 	"github.com/PuerkitoBio/goquery"
 	"github.com/wikimedia/phoenix/common"
 )
@@ -17,14 +15,17 @@ func getSectionName(section *goquery.Selection) string {
 	return section.Find("h2").First().Text()
 }
 
-func parseParsoidDocumentNodes(document *goquery.Document, modified time.Time) (nodes []common.Node, err error) {
-	nodes = []common.Node{}
+func parseParsoidDocumentNodes(document *goquery.Document, page *common.Page) ([]common.Node, error) {
+	var err error
+	var modified = page.DateModified
+	var nodes = make([]common.Node, 0)
 
 	sections := document.Find("html>body>section[data-mw-section-id]")
 	for i := range sections.Nodes {
 		section := sections.Eq(i)
 
 		node := common.Node{}
+		node.Source = page.Source
 		node.Name = getSectionName(section)
 		node.DateModified = modified
 

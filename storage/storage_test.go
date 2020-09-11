@@ -230,8 +230,14 @@ func GetTestIndex() Index {
 
 	if useDynamoDB {
 		region := Getenv("AWS_REGION", "us-east-2")
-		table := Getenv("AWS_DYNAMODB_PAGE_TITLES_TABLE", "scpoc-dynamodb-page-titles")
-		return &DynamoDBIndex{Client: dynamodb.New(session.New(&aws.Config{Region: aws.String(region)})), TitlesTable: table}
+		titles := Getenv("AWS_DYNAMODB_PAGE_TITLES_TABLE", "scpoc-dynamodb-page-titles")
+		names := Getenv("AWS_DYNAMODB_NODE_NAMES_TABLE", "scpoc-dynamodb-node-names")
+
+		return &DynamoDBIndex{
+			Client:      dynamodb.New(session.New(&aws.Config{Region: aws.String(region)})),
+			TitlesTable: titles,
+			NamesTable:  names,
+		}
 	}
 
 	return NewMockIndex()
@@ -303,9 +309,9 @@ func TestRepositoryApply(t *testing.T) {
 
 		require.Nil(t, repo.Apply(update))
 
+		// Retrieving a page by its ID
 		page, err := repo.GetPage(testPage.ID)
 		require.Nil(t, err)
-
 		assert.Equal(t, testPage.DateModified, page.DateModified)
 		assert.Equal(t, testPage.Name, page.Name)
 		assert.Equal(t, testPage.Source, page.Source)
@@ -313,10 +319,12 @@ func TestRepositoryApply(t *testing.T) {
 		assert.Len(t, page.HasPart, 1)
 		assert.Len(t, page.About, 1)
 
+		// Retrieving a page by its name (exercises the index)
 		page, err = repo.GetPageByName(testPage.Source.Authority, testPage.Name)
 		require.Nil(t, err)
 		assert.Equal(t, testPage.ID, page.ID, "By-name lookup of the Page failed (indexing)")
 
+		// Retrieving a node by its ID
 		node, err := repo.GetNode(page.HasPart[0])
 		require.Nil(t, err)
 		assert.Equal(t, testNode.Name, node.Name)
@@ -324,6 +332,12 @@ func TestRepositoryApply(t *testing.T) {
 		assert.Equal(t, testNode.DateModified, node.DateModified)
 		assert.Equal(t, testPage.ID, node.IsPartOf[0])
 
+		// Retrieving a node by its name (exercises the index)
+		node, err = repo.GetNodeByName(testNode.Source.Authority, page.Name, node.Name)
+		require.Nil(t, err)
+		assert.Equal(t, testNode.ID, node.ID)
+
+		// Retrieving a linked-data object
 		about, err := repo.GetAbout(page.About["//schema.org"])
 		require.Nil(t, err)
 		assert.Equal(t, testAbout.AlternateName, about.AlternateName)
