@@ -128,6 +128,18 @@ func (r *Repository) GetNode(id string) (*common.Node, error) {
 	return &section, nil
 }
 
+// GetNodeByName returns a Node by its authority, a page name, and the node name
+func (r *Repository) GetNodeByName(authority, pageName, name string) (*common.Node, error) {
+	var id string
+	var err error
+
+	if id, err = r.Index.NodeIDForName(authority, pageName, name); err != nil {
+		return nil, err
+	}
+
+	return r.GetNode(id)
+}
+
 // GetAbout returns an About by its ID
 func (r *Repository) GetAbout(id string) (*common.Thing, error) {
 	var data *json.Decoder
@@ -276,7 +288,7 @@ func (r *Repository) Apply(update *Update) error {
 
 	// Upload node objects.  Remember: the ordering of HasPart matters (keep this in mind
 	// when/if adding concurrency at a later date).
-	for _, node := range update.Nodes {
+	for i, node := range update.Nodes {
 		var id string
 		var err error
 
@@ -287,6 +299,7 @@ func (r *Repository) Apply(update *Update) error {
 			return fmt.Errorf("error storing node: %w", err)
 		}
 
+		update.Nodes[i].ID = id
 		update.Page.HasPart = append(update.Page.HasPart, id)
 	}
 
@@ -320,7 +333,7 @@ func (r *Repository) Apply(update *Update) error {
 	}
 
 	// Perform indexing
-	return r.Index.Apply(&update.Page)
+	return r.Index.Apply(update)
 }
 
 var (

@@ -31,6 +31,7 @@ var (
 	// These values are passed in at build-time using -ldflags (see: Makefile)
 	awsRegion          string
 	dynamoDBPageTitles string
+	dynamoDBNodeNames  string
 	s3Bucket           string
 )
 
@@ -79,8 +80,8 @@ func (r *RootResolver) PageByName(args struct {
 	var err error
 
 	if page, err = r.Repository.GetPageByName(args.Authority, args.Name); err != nil {
-		// If err is of type ErrNameNotFound, then this is not an error per say.
-		if _, ok := err.(*storage.ErrNameNotFound); ok {
+		// If err is of type ErrPageNotFound, then this is not an error per say.
+		if _, ok := err.(*storage.ErrPageNotFound); ok {
 			return nil, nil
 		}
 
@@ -104,6 +105,28 @@ func (r *RootResolver) Node(args struct{ ID graphql.ID }) (*NodeResolver, error)
 		}
 
 		r.Logger.Error("Unable to retrieve Node (ID=%s): %s", string(args.ID), err)
+		return nil, err
+	}
+
+	return &NodeResolver{node}, nil
+}
+
+// NodeByName returns a Page given its Name
+func (r *RootResolver) NodeByName(args struct {
+	Authority string
+	PageName  string
+	Name      string
+}) (*NodeResolver, error) {
+	var node *common.Node
+	var err error
+
+	if node, err = r.Repository.GetNodeByName(args.Authority, args.PageName, args.Name); err != nil {
+		// If err is of type ErrPageNotFound, then this is not an error per say.
+		if _, ok := err.(*storage.ErrNodeNotFound); ok {
+			return nil, nil
+		}
+
+		r.Logger.Error("Unable to retrieve Node (authority=%s, pageName=%s, name=%s): %s", args.Authority, args.PageName, args.Name, err)
 		return nil, err
 	}
 
@@ -200,7 +223,7 @@ func (r *NodeResolver) Unsafe() string {
 }
 
 // Return configuration variables that are the union of defaults, and any values passed in the environment
-func config() (region, titlesTable, bucket string) {
+func config() (region, titlesTable, namesTable, bucket string) {
 	// Retrieve environment variables
 	env := func(name string, def string) string {
 		if v := os.Getenv(name); v != "" {
@@ -211,9 +234,10 @@ func config() (region, titlesTable, bucket string) {
 
 	region = env("AWS_REGION", awsRegion)
 	titlesTable = env("AWS_DYNAMODB_PAGE_TITLES_TABLE", dynamoDBPageTitles)
+	namesTable = env("AWS_DYNAMODB_NODE_NAMES_TABLE", dynamoDBNodeNames)
 	bucket = env("AWS_BUCKET", s3Bucket)
 
-	return region, titlesTable, bucket
+	return region, titlesTable, namesTable, bucket
 }
 
 func main() {
@@ -224,7 +248,7 @@ func main() {
 	var resolver *RootResolver
 	var schema *graphql.Schema
 
-	var region, titlesTable, bucket = config()
+	var region, titlesTable, namesTable, bucket = config()
 	var awsSession = session.New(&aws.Config{Region: aws.String(region)})
 
 	flag.Parse()
@@ -256,7 +280,7 @@ func main() {
 	resolver = &RootResolver{
 		Repository: &storage.Repository{
 			Store:  s3.New(awsSession),
-			Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession), TitlesTable: titlesTable},
+			Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession), TitlesTable: titlesTable, NamesTable: namesTable},
 			Bucket: bucket,
 		},
 		Logger: logger,
