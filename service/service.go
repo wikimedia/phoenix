@@ -46,6 +46,12 @@ func isS3NotFound(err error) bool {
 	return false
 }
 
+// PageNameInput corresponds to a GraphQL input used by the Page query
+type PageNameInput struct {
+	Authority string
+	Name      string
+}
+
 // RootResolver is the top-level GraphQL resolver
 type RootResolver struct {
 	Repository *storage.Repository
@@ -53,19 +59,47 @@ type RootResolver struct {
 }
 
 // Page returns a Page given its ID
-func (r *RootResolver) Page(args struct{ ID graphql.ID }) (*PageResolver, error) {
+func (r *RootResolver) Page(args struct {
+	ID   *string
+	Name *PageNameInput
+}) (*PageResolver, error) {
 	var page *common.Page
 	var err error
 
-	if page, err = r.Repository.GetPage(string(args.ID)); err != nil {
-		// If this was an error returned by S3 (it is an awserr.Error), and its code is s3.ErrCodeNoSuchKey
-		// then the object was simply not found (read: this is not an error per say).
-		if isS3NotFound(err) {
-			return nil, nil
+	if args.Name != nil {
+		// A page name was supplied
+		if page, err = r.Repository.GetPageByName(args.Name.Authority, args.Name.Name); err != nil {
+			// If err is of type storage.ErrPageNotFound or s3.ErrCodeNoSuchKey, then this is not an "error" per say.
+			if _, ok := err.(*storage.ErrPageNotFound); ok || isS3NotFound(err) {
+				return nil, nil
+			}
+
+			r.Logger.Error("Unable to retrieve Page (authority=%s, name=%s): %s", args.Name.Authority, args.Name.Name, err)
+			return nil, err
 		}
 
-		r.Logger.Error("Unable to retrieve Page (ID=%s): %s", string(args.ID), err)
-		return nil, err
+		// A name argument was supplied and a matching page was found.  If an ID was also specified but it does NOT match
+		// the page returned, then we return nil on the basis that we have no results that match all of the predicates supplied.
+		if args.ID != nil {
+			if page.ID != *args.ID {
+				return nil, nil
+			}
+		}
+	} else if args.ID != nil {
+		// The page ID was supplied
+		if page, err = r.Repository.GetPage(*args.ID); err != nil {
+			// If this was an error returned by S3 (it is an awserr.Error), and its code is s3.ErrCodeNoSuchKey
+			// then the object was simply not found (read: this is not an error per say).
+			if isS3NotFound(err) {
+				return nil, nil
+			}
+
+			r.Logger.Error("Unable to retrieve Page (ID=%s): %s", *args.ID, err)
+			return nil, err
+		}
+	} else {
+		// Neither a page ID or a name was supplied
+		return nil, nil
 	}
 
 	return &PageResolver{page}, nil

@@ -3,11 +3,15 @@ schema {
 }
 
 type Query {
-  page(id: ID!): Page
   # NOTE: authority is the complete hostname of the wiki (e.g. simple.wikipedia.org)
-  pageByName(authority: String!, name: String!): Page
+  page(id: String, name: PageNameInput): Page
   node(id: ID!): Node
   nodeByName(authority: String!, pageName: String!, name: String!): Node
+}
+
+input PageNameInput {
+  authority: String!
+  name: String!
 }
 
 type Page {
