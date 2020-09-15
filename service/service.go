@@ -102,28 +102,7 @@ func (r *RootResolver) Page(args struct {
 		return nil, nil
 	}
 
-	return &PageResolver{page}, nil
-}
-
-// PageByName returns a Page given its Name
-func (r *RootResolver) PageByName(args struct {
-	Authority string
-	Name      string
-}) (*PageResolver, error) {
-	var page *common.Page
-	var err error
-
-	if page, err = r.Repository.GetPageByName(args.Authority, args.Name); err != nil {
-		// If err is of type ErrPageNotFound, then this is not an error per say.
-		if _, ok := err.(*storage.ErrPageNotFound); ok {
-			return nil, nil
-		}
-
-		r.Logger.Error("Unable to retrieve Page (authority=%s, name=%s): %s", args.Authority, args.Name, err)
-		return nil, err
-	}
-
-	return &PageResolver{page}, nil
+	return &PageResolver{page, r.Repository}, nil
 }
 
 // Node returns a Node given its ID
@@ -169,7 +148,8 @@ func (r *RootResolver) NodeByName(args struct {
 
 // PageResolver resolves a GraphQL page type
 type PageResolver struct {
-	p *common.Page
+	p    *common.Page
+	repo *storage.Repository
 }
 
 // ID resolves a page id attribute
@@ -193,8 +173,36 @@ func (r *PageResolver) DateModified() string {
 }
 
 // HasPart resolves a page hasPart attribute
-func (r *PageResolver) HasPart() []string {
-	return r.p.HasPart
+func (r *PageResolver) HasPart(args struct {
+	Limit  *int32
+	Offset *int32
+}) ([]*NodeResolver, error) {
+	var err error
+	var node *common.Node
+	var offset int32 = 0
+	var resolvers = make([]*NodeResolver, 0)
+
+	if args.Offset != nil {
+		offset = *args.Offset
+	}
+
+	// TODO: This is slow; Consider adding concurrency
+	for i, id := range r.p.HasPart[offset:] {
+		if args.Limit != nil && (int32(i)+1) > *args.Limit {
+			break
+		}
+		if node, err = r.repo.GetNode(id); err != nil {
+			// If this was an error returned by S3 (it is an awserr.Error) and its code is s3.ErrCodeNoSuchKey
+			// then the object was simply not found (read: this is not an error per say).
+			if isS3NotFound(err) {
+				return nil, nil
+			}
+			return nil, err
+		}
+		resolvers = append(resolvers, &NodeResolver{node})
+	}
+
+	return resolvers, nil
 }
 
 // About resolves a page about attribute

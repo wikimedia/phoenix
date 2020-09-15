@@ -11,7 +11,11 @@ query()
        page(name: { authority: \"simple.wikipedia.org\", name: \"$1\"} ) {
          name
          dateModified
-         hasPart
+         hasPart(limit: 3, offset: 2) {
+           id
+           name
+           dateModified
+         }
          about {
            key
            val
