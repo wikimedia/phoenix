@@ -52,6 +52,13 @@ type PageNameInput struct {
 	Name      string
 }
 
+// NodeNameInput corresponds to a GraphQL input used by the Page query
+type NodeNameInput struct {
+	Authority string
+	PageName  string
+	Name      string
+}
+
 // RootResolver is the top-level GraphQL resolver
 type RootResolver struct {
 	Repository *storage.Repository
@@ -106,41 +113,37 @@ func (r *RootResolver) Page(args struct {
 }
 
 // Node returns a Node given its ID
-func (r *RootResolver) Node(args struct{ ID graphql.ID }) (*NodeResolver, error) {
-	var node *common.Node
-	var err error
-
-	if node, err = r.Repository.GetNode(string(args.ID)); err != nil {
-		// If this was an error returned by S3 (it is an awserr.Error) and its code is s3.ErrCodeNoSuchKey
-		// then the object was simply not found (read: this is not an error per say).
-		if isS3NotFound(err) {
-			return nil, nil
-		}
-
-		r.Logger.Error("Unable to retrieve Node (ID=%s): %s", string(args.ID), err)
-		return nil, err
-	}
-
-	return &NodeResolver{node}, nil
-}
-
-// NodeByName returns a Page given its Name
-func (r *RootResolver) NodeByName(args struct {
-	Authority string
-	PageName  string
-	Name      string
+func (r *RootResolver) Node(args struct {
+	ID   *string
+	Name *NodeNameInput
 }) (*NodeResolver, error) {
 	var node *common.Node
 	var err error
 
-	if node, err = r.Repository.GetNodeByName(args.Authority, args.PageName, args.Name); err != nil {
-		// If err is of type ErrPageNotFound, then this is not an error per say.
-		if _, ok := err.(*storage.ErrNodeNotFound); ok {
-			return nil, nil
-		}
+	if args.Name != nil {
+		if node, err = r.Repository.GetNodeByName(args.Name.Authority, args.Name.PageName, args.Name.Name); err != nil {
+			// If err is of type ErrPageNotFound, then this is not an error per say.
+			if _, ok := err.(*storage.ErrNodeNotFound); ok || isS3NotFound(err) {
+				return nil, nil
+			}
 
-		r.Logger.Error("Unable to retrieve Node (authority=%s, pageName=%s, name=%s): %s", args.Authority, args.PageName, args.Name, err)
-		return nil, err
+			r.Logger.Error("Unable to retrieve Node (authority=%s, pageName=%s, name=%s): %s", args.Name.Authority, args.Name.PageName, args.Name.Name, err)
+			return nil, err
+		}
+	} else if args.ID != nil {
+		if node, err = r.Repository.GetNode(*args.ID); err != nil {
+			// If this was an error returned by S3 (it is an awserr.Error) and its code is s3.ErrCodeNoSuchKey
+			// then the object was simply not found (read: this is not an error per say).
+			if isS3NotFound(err) {
+				return nil, nil
+			}
+
+			r.Logger.Error("Unable to retrieve Node (ID=%s): %s", *args.ID, err)
+			return nil, err
+		}
+	} else {
+		// Neither a node ID or a name was supplied
+		return nil, nil
 	}
 
 	return &NodeResolver{node}, nil

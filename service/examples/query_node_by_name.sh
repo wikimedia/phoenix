@@ -7,10 +7,23 @@ query()
 {
     cat <<EOF
 {
-  "query": "query Node(\$authority: String!, \$pageName: String!, \$name: String!) { nodeByName(authority: \$authority, pageName: \$pageName, name: \$name) { dateModified name unsafe } }",
-  "variables": { "authority": "simple.wikipedia.org", "pageName": "$1", "name": "$2" }
+  "query":
+    "{
+      node(name: { authority: \"$1\", pageName: \"$2\", name: \"$3\" } ) {
+        dateModified
+        name
+        unsafe
+        id
+      }
+    }"
 }
 EOF
 }
 
-query "$1" "$2" | curl -XPOST localhost:8080/query -d @- 2>/dev/null | json_pp
+echo "Query (JSON-encoded) -------------"
+query "simple.wikipedia.org" "$1" "$2"
+
+echo
+
+echo "Response -------------------------"
+query "simple.wikipedia.org" "$1" "$2" | curl -XPOST localhost:8080/query -d @- 2>/dev/null | json_pp

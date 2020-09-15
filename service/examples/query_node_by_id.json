@@ -1,4 +1,0 @@
-{
-  "query": "query Node($id: ID!) { node(id: $id) { dateModified unsafe } }",
-  "variables": { "id": "/node/e61f7702-1e43-4c57-bda5-d01d2978bbfe" }
-}

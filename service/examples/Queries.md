@@ -1,8 +1,6 @@
-Sample Queries
-==============
+# Sample Queries
 
-Pages
------
+## Pages
 
 Querying for a page by its name, returning the first 3 child nodes:
 
@@ -40,6 +38,24 @@ Querying for a page by its ID, returning all but the first 3 child nodes:
       }
     }
 
+## Nodes
 
-Nodes
------
+Querying a node by its name:
+
+    {
+      node(name: { authority: "simple.wikipedia.org", pageName: "Banana", name: "Fruit" } ) {
+        dateModified
+        name
+        unsafe
+      }
+    }
+
+Querying a node by its id:
+
+    {
+      node(name: { id: "/node/5507c30ba578cdbe" } ) {
+        dateModified
+        name
+        unsafe
+      }
+    }
