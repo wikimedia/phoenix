@@ -1,4 +1,0 @@
-{
-  "query": "query Page($id: ID!) { page(id: $id) { name dateModified hasPart about { key val } } }",
-  "variables": { "id": "/page/459ddb95f152ce4f" }
-}

@@ -3,13 +3,13 @@ schema {
 }
 
 type Query {
-  # NOTE: authority is the complete hostname of the wiki (e.g. simple.wikipedia.org)
   page(id: String, name: PageNameInput): Page
   node(id: ID!): Node
   nodeByName(authority: String!, pageName: String!, name: String!): Node
 }
 
 input PageNameInput {
+  # NOTE: authority is the complete hostname of the wiki (e.g. simple.wikipedia.org)
   authority: String!
   name: String!
 }
