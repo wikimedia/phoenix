@@ -5,6 +5,8 @@ github.com/aws/aws-sdk-go v1.34.21 h1:M97FXuiJgDHwD4mXhrIZ7RJ4xXV6uZVPvIC2qb+HfY
 github.com/aws/aws-sdk-go v1.34.21/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
 github.com/aws/aws-sdk-go v1.34.22 h1:7V2sKilVVgHqdjbW+O/xaVWYfnmuLwZdF/+6JuUh6Cw=
 github.com/aws/aws-sdk-go v1.34.22/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
+github.com/aws/aws-sdk-go v1.34.25 h1:yHNez503p+NuQ5QdMKjwEIkwTa2u+TeUAPAqCVdFu4I=
+github.com/aws/aws-sdk-go v1.34.25/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/elastic/go-elasticsearch/v7 v7.9.0 h1:UEau+a1MiiE/F+UrDj60kqIHFWdzU1M2y/YtBU2NC2M=
@@ -17,6 +19,8 @@ github.com/google/uuid v1.1.2 h1:EVhdT+1Kseyi1/pUmXKaFxYsDNy9RQYkMWRH68J/W7Y=
 github.com/google/uuid v1.1.2/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/gorilla/handlers v1.5.0 h1:4wjo3sf9azi99c8hTmyaxp9y5S+pFszsy3pP0rAw/lw=
 github.com/gorilla/handlers v1.5.0/go.mod h1:t8XrUpc4KVXb7HGyJ4/cEnwQiaxrX/hz1Zv/4g96P1Q=
+github.com/gorilla/handlers v1.5.1 h1:9lRY6j8DEeeBT10CvO9hGW0gmky0BprnvDI5vfhUHH4=
+github.com/gorilla/handlers v1.5.1/go.mod h1:t8XrUpc4KVXb7HGyJ4/cEnwQiaxrX/hz1Zv/4g96P1Q=
 github.com/graph-gophers/graphql-go v0.0.0-20200819123640-3b5ddcd884ae h1:TQuRfD07N7uHp+CW7rCfR579o6PDnwJacRBJH74RMq0=
 github.com/graph-gophers/graphql-go v0.0.0-20200819123640-3b5ddcd884ae/go.mod h1:9CQHMSxwO4MprSdzoIEobiHpoLtHm77vfxsvsIN5Vuc=
 github.com/jmespath/go-jmespath v0.3.0 h1:OS12ieG61fsCg5+qLJ+SsW9NicxNkg3b25OyT2yCeUc=
@@ -44,6 +48,8 @@ github.com/wikimedia/phoenix/common v0.0.0-20200910210446-f96abf625df6 h1:0el6H4
 github.com/wikimedia/phoenix/common v0.0.0-20200910210446-f96abf625df6/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
 github.com/wikimedia/phoenix/common v0.0.0-20200911190659-bd9af6d4c042 h1:KRLd7pUf58AoMIMV/EE9R2PRlPu6Kp35EnY9USKvsCU=
 github.com/wikimedia/phoenix/common v0.0.0-20200911190659-bd9af6d4c042/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
+github.com/wikimedia/phoenix/common v0.0.0-20200915234838-9cdaa9ab5421 h1:NvuOzP/CHlnKQkjMIYlAvoj4Ql1MELY+Va9Qfpt9xJQ=
+github.com/wikimedia/phoenix/common v0.0.0-20200915234838-9cdaa9ab5421/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
 github.com/wikimedia/phoenix/storage v0.0.0-20200901205227-2ea7e5ee03f6/go.mod h1:HNgJUEPuRYWclcP9/lkvgHtVq3bv0quTHh6ceQ8LOb0=
 github.com/wikimedia/phoenix/storage v0.0.0-20200910210446-f96abf625df6 h1:+fzeOQYyD2Mr38Hc5HDfDuY30RoA6BXgPbEHftCB+C8=
 github.com/wikimedia/phoenix/storage v0.0.0-20200910210446-f96abf625df6/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=

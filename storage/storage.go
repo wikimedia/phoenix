@@ -16,6 +16,15 @@ import (
 	"github.com/wikimedia/phoenix/common"
 )
 
+// ErrNotFound indicates that a requested resource does not exist in storage
+type ErrNotFound struct {
+	message string
+}
+
+func (e *ErrNotFound) Error() string {
+	return e.message
+}
+
 // Store is a mockable interface corresponding to s3.S3.
 type Store interface {
 	PutObject(*s3.PutObjectInput) (*s3.PutObjectOutput, error)
@@ -38,6 +47,13 @@ func (r *Repository) get(key string) (*json.Decoder, error) {
 
 	input = &s3.GetObjectInput{Bucket: aws.String(r.Bucket), Key: aws.String(key)}
 	if output, err = r.Store.GetObject(input); err != nil {
+		// Special-case a not found error, and return our own type (to simplify error handling for callers)
+		var s3err awserr.Error
+		if errors.As(err, &s3err) {
+			if s3err.Code() == s3.ErrCodeNoSuchKey {
+				return nil, &ErrNotFound{fmt.Sprintf("s3 resource: %s/%s not found", r.Bucket, key)}
+			}
+		}
 		return nil, err
 	}
 
@@ -270,17 +286,10 @@ func (r *Repository) Apply(update *Update) error {
 	prePID = pagef(makePageID(&update.Page))
 
 	if prevPage, err = r.GetPage(prePID); err != nil {
-		// Continue for ErrCodeNoSuchKey (first write?), return any other error.
-		var aerr awserr.Error
-		if errors.As(err, &aerr) {
-			switch aerr.Code() {
-			case s3.ErrCodeNoSuchKey:
-				break
-			default:
-				return aerr
-			}
-		} else {
-			return aerr
+		// Continue for ErrNotFound (first write?), return errors of any other type.
+		var nerr *ErrNotFound
+		if !errors.As(err, &nerr) {
+			return err
 		}
 	}
 

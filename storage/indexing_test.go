@@ -35,9 +35,8 @@ func TestIndex(t *testing.T) {
 
 	id, err = index.PageIDForName("fake.wikipedia.org", "Bogus")
 	require.NotNil(t, err)
-	pageNotFound, ok := err.(*ErrPageNotFound)
-	require.True(t, ok, "Expected an error of type ErrPageNotFound")
-	assert.Equal(t, "Bogus", pageNotFound.Name)
+	_, ok := err.(*ErrNotFound)
+	require.True(t, ok, "Expected an error of type ErrNotFound")
 
 	id, err = index.NodeIDForName("fake.wikipedia.org", "San Marcos", "History")
 	require.Nil(t, err)
@@ -45,7 +44,6 @@ func TestIndex(t *testing.T) {
 
 	id, err = index.NodeIDForName("fake.wikipedia.org", "San Marcos", "Bogus")
 	require.NotNil(t, err)
-	nodeNotFound, ok := err.(*ErrNodeNotFound)
-	require.True(t, ok, "Expected an error of type ErrNodeNotFound")
-	assert.Equal(t, "Bogus", nodeNotFound.Name)
+	_, ok = err.(*ErrNotFound)
+	require.True(t, ok, "Expected an error of type ErrNotFound")
 }

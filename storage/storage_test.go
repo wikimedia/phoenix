@@ -261,9 +261,8 @@ func TestRepository(t *testing.T) {
 	t.Run("GetPage (not found)", func(t *testing.T) {
 		_, err := repo.GetPage("/page/bogus")
 		require.NotNil(t, err)
-		var s3err awserr.Error
-		require.True(t, errors.As(err, &s3err))
-		assert.Equal(t, s3.ErrCodeNoSuchKey, s3err.Code())
+		var notFound *ErrNotFound
+		require.True(t, errors.As(err, &notFound))
 	})
 
 	// Node
@@ -277,6 +276,12 @@ func TestRepository(t *testing.T) {
 		require.Nil(t, err)
 		assert.Equal(t, &testNode, node)
 	})
+	t.Run("GetNode (not found)", func(t *testing.T) {
+		_, err := repo.GetNode("/node/bogus")
+		require.NotNil(t, err)
+		var notFound *ErrNotFound
+		require.True(t, errors.As(err, &notFound))
+	})
 
 	// About
 	t.Run("PutAbout", func(t *testing.T) {
@@ -288,6 +293,12 @@ func TestRepository(t *testing.T) {
 		about, err := repo.GetAbout(testAbout.ID)
 		require.Nil(t, err)
 		assert.Equal(t, &testAbout, about)
+	})
+	t.Run("GetAbout (not found)", func(t *testing.T) {
+		_, err := repo.GetAbout("/data/bogus")
+		require.NotNil(t, err)
+		var notFound *ErrNotFound
+		require.True(t, errors.As(err, &notFound))
 	})
 
 	// Function(s)

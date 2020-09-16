@@ -46,6 +46,14 @@ func isS3NotFound(err error) bool {
 	return false
 }
 
+func isErrNotFound(err error) bool {
+	var nerr *storage.ErrNotFound
+	if errors.As(err, &nerr) {
+		return true
+	}
+	return false
+}
+
 // PageNameInput corresponds to a GraphQL input used by the Page query
 type PageNameInput struct {
 	Authority string
@@ -76,8 +84,8 @@ func (r *RootResolver) Page(args struct {
 	if args.Name != nil {
 		// A page name was supplied
 		if page, err = r.Repository.GetPageByName(args.Name.Authority, args.Name.Name); err != nil {
-			// If err is of type storage.ErrPageNotFound or s3.ErrCodeNoSuchKey, then this is not an "error" per say.
-			if _, ok := err.(*storage.ErrPageNotFound); ok || isS3NotFound(err) {
+			// If err is of type storage.ErrNotFound, then this is not an error per say
+			if isErrNotFound(err) {
 				return nil, nil
 			}
 
@@ -122,8 +130,8 @@ func (r *RootResolver) Node(args struct {
 
 	if args.Name != nil {
 		if node, err = r.Repository.GetNodeByName(args.Name.Authority, args.Name.PageName, args.Name.Name); err != nil {
-			// If err is of type ErrPageNotFound, then this is not an error per say.
-			if _, ok := err.(*storage.ErrNodeNotFound); ok || isS3NotFound(err) {
+			// If err is of type storage.ErrNotFound, then this is not an error per say
+			if isErrNotFound(err) {
 				return nil, nil
 			}
 

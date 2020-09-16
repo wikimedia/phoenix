@@ -25,27 +25,6 @@ type Index interface {
 	NodeIDForName(authority, pageName, name string) (string, error)
 }
 
-// ErrPageNotFound is an Error returned when a lookup by name fails
-type ErrPageNotFound struct {
-	Authority string
-	Name      string
-}
-
-func (e *ErrPageNotFound) Error() string {
-	return fmt.Sprintf(`("%s", "%s"): not found`, e.Authority, e.Name)
-}
-
-// ErrNodeNotFound is an Error returned when a lookup by name fails
-type ErrNodeNotFound struct {
-	Authority string
-	PageName  string
-	Name      string
-}
-
-func (e *ErrNodeNotFound) Error() string {
-	return fmt.Sprintf(`("%s", "%s", "%s"): not found`, e.Authority, e.PageName, e.Name)
-}
-
 // MockIndex is a memory-backed Index used in testing
 type MockIndex struct {
 	pages map[string]string
@@ -72,7 +51,7 @@ func (i *MockIndex) PageIDForName(authority, name string) (string, error) {
 		return v, nil
 	}
 
-	return "", &ErrPageNotFound{Authority: authority, Name: name}
+	return "", &ErrNotFound{fmt.Sprintf("page index: %s/%s not found", authority, name)}
 }
 
 // NodeIDForName queries the index for node ID matching name
@@ -81,7 +60,7 @@ func (i *MockIndex) NodeIDForName(authority, pageName, name string) (string, err
 		return v, nil
 	}
 
-	return "", &ErrNodeNotFound{Authority: authority, PageName: pageName, Name: name}
+	return "", &ErrNotFound{fmt.Sprintf("node index: %s/%s/%s not found", authority, pageName, name)}
 }
 
 // NewMockIndex creates a new MockIndex
@@ -154,7 +133,7 @@ func (i *DynamoDBIndex) PageIDForName(authority, name string) (string, error) {
 	}
 
 	if result.Item == nil {
-		return "", &ErrPageNotFound{Authority: authority, Name: name}
+		return "", &ErrNotFound{fmt.Sprintf("page index: %s/%s not found", authority, name)}
 	}
 
 	return *result.Item["ID"].S, nil
@@ -176,7 +155,7 @@ func (i *DynamoDBIndex) NodeIDForName(authority, pageName, name string) (string,
 	}
 
 	if result.Item == nil {
-		return "", &ErrNodeNotFound{Authority: authority, PageName: pageName, Name: name}
+		return "", &ErrNotFound{fmt.Sprintf("node index: %s/%s/%s not found", authority, pageName, name)}
 	}
 
 	return *result.Item["ID"].S, nil
@@ -243,7 +222,7 @@ func (i *ElasticsearchIndex) PageIDForName(authority, name string) (string, erro
 
 	if res.IsError() {
 		if res.StatusCode == 404 {
-			return "", &ErrPageNotFound{Name: name}
+			return "", &ErrNotFound{fmt.Sprintf("page index: %s/%s not found", authority, name)}
 		}
 		return "", fmt.Errorf("unknown error retrieving %s (status=%s)", name, res.Status())
 	}
