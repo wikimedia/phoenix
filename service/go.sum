@@ -50,11 +50,17 @@ github.com/wikimedia/phoenix/common v0.0.0-20200911190659-bd9af6d4c042 h1:KRLd7p
 github.com/wikimedia/phoenix/common v0.0.0-20200911190659-bd9af6d4c042/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
 github.com/wikimedia/phoenix/common v0.0.0-20200915234838-9cdaa9ab5421 h1:NvuOzP/CHlnKQkjMIYlAvoj4Ql1MELY+Va9Qfpt9xJQ=
 github.com/wikimedia/phoenix/common v0.0.0-20200915234838-9cdaa9ab5421/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
+github.com/wikimedia/phoenix/common v0.0.0-20200917001152-7e350ad903c6 h1:GjyPncVImt5zV3ZDmQcwC5HnyB/rreAiYcR8A6f1Eao=
+github.com/wikimedia/phoenix/common v0.0.0-20200917001152-7e350ad903c6/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
 github.com/wikimedia/phoenix/storage v0.0.0-20200901205227-2ea7e5ee03f6/go.mod h1:HNgJUEPuRYWclcP9/lkvgHtVq3bv0quTHh6ceQ8LOb0=
 github.com/wikimedia/phoenix/storage v0.0.0-20200910210446-f96abf625df6 h1:+fzeOQYyD2Mr38Hc5HDfDuY30RoA6BXgPbEHftCB+C8=
 github.com/wikimedia/phoenix/storage v0.0.0-20200910210446-f96abf625df6/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=
 github.com/wikimedia/phoenix/storage v0.0.0-20200911190659-bd9af6d4c042 h1:IhKivFE4oFsMxVuhzLfR52HXN5ZDKGkceA4zHBrue/Y=
 github.com/wikimedia/phoenix/storage v0.0.0-20200911190659-bd9af6d4c042/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=
+github.com/wikimedia/phoenix/storage v0.0.0-20200915234838-9cdaa9ab5421 h1:PfMOOZMZy2zucdkJ264MFjbfh9/YJCZDxzj/rPxUU5w=
+github.com/wikimedia/phoenix/storage v0.0.0-20200915234838-9cdaa9ab5421/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=
+github.com/wikimedia/phoenix/storage v0.0.0-20200917001152-7e350ad903c6 h1:vma80rIzuNOeDdMUPoBymP4VEHGsA1KK+27hybD1iwY=
+github.com/wikimedia/phoenix/storage v0.0.0-20200917001152-7e350ad903c6/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2 h1:CCH4IOTTfewWjGOlSp+zGcjutRKlBEZQ6wTn8ozI/nI=
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
