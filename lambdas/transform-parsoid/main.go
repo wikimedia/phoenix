@@ -18,6 +18,9 @@ import (
 	"github.com/wikimedia/phoenix/storage"
 )
 
+// Name to assign (unnamed) lead/intro sections.
+const leadSectionName = "__intro__"
+
 var (
 	// These values are passed in at build-time w/ -ldflags (see: Makefile)
 	awsRegion                 string

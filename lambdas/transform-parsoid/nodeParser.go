@@ -26,7 +26,19 @@ func parseParsoidDocumentNodes(document *goquery.Document, page *common.Page) ([
 
 		node := common.Node{}
 		node.Source = page.Source
-		node.Name = getSectionName(section)
+
+		// If this is the first section and the name is a zero length string, then we assign it
+		// a constant to simplify lookups
+		if i == 0 {
+			if name := getSectionName(section); name == "" {
+				node.Name = leadSectionName
+			} else {
+				node.Name = name
+			}
+		} else {
+			node.Name = getSectionName(section)
+		}
+
 		node.DateModified = modified
 
 		if val, ok := ignoredNodes[node.Name]; ok && val {
