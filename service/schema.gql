@@ -28,7 +28,7 @@ type Page {
   hasPart(limit: Int, offset: Int): [Node]!
   # We had this as an associative array, (which GraphQL doesn't support); This
   # gets us close, but we should rethink.
-  about: [Tuple!]!
+  about(key: String): [Tuple!]!
 }
 
 type Node {

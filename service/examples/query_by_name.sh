@@ -16,8 +16,7 @@ query()
            name
            dateModified
          }
-         about {
-           key
+         about(key: \"//schema.org\") {
            val
          }
        }

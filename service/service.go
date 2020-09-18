@@ -217,11 +217,21 @@ func (r *PageResolver) HasPart(args struct {
 }
 
 // About resolves a page about attribute
-func (r *PageResolver) About() []*TupleResolver {
+func (r *PageResolver) About(args struct{ Key *string }) []*TupleResolver {
 	res := make([]*TupleResolver, 0)
+
 	for k, v := range r.p.About {
-		res = append(res, &TupleResolver{key: k, val: v})
+		// If a key predicate has been supplied, then try to match it and return.
+		if args.Key != nil {
+			if *args.Key == k {
+				res = append(res, &TupleResolver{key: k, val: v})
+				break
+			}
+		} else {
+			res = append(res, &TupleResolver{key: k, val: v})
+		}
 	}
+
 	return res
 }
 
