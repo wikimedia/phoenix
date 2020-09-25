@@ -59,3 +59,23 @@ Querying a node by its id:
         unsafe
       }
     }
+
+## Linked data
+
+Query a page with a specific `about` (by its key):
+
+    {
+      page(name: { authority: "simple.wikipedia.org", name: "Banana" }) {
+        name
+        dateModified
+        hasPart(limit: 3, offset: 0) {
+          id
+          name
+          dateModified
+        }
+        about(key: \"//schema.org\") {
+          val
+        }
+      }
+    }
+
