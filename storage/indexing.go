@@ -78,6 +78,7 @@ type DynamoDBIndex struct {
 // Apply updates the index with new Phoenix document data
 func (i *DynamoDBIndex) Apply(update *Update) error {
 	var items []*dynamodb.TransactWriteItem
+	var nodeNameSet = make(map[string]bool, 0)
 	var page = update.Page
 
 	items = make([]*dynamodb.TransactWriteItem, 0)
@@ -96,10 +97,19 @@ func (i *DynamoDBIndex) Apply(update *Update) error {
 
 	// Node names
 	for _, n := range update.Nodes {
+		// If the resulting transaction includes two or more items with the same Name attribute, the call to
+		// TransactWriteItems that follows will fail with an (obscure) validation error.  The following is meant to
+		// detect this condition and return a more meaningful error.
+		nodeName := encodeNodeName(page.Name, n.Name)
+		if _, exists := nodeNameSet[nodeName]; exists {
+			return fmt.Errorf(`unable to index Node: name "%s" conflicts with another in this transaction (%+v)`, nodeName, n)
+		}
+		nodeNameSet[nodeName] = true
+
 		items = append(items, &dynamodb.TransactWriteItem{
 			Put: &dynamodb.Put{
 				Item: map[string]*dynamodb.AttributeValue{
-					"Name":      {S: aws.String(encodeNodeName(page.Name, n.Name))},
+					"Name":      {S: aws.String(nodeName)},
 					"Authority": {S: aws.String(n.Source.Authority)},
 					"ID":        {S: aws.String(n.ID)},
 				},
