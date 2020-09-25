@@ -1,0 +1,17 @@
+{
+  "name": "wikipedia-rosette",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "argparse": "^2.0.1",
+    "axios": "^0.20.0",
+    "rosette-api": "^1.14.4"
+  }
+}
