@@ -21,13 +21,22 @@
         </v-list-item>
 
         <v-divider></v-divider>
-        <v-subheader inset>Sandbox</v-subheader>
+        <v-subheader inset>Examples</v-subheader>
         <v-list-item link to="/fetchbyname">
           <v-list-item-action>
             <v-icon>fa-file</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Fetch a part of a page</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-subheader inset>GraphQL</v-subheader>
+        <v-list-item link href="/sandbox">
+          <v-list-item-action>
+            <v-icon>fa-file</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>GraphQL Sandbox</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
