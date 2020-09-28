@@ -20,7 +20,7 @@
   </head>
   <body style="margin: 0;">
     <div id="graphiql"></div>
-    <div id="phoenix"><a href="/">Back to Phoenix Demo</a></div>
+    <div id="phoenix"><a id="phoenix-link" href="/">Back to Phoenix Demo</a></div>
 
     <script
       crossorigin
@@ -36,6 +36,8 @@
     ></script>
 
     <script>
+      var url = window.location.hostname === 'wikimedia.github.io' ?
+        '/phoenix' : '/'
       const graphQLFetcher = graphQLParams =>
         fetch('http://localhost:8080/query', {
           method: 'post',
@@ -59,6 +61,8 @@
         }),
         document.getElementById('graphiql'),
       );
+
+      document.getElementById('phoenix-link').href = url;
     </script>
-  </body>
+</body>
 </html>

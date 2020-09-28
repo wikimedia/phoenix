@@ -31,7 +31,7 @@
           </v-list-item-content>
         </v-list-item>
         <v-subheader inset>GraphQL</v-subheader>
-        <v-list-item link href="/sandbox">
+        <v-list-item link :href="sandboxLink">
           <v-list-item-action>
             <v-icon>fa-file</v-icon>
           </v-list-item-action>
@@ -73,7 +73,15 @@ export default {
 
   data: () => ({
     drawer: null
-  })
+  }),
+  computed: {
+    sandboxLink: function () {
+      const prefix = window.location.hostname === 'wikimedia.github.io'
+        ? '/phoenix' : ''
+
+      return prefix + '/sandbox'
+    }
+  }
 
 //   created () {
 //     this.$vuetify.theme.dark = false
