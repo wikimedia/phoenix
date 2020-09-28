@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Simple GraphiQL Example</title>
+    <link href="https://unpkg.com/graphiql/graphiql.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.23.0/theme/duotone-dark.css" />
+    <style>
+      #graphiql {
+        height: calc( 100vh - 1.5em );
+      }
+      #phoenix {
+        text-align: center;
+        padding-top: 0.2em;
+        background-color: #673ab7;
+      }
+      #phoenix a, #phoenix a:active, #phoenix a:visited {
+        text-decoration: none;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <div id="graphiql"></div>
+    <div id="phoenix"><a href="/">Back to Phoenix Demo</a></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/graphiql/graphiql.min.js"
+    ></script>
+
+    <script>
+      const graphQLFetcher = graphQLParams =>
+        fetch('http://localhost:8080/query', {
+          method: 'post',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(graphQLParams),
+        })
+          .then(response => response.json())
+          .catch(() => response.text());
+      ReactDOM.render(
+        React.createElement(GraphiQL, {
+          editorTheme: "duotone-dark",
+          fetcher: graphQLFetcher,
+          schema: undefined,
+          defaultQuery: `{
+  node(name: {authority: "simple.wikipedia.org", pageName: "Banana", name: "Fruit"}) {
+    dateModified
+    name
+    unsafe
+  }
+}`
+        }),
+        document.getElementById('graphiql'),
+      );
+    </script>
+  </body>
+</html>
