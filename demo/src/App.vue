@@ -27,7 +27,7 @@
             <v-icon>fa-file</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Fetch by Page Name</v-list-item-title>
+            <v-list-item-title>Fetch a part of a page</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
