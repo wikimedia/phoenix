@@ -17,6 +17,8 @@ github.com/aws/aws-sdk-go v1.34.26 h1:tw4nsSfGvCDnXt2xPe8NkxIrDui+asAWinMknPLEf8
 github.com/aws/aws-sdk-go v1.34.26/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
 github.com/aws/aws-sdk-go v1.35.0 h1:Pxqn1MWNfBCNcX7jrXCCTfsKpg5ms2IMUMmmcGtYJuo=
 github.com/aws/aws-sdk-go v1.35.0/go.mod h1:H7NKnBqNVzoTJpGfLrQkkD+ytBA93eiDYi/+8rV9s48=
+github.com/aws/aws-sdk-go v1.35.1 h1:dGBUiVpdG6Zho3taAqGJKxuhn+qIrP3OdjfrtqowDyc=
+github.com/aws/aws-sdk-go v1.35.1/go.mod h1:H7NKnBqNVzoTJpGfLrQkkD+ytBA93eiDYi/+8rV9s48=
 github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsrgA7czyZG/E6dU=
 github.com/cpuguy83/go-md2man/v2 v2.0.0/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsrgA7czyZG/E6dU=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -54,6 +56,10 @@ github.com/wikimedia/phoenix/common v0.0.0-20200917172730-99566e6ca6e1 h1:mTAFnj
 github.com/wikimedia/phoenix/common v0.0.0-20200917172730-99566e6ca6e1/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
 github.com/wikimedia/phoenix/common v0.0.0-20200928232010-e94c28a05564 h1:l3D4cT/6gB03ocmeiTMhKYUC/jdaXqMLG6bHgfct6Bg=
 github.com/wikimedia/phoenix/common v0.0.0-20200928232010-e94c28a05564/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
+github.com/wikimedia/phoenix/common v0.0.0-20200930183845-ed26ff645264 h1:kJLhPYpZ735uZL4p7erAVKY+ycbi+XV2YZzas8PQA4w=
+github.com/wikimedia/phoenix/common v0.0.0-20200930183845-ed26ff645264/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
+github.com/wikimedia/phoenix/common v0.0.0-20201001185421-7e82111ec427 h1:q4iHfOmiefqNDeGTiktmlDVbMwyPcM0IM8/IoyJhaCQ=
+github.com/wikimedia/phoenix/common v0.0.0-20201001185421-7e82111ec427/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
 github.com/wikimedia/phoenix/storage v0.0.0-20200911175454-f97fac6083b7/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=
 github.com/wikimedia/phoenix/storage v0.0.0-20200911190659-bd9af6d4c042 h1:IhKivFE4oFsMxVuhzLfR52HXN5ZDKGkceA4zHBrue/Y=
 github.com/wikimedia/phoenix/storage v0.0.0-20200911190659-bd9af6d4c042/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=
@@ -61,6 +67,10 @@ github.com/wikimedia/phoenix/storage v0.0.0-20200917172730-99566e6ca6e1 h1:bAJZz
 github.com/wikimedia/phoenix/storage v0.0.0-20200917172730-99566e6ca6e1/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=
 github.com/wikimedia/phoenix/storage v0.0.0-20200928232010-e94c28a05564 h1:DcrFKnne6LHBkQ7OaXLXCeAFBZNuPv3XKRG46hWWipo=
 github.com/wikimedia/phoenix/storage v0.0.0-20200928232010-e94c28a05564/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=
+github.com/wikimedia/phoenix/storage v0.0.0-20200930183845-ed26ff645264 h1:7Pc8gwwkiS5sd85SD4kpWvb7ZUGsAZMjX71XUwXDpQU=
+github.com/wikimedia/phoenix/storage v0.0.0-20200930183845-ed26ff645264/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=
+github.com/wikimedia/phoenix/storage v0.0.0-20201001185421-7e82111ec427 h1:ERGUzN+ZB8lawdLYgD2yDz9ZsUAqag2z/d/PNWHMU0Q=
+github.com/wikimedia/phoenix/storage v0.0.0-20201001185421-7e82111ec427/go.mod h1:YYmzaBwjy8N1qz74udHrVB/JG4u7qpYqy8xTSSsK7dc=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/net v0.0.0-20180218175443-cbe0f9307d01/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
