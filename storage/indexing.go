@@ -77,6 +77,7 @@ type DynamoDBIndex struct {
 
 // Apply updates the index with new Phoenix document data
 func (i *DynamoDBIndex) Apply(update *Update) error {
+	var count = 0
 	var items []*dynamodb.TransactWriteItem
 	var nodeNameSet = make(map[string]bool, 0)
 	var page = update.Page
@@ -95,8 +96,19 @@ func (i *DynamoDBIndex) Apply(update *Update) error {
 		},
 	})
 
+	count++
+
 	// Node names
 	for _, n := range update.Nodes {
+		// The DynamoDB transaction is limited to 25 items; Bailing out after reaching the upper bound on items means
+		// that any document with more than 24 sections (the transaction includes an item for the page as well) will
+		// have the remaining sections silently dropped. https://github.com/wikimedia/phoenix/issues/68 was opened to
+		// properly address this, but in the mean time this work-around is preferable to the resulting
+		// ValidationException.
+		if count >= 25 {
+			break
+		}
+
 		// If the resulting transaction includes two or more items with the same Name attribute, the call to
 		// TransactWriteItems that follows will fail with an (obscure) validation error.  The following is meant to
 		// detect this condition and return a more meaningful error.
@@ -116,6 +128,8 @@ func (i *DynamoDBIndex) Apply(update *Update) error {
 				TableName: aws.String(i.NamesTable),
 			},
 		})
+
+		count++
 	}
 
 	_, err := i.Client.TransactWriteItems(&dynamodb.TransactWriteItemsInput{TransactItems: items})
