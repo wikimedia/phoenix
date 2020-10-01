@@ -12,19 +12,28 @@ var (
 )
 
 func getSectionName(section *goquery.Selection) string {
-	return section.Find("h2").First().Text()
+	var id string
+	var exists bool
+	var header = section.Find("h2").First()
+
+	if id, exists = header.Attr("id"); exists {
+		return id
+	}
+
+	return header.Text()
 }
 
 func parseParsoidDocumentNodes(document *goquery.Document, page *common.Page) ([]common.Node, error) {
 	var err error
 	var modified = page.DateModified
 	var nodes = make([]common.Node, 0)
+	var sections = document.Find("html>body>section[data-mw-section-id]")
 
-	sections := document.Find("html>body>section[data-mw-section-id]")
 	for i := range sections.Nodes {
-		section := sections.Eq(i)
+		var node = common.Node{}
+		var section = sections.Eq(i)
+		var unsafe string
 
-		node := common.Node{}
 		node.Source = page.Source
 
 		// If this is the first section and the name is a zero length string, then we assign it
@@ -45,9 +54,11 @@ func parseParsoidDocumentNodes(document *goquery.Document, page *common.Page) ([
 			continue
 		}
 
-		if node.Unsafe, err = section.Html(); err != nil {
+		if unsafe, err = section.Html(); err != nil {
 			return []common.Node{}, err
 		}
+
+		node.Unsafe = unsafe
 		nodes = append(nodes, node)
 	}
 
