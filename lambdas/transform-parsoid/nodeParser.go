@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/PuerkitoBio/goquery"
 	"github.com/wikimedia/phoenix/common"
 )
@@ -12,20 +14,13 @@ var (
 )
 
 func getSectionName(section *goquery.Selection) string {
-	var id string
-	var exists bool
-	var header = section.Find("h2").First()
-
-	if id, exists = header.Attr("id"); exists {
-		return id
-	}
-
-	return header.Text()
+	return section.Find("h2").First().Text()
 }
 
 func parseParsoidDocumentNodes(document *goquery.Document, page *common.Page) ([]common.Node, error) {
 	var err error
 	var modified = page.DateModified
+	var nameCounts = make(map[string]int)
 	var nodes = make([]common.Node, 0)
 	var sections = document.Find("html>body>section[data-mw-section-id]")
 
@@ -46,6 +41,14 @@ func parseParsoidDocumentNodes(document *goquery.Document, page *common.Page) ([
 			}
 		} else {
 			node.Name = getSectionName(section)
+		}
+
+		// Since it is possible for a document to have more than one section with the same heading text, keep
+		// track of the number of times we've assigned a name, and de-duplicate if necessary.
+		nameCounts[node.Name]++
+
+		if nameCounts[node.Name] > 1 {
+			node.Name = fmt.Sprintf("%s_%d", node.Name, nameCounts[node.Name])
 		}
 
 		node.DateModified = modified
