@@ -405,9 +405,6 @@ func validateNode(node *common.Node) error {
 	if node.DateModified.IsZero() {
 		return fmt.Errorf("uninitialized node.DateModified attribute (%+v)", node)
 	}
-	if node.Unsafe == "" {
-		return fmt.Errorf("uninitialized node.Unsafe attribute (%+v)", node)
-	}
 	return validateSource(&node.Source)
 }
 
