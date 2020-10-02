@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/wikimedia/phoenix/common"
@@ -45,10 +46,10 @@ func parseParsoidDocumentNodes(document *goquery.Document, page *common.Page) ([
 
 		// Since it is possible for a document to have more than one section with the same heading text, keep
 		// track of the number of times we've assigned a name, and de-duplicate if necessary.
-		nameCounts[node.Name]++
+		nameCounts[strings.ToLower(node.Name)]++
 
-		if nameCounts[node.Name] > 1 {
-			node.Name = fmt.Sprintf("%s_%d", node.Name, nameCounts[node.Name])
+		if nameCounts[strings.ToLower(node.Name)] > 1 {
+			node.Name = fmt.Sprintf("%s_%d", node.Name, nameCounts[strings.ToLower(node.Name)])
 		}
 
 		node.DateModified = modified
