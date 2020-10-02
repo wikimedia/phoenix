@@ -108,7 +108,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 		page, nodes, err := parseParsoidDocument(document)
 
 		if err != nil {
-			log.Error("Unable to parse parsoid document with error: %s", err)
+			log.Error("Unable to parse parsoid document (%+v) with error: %s (+%v)", err, msg)
 			continue
 		}
 
