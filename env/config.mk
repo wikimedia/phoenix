@@ -10,17 +10,14 @@ PHX_PREFIX                   = scpoc
 # Topic that receives change events originating from the Wikimedia
 # Event Streams service.
 PHX_SNS_EVENT_STREAMS_BRIDGE      = $(PHX_PREFIX)-event-streams-bridge
-PHX_SNS_EVENT_STREAMS_BRIDGE_ARN  = $(shell printf "$(_BASE_ARN)" sns "$(PHX_SNS_EVENT_STREAMS_BRIDGE)")
 
 # Topic that receives events when new HTML is added to incoming (see
 # PHX_S3_RAW_CONTENT_INCOMING).
 PHX_SNS_RAW_CONTENT_INCOMING      = $(PHX_PREFIX)-sns-raw-content-incoming
-PHX_SNS_RAW_CONTENT_INCOMING_ARN  = $(shell printf "$(_BASE_ARN)" sns "$(PHX_SNS_RAW_CONTENT_INCOMING)")
 
 # Topic that receives events when new linked-data (Wikidata) is added
 # to the raw content store (see PHX_S3_RAW_CONTENT_WD_LINKED)
 PHX_SNS_RAW_CONTENT_WD_LINKED     = $(PHX_PREFIX)-sns-raw-content-schemaorg
-PHX_SNS_RAW_CONTENT_WD_LINKED_ARN = $(shell printf "$(_BASE_ARN)" sns "$(PHX_SNS_RAW_CONTENT_WD_LINKED)")
 
 ######
 # S3 resources

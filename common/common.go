@@ -11,11 +11,10 @@ import (
 
 // ChangeEventPublisher wraps the AWS SDK for publishing Message structs
 type ChangeEventPublisher struct {
-	client   *sns.SNS
-	account  string
-	region   string
-	topic    string
-	topicARN string
+	client  *sns.SNS
+	account string
+	region  string
+	topic   string
 }
 
 // Send publishes an SNS message for a ChangeEvent
