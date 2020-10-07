@@ -12,6 +12,7 @@
   "dependencies": {
     "argparse": "^2.0.1",
     "axios": "^0.20.0",
+    "prompt": "^1.0.0",
     "rosette-api": "^1.14.4"
   }
 }

@@ -52,3 +52,11 @@ See [Relationship types](https://developer.rosette.com/features-and-functions#re
 
 * `node index.js --endpoint "relationships" --page "Philadelphia" --part "Culture"`
 * Empty - `node index.js --endpoint "relationships" --page "Banana" --part "__intro__"`
+
+# Automated script
+
+The automated script, `autofetch.js` is meant to pick a series of pages and pass their individual parts through Rosette's `topics` endpoint, gathering and mapping the sections per topic.
+
+The list of pages are defined inside the `autofetch.js` file.
+
+The results are created inside the `data/` folder.

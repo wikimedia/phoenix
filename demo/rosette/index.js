@@ -1,10 +1,8 @@
-import axios from 'axios'
+import ApiHelper from './ApiHelper.js'
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const { ArgumentParser } = require('argparse');
-
-import Api from 'rosette-api';
-import config from './config.js'
+const api = new ApiHelper();
 
 var parser = new ArgumentParser({
   add_help: true,
@@ -14,13 +12,15 @@ var parser = new ArgumentParser({
 parser.add_argument("--page", {help: "Page name from simple.wikipedia", required: false});
 parser.add_argument("--part", {help: "A section name to fetch", required: false});
 parser.add_argument("--endpoint", {help: "Endpoint for Rosette API", required: false});
+parser.add_argument("--output", {help: "Output type: 'table', 'csv', 'collectconcepts'. Default: table", required: false});
 const args = parser.parse_args();
-const rosetteApi = new Api(config.rosette_key, args.url);
+// const rosetteApi = new Api(config.rosette_key, args.url);
 
 // Available endpoints: 'topics', 'entities', 'categories'
 const endpoint = args.endpoint || "topics";
 const pageName = args.page || 'Philadelphia'
 const requestedPart = args.part || ''
+const requestedOutput = args.output || 'table'
 const queries = {
   parts: `{
     page(name: { authority: "simple.wikipedia.org", name: "${pageName}"} ) {
@@ -35,19 +35,7 @@ const queries = {
 }
 // Fetch from graphql service
 console.log('Fetching...')
-axios
-  .post(
-    'http://localhost:8080/query',
-    { query: queries.parts },
-    { headers: { 'Content-Type': 'application/json' } }
-  )
-  .then(res => {
-    if ( res && res.data && res.data.data && ( res.data.data.page || res.data.data.node ) ) {
-      return res.data.data.page.hasPart
-    }
-    return Promise.reject('Requested node or page not found.');
-  })
-  .then(parts => {
+api.fetchFromGraphQL(pageName).then(parts => {
     let partIndex = Math.floor(Math.random() * parts.length);
     const partNames = parts.map(p => {
       return p.name
@@ -63,7 +51,7 @@ axios
 
     return Promise.all([
       parts[partIndex].name,
-      fetchFromRosette(endpoint, parts[partIndex].unsafe),
+      api.fetchFromRosette(endpoint, parts[partIndex].unsafe),
     ]);
   })
   .then(results => {
@@ -77,9 +65,13 @@ axios
 
     if ( endpoint === 'topics' ) {
       console.log(`-> Key phrases`)
-      console.table(rosette.keyphrases)
+      if ( requestedOutput !== 'collectconcepts') {
+        outputResult(requestedOutput, [pageName, name], rosette.keyphrases)
+      }
+      // console.table(rosette.keyphrases)
       console.log(`-> Concepts`)
-      console.table(rosette.concepts)
+      outputResult(requestedOutput, [pageName, name], rosette.concepts)
+      // console.table(rosette.concepts)
     } else {
       formatted = rosette[endpoint]
         .map(ent => {
@@ -96,8 +88,9 @@ axios
           }
           return 0;
         })
-        console.table(formatted);
-    }
+        // console.table(formatted);
+        outputResult(requestedOutput, [pageName, name], formatted)
+      }
   })
   .catch(e => {
     console.log('Error:', (e.message || e))
@@ -105,24 +98,32 @@ axios
   })
 
 
-function fetchFromRosette(api_endpoint, content) {
-  const deferred = new Deferred();
-  rosetteApi.parameters.content = content;
-  rosetteApi.rosette(api_endpoint, function(err, res){
-    if(err){
-      deferred.reject(err);
-    } else {
-      deferred.resolve(res);
+function outputResult(outputType, pageNameParts, obj) {
+  if ( outputType === 'csv' ) {
+    const out = [];
+    obj.forEach(res => {
+      let row = Object.values(res);
+      out.push(row.join(','))
+    })
+    console.log(out.join("\n"));
+  } else if ( endpoint === 'topics' && outputType === 'collectconcepts' ) {
+    // Collect terms per page-part
+    // This is super specific for the experiment to collect concepts per pages
+    // for the experiments folder. Ignore this for general usage ;)
+    const out = {};
+    const lim = Math.min(obj.length, 10);
+    for ( let i = 0; i < lim; i++) {
+      const res = obj[i]
+      if (res.conceptId.indexOf('Q') === 0) {
+        out[pageNameParts.join(' - ')] = out[pageNameParts.join(' - ')] || [];
+        out[pageNameParts.join(' - ')].push({
+          concept: `${res.phrase} (${res.conceptId})`,
+          salience: res.salience
+        });
+      }
     }
-  });
-  return deferred;
-}
-
-function Deferred () {
-  var res = null,
-    rej = null,
-    p = new Promise((a,b)=>(res = a, rej = b));
-  p.resolve = res;
-  p.reject = rej;
-  return p;
+    console.log(JSON.stringify(out, null, 2))
+  } else {
+    console.table(obj);
+  }  
 }
