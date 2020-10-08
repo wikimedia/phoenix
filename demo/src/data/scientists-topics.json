@@ -1,0 +1,6720 @@
+{
+  "Switzerland (Q1456250)": {
+    "0.17628028": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.12917888": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    },
+    "0.17365741": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.19751629": {
+      "page": "Leonhard Euler",
+      "part": "Early years"
+    }
+  },
+  "Swiss people (Q3919882)": {
+    "0.17024361": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    }
+  },
+  "Germany (Q1410828)": {
+    "0.15332037": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.11917358": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    },
+    "0.22404038": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.13566034": {
+      "page": "Max Planck",
+      "part": "Life"
+    },
+    "0.19625618": {
+      "page": "Max Born",
+      "part": "__intro__"
+    }
+  },
+  "Scientists (Q7043111)": {
+    "0.15249481": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.12449588": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.08381978": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.18321711": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.10981652": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.0891357": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.21961922": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    },
+    "0.22404038": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.24676461": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.21450834": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.21344517": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.09366206": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.1255001": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.13603443": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    },
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.15448968": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.21473735": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.16244443": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    },
+    "0.0923723": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    },
+    "0.15881169": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "American people (Q3919762)": {
+    "0.15053236": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.13756166": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    },
+    "0.24367967": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    },
+    "0.18695359": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    }
+  },
+  "German people (Q7605094)": {
+    "0.14821757": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.22404038": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.22227222": {
+      "page": "Max Born",
+      "part": "__intro__"
+    }
+  },
+  "European people (Q6866928)": {
+    "0.14688787": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.11939712": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    },
+    "0.18983262": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.25047074": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.19491778": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    }
+  },
+  "United States (Q1410960)": {
+    "0.14584637": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.10233191": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    },
+    "0.222854": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    },
+    "0.09341137": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.16360374": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.13270203": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    },
+    "0.07936898": {
+      "page": "Shirley Ann Jackson",
+      "part": "__intro__"
+    },
+    "0.07333697": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "American society (Q7141244)": {
+    "0.14584637": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.13756166": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "German scientists (Q7004044)": {
+    "0.14567958": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.19878517": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.22227222": {
+      "page": "Max Born",
+      "part": "__intro__"
+    }
+  },
+  "Albert Einstein (Q7213562)": {
+    "0.14567958": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    }
+  },
+  "Swiss scientists (Q7067472)": {
+    "0.14567958": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    }
+  },
+  "Physical sciences (Q7153079)": {
+    "0.14441212": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.21401171": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.20816145": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.13062233": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.18437375": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.13242083": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.18878349": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.10564284": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.18589261": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.22540771": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.13303225": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    },
+    "0.20536949": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.10738703": {
+      "page": "Max Planck",
+      "part": "Life"
+    },
+    "0.24676461": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.23386915": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19766468": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.12752699": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.12496617": {
+      "page": "Erwin Schrödinger",
+      "part": "Important work"
+    },
+    "0.14922654": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.26378165": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    },
+    "0.11596889": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    },
+    "0.1736704": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.1304297": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    },
+    "0.08093928": {
+      "page": "Shirley Ann Jackson",
+      "part": "__intro__"
+    }
+  },
+  "Physics (Q1457258)": {
+    "0.13179592": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.24221381": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.20816145": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.13062233": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.23365809": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.12337028": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.25104582": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.21944082": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.10564284": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.14815611": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.1946821": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.22540771": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.13710973": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.16834114": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.16897872": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.14323471": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.10163272": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.08896437": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    },
+    "0.14309208": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.16575027": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    },
+    "0.22404038": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.10738703": {
+      "page": "Max Planck",
+      "part": "Life"
+    },
+    "0.24676461": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.23386915": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19766468": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.12752699": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.09662899": {
+      "page": "Erwin Schrödinger",
+      "part": "Important work"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.19026191": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    },
+    "0.14922654": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.26378165": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    },
+    "0.11596889": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    },
+    "0.19595071": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.13100566": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    },
+    "0.10877385": {
+      "page": "Shirley Ann Jackson",
+      "part": "__intro__"
+    }
+  },
+  "Scholars and academics (Q7005672)": {
+    "0.13012135": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.07821005": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.19251766": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.19550275": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.18282569": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.20933364": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.09924391": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.11596889": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    },
+    "0.18271438": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.0923723": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    }
+  },
+  "Science (Q1458083)": {
+    "0.12984682": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.16749559": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.23043543": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.08933981": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.15157626": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.20289811": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.10564284": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.14622291": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.20781224": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.15483063": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.13124571": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.11295259": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.3080944": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    },
+    "0.21699305": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.18690348": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.12425607": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.08613423": {
+      "page": "Erwin Schrödinger",
+      "part": "Important work"
+    },
+    "0.13897434": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.18288437": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    },
+    "0.15054165": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.11020528": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.15683101": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    },
+    "0.24644864": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.17407122": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.16839157": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    },
+    "0.21434567": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.13994338": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    },
+    "0.07094862": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    },
+    "0.08340685": {
+      "page": "Cynthia Kenyon",
+      "part": "Honors"
+    }
+  },
+  "Awards (Q6576190)": {
+    "0.12955848": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.18820609": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.21418493": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.19150999": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19766468": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.10144039": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.13603443": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    },
+    "0.24644864": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.12703821": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    },
+    "0.13705912": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "Scientific theories (Q7036097)": {
+    "0.12691497": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.17218086": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.10919443": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.19390823": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.18528556": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.10564284": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.0830092": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.2190659": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.17119716": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19026191": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    },
+    "0.08915998": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.13269376": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    }
+  },
+  "Creativity (Q6697267)": {
+    "0.12474267": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    },
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.14007895": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.12475252": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.17005252": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.10010393": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Engineers (Q6996692)": {
+    "0.12447575": {
+      "page": "Albert Einstein",
+      "part": "__intro__"
+    }
+  },
+  "Hans Albert Einstein (Q123371)": {
+    "0.1761745": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "Elsa Einstein (Q68761)": {
+    "0.14247635": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "Jewish diaspora (Q6565750)": {
+    "0.13795491": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "European Jews (Q15256076)": {
+    "0.13795491": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "Jews (Q5838566)": {
+    "0.13795491": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "Ashkenazi Jews (Q7217064)": {
+    "0.13795491": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "American Jews (Q7216950)": {
+    "0.12753741": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "Immigration to the United States (Q7210609)": {
+    "0.12753741": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "Middle Eastern American (Q8627982)": {
+    "0.12753741": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "Family history (Q8443149)": {
+    "0.11624119": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "American families (Q7061036)": {
+    "0.11624119": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "Genealogy (Q4965571)": {
+    "0.11624119": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "Families (Q8443049)": {
+    "0.11624119": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    },
+    "0.26500419": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "Jewish history (Q7130226)": {
+    "0.10341942": {
+      "page": "Albert Einstein",
+      "part": "Life"
+    }
+  },
+  "Spacetime (Q7016232)": {
+    "0.22544197": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.15892183": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.14215436": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.18550219": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.19822526": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.11274695": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.12502412": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    }
+  },
+  "Mechanical engineering (Q7469362)": {
+    "0.22544197": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.13393887": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.16173631": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.25104582": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.18986562": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.15472477": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.09347078": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    }
+  },
+  "Dimension (Q7144808)": {
+    "0.22544197": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.15892183": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.14215436": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.18550219": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.19822526": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.11274695": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.12502412": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    }
+  },
+  "Vector spaces (Q8229220)": {
+    "0.21930961": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    }
+  },
+  "Mechanics (Q7007340)": {
+    "0.21421295": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.1844126": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.1731856": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.11577703": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.25104582": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.17993188": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.20031003": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.15472477": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.13229451": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.10207387": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.31846175": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    },
+    "0.19802347": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.17496784": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19001071": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    },
+    "0.09347078": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.18835773": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    }
+  },
+  "Ontology (Q6490429)": {
+    "0.21401171": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.16183168": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.08790607": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    }
+  },
+  "Cognitive science (Q7129786)": {
+    "0.20015876": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.12011189": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.14569896": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.14288468": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.16286702": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.15557451": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.15427342": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.15117244": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    },
+    "0.08127308": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.17101166": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.16962256": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.09712085": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    },
+    "0.16956522": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Natural sciences (Q1457332)": {
+    "0.18750505": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.2007307": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.11964782": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.11632584": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.11400562": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.22461354": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    },
+    "0.10457177": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    }
+  },
+  "Semantics (Q8728647)": {
+    "0.17330572": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.08790607": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    }
+  },
+  "Mental content (Q8621208)": {
+    "0.17330572": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.08790607": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    }
+  },
+  "Modern physics (Q8637336)": {
+    "0.17218086": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.19390823": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.17496784": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.18835773": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    }
+  },
+  "Mathematical physics (Q7457477)": {
+    "0.17218086": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.15105891": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Theoretical physics (Q6584877)": {
+    "0.17218086": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.20540554": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.17496784": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.20130247": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    },
+    "0.18835773": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    }
+  },
+  "Applied mathematics (Q7020694)": {
+    "0.17218086": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.16697564": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Time (Q4049213)": {
+    "0.16311359": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.1647233": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.1731856": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.13843559": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.18145782": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.10564284": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.11316572": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.12199751": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.16247162": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.18550219": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.19422123": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.10698216": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.11924346": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.3080944": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    }
+  },
+  "Observer (special relativity) (Q7075491)": {
+    "0.16186458": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    }
+  },
+  "Scientific modeling (Q7483215)": {
+    "0.1565041": {
+      "page": "Albert Einstein",
+      "part": "Theory of special relativity"
+    },
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.19590107": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.14007895": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.14827307": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.11856628": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.15741175": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.18766517": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.08111466": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.17384398": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.18357049": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    },
+    "0.1632832": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23621065": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.17555647": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Physical universe (Q5551050)": {
+    "0.22103218": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.16176191": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.18589261": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.17598865": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.08724972": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.2202537": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    }
+  },
+  "Nature (Q32859972)": {
+    "0.22103218": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.16176191": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.10417705": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.17599827": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.15026502": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    },
+    "0.09056892": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.23223613": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    },
+    "0.15874582": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.19061978": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.11761831": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    },
+    "0.07089759": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Physical cosmology (Q7025480)": {
+    "0.21744287": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.31201776": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.25550027": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    },
+    "0.19565586": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.22756793": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.16492329": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    }
+  },
+  "Matter (Q5550631)": {
+    "0.21169758": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.18589261": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.18523613": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.17119045": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    },
+    "0.2427643": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    }
+  },
+  "Contents (Q1281)": {
+    "0.20197867": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    }
+  },
+  "Articles (Q6741630)": {
+    "0.20197867": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    }
+  },
+  "Chemistry (Q1457474)": {
+    "0.19872896": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.13876422": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.16762262": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.19001071": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    },
+    "0.26378165": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    },
+    "0.1750646": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.12808506": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    }
+  },
+  "Energy (Q8413436)": {
+    "0.19053371": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.10669965": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.23306498": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Physical bodies (Q24081972)": {
+    "0.18807605": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.20231009": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    }
+  },
+  "Physical quantities (Q7191009)": {
+    "0.17038714": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.2230226": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.1946821": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.15777871": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.07875809": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.11775571": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    },
+    "0.10413397": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    }
+  },
+  "Atomic physics (Q6565519)": {
+    "0.16946929": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    }
+  },
+  "Atoms (Q5550894)": {
+    "0.16946929": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    }
+  },
+  "Space (Q1458583)": {
+    "0.16487871": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.12531092": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.15589375": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.1090834": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.10828951": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Classical mechanics (Q7007336)": {
+    "0.16129041": {
+      "page": "Albert Einstein",
+      "part": "Mass-energy equivalence"
+    },
+    "0.16166654": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.18986562": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    },
+    "0.14001835": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Condensation (Q166583)": {
+    "0.09704628": {
+      "page": "Albert Einstein",
+      "part": "BEC"
+    }
+  },
+  "Zero-point energy (Q4327971)": {
+    "0.1618203": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    }
+  },
+  "Science and technology (Q9795196)": {
+    "0.13062233": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.14387574": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.19287633": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.24676461": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.24023256": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.20933364": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.09366206": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.1255001": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.15054165": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    },
+    "0.22172178": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.24644864": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.16651509": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    },
+    "0.12697428": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    },
+    "0.08358098": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    },
+    "0.12298603": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Scientific works (Q6399434)": {
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.17414039": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Scientific method (Q7217368)": {
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.14007895": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.18887878": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.17795475": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.18288437": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    }
+  },
+  "Mathematical analysis (Q7211696)": {
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.31201776": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    },
+    "0.13843559": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.17037415": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.21560213": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    },
+    "0.17131319": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.12531367": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.15035032": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Analytic philosophy (Q6509996)": {
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.17869977": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.14036873": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    }
+  },
+  "Theories (Q6488282)": {
+    "0.10821612": {
+      "page": "Albert Einstein",
+      "part": "Zero-point energy"
+    },
+    "0.14007895": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.18234818": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.19287501": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Quantity (Q8614185)": {
+    "0.2230226": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.1946821": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.07875809": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.31669005": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    }
+  },
+  "Planck constant (Q122894)": {
+    "0.21506664": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    }
+  },
+  "Natural philosophy (Q8668645)": {
+    "0.18437375": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.13843559": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.18145782": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.10564284": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.17993188": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.11924346": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    }
+  },
+  "Motion (physics) (Q7014654)": {
+    "0.1732354": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    }
+  },
+  "Physical phenomena (Q7131174)": {
+    "0.16953736": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    }
+  },
+  "Mass (Q5911532)": {
+    "0.16176191": {
+      "page": "Albert Einstein",
+      "part": "Momentum, mass, and energy"
+    },
+    "0.17599827": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.11775571": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    }
+  },
+  "Geometry (Q6436127)": {
+    "0.31260252": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    }
+  },
+  "General relativity (Q8482188)": {
+    "0.31201776": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    }
+  },
+  "Cosmology (Q5909799)": {
+    "0.31201776": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    }
+  },
+  "Differential topology (Q8802316)": {
+    "0.31201776": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    }
+  },
+  "Classical geometry (Q6482641)": {
+    "0.31201776": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    }
+  },
+  "Differential geometry (Q6181442)": {
+    "0.31201776": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    }
+  },
+  "Non-Euclidean geometry (Q7413897)": {
+    "0.31201776": {
+      "page": "Albert Einstein",
+      "part": "The General Theory of Relativity"
+    }
+  },
+  "Atomic, molecular, and optical physics (Q7457406)": {
+    "0.11040922": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    }
+  },
+  "Dynamical systems (Q5625903)": {
+    "0.10867363": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.14001835": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Systems theory (Q7036033)": {
+    "0.09792065": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.14001835": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Applied sciences (Q8917068)": {
+    "0.09758745": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.14569896": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.16974117": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.15424139": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.12256414": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.17055356": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.16962256": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.18173156": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    },
+    "0.16956522": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Quantum mechanics (Q5724991)": {
+    "0.09445972": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.22166604": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    }
+  },
+  "Engineering disciplines (Q5472577)": {
+    "0.08955239": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    },
+    "0.16947175": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.11998792": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    },
+    "0.16867368": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.12322367": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.08015598": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    },
+    "0.10518687": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.12735993": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.21741805": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    },
+    "0.08378747": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.18516876": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Manufacturing (Q6683771)": {
+    "0.08855437": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    }
+  },
+  "Einsteinium (Q1892)": {
+    "0.08818887": {
+      "page": "Albert Einstein",
+      "part": "Beliefs"
+    }
+  },
+  "General Relativity (book) (Q5532148)": {
+    "0.22951998": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    }
+  },
+  "Analysis (Q7013792)": {
+    "0.18009655": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.17304877": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.1108522": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    },
+    "0.16453069": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.10981652": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.12319337": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    }
+  },
+  "General relativity (Q11452)": {
+    "0.15129486": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    }
+  },
+  "Metaphysics (Q6509791)": {
+    "0.14961565": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.1642443": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.09256364": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    }
+  },
+  "Quantum mechanics (Q944)": {
+    "0.13900225": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    }
+  },
+  "Force (Q7434208)": {
+    "0.13843559": {
+      "page": "Albert Einstein",
+      "part": "Criticism"
+    },
+    "0.07895191": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    },
+    "0.10233372": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.15843371": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Italian people (Q3919890)": {
+    "0.28303397": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    },
+    "0.07088871": {
+      "page": "Galileo Galilei",
+      "part": "Death"
+    }
+  },
+  "Mathematicians (Q7217485)": {
+    "0.28303397": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    },
+    "0.12449588": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.17055428": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.16839484": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    }
+  },
+  "Astronomers (Q6562)": {
+    "0.27389445": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    },
+    "0.12449588": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    }
+  },
+  "Italy (Q1410903)": {
+    "0.26500419": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    },
+    "0.07088871": {
+      "page": "Galileo Galilei",
+      "part": "Death"
+    },
+    "0.13553072": {
+      "page": "Enrico Fermi",
+      "part": "Early life"
+    }
+  },
+  "Scientific revolution (Q6973107)": {
+    "0.25589277": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    },
+    "0.20479402": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    }
+  },
+  "Renaissance philosophy (Q8652227)": {
+    "0.24534331": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    },
+    "0.10564284": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.19223728": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    }
+  },
+  "Galileo Galilei (Q7270875)": {
+    "0.23382883": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "Copernican Revolution (Q15318292)": {
+    "0.23382883": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "17th-century scientists (Q8106943)": {
+    "0.23382883": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "Ostilio Ricci (Q926531)": {
+    "0.22326371": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "Vincenzo Gamba (Q7932232)": {
+    "0.2081244": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "17th-century Italian people (Q6263778)": {
+    "0.20583806": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "Roman Catholics (Q7216500)": {
+    "0.19163384": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "Florence (Q7237043)": {
+    "0.18950944": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "Mario Guiducci (Q1796926)": {
+    "0.18266858": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "Tuscany (Q7215063)": {
+    "0.18016944": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    },
+    "0.11017911": {
+      "page": "Galileo Galilei",
+      "part": "Death"
+    },
+    "0.12229544": {
+      "page": "Enrico Fermi",
+      "part": "Early life"
+    }
+  },
+  "Marina Gamba (Q2843250)": {
+    "0.1676764": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "Catholics (Q7327880)": {
+    "0.16062426": {
+      "page": "Galileo Galilei",
+      "part": "__intro__"
+    }
+  },
+  "Astronomy (Q6508)": {
+    "0.20942818": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.12449588": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.17970653": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.16424468": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    }
+  },
+  "Solar System (Q6519933)": {
+    "0.20818166": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    }
+  },
+  "Ancient astronomy (Q8251490)": {
+    "0.19367722": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    }
+  },
+  "Astronomical objects (Q2944728)": {
+    "0.18587934": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.15454958": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    }
+  },
+  "Epistemology (Q7217123)": {
+    "0.18226036": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.14387574": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.07165597": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    }
+  },
+  "Science studies (Q7481103)": {
+    "0.1730938": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.14188203": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.14416058": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.14950177": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.17101166": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.1632832": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    }
+  },
+  "Outer space (Q7446056)": {
+    "0.17027575": {
+      "page": "Galileo Galilei",
+      "part": "Life"
+    },
+    "0.10871294": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    }
+  },
+  "Arcetri (Q2031761)": {
+    "0.24069375": {
+      "page": "Galileo Galilei",
+      "part": "Death"
+    }
+  },
+  "Galileo Galilei (opera) (Q3094742)": {
+    "0.12282256": {
+      "page": "Galileo Galilei",
+      "part": "Death"
+    }
+  },
+  "Country subdivisions (Q7339272)": {
+    "0.10340822": {
+      "page": "Galileo Galilei",
+      "part": "Death"
+    }
+  },
+  "History (Q1457595)": {
+    "0.08683386": {
+      "page": "Galileo Galilei",
+      "part": "Death"
+    },
+    "0.15883098": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    }
+  },
+  "Giordano Bruno (film) (Q1034022)": {
+    "0.19251414": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    }
+  },
+  "Nicolaus (Q1986777)": {
+    "0.15825418": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    }
+  },
+  "Nicolaus Copernicus (Q619)": {
+    "0.1315067": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    }
+  },
+  "Philosophers (Q6997215)": {
+    "0.12449588": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    }
+  },
+  "Mathematics (Q4619)": {
+    "0.12449588": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.1432133": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.19975208": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.21472758": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.19348633": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.2398624": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    },
+    "0.22347712": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.23020481": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    },
+    "0.0871965": {
+      "page": "Emmy Noether",
+      "part": "Further reading"
+    }
+  },
+  "Christians (Q6734240)": {
+    "0.12449588": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    }
+  },
+  "Philosophy (Q1983674)": {
+    "0.12449588": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    }
+  },
+  "Medieval philosophy (Q8617302)": {
+    "0.10564284": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    },
+    "0.19223728": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    }
+  },
+  "Giordano Bruno (crater) (Q1525305)": {
+    "0.09672235": {
+      "page": "Galileo Galilei",
+      "part": "Related pages"
+    }
+  },
+  "Digital technology (Q5330608)": {
+    "0.17089777": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.08307774": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    },
+    "0.11417827": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    },
+    "0.12127532": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Human–computer interaction (Q8527502)": {
+    "0.1472079": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.0966701": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Written communication (Q6898121)": {
+    "0.14310229": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Linkback (Q426160)": {
+    "0.13891445": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    }
+  },
+  "Julian calendar (Q11184)": {
+    "0.13093045": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    }
+  },
+  "Computing (Q5330456)": {
+    "0.12459296": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.15190568": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.1387052": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.16215137": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.17384398": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.10368222": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    },
+    "0.18434307": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23621065": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.10758702": {
+      "page": "Ada Lovelace",
+      "part": "__intro__"
+    },
+    "0.19615853": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    },
+    "0.18233969": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Digital media (Q8064942)": {
+    "0.12303028": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.08307774": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    },
+    "0.11417827": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Calendars (Q4966070)": {
+    "0.12079465": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    }
+  },
+  "Chronology (Q7190896)": {
+    "0.12079465": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    }
+  },
+  "Hypertext (Q6376066)": {
+    "0.11941241": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.0966701": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Cyberspace (Q7215645)": {
+    "0.11941241": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.09110609": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    },
+    "0.11965284": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Writing (Q7014659)": {
+    "0.11941241": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    }
+  },
+  "Human communication (Q5612778)": {
+    "0.11215056": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.08307774": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    },
+    "0.11801228": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    },
+    "0.18368364": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Anthropology (Q7144653)": {
+    "0.10102168": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.1694567": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.07065098": {
+      "page": "Jane Goodall",
+      "part": "Work"
+    },
+    "0.09224186": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "Language (Q1458484)": {
+    "0.10102168": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.17456982": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Computer data (Q6382652)": {
+    "0.10041534": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.15190568": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.1387052": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.16215137": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.17384398": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.12088147": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    },
+    "0.18434307": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23621065": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.17865395": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Notation (Q6970001)": {
+    "0.10041534": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    }
+  },
+  "Rules (Q7094473)": {
+    "0.10017757": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    }
+  },
+  "Social sciences (Q6577596)": {
+    "0.09928209": {
+      "page": "Galileo Galilei",
+      "part": "Notes"
+    },
+    "0.17153309": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.13370885": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    },
+    "0.12600677": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Data management (Q7011992)": {
+    "0.15190568": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.16186169": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.17384398": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.17820071": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23621065": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.17843858": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Information retrieval (Q8548779)": {
+    "0.15190568": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.16186169": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.17384398": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.17820071": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23621065": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.17843858": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Information technology management (Q7216128)": {
+    "0.15190568": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.16186169": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.17384398": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.17820071": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23621065": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.17843858": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Information science (Q6491658)": {
+    "0.15190568": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.16215137": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.17384398": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.09789873": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    },
+    "0.18434307": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23621065": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.17843858": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Data (Q6641340)": {
+    "0.15190568": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.11745784": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.16215137": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.17384398": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.18434307": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23621065": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.17843858": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Artificial intelligence (Q558331)": {
+    "0.14933157": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.11745784": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.15872335": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.17055356": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.18434307": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.17364493": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Conceptual systems (Q7145849)": {
+    "0.14188203": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.14950177": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.08634591": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    },
+    "0.16527182": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.1632832": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.19151301": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Reference works (Q6516857)": {
+    "0.13901078": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.15424139": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.17055356": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.16962256": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.16956522": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Information management (Q9473164)": {
+    "0.13667905": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    }
+  },
+  "Knowledge (Q2945448)": {
+    "0.12338893": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.1606839": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.14037866": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.07778556": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.0863407": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    }
+  },
+  "Archival science (Q8880825)": {
+    "0.12269975": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    }
+  },
+  "Formal sciences (Q7469326)": {
+    "0.12236594": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.19005594": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    },
+    "0.16730697": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.15488309": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    },
+    "0.09661646": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    },
+    "0.17598252": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Metadata (Q6454287)": {
+    "0.12162388": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.16544964": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Information technology (Q7214259)": {
+    "0.12162388": {
+      "page": "Galileo Galilei",
+      "part": "Bibliography"
+    },
+    "0.17066933": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Physical objects (Q6821165)": {
+    "0.17324303": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.13099664": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.10791429": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    }
+  },
+  "Titan (moon) (Q2565)": {
+    "0.14829181": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    }
+  },
+  "Places (Q7481476)": {
+    "0.14153513": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.136339": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    },
+    "0.11316639": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    },
+    "0.07153763": {
+      "page": "Elizabeth Blackburn",
+      "part": "Life"
+    }
+  },
+  "Systems engineering (Q6582844)": {
+    "0.13830392": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    },
+    "0.18516876": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Technology systems (Q7145850)": {
+    "0.13163823": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    }
+  },
+  "Dutch people (Q3919824)": {
+    "0.12475458": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    }
+  },
+  "Dutch Republic (Q7098271)": {
+    "0.12475458": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    }
+  },
+  "Christiaan Huygens (Q24069100)": {
+    "0.12475458": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    }
+  },
+  "Huygens (Q1639450)": {
+    "0.12049513": {
+      "page": "Christiaan Huygens",
+      "part": "__intro__"
+    }
+  },
+  "Isaac Newton (Q935)": {
+    "0.15763564": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    }
+  },
+  "Measurement (Q6498192)": {
+    "0.15231118": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.19456409": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.19387989": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    },
+    "0.09359522": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.16819833": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.11775571": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    }
+  },
+  "British scientists (Q7097016)": {
+    "0.14898708": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.08381978": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.22425817": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    }
+  },
+  "United Kingdom (Q1411125)": {
+    "0.14340615": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.14163873": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.18715769": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.09059834": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.23490967": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.177881": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    },
+    "0.12042483": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    },
+    "0.1083917": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    },
+    "0.10918132": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "Science and technology studies (Q7007255)": {
+    "0.14229742": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.11673904": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.24644864": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.12697428": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    }
+  },
+  "Theoretical philosophy (Q10230765)": {
+    "0.14036873": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.1642443": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    }
+  },
+  "Academia (Q6642779)": {
+    "0.13719365": {
+      "page": "Isaac Newton",
+      "part": "__intro__"
+    },
+    "0.08796186": {
+      "page": "Emmy Noether",
+      "part": "Further reading"
+    },
+    "0.08049778": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    }
+  },
+  "Woolsthorpe Manor (Q3316008)": {
+    "0.23440045": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    }
+  },
+  "Western philosophy (Q5899059)": {
+    "0.18013453": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    }
+  },
+  "Size (Q8749074)": {
+    "0.17599827": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    },
+    "0.3080944": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    }
+  },
+  "Renaissance (Q8651924)": {
+    "0.16740344": {
+      "page": "Isaac Newton",
+      "part": "Life"
+    }
+  },
+  "Calculus (Q149972)": {
+    "0.16861959": {
+      "page": "Isaac Newton",
+      "part": "The discovery of the Law of Gravitation"
+    }
+  },
+  "Old Style and New Style dates (Q1922815)": {
+    "0.1324688": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    }
+  },
+  "British Isles (Q6911560)": {
+    "0.12269121": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.09059834": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.08786159": {
+      "page": "Ada Lovelace",
+      "part": "__intro__"
+    },
+    "0.15000858": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    },
+    "0.16398687": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "Europe (Q4587662)": {
+    "0.0987204": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    }
+  },
+  "Western Europe (Q7453273)": {
+    "0.09790981": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.17913117": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    }
+  },
+  "Hawkins (name) (Q16870600)": {
+    "0.09351882": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    }
+  },
+  "England (Q6501021)": {
+    "0.09171768": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.09617917": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.16940575": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.11648793": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    },
+    "0.07672755": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    },
+    "0.10918132": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "Germanic languages (Q8490990)": {
+    "0.08573707": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    }
+  },
+  "Kingdoms (Q9878462)": {
+    "0.08328708": {
+      "page": "Isaac Newton",
+      "part": "Death"
+    },
+    "0.07753533": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    }
+  },
+  "Non-fiction literature (Q6813522)": {
+    "0.14755947": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.16527182": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.15041193": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    }
+  },
+  "Lexicography (Q8587895)": {
+    "0.14755947": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.16527182": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.15041193": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    }
+  },
+  "Library science (Q7110113)": {
+    "0.14755947": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.16527182": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    }
+  },
+  "Programming paradigms (Q13360530)": {
+    "0.14755947": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.16527182": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    },
+    "0.17598252": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  },
+  "Reference (Q7014563)": {
+    "0.14755947": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    }
+  },
+  "Knowledge representation (Q6378398)": {
+    "0.14755947": {
+      "page": "Isaac Newton",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    }
+  },
+  "Academic institutions (Q5640519)": {
+    "0.18477241": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.19150999": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.10144039": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.13603443": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.12352023": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    }
+  },
+  "Leonhard Euler (Q7604)": {
+    "0.18376474": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.15250762": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Scholars (Q6997821)": {
+    "0.17558806": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.21118854": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.22466226": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    }
+  },
+  "Researchers (Q8655496)": {
+    "0.17558806": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.18271438": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    }
+  },
+  "Educational organizations (Q6244085)": {
+    "0.17304877": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.11596889": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    }
+  },
+  "Civil engineering (Q6135934)": {
+    "0.17119045": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    }
+  },
+  "Continuum mechanics (Q7731439)": {
+    "0.16762262": {
+      "page": "Leonhard Euler",
+      "part": "__intro__"
+    },
+    "0.14001835": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Basel-Stadt (Q7724637)": {
+    "0.19751629": {
+      "page": "Leonhard Euler",
+      "part": "Early years"
+    }
+  },
+  "Johann Bernoulli (Q227897)": {
+    "0.19171858": {
+      "page": "Leonhard Euler",
+      "part": "Early years"
+    }
+  },
+  "Riehen (Q5262)": {
+    "0.15456516": {
+      "page": "Leonhard Euler",
+      "part": "Early years"
+    }
+  },
+  "Cantons (Q7461822)": {
+    "0.1531974": {
+      "page": "Leonhard Euler",
+      "part": "Early years"
+    }
+  },
+  "Swiss architecture (Q7479293)": {
+    "0.1336101": {
+      "page": "Leonhard Euler",
+      "part": "Early years"
+    }
+  },
+  "University of Basel (Q372608)": {
+    "0.13295667": {
+      "page": "Leonhard Euler",
+      "part": "Early years"
+    }
+  },
+  "Basel (Q78)": {
+    "0.11330847": {
+      "page": "Leonhard Euler",
+      "part": "Early years"
+    }
+  },
+  "Cognition (Q6553131)": {
+    "0.17234945": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    },
+    "0.20145325": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.10585406": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    },
+    "0.10187498": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.10229501": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Eulerian path (Q624580)": {
+    "0.14916769": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Discrete mathematics (Q8380263)": {
+    "0.14836617": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Combinatorics (Q7020692)": {
+    "0.14836617": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Euler characteristic (Q852973)": {
+    "0.14342321": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Theoretical computer science (Q7153055)": {
+    "0.13595349": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Predicate logic (Q7470272)": {
+    "0.12989585": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Euler diagram (Q2501020)": {
+    "0.12860918": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Intelligence (Q7214211)": {
+    "0.12372296": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Educational psychology (Q7028950)": {
+    "0.12372296": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Algebra (Q8234869)": {
+    "0.11451221": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    },
+    "0.26486259": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "A priori (Q8218022)": {
+    "0.11023479": {
+      "page": "Leonhard Euler",
+      "part": "Related pages"
+    }
+  },
+  "Christophe Gadbled (Q2966252)": {
+    "0.2213827": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    }
+  },
+  "Pierre-Simon Laplace (Q44481)": {
+    "0.182025": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    }
+  },
+  "French people (Q3919837)": {
+    "0.16839484": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    },
+    "0.10981652": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.07444267": {
+      "page": "Joseph Fourier",
+      "part": "Life"
+    }
+  },
+  "Philosophical methodology (Q7193363)": {
+    "0.16453069": {
+      "page": "Pierre-Simon Laplace",
+      "part": "__intro__"
+    }
+  },
+  "Edwin Hubble (Q43027)": {
+    "0.11308786": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Astronomy"
+    }
+  },
+  "Wikiquote (Q369)": {
+    "0.13545582": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    },
+    "0.10043636": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Communication design (Q9131595)": {
+    "0.08626198": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    }
+  },
+  "Electronic publishing (Q7453015)": {
+    "0.08307774": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    },
+    "0.11417827": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Napoleone (Q240790)": {
+    "0.08195107": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    }
+  },
+  "Mbox (Q285972)": {
+    "0.07933798": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    }
+  },
+  "Mass media (Q1458390)": {
+    "0.07662396": {
+      "page": "Pierre-Simon Laplace",
+      "part": "Quotes"
+    },
+    "0.10674417": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    },
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    },
+    "0.07030265": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Joseph Fourier (Q8772)": {
+    "0.18222927": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    }
+  },
+  "France (Q8249)": {
+    "0.14008482": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.11797382": {
+      "page": "Joseph Fourier",
+      "part": "Life"
+    }
+  },
+  "Yonne (Q7027522)": {
+    "0.11228354": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    }
+  },
+  "Auxerre (Q167600)": {
+    "0.09080491": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    }
+  },
+  "Materials science (Q6464799)": {
+    "0.08944746": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.17897015": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    },
+    "0.23289023": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    },
+    "0.1131406": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    }
+  },
+  "Infobox (Q15515987)": {
+    "0.08166341": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    },
+    "0.07827342": {
+      "page": "Ada Lovelace",
+      "part": "__intro__"
+    }
+  },
+  "Greenhouse effect (Q41560)": {
+    "0.07750091": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    }
+  },
+  "Fourier transform (Q6520159)": {
+    "0.07617746": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    }
+  },
+  "Fourier series (Q179467)": {
+    "0.07104283": {
+      "page": "Joseph Fourier",
+      "part": "__intro__"
+    }
+  },
+  "Gaspard Monge (Q206832)": {
+    "0.10168676": {
+      "page": "Joseph Fourier",
+      "part": "Life"
+    }
+  },
+  "18th-century French people (Q6243377)": {
+    "0.07446446": {
+      "page": "Joseph Fourier",
+      "part": "Life"
+    }
+  },
+  "French society (Q7284969)": {
+    "0.07446446": {
+      "page": "Joseph Fourier",
+      "part": "Life"
+    }
+  },
+  "Republics (Q7158214)": {
+    "0.07331319": {
+      "page": "Joseph Fourier",
+      "part": "Life"
+    },
+    "0.0738307": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.08986792": {
+      "page": "Jane Goodall",
+      "part": "Her Life"
+    }
+  },
+  "French culture (Q7151887)": {
+    "0.07018626": {
+      "page": "Joseph Fourier",
+      "part": "Life"
+    }
+  },
+  "Scotland (Q7311958)": {
+    "0.13876702": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    }
+  },
+  "Maxwell (unit) (Q608697)": {
+    "0.10823634": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    }
+  },
+  "James Clerk Maxwell (Q9095)": {
+    "0.09635644": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    }
+  },
+  "British monarchy (Q8896355)": {
+    "0.08626579": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    }
+  },
+  "Royal burghs (Q8685438)": {
+    "0.08328928": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    }
+  },
+  "Russell Group (Q7255985)": {
+    "0.08079234": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.22425817": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    }
+  },
+  "Electromagnetism (Q8411330)": {
+    "0.07895191": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    },
+    "0.15341271": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.22178796": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Magnetism (Q6983088)": {
+    "0.07895191": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    },
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    },
+    "0.10233372": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.15843371": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Cavendish Professor of Physics (Q5055024)": {
+    "0.07545939": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    }
+  },
+  "Autonomous regions (Q8280447)": {
+    "0.07005424": {
+      "page": "James Clerk Maxwell",
+      "part": "__intro__"
+    }
+  },
+  "Acceleration (Q8219476)": {
+    "0.32815994": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    }
+  },
+  "Dynamics (mechanics) (Q7138876)": {
+    "0.31846175": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    }
+  },
+  "Length (Q6684529)": {
+    "0.3080944": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    }
+  },
+  "Kinematics (Q30857580)": {
+    "0.3080944": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    }
+  },
+  "Rates (Q21993543)": {
+    "0.3080944": {
+      "page": "James Clerk Maxwell",
+      "part": "Publications"
+    }
+  },
+  "Nikola Tesla (Q9036)": {
+    "0.15323699": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.22903664": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    },
+    "0.15907755": {
+      "page": "Nikola Tesla",
+      "part": "Gallery"
+    }
+  },
+  "Croatia (Q5626618)": {
+    "0.13445341": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    }
+  },
+  "Electrical engineering (Q5470782)": {
+    "0.13315113": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.25477945": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    },
+    "0.14936013": {
+      "page": "Nikola Tesla",
+      "part": "Gallery"
+    }
+  },
+  "Nikola (Q15501913)": {
+    "0.12685278": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.17046803": {
+      "page": "Nikola Tesla",
+      "part": "Gallery"
+    }
+  },
+  "Electricity (Q7215676)": {
+    "0.12358391": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.23306498": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Power (physics) (Q7852133)": {
+    "0.10669965": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.22444589": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Electric power (Q10106042)": {
+    "0.10669965": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.22444589": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Coronary thrombosis (Q707774)": {
+    "0.09828847": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    }
+  },
+  "Croatian people (Q7031578)": {
+    "0.09216915": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.20786181": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Tesla (unit) (Q163343)": {
+    "0.08948641": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    }
+  },
+  "Inventions (Q7013053)": {
+    "0.08138501": {
+      "page": "Nikola Tesla",
+      "part": "__intro__"
+    },
+    "0.23069067": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "American inventions (Q6900308)": {
+    "0.21703089": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Serbian people (Q7061916)": {
+    "0.19734035": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Wardenclyffe Tower (Q2164598)": {
+    "0.1789208": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    },
+    "0.21088444": {
+      "page": "Nikola Tesla",
+      "part": "Gallery"
+    }
+  },
+  "Infrastructure (Q7215300)": {
+    "0.16292771": {
+      "page": "Nikola Tesla",
+      "part": "Biography"
+    }
+  },
+  "Bitmap (Q1194708)": {
+    "0.07811839": {
+      "page": "Nikola Tesla",
+      "part": "Gallery"
+    }
+  },
+  "Tesla coil (Q622424)": {
+    "0.2640358": {
+      "page": "Nikola Tesla",
+      "part": "Related pages"
+    }
+  },
+  "Telecommunications (Q7215330)": {
+    "0.16730697": {
+      "page": "Nikola Tesla",
+      "part": "Other websites"
+    },
+    "0.15041193": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    }
+  },
+  "20th century (Q5746824)": {
+    "0.21118854": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    },
+    "0.19413213": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.11454495": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    }
+  },
+  "20th-century people (Q6614592)": {
+    "0.21118854": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    }
+  },
+  "Physicists (Q7217521)": {
+    "0.2065183": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.2339001": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.18282569": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.07732878": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.11271816": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.11596889": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    }
+  },
+  "20th-century scientists (Q8206112)": {
+    "0.18875025": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    }
+  },
+  "Science and technology awards (Q8716885)": {
+    "0.18820609": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.24376252": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.19150999": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.10144039": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.13603443": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    },
+    "0.24644864": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    }
+  },
+  "Alfred Nobel (Q9748610)": {
+    "0.18820609": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.19150999": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.10144039": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.13603443": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    }
+  },
+  "Nobel Prize (Q7047623)": {
+    "0.18820609": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.19150999": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.10144039": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.13603443": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    }
+  },
+  "National academies (Q9703960)": {
+    "0.18820609": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.19150999": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    },
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.10144039": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    },
+    "0.13603443": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    },
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.11974305": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    },
+    "0.07303485": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "Award winners (Q7020051)": {
+    "0.17007936": {
+      "page": "Max Planck",
+      "part": "__intro__"
+    },
+    "0.24395649": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.19766468": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.11596889": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    },
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    }
+  },
+  "Max Planck (Q9021)": {
+    "0.256916": {
+      "page": "Max Planck",
+      "part": "Life"
+    },
+    "0.07619598": {
+      "page": "Erwin Schrödinger",
+      "part": "Life"
+    }
+  },
+  "Schleswig-Holstein (Q7146093)": {
+    "0.16374836": {
+      "page": "Max Planck",
+      "part": "Life"
+    }
+  },
+  "German culture (Q7282276)": {
+    "0.15496946": {
+      "page": "Max Planck",
+      "part": "Life"
+    }
+  },
+  "Kiel (Q7273458)": {
+    "0.14203519": {
+      "page": "Max Planck",
+      "part": "Life"
+    }
+  },
+  "Holstein (Q8520951)": {
+    "0.14203519": {
+      "page": "Max Planck",
+      "part": "Life"
+    }
+  },
+  "Ludwig Maximilian University of Munich (Q55044)": {
+    "0.12810674": {
+      "page": "Max Planck",
+      "part": "Life"
+    }
+  },
+  "Prussia (Q8929856)": {
+    "0.11946363": {
+      "page": "Max Planck",
+      "part": "Life"
+    },
+    "0.20057506": {
+      "page": "Max Born",
+      "part": "__intro__"
+    }
+  },
+  "University of Kiel (Q156737)": {
+    "0.07988563": {
+      "page": "Max Planck",
+      "part": "Life"
+    }
+  },
+  "Kiel (name) (Q11687171)": {
+    "0.07553284": {
+      "page": "Max Planck",
+      "part": "Life"
+    }
+  },
+  "Abstract algebra (Q6874380)": {
+    "0.23915818": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Mathematical objects (Q7152477)": {
+    "0.18618843": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Ring theory (Q7036089)": {
+    "0.17759491": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Mathematical structures (Q7215294)": {
+    "0.17321197": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Form (Q6643072)": {
+    "0.17272535": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Emmy Noether (Q7099)": {
+    "0.16854805": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    },
+    "0.08429056": {
+      "page": "Emmy Noether",
+      "part": "Further reading"
+    }
+  },
+  "Ring (mathematics) (Q161172)": {
+    "0.14587246": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Functions and mappings (Q7139377)": {
+    "0.1427337": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Category theory (Q7451918)": {
+    "0.1427337": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Metalogic (Q9883138)": {
+    "0.13596434": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Commutative algebra (Q727659)": {
+    "0.1297539": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Algebraic structures (Q8234762)": {
+    "0.1257185": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Universal algebra (Q8880669)": {
+    "0.1257185": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Model theory (Q7451685)": {
+    "0.1257185": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "Mathematical logic (Q7020589)": {
+    "0.1257185": {
+      "page": "Emmy Noether",
+      "part": "__intro__"
+    }
+  },
+  "American Mathematical Society (Q465654)": {
+    "0.08103269": {
+      "page": "Emmy Noether",
+      "part": "Further reading"
+    }
+  },
+  "Project management (Q7232613)": {
+    "0.11386935": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Text (Q9979290)": {
+    "0.10674417": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Media technology (Q7471742)": {
+    "0.10674417": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Applied linguistics (Q6448947)": {
+    "0.10487952": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "World Wide Web (Q4897839)": {
+    "0.0966701": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    }
+  },
+  "Cultural globalization (Q7068914)": {
+    "0.0966701": {
+      "page": "Emmy Noether",
+      "part": "Related pages"
+    },
+    "0.10208388": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    }
+  },
+  "Nationality (Q6963704)": {
+    "0.21584307": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.18884098": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    }
+  },
+  "Max Born (Q58978)": {
+    "0.20633617": {
+      "page": "Max Born",
+      "part": "__intro__"
+    }
+  },
+  "Academic organizations (Q7882720)": {
+    "0.20508883": {
+      "page": "Max Born",
+      "part": "__intro__"
+    },
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    }
+  },
+  "Aage Bohr (Q103854)": {
+    "0.23571646": {
+      "page": "Niels Bohr",
+      "part": "__intro__"
+    }
+  },
+  "Denmark (Q4367478)": {
+    "0.19452145": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    }
+  },
+  "Learned societies (Q8908660)": {
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.12728091": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    }
+  },
+  "Nobel laureates (Q6635159)": {
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.11596889": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.1897106": {
+      "page": "Abdus Salam",
+      "part": "Other websites"
+    }
+  },
+  "Academies (Q9699184)": {
+    "0.19371767": {
+      "page": "Niels Bohr",
+      "part": "Biography"
+    },
+    "0.19227608": {
+      "page": "Louis de Broglie",
+      "part": "__intro__"
+    },
+    "0.11596889": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    },
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    }
+  },
+  "Nobel Prize (Q7191)": {
+    "0.10717842": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.07304442": {
+      "page": "Erwin Schrödinger",
+      "part": "Life"
+    },
+    "0.0933926": {
+      "page": "Dorothy Hodgkin",
+      "part": "Career"
+    }
+  },
+  "Nobel Prize in Physics (Q38104)": {
+    "0.10416442": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    }
+  },
+  "Transclusion (Q1207412)": {
+    "0.09490879": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.07750141": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Social groups (Q7232559)": {
+    "0.07213646": {
+      "page": "Erwin Schrödinger",
+      "part": "__intro__"
+    },
+    "0.21537136": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    }
+  },
+  "Towns (Q6213969)": {
+    "0.08540164": {
+      "page": "Erwin Schrödinger",
+      "part": "Life"
+    },
+    "0.07702187": {
+      "page": "Enrico Fermi",
+      "part": "Early life"
+    }
+  },
+  "Students (Q7044373)": {
+    "0.08540164": {
+      "page": "Erwin Schrödinger",
+      "part": "Life"
+    }
+  },
+  "Town (Q7447302)": {
+    "0.08540164": {
+      "page": "Erwin Schrödinger",
+      "part": "Life"
+    }
+  },
+  "Youth culture (Q6972003)": {
+    "0.08540164": {
+      "page": "Erwin Schrödinger",
+      "part": "Life"
+    }
+  },
+  "Molecular biology (Q7202)": {
+    "0.12779374": {
+      "page": "Erwin Schrödinger",
+      "part": "Important work"
+    }
+  },
+  "Molecular Biology (journal) (Q4300349)": {
+    "0.11991635": {
+      "page": "Erwin Schrödinger",
+      "part": "Important work"
+    }
+  },
+  "Biophysics (Q7100)": {
+    "0.11193161": {
+      "page": "Erwin Schrödinger",
+      "part": "Important work"
+    },
+    "0.075753": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    }
+  },
+  "Biology (Q1457402)": {
+    "0.09354982": {
+      "page": "Erwin Schrödinger",
+      "part": "Important work"
+    },
+    "0.15874582": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.19061978": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.22172178": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.24644864": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.14038789": {
+      "page": "Elizabeth Blackburn",
+      "part": "Work"
+    },
+    "0.17915459": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.16839157": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    },
+    "0.16582643": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.12037693": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    },
+    "0.07948527": {
+      "page": "Dorothy Hodgkin",
+      "part": "Career"
+    },
+    "0.0923723": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    },
+    "0.15304548": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    },
+    "0.16282776": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Life sciences (Q10185120)": {
+    "0.09354982": {
+      "page": "Erwin Schrödinger",
+      "part": "Important work"
+    },
+    "0.1567529": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.1801941": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.18570244": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.11205133": {
+      "page": "Elizabeth Blackburn",
+      "part": "Work"
+    },
+    "0.15304548": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    },
+    "0.16282776": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Organisms (Q5626060)": {
+    "0.09354982": {
+      "page": "Erwin Schrödinger",
+      "part": "Important work"
+    },
+    "0.1567529": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.16035": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.18570244": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.11205133": {
+      "page": "Elizabeth Blackburn",
+      "part": "Work"
+    },
+    "0.07137098": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    },
+    "0.15304548": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    },
+    "0.14281984": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Mechanics (Q41217)": {
+    "0.07240839": {
+      "page": "Erwin Schrödinger",
+      "part": "Important work"
+    }
+  },
+  "Cat (Q146)": {
+    "0.07889328": {
+      "page": "Erwin Schrödinger",
+      "part": "Related pages"
+    }
+  },
+  "Satyendra Nath Bose (Q45789)": {
+    "0.23338616": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Physical chemistry (Q7214051)": {
+    "0.19001071": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Bose gas (Q1143503)": {
+    "0.15382338": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Bengal (Q6582587)": {
+    "0.14909423": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "South Asia (Q7214980)": {
+    "0.14909423": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Thermodynamics (Q7213738)": {
+    "0.14001835": {
+      "page": "Satyendra Nath Bose",
+      "part": "__intro__"
+    }
+  },
+  "Enrico Fermi (Q8753)": {
+    "0.14815657": {
+      "page": "Enrico Fermi",
+      "part": "__intro__"
+    }
+  },
+  "University of Florence (Q820887)": {
+    "0.11218482": {
+      "page": "Enrico Fermi",
+      "part": "Early life"
+    }
+  },
+  "University of Pisa (Q645663)": {
+    "0.10467626": {
+      "page": "Enrico Fermi",
+      "part": "Early life"
+    }
+  },
+  "Pisa (Q13375)": {
+    "0.1043954": {
+      "page": "Enrico Fermi",
+      "part": "Early life"
+    }
+  },
+  "Italian architecture (Q7583588)": {
+    "0.10073225": {
+      "page": "Enrico Fermi",
+      "part": "Early life"
+    }
+  },
+  "Universities and colleges (Q5741962)": {
+    "0.0860652": {
+      "page": "Enrico Fermi",
+      "part": "Early life"
+    },
+    "0.09262893": {
+      "page": "Elizabeth Blackburn",
+      "part": "Life"
+    }
+  },
+  "Wikipedia categories named after buildings and structures (Q7480121)": {
+    "0.0860652": {
+      "page": "Enrico Fermi",
+      "part": "Early life"
+    },
+    "0.15336786": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    }
+  },
+  "Particle physics (Q7139413)": {
+    "0.25619823": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    }
+  },
+  "Condensed matter physics (Q7139566)": {
+    "0.25619823": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    }
+  },
+  "Nuclear physics (Q7139401)": {
+    "0.21189066": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    },
+    "0.08245409": {
+      "page": "Shirley Ann Jackson",
+      "part": "__intro__"
+    }
+  },
+  "Condensed matter (Q7801846)": {
+    "0.2005473": {
+      "page": "Enrico Fermi",
+      "part": "Scientist in Italy"
+    },
+    "0.1131406": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    }
+  },
+  "Abdus Salam (Q28189)": {
+    "0.19124576": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    }
+  },
+  "Abdus Salam (name) (Q4666312)": {
+    "0.1504323": {
+      "page": "Abdus Salam",
+      "part": "__intro__"
+    }
+  },
+  "Natural Selection (manuscript) (Q6980616)": {
+    "0.16718552": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.15424234": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    }
+  },
+  "Biological evolution (Q6966040)": {
+    "0.1567529": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.15558877": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.22046575": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    }
+  },
+  "Evolutionary biology (Q6719808)": {
+    "0.1567529": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.16913446": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.22046575": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    }
+  },
+  "Evolution (Q7153707)": {
+    "0.12880249": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    }
+  },
+  "Shrewsbury (Q201970)": {
+    "0.1149296": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    }
+  },
+  "Charles Darwin (Q1035)": {
+    "0.10930448": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    }
+  },
+  "Earth sciences (Q1457551)": {
+    "0.10706911": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.17407122": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.14383453": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Phenomena (Q8799829)": {
+    "0.10106164": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.11761831": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Environmental philosophy (Q15325002)": {
+    "0.0985611": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    }
+  },
+  "Natural environment (Q8419352)": {
+    "0.09677444": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    },
+    "0.17915459": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.13093023": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Shropshire (Q8742950)": {
+    "0.09617917": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    }
+  },
+  "West Midlands (region) (Q7463005)": {
+    "0.09617917": {
+      "page": "Charles Darwin",
+      "part": "__intro__"
+    }
+  },
+  "The Voyage of the Beagle (Q1768515)": {
+    "0.13868925": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "Geography (Q1457673)": {
+    "0.12862075": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "19th century (Q5849653)": {
+    "0.10975799": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    },
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    },
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    }
+  },
+  "Landforms (Q6582734)": {
+    "0.09921516": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "Continents (Q2945667)": {
+    "0.09341968": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "Port cities and towns (Q6140606)": {
+    "0.09090697": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "Hobart (Q40191)": {
+    "0.09056005": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    },
+    "0.09416491": {
+      "page": "Elizabeth Blackburn",
+      "part": "Life"
+    }
+  },
+  "Supercontinents (Q7086541)": {
+    "0.08845637": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "Fluvial landforms (Q6965877)": {
+    "0.08839504": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    },
+    "0.10079926": {
+      "page": "Elizabeth Blackburn",
+      "part": "Life"
+    }
+  },
+  "HMS Beagle (Q35926)": {
+    "0.08640514": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "English language (Q7923975)": {
+    "0.0852274": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    },
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Territories (Q6841554)": {
+    "0.08069703": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "Mockingbird (Q720541)": {
+    "0.07851458": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "Political geography (Q7143308)": {
+    "0.07810856": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "Populated coastal places (Q6132302)": {
+    "0.07679659": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    }
+  },
+  "Human geography (Q6576501)": {
+    "0.07559316": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    },
+    "0.07475386": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    }
+  },
+  "English literature (Q3919946)": {
+    "0.07314514": {
+      "page": "Charles Darwin",
+      "part": "Voyage of the HMS Beagle"
+    },
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Animals (Q7157802)": {
+    "0.19306714": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.1200104": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Biological processes (Q6226217)": {
+    "0.16838615": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.09845439": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Euthenics (Q14951434)": {
+    "0.1679368": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.10782312": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    },
+    "0.1051906": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Struggle for existence (Q15093651)": {
+    "0.16478132": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    }
+  },
+  "Biological systems (Q7145637)": {
+    "0.15997324": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    }
+  },
+  "Systems biology (Q7217019)": {
+    "0.15997324": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    }
+  },
+  "Biological interactions (Q8300766)": {
+    "0.15650342": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    }
+  },
+  "Reproduction (Q7014346)": {
+    "0.15650342": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    }
+  },
+  "Zoology (Q6544657)": {
+    "0.1539805": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    },
+    "0.17934988": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Action (philosophy) (Q25233764)": {
+    "0.15273708": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    }
+  },
+  "Change (Q26262417)": {
+    "0.14696774": {
+      "page": "Charles Darwin",
+      "part": "Evolution"
+    }
+  },
+  "Creative works (Q17537629)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Manufactured goods (Q7158693)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Arts (Q4104783)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Modern history (Q6115583)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Centuries (Q7022211)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "British literature (Q6425985)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Non-fiction books (Q5659271)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    },
+    "0.15041193": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    }
+  },
+  "British books (Q7314451)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Literature (Q8259)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Science books (Q13226090)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Documents (Q5461105)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "2nd millennium (Q7022537)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "English-language media (Q6893464)": {
+    "0.32578667": {
+      "page": "Charles Darwin",
+      "part": "Other works"
+    }
+  },
+  "Darwinism (book) (Q5226079)": {
+    "0.2894465": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    }
+  },
+  "British awards (Q6586747)": {
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.11824623": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    },
+    "0.07961123": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "British writers (Q5636453)": {
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.22425817": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    }
+  },
+  "British society (Q7141386)": {
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    },
+    "0.16940575": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.16244443": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    },
+    "0.10918132": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "19th-century people (Q6614639)": {
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    }
+  },
+  "Royal Society (Q6509239)": {
+    "0.22141269": {
+      "page": "Charles Darwin",
+      "part": "Related pages"
+    }
+  },
+  "Health sciences (Q6154313)": {
+    "0.24644864": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.12615039": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    }
+  },
+  "Medicine (Q9554255)": {
+    "0.24644864": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.11965577": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Lasker Award (Q10053784)": {
+    "0.18938434": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    }
+  },
+  "Orders, decorations, and medals (Q6169662)": {
+    "0.17456294": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.13705912": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "Louisa Gross Horwitz Prize (Q899039)": {
+    "0.17035292": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    }
+  },
+  "Health care (Q4095844)": {
+    "0.17013184": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    },
+    "0.09098541": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Albert Lasker Award for Basic Medical Research (Q999734)": {
+    "0.16555451": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    }
+  },
+  "Elizabeth Blackburn (Q26321)": {
+    "0.15242103": {
+      "page": "Elizabeth Blackburn",
+      "part": "__intro__"
+    }
+  },
+  "Telomere (Q185057)": {
+    "0.25756454": {
+      "page": "Elizabeth Blackburn",
+      "part": "Work"
+    }
+  },
+  "Chromosome (Q37748)": {
+    "0.08500968": {
+      "page": "Elizabeth Blackburn",
+      "part": "Work"
+    }
+  },
+  "Blackburn (Q188313)": {
+    "0.0729291": {
+      "page": "Elizabeth Blackburn",
+      "part": "Work"
+    },
+    "0.0804842": {
+      "page": "Elizabeth Blackburn",
+      "part": "Achievements"
+    }
+  },
+  "Launceston, Tasmania (Q339527)": {
+    "0.12039882": {
+      "page": "Elizabeth Blackburn",
+      "part": "Life"
+    }
+  },
+  "Tasmania (Q6445761)": {
+    "0.10079926": {
+      "page": "Elizabeth Blackburn",
+      "part": "Life"
+    }
+  },
+  "Australia (Q1411322)": {
+    "0.08981844": {
+      "page": "Elizabeth Blackburn",
+      "part": "Life"
+    }
+  },
+  "University of California, San Francisco (Q1061104)": {
+    "0.08532099": {
+      "page": "Elizabeth Blackburn",
+      "part": "Life"
+    },
+    "0.09349076": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    },
+    "0.12585518": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    }
+  },
+  "Lorna (Q15725008)": {
+    "0.10123566": {
+      "page": "Lorna Casselton",
+      "part": "__intro__"
+    }
+  },
+  "Virtual International Authority File (Q54919)": {
+    "0.17524087": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    }
+  },
+  "Knowledge engineering (Q7469411)": {
+    "0.15041193": {
+      "page": "Lorna Casselton",
+      "part": "Other websites"
+    },
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    }
+  },
+  "Environmental science (Q9890029)": {
+    "0.19663349": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.16250687": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Systems ecology (Q7045577)": {
+    "0.19663349": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.16250687": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Ecology (Q1970530)": {
+    "0.19663349": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.16250687": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Decades (Q2945249)": {
+    "0.19413213": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    }
+  },
+  "Politics (Q4103183)": {
+    "0.18929775": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    }
+  },
+  "Environmental studies (Q8420091)": {
+    "0.17361764": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.13093023": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Environmental technology (Q6133703)": {
+    "0.17361764": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    }
+  },
+  "Social issues (Q7090668)": {
+    "0.17361764": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.13093023": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Biogeochemistry (Q8300474)": {
+    "0.17361764": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    }
+  },
+  "Conservation (Q7014499)": {
+    "0.1732904": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.13405067": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Environmental conservation (Q6912358)": {
+    "0.1732904": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    }
+  },
+  "Sustainability (Q6698997)": {
+    "0.17307105": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.13093023": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Law (Q4026563)": {
+    "0.17074326": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    }
+  },
+  "Environmental social science (Q8420080)": {
+    "0.16820703": {
+      "page": "Rachel Carson",
+      "part": "__intro__"
+    },
+    "0.13405067": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Rachel Carson (Q100948)": {
+    "0.1886206": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Natural resource management (Q15729156)": {
+    "0.13405067": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Global issues (Q8492877)": {
+    "0.13405067": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Environmental ethics (Q8419841)": {
+    "0.13405067": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Habitat (Q7168694)": {
+    "0.13405067": {
+      "page": "Rachel Carson",
+      "part": "Life and work"
+    }
+  },
+  "Rosalind Franklin (Q7474)": {
+    "0.22829093": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    }
+  },
+  "English culture (Q7151900)": {
+    "0.19017661": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    },
+    "0.15000858": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    },
+    "0.16398687": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "King's College London (Q8574059)": {
+    "0.1867701": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    }
+  },
+  "English society (Q7141328)": {
+    "0.18005725": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    }
+  },
+  "English people (Q6489138)": {
+    "0.16940575": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    }
+  },
+  "Maurice Wilkins (Q184659)": {
+    "0.16746211": {
+      "page": "Rosalind Franklin",
+      "part": "__intro__"
+    }
+  },
+  "Jane Goodall (Q184746)": {
+    "0.21898519": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Jane Goodall Institute (Q958460)": {
+    "0.19169086": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Primatology (Q7456346)": {
+    "0.16244443": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Primatologists (Q8479886)": {
+    "0.16244443": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Activism (Q7014667)": {
+    "0.16244443": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Activists (Q7062576)": {
+    "0.16244443": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Mammalogists (Q6275184)": {
+    "0.16244443": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Zoologists (Q7067154)": {
+    "0.16244443": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Intergovernmental organizations (Q7164685)": {
+    "0.13622176": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "International relations (Q7012308)": {
+    "0.13001892": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "United Nations Messengers of Peace (Q939566)": {
+    "0.12435992": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Ethology (Q7138885)": {
+    "0.1200104": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Mammaliaformes (Q8603928)": {
+    "0.11955926": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Synapsids (Q8799422)": {
+    "0.11955926": {
+      "page": "Jane Goodall",
+      "part": "__intro__"
+    }
+  },
+  "Gombe Stream National Park (Q856665)": {
+    "0.11137012": {
+      "page": "Jane Goodall",
+      "part": "Her Life"
+    }
+  },
+  "Louis Leakey (Q14837)": {
+    "0.1002004": {
+      "page": "Jane Goodall",
+      "part": "Her Life"
+    }
+  },
+  "Kasakela Chimpanzee Community (Q6373973)": {
+    "0.30536917": {
+      "page": "Jane Goodall",
+      "part": "Work"
+    }
+  },
+  "Apes (Q6697925)": {
+    "0.16297776": {
+      "page": "Jane Goodall",
+      "part": "Work"
+    }
+  },
+  "Primates (Q6698087)": {
+    "0.16297776": {
+      "page": "Jane Goodall",
+      "part": "Work"
+    }
+  },
+  "Catarrhini (Q8347226)": {
+    "0.16297776": {
+      "page": "Jane Goodall",
+      "part": "Work"
+    }
+  },
+  "Human evolution (Q8527125)": {
+    "0.16076198": {
+      "page": "Jane Goodall",
+      "part": "Work"
+    }
+  },
+  "Pliocene (Q7344876)": {
+    "0.16076198": {
+      "page": "Jane Goodall",
+      "part": "Work"
+    }
+  },
+  "Pleistocene (Q7345012)": {
+    "0.16076198": {
+      "page": "Jane Goodall",
+      "part": "Work"
+    }
+  },
+  "Chimpanzee (Q80174)": {
+    "0.12715246": {
+      "page": "Jane Goodall",
+      "part": "Work"
+    }
+  },
+  "Dorothy Hodgkin (Q7487)": {
+    "0.1627194": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    }
+  },
+  "Crystallography (Q7464146)": {
+    "0.1131406": {
+      "page": "Dorothy Hodgkin",
+      "part": "__intro__"
+    }
+  },
+  "Crystallography (Q160398)": {
+    "0.07843579": {
+      "page": "Dorothy Hodgkin",
+      "part": "Career"
+    }
+  },
+  "Penicillin (Q12190)": {
+    "0.07049729": {
+      "page": "Dorothy Hodgkin",
+      "part": "Career"
+    }
+  },
+  "Insulin (Q21163221)": {
+    "0.07048985": {
+      "page": "Dorothy Hodgkin",
+      "part": "Career"
+    }
+  },
+  "Copley Medal (Q28003)": {
+    "0.1175888": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "Order of Merit (Egypt) (Q3885163)": {
+    "0.10253102": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "Establishments (Q6951650)": {
+    "0.09195433": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "Order of Merit (Lebanon) (Q3885165)": {
+    "0.0856327": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "Order of Merit (Cameroon) (Q3885179)": {
+    "0.08191258": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "Order of Merit (Ukraine) (Q431230)": {
+    "0.07588007": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "Margaret Thatcher (Q7416)": {
+    "0.07018327": {
+      "page": "Dorothy Hodgkin",
+      "part": "Honors"
+    }
+  },
+  "Lenin Peace Prize (Q308907)": {
+    "0.11674922": {
+      "page": "Dorothy Hodgkin",
+      "part": "Controversies"
+    }
+  },
+  "Shirley Ann Jackson (Q3482342)": {
+    "0.1239781": {
+      "page": "Shirley Ann Jackson",
+      "part": "__intro__"
+    }
+  },
+  "Nuclear Physics (journal) (Q1134929)": {
+    "0.08350369": {
+      "page": "Shirley Ann Jackson",
+      "part": "__intro__"
+    }
+  },
+  "Jackson (name) (Q2732758)": {
+    "0.0834252": {
+      "page": "Shirley Ann Jackson",
+      "part": "__intro__"
+    }
+  },
+  "Vannevar Bush Award (Q3295036)": {
+    "0.07561741": {
+      "page": "Shirley Ann Jackson",
+      "part": "__intro__"
+    }
+  },
+  "Shirley (name) (Q13872259)": {
+    "0.07525146": {
+      "page": "Shirley Ann Jackson",
+      "part": "__intro__"
+    }
+  },
+  "Cynthia Kenyon (Q437333)": {
+    "0.17070866": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    }
+  },
+  "Caenorhabditis elegans (Q91703)": {
+    "0.10770469": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    }
+  },
+  "Caenorhabditis (Q1904768)": {
+    "0.09713097": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    }
+  },
+  "Research (Q7216204)": {
+    "0.09238209": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    }
+  },
+  "Biologists (Q8300830)": {
+    "0.0923723": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    }
+  },
+  "Kenyon (Q421649)": {
+    "0.08759549": {
+      "page": "Cynthia Kenyon",
+      "part": "__intro__"
+    },
+    "0.11976978": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    },
+    "0.09847709": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Biotechnology (Q7214254)": {
+    "0.12779447": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    },
+    "0.09845439": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Cambridge, Massachusetts (Q49111)": {
+    "0.11607328": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    }
+  },
+  "California (Q6808842)": {
+    "0.11304323": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    }
+  },
+  "Sydney Brenner (Q234463)": {
+    "0.11108384": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    }
+  },
+  "Technology (Q4884546)": {
+    "0.10457177": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    },
+    "0.17819341": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Calico (company) (Q14932155)": {
+    "0.10219066": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    }
+  },
+  "Molecular biology (Q7164711)": {
+    "0.0994157": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    },
+    "0.09845439": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Medical research (Q8616748)": {
+    "0.08928728": {
+      "page": "Cynthia Kenyon",
+      "part": "Career"
+    },
+    "0.11533645": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Calorie restriction (Q1332886)": {
+    "0.12226194": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Health (Q7486603)": {
+    "0.11965577": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    },
+    "0.1051906": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    },
+    "0.12316051": {
+      "page": "Ada Lovelace",
+      "part": "Later life"
+    }
+  },
+  "Hox gene (Q253149)": {
+    "0.11739129": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Public health (Q8790871)": {
+    "0.10782312": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Emerging technologies (Q6374125)": {
+    "0.1035038": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Demography (Q7164495)": {
+    "0.09631343": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    },
+    "0.1048265": {
+      "page": "Ada Lovelace",
+      "part": "Later life"
+    }
+  },
+  "Population (Q6174221)": {
+    "0.09631343": {
+      "page": "Cynthia Kenyon",
+      "part": "Research"
+    }
+  },
+  "Academy of sciences (Q414147)": {
+    "0.08154058": {
+      "page": "Cynthia Kenyon",
+      "part": "Honors"
+    }
+  },
+  "National Academy of Sciences (Q270794)": {
+    "0.07116173": {
+      "page": "Cynthia Kenyon",
+      "part": "Honors"
+    }
+  },
+  "Food and drink (Q5645580)": {
+    "0.1051906": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Nutrition (Q6294036)": {
+    "0.1051906": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Psychology (Q9545033)": {
+    "0.09385328": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Natural resources (Q8942557)": {
+    "0.09178261": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Methuselah (Q156290)": {
+    "0.08848294": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Foods (Q5611149)": {
+    "0.07973118": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Innovation (Q7217425)": {
+    "0.07919297": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "South Beach Diet (Q1570647)": {
+    "0.07219818": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Atkins diet (Q756030)": {
+    "0.07031133": {
+      "page": "Cynthia Kenyon",
+      "part": "Personal diet"
+    }
+  },
+  "Senescence (Q2070979)": {
+    "0.25213277": {
+      "page": "Cynthia Kenyon",
+      "part": "Related pages"
+    }
+  },
+  "Reasoning (Q7214939)": {
+    "0.23482637": {
+      "page": "Cynthia Kenyon",
+      "part": "Other websites"
+    }
+  },
+  "Ada Lovelace (Q7259)": {
+    "0.12284616": {
+      "page": "Ada Lovelace",
+      "part": "__intro__"
+    }
+  },
+  "Ada (name) (Q346047)": {
+    "0.09063844": {
+      "page": "Ada Lovelace",
+      "part": "__intro__"
+    },
+    "0.12281059": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    },
+    "0.084378": {
+      "page": "Ada Lovelace",
+      "part": "Recognition"
+    }
+  },
+  "Computers (Q6061304)": {
+    "0.17516237": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Electronic engineering (Q7153752)": {
+    "0.17516237": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Computer engineering (Q1343123)": {
+    "0.17516237": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Analytical Engine (Q485257)": {
+    "0.17167749": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    },
+    "0.08393541": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "Charles Babbage (Q46633)": {
+    "0.16726142": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    },
+    "0.08359694": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "Office equipment (Q5636975)": {
+    "0.16161527": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Computer science (Q14566512)": {
+    "0.16014325": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Programmer (Q5482740)": {
+    "0.13749616": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Computer program (Q40056)": {
+    "0.12498084": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Information Age (Q7063231)": {
+    "0.12127532": {
+      "page": "Ada Lovelace",
+      "part": "Achievements"
+    }
+  },
+  "Lord Byron (Q5679)": {
+    "0.1600116": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "Lord Byron (film) (Q6679004)": {
+    "0.12424059": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "Great Britain (Q5743100)": {
+    "0.10918132": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "Baron (name) (Q4320580)": {
+    "0.07736219": {
+      "page": "Ada Lovelace",
+      "part": "Childhood"
+    }
+  },
+  "Uterine cancer (Q1209744)": {
+    "0.14121217": {
+      "page": "Ada Lovelace",
+      "part": "Later life"
+    }
+  },
+  "Actuarial science (Q6016889)": {
+    "0.1048265": {
+      "page": "Ada Lovelace",
+      "part": "Later life"
+    }
+  },
+  "Diseases and disorders (Q7215431)": {
+    "0.1048265": {
+      "page": "Ada Lovelace",
+      "part": "Later life"
+    }
+  },
+  "Clinical medicine (Q14916851)": {
+    "0.1048265": {
+      "page": "Ada Lovelace",
+      "part": "Later life"
+    }
+  },
+  "Epidemiology (Q5601738)": {
+    "0.1048265": {
+      "page": "Ada Lovelace",
+      "part": "Later life"
+    }
+  },
+  "Medical specialties (Q6585042)": {
+    "0.07608979": {
+      "page": "Ada Lovelace",
+      "part": "Later life"
+    }
+  },
+  "Ada (programming language) (Q154755)": {
+    "0.14095518": {
+      "page": "Ada Lovelace",
+      "part": "Recognition"
+    }
+  },
+  "Ministry of Defence (Q1788820)": {
+    "0.11272734": {
+      "page": "Ada Lovelace",
+      "part": "Recognition"
+    }
+  },
+  "Ministry of Defence (Slovakia) (Q13450134)": {
+    "0.07741874": {
+      "page": "Ada Lovelace",
+      "part": "Recognition"
+    }
+  },
+  "Oral communication (Q8040748)": {
+    "0.17249218": {
+      "page": "Ada Lovelace",
+      "part": "Other websites"
+    }
+  }
+}
