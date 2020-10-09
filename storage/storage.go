@@ -371,42 +371,39 @@ func encodeJSON(v interface{}) ([]byte, error) {
 
 func validateSource(source *common.Source) error {
 	if source.ID <= 0 {
-		return fmt.Errorf("uninitialized common.Source.ID attribute")
+		return fmt.Errorf("uninitialized common.Source.ID attribute (+%v)", source)
 	}
 	if source.Revision <= 0 {
-		return fmt.Errorf("uninitialized common.Source.Revision attribute")
+		return fmt.Errorf("uninitialized common.Source.Revision attribute (+%v)", source)
 	}
 	if !tidRegexp.Match([]byte(source.TimeUUID)) {
-		return fmt.Errorf("invalid common.Source.TimeUUID attribute")
+		return fmt.Errorf("invalid common.Source.TimeUUID attribute (+%v)", source)
 	}
 	if source.Authority == "" {
-		return fmt.Errorf("uninitialized common.Source.Authority attribute")
+		return fmt.Errorf("uninitialized common.Source.Authority attribute (+%v)", source)
 	}
 	return nil
 }
 
 func validatePage(page *common.Page) error {
 	if page.Name == "" {
-		return fmt.Errorf("uninitialized page.Name attribute")
+		return fmt.Errorf("uninitialized page.Name attribute (%+v)", page)
 	}
 	if page.URL == "" {
-		return fmt.Errorf("uninitialized page.URL attribute")
+		return fmt.Errorf("uninitialized page.URL attribute (%+v)", page)
 	}
 	if page.DateModified.IsZero() {
-		return fmt.Errorf("uninitialized page.DateModified attribute")
+		return fmt.Errorf("uninitialized page.DateModified attribute (%+v)", page)
 	}
 	if len(page.HasPart) < 1 {
-		return fmt.Errorf("zero-length page.HasPart attribute")
+		return fmt.Errorf("zero-length page.HasPart attribute (%+v)", page)
 	}
 	return validateSource(&page.Source)
 }
 
 func validateNode(node *common.Node) error {
 	if node.DateModified.IsZero() {
-		return fmt.Errorf("uninitialized node.DateModified attribute")
-	}
-	if node.Unsafe == "" {
-		return fmt.Errorf("uninitialized node.Unsafe attribute")
+		return fmt.Errorf("uninitialized node.DateModified attribute (%+v)", node)
 	}
 	return validateSource(&node.Source)
 }

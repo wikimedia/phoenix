@@ -42,5 +42,16 @@ npm run build
 ```
 Production-ready files will be available in `/dist`
 
+## Deploy to Github pages
+To deploy the demo to github pages:
+
+1. Clone the Phoenix repo
+2. Go into the `phoenix/demo` folder
+3. Run `./deploy.sh`
+
+The demo will be avilable at the [Wikimedia Github Pages for the phoenix repo](https://wikimedia.github.io/phoenix).
+
+NOTE: Running that command will build the repository and then immediately push this into github. Make sure your working directory is clean.
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"strings"
+
 	"github.com/PuerkitoBio/goquery"
 	"github.com/wikimedia/phoenix/common"
 )
@@ -18,13 +21,15 @@ func getSectionName(section *goquery.Selection) string {
 func parseParsoidDocumentNodes(document *goquery.Document, page *common.Page) ([]common.Node, error) {
 	var err error
 	var modified = page.DateModified
+	var nameCounts = make(map[string]int)
 	var nodes = make([]common.Node, 0)
+	var sections = document.Find("html>body>section[data-mw-section-id]")
 
-	sections := document.Find("html>body>section[data-mw-section-id]")
 	for i := range sections.Nodes {
-		section := sections.Eq(i)
+		var node = common.Node{}
+		var section = sections.Eq(i)
+		var unsafe string
 
-		node := common.Node{}
 		node.Source = page.Source
 
 		// If this is the first section and the name is a zero length string, then we assign it
@@ -39,15 +44,25 @@ func parseParsoidDocumentNodes(document *goquery.Document, page *common.Page) ([
 			node.Name = getSectionName(section)
 		}
 
+		// Since it is possible for a document to have more than one section with the same heading text, keep
+		// track of the number of times we've assigned a name, and de-duplicate if necessary.
+		nameCounts[strings.ToLower(node.Name)]++
+
+		if nameCounts[strings.ToLower(node.Name)] > 1 {
+			node.Name = fmt.Sprintf("%s_%d", node.Name, nameCounts[strings.ToLower(node.Name)])
+		}
+
 		node.DateModified = modified
 
 		if val, ok := ignoredNodes[node.Name]; ok && val {
 			continue
 		}
 
-		if node.Unsafe, err = section.Html(); err != nil {
+		if unsafe, err = section.Html(); err != nil {
 			return []common.Node{}, err
 		}
+
+		node.Unsafe = unsafe
 		nodes = append(nodes, node)
 	}
 

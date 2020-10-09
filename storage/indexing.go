@@ -77,7 +77,9 @@ type DynamoDBIndex struct {
 
 // Apply updates the index with new Phoenix document data
 func (i *DynamoDBIndex) Apply(update *Update) error {
+	var count = 0
 	var items []*dynamodb.TransactWriteItem
+	var nodeNameSet = make(map[string]bool, 0)
 	var page = update.Page
 
 	items = make([]*dynamodb.TransactWriteItem, 0)
@@ -94,18 +96,40 @@ func (i *DynamoDBIndex) Apply(update *Update) error {
 		},
 	})
 
+	count++
+
 	// Node names
 	for _, n := range update.Nodes {
+		// The DynamoDB transaction is limited to 25 items; Bailing out after reaching the upper bound on items means
+		// that any document with more than 24 sections (the transaction includes an item for the page as well) will
+		// have the remaining sections silently dropped. https://github.com/wikimedia/phoenix/issues/68 was opened to
+		// properly address this, but in the mean time this work-around is preferable to the resulting
+		// ValidationException.
+		if count >= 25 {
+			break
+		}
+
+		// If the resulting transaction includes two or more items with the same Name attribute, the call to
+		// TransactWriteItems that follows will fail with an (obscure) validation error.  The following is meant to
+		// detect this condition and return a more meaningful error.
+		nodeName := encodeNodeName(page.Name, n.Name)
+		if _, exists := nodeNameSet[nodeName]; exists {
+			return fmt.Errorf(`unable to index Node: name "%s" conflicts with another in this transaction (%+v)`, nodeName, n)
+		}
+		nodeNameSet[nodeName] = true
+
 		items = append(items, &dynamodb.TransactWriteItem{
 			Put: &dynamodb.Put{
 				Item: map[string]*dynamodb.AttributeValue{
-					"Name":      {S: aws.String(encodeNodeName(page.Name, n.Name))},
+					"Name":      {S: aws.String(nodeName)},
 					"Authority": {S: aws.String(n.Source.Authority)},
 					"ID":        {S: aws.String(n.ID)},
 				},
 				TableName: aws.String(i.NamesTable),
 			},
 		})
+
+		count++
 	}
 
 	_, err := i.Client.TransactWriteItems(&dynamodb.TransactWriteItemsInput{TransactItems: items})
