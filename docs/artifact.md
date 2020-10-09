@@ -1,24 +1,10 @@
-## To contribute
+## Proof of value
 
-- Push changes ||
-- Comment in PR ||
-- Set up in StackEdit to share (instructions added the first time we do this) ||
-- Paste in Google Doc and add comments
+We aim to interconnect the Foundation's longterm technology goals with the strategic decisions needed to reach them. This experiment is part of an overall strategy to uncover, explore, discuss and define the key challenges in meeting those goals. More importantly, we aim to illuminate opportunities.
 
-## Areas of focus
-Add any notes or subjects to include here
+We succeed de[ends on understanding the tradeoffs, especially in areas that have been philosophically off limits, and enabling informed decisions. Our success also depends on defining terms that, so far, have been aspirational (like "modern").
 
-- What
-- Challenges
--- Breaking down
--- Expanded use cases (will it get used)
--- Infrastructure
--- Conceptual buy in
--- Is CQRS a viable pattern? (editing)
-- Next steps
-- How
--- How to use the demo
--- What is here and how it works (models)
+What will reaching our goals cost? By "cost", we mean money, eventually. We also mean time, energy and expertise. We mean social and cultural changes that may remove roadblocks, when necessary. And we mean discerning whether or not the effort required is reasonably balanced against the value of our goals. When it isn't, how shall we alter those goals?  
 
 ## Foundation Goal
 [Knowledge as a service](https://meta.wikimedia.org/wiki/Strategy/Wikimedia_movement/2017):
@@ -29,6 +15,9 @@ Delivered through [Modernizing the Wikimedia product experience](https://meta.wi
 
 "We will make contributor and reader experiences useful and joyful; *moving from viewing Wikipedia as solely a website, to developing, supporting, and maintaining the Wikimedia ecosystem as a collection of knowledge, information, and insights with infinite possible product experiences and applications*."
 
+### In the PoV, we ...
+Design and test a giant step in that direction. A criticism has been that we take too big a step here. We do too many things. This may be so. The challenge is: there is no *iterative* path to transforming a semitruck into a small fleet of fast cars. First, you need a workflow that builds the cars.
+
 ## Our Goal
 Architect a  
 - modern platform
@@ -37,18 +26,14 @@ Architect a
 - to nearly-infinite product experiences
 - and other platforms.
 
-Some guiding questions are: What does that look like? How do we get from here to there? What are the challenges? Are they possible to resolve? Are they worth the necessary investment?
-
-## This proof of value
-We call this a "proof of value" (PoV) because we aren't strictly interested in proving the concept. We are also interesting in facilitating further discussion and exploration: is the cost (in time and energy) reasonably balanced against the overall goals? If not, do we alter the goals?  
-
-This PoV is an experiment.
-
-- Design a tiny modern platform that can serve collections of knowledge and information, created from multiple trusted sources, to many product experiences and platforms.
-- Find out what happens when we move knowledge out of a Wikipedia website into this modern platform.
+### In the PoV, we ...
+- Designed a tiny modern platform that can serve collections of knowledge and information, created from multiple trusted sources, to many product experiences and platforms.
+- Experimented with what happens when we move knowledge out of a Wikipedia website into this modern platform.
 
 ## Modern platform
-We made some choices about what "modern platform" means. Generally speaking, we relied on emerging industry patterns for content systems facing this challenge (which is most of them). A predictable data structure, temporal decoupling The patterns include:
+In this design, we made some choices about what "modern platform" means. We draw from the wider world where content providers are facing similar challenges - how to move past the boundaries of a single piece of software towards "create once, publish everywhere"? We also relied on 18 months of architectural explorations conducted prior to this PoV to understand what *we* need from a "modern" platform.
+
+We define modern platform as a system of interrelated capabilities relying on emerging industry patterns. The patterns of a system are what make (or break) the system as it scales. The patterns we're exploring include:
 
 *Canonical data modeling*: allows content to be understood by people, programs and machines outside the traditional boundaries of MediaWiki. And, as far as possible, allows consumers to request only what they need.
 
@@ -70,11 +55,15 @@ Note: Honestly, we don't know if it's humanly possible to "structure" Wikipedia 
 *CQRS*: The current structure inside of MediaWiki is left alone. When changes happen in MW, the new system reacts by getting the necessary information and translating it into the canonical data model. Also, if the system is used > 90% of the time for reads, can editing be a seperate part of the system?
 
 LINK
+
+### In the PoV, we ...
+TODO: Decoupling the payload (justify the content platform design specifically)
+TODO: How the implementation choices mirror these patterns.
+
+## Collections of knowledge and information
+
 Our goal wasn't to build a rock-solid deployable prototype. A production-ready design for requires significantly more infrastructure discussion. Our goal was to focus on the knowledge. Because at the moment, it is a gigantic, tangled, monolithically-orchestrated bundle of Wikitext. Which, it's safe to say, is not going to feed the multitudes of new product experiences.
 
-As we attempt to structure the knowledge and information for a modern platform, What are the biggest challenges we face? Are they worth the effort they'll require?
-
-## The Experiment
 During our two years of architectural explorations, a single blocker arises again and again. At the heart of our ecosystem, the knowledge we want to share with the world is a mountain of Wikitext. Like a body without a skeleton, it has no predictable shape, until MediaWiki pieces bones together to form a Wikipedia web page.
 
 The knowledge is bounded by the context of a Wiki web page (for example, the Philadelphia page). Some of the knowledge is pages within pages related according to a unique logic. Instructions for displaying the knowledge on a Wikipedia page are inextricably mixed into the knowledge we hope to share beyond Wikimedia.
@@ -85,6 +74,19 @@ What is the shape of knowledge that can be consumed by "infinite product experie
 
 The knowledge also needs cataloging, a predictable relationship structure so it can be shared meaningfully. For example, as knowledge about a subject, like Barak Obama, wherever it currently lives on Wikipedia.
 
-There are nearly-infinite challenges. Here are the primary ones we've uncovered. First, here's what the PoV does. (And the demo.)
+## Created from multiple trusted sources
+TODO: Rosette as our example
+TODO: Using schema.org (goes here?)
 
-## Change the patterns
+## Nearly-infinite product experiences
+
+TODO: GraphQL and FE agnostic
+TODO: What do those product experiences expect?
+
+## And other platforms
+
+TODO: Can push as well as pull
+
+## Next steps
+- Verify value (we are doing)
+- Design a production-deployable version (do we have the use cases right now?)
