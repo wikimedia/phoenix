@@ -1,32 +1,39 @@
-## Proof of value
+## Why this is valuable
 
-We aim to interconnect the Foundation's longterm technology goals with the strategic decisions needed to reach them. This experiment is part of an overall strategy to uncover, explore, discuss and define the key challenges in meeting those goals. More importantly, we aim to illuminate opportunities.
+This experiment is part of an overall strategy to interconnect the Foundation's longterm technology goals with the strategic decisions needed to reach them. We aim to uncover, explore, discuss and define the key challenges in "modernizing". More importantly, we aim to illuminate opportunities.
 
-We succeed de[ends on understanding the tradeoffs, especially in areas that have been philosophically off limits, and enabling informed decisions. Our success also depends on defining terms that, so far, have been aspirational (like "modern").
-
-What will reaching our goals cost? By "cost", we mean money, eventually. We also mean time, energy and expertise. We mean social and cultural changes that may remove roadblocks, when necessary. And we mean discerning whether or not the effort required is reasonably balanced against the value of our goals. When it isn't, how shall we alter those goals?  
-
-## Foundation Goal
-[Knowledge as a service](https://meta.wikimedia.org/wiki/Strategy/Wikimedia_movement/2017):
+##### To meet the Foundation's goal
+[Knowledge as a service](https://meta.wikimedia.org/wiki/Strategy/Wikimedia_movement/2017)
 
 "To serve our users, we will become a platform that serves open knowledge to the world across interfaces and communities. We will build tools for allies and partners to organize and exchange free knowledge beyond Wikimedia. Our infrastructure will enable us and others to collect and use different forms of free, trusted knowledge."
 
-Delivered through [Modernizing the Wikimedia product experience](https://meta.wikimedia.org/wiki/Wikimedia_Foundation_Medium-term_plan_2019)
+##### delivered by
+[Modernizing the Wikimedia product experience](https://meta.wikimedia.org/wiki/Wikimedia_Foundation_Medium-term_plan_2019)
 
 "We will make contributor and reader experiences useful and joyful; *moving from viewing Wikipedia as solely a website, to developing, supporting, and maintaining the Wikimedia ecosystem as a collection of knowledge, information, and insights with infinite possible product experiences and applications*."
 
-### In the PoV, we ...
-Design and test a giant step in that direction. A criticism has been that we take too big a step here. We do too many things. This may be so. The challenge is: there is no *iterative* path to transforming a semitruck into a small fleet of fast cars. First, you need a workflow that builds the cars.
-
-## Our Goal
-Architect a  
-- modern platform
+##### the mission is to architect   
+- a modern platform
 - that can serve collections of knowledge and information,
 - created from multiple trusted sources,
 - to nearly-infinite product experiences
 - and other platforms.
 
-### In the PoV, we ...
+Success depends on:
+- understanding the tradeoffs, especially in areas that have been philosophically off limits
+- enabling a continuous flow of informed decisions
+- cross-functional discovery and iterative step taking
+- defining aspirational terms like "modern"
+- understanding the cost
+
+By "cost", we mean money, eventually. We also mean time, energy and expertise. We mean social and cultural changes that may remove roadblocks, when necessary. And we mean discerning whether or not the effort required is reasonably balanced against the value of our goals. When it isn't, how shall we alter those goals?  
+
+### In this proof of value
+We design and test a first step in the direction described above. It may be too big a step. Or not big enough, leaving too many other questions unanswered.
+
+The challenge is: there is no *iterative* path from here to there. If the goal is to transform a semitruck into a small fleet of fast cars, while the semitruck is still in service ... best to begin with the workflow needed to build cars.
+
+In this PoV, we:
 - Designed a tiny modern platform that can serve collections of knowledge and information, created from multiple trusted sources, to many product experiences and platforms.
 - Experimented with what happens when we move knowledge out of a Wikipedia website into this modern platform.
 
