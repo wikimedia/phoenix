@@ -19,6 +19,11 @@ PHX_SNS_RAW_CONTENT_INCOMING      = $(PHX_PREFIX)-sns-raw-content-incoming
 # to the raw content store (see PHX_S3_RAW_CONTENT_WD_LINKED)
 PHX_SNS_RAW_CONTENT_WD_LINKED     = $(PHX_PREFIX)-sns-raw-content-schemaorg
 
+# Topic that receives events when new Node objects are added to the
+# Structured Content Store
+PHX_SNS_NODE_PUBLISHED            = $(PHX_PREFIX)-sns-node-published
+
+
 ######
 # S3 resources
 ######

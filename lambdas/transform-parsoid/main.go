@@ -14,6 +14,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/aws/aws-sdk-go/service/sns"
 	"github.com/wikimedia/phoenix/common"
 	"github.com/wikimedia/phoenix/storage"
 )
@@ -31,6 +32,7 @@ var (
 	s3RawBucket               string
 	s3RawIncomeFolder         string
 	s3RawLinkedFolder         string
+	snsNodePublished          string
 
 	debug bool = false
 	log   *common.Logger
@@ -66,6 +68,7 @@ func readLinkedData(s3client *s3.S3, msg *common.ChangeEvent) (*common.Thing, er
 func handleRequest(ctx context.Context, event events.SNSEvent) {
 	awsSession := session.New(&aws.Config{Region: aws.String(awsRegion)})
 	s3client := s3.New(awsSession)
+	snsClient := sns.New(awsSession)
 
 	repo := storage.Repository{
 		Store:  s3client,
@@ -126,6 +129,35 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			Page:   *page,
 			Nodes:  nodes,
 			Abouts: map[string]common.Thing{"//schema.org": *thing},
+
+			// Send events for each node published
+			PostPutNodeCallback: func(node common.Node) error {
+				var b []byte
+				var err error
+				var input *sns.PublishInput
+				var output *sns.PublishOutput
+
+				// JSON-encoded SNS message
+				if b, err = json.Marshal(common.NodeStoredEvent{ID: node.ID}); err != nil {
+					log.Error("Unable to marhsal SNS event to JSON: %s", err)
+					return fmt.Errorf("Unable to marshal SNS event to JSON: %w", err)
+				}
+
+				input = &sns.PublishInput{
+					Message:  aws.String(string(b)),
+					TopicArn: aws.String(fmt.Sprintf("arn:aws:sns:%s:%s:%s", awsRegion, awsAccount, snsNodePublished)),
+				}
+
+				// Publish to SNS
+				if output, err = snsClient.Publish(input); err != nil {
+					log.Error("Failed to publish SNS event: %s", err)
+					return fmt.Errorf("Failed to publish SNS event: %w", err)
+				}
+
+				log.Debug("Successfully published SNS message: %s (%s stored)", *output.MessageId, node.ID)
+
+				return nil
+			},
 		})
 
 		if saveError != nil {
@@ -156,6 +188,7 @@ func init() {
 	log.Debug("S3 raw content bucket ............: %s", s3RawBucket)
 	log.Debug("S3 raw content incoming folder ...: %s", s3RawIncomeFolder)
 	log.Debug("S3 raw content linked folder .....: %s", s3RawLinkedFolder)
+	log.Debug("SNS node published topic .........: %s", snsNodePublished)
 }
 
 func main() {

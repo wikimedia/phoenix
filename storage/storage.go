@@ -266,9 +266,10 @@ func (r *Repository) DeleteAbout(id string) {
 
 // Update encapsulates the parts of a document involved in an update of the content repository.
 type Update struct {
-	Page   common.Page
-	Nodes  []common.Node
-	Abouts map[string]common.Thing
+	Page                common.Page
+	Nodes               []common.Node
+	Abouts              map[string]common.Thing
+	PostPutNodeCallback func(common.Node) error
 }
 
 // Apply updates a document in the content repository.
@@ -310,6 +311,11 @@ func (r *Repository) Apply(update *Update) error {
 
 		update.Nodes[i].ID = id
 		update.Page.HasPart = append(update.Page.HasPart, id)
+
+		if update.PostPutNodeCallback != nil {
+			// FIXME: Should we handle the error?  Ignore it?
+			update.PostPutNodeCallback(node)
+		}
 	}
 
 	update.Page.About = make(map[string]string)
