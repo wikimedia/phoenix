@@ -91,12 +91,9 @@ func NewThing() *Thing {
 	return &Thing{metadata: metadata{Context: "https://schema.org", Type: "Thing"}}
 }
 
-// RelatedTopics corresponds to a list of topics that relate to a Node's content.
-type RelatedTopics struct {
-	// An array of topics, ordered by salience
-	Topics []struct {
-		ID       string  `json:"id"`
-		Label    string  `json:"label"`
-		Salience float32 `json:"salience"`
-	} `json:"topics"`
+// RelatedTopic corresponds to a Wikidata topic that relates to a Node's content.
+type RelatedTopic struct {
+	ID       string  `json:"id"`
+	Label    string  `json:"label"`
+	Salience float32 `json:"salience"`
 }

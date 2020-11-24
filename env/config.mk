@@ -46,6 +46,7 @@ PHX_S3_RAW_CONTENT_LINKED_HTML   = linked-html
 # stored in canonical format
 PHX_S3_STRUCTURED_CONTENT_BUCKET = $(PHX_PREFIX)-structured-content-store
 
+
 ######
 # Lambda resources
 ######
@@ -54,7 +55,6 @@ PHX_S3_STRUCTURED_CONTENT_BUCKET = $(PHX_PREFIX)-structured-content-store
 # Downloads the corresponding HTML (revision) and writes it to S3 (see
 # PHX_S3_RAW_CONTENT_INCOMING)
 PHX_LAMBDA_FETCH_CHANGED   = $(PHX_PREFIX)-fetch-changed
-
 
 # Function invoked when new content has been added to incoming
 # (PHX_SNS_RAW_CONTENT_INCOMING).  Downloads corresponding Wikidata
@@ -73,6 +73,11 @@ PHX_LAMBDA_MERGE_SCHEMAORG = $(PHX_PREFIX)-lambda-merge-schemaorg
 # storage, transforms raw content into canonical tructure and save to S3 
 # storage (See PHX_S3_STRUCTURED_CONTENT_BUCKET)
 PHX_LAMBDA_TRANSFORM_PARSOID = $(PHX_PREFIX)-lambda-transform-parsoid
+
+# Lambda subscribed to events signaling that a new Node object has been stored.
+# Retrieves related topic information for the Node, and stores the result.
+PHX_LAMBDA_RELATED_TOPICS = $(PHX_PREFIX)-lambda-related-topics
+
 
 ######
 # DynamoDB resources
