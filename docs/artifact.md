@@ -71,7 +71,7 @@ Essential note: Honestly, we don't know if it's humanly possible to "structure" 
 
 *CQRS*: Differentiating between reading and editing. In the PoV, the current structure inside of MediaWiki is left alone, it is the "trusted source". When changes happen in MW, the new system reacts by getting the necessary information and translating it into the canonical data model. This means the design works for reading but not for editing. If > 90% of the requests are for reads, can editing be a separate part of the system? We're looking at the editing workflow next.
 
-### In the PoV, we ...
+## Implementation overview
 - Respond to an edit event triggered by MediaWiki when page content has changed
 - Retrieve the content from the source, break it down into sections and give each part a predictable structure
 - Save the page and sections as json object associated by hypermedia links (hasparts/isparts)
@@ -80,6 +80,12 @@ Essential note: Honestly, we don't know if it's humanly possible to "structure" 
 - Save the topics associated with the parts they describe
 - Return requests for parts associated with the topic (highest-scoring sections on Physics, for example)
 - Though this list seems sequential, these activities are asynchronous
+
+TODO: Add model
+
+### Demo
+
+### Caveats
 
 ## Collections of knowledge and information
 What is the shape of knowledge that can be consumed by "infinite product experiences"? Experiences that will likely control how the knowledge is displayed and how users interact with it. When we say collections, what do we mean? A page is one, predominant, collection of knowledge and information. What are the others?
@@ -115,7 +121,6 @@ When we imagine "nearly-infinite product experiences", what comes to mind? Answe
 - these experiences drawing from multiple sources and needing relationships that give the integrated knowledge meaning (about Barack Obama, for example)
 - a website or app about Cricket that draws people towards Wikipedia in places that aren't part of the community yet
 
-
 ## And other platforms
 We imagined
 - big platforms who use the free knowledge getting exactly what they need (and perhaps monetizing that request)
@@ -146,9 +151,3 @@ Success depends on:
 - understanding the cost
 
 By "cost", we mean estimating the financial investment, though its too soon for that analysis. We also mean articulating the time, energy and expertise required. By cost, we also mean the social and cultural changes that may be necessary to remove roadblocks. And we mean discerning ways to balance our investment, values and goals.
-
-## Implementation overview
-
-### Caveats
-
-### Demo
