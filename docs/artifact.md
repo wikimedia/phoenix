@@ -1,11 +1,11 @@
-# Architectural proof of value
-### by the Architecture team
+# Architectural Proof of Value
+### by the Architecture Team
+
+[Mural board of this artifact](https://app.mural.co/t/neweditorexperiences1471/m/neweditorexperiences1471/1606310676597/5994555cfce1cc40ff0b0ec85600da818c7bea12)
 
 ## Why this artifact is valuable
 
-The architecture team aims to interconnect the Foundation's longterm goals with the strategic, technology decisions needed to reach them. To succeed, we need to uncover, explore, discuss and define the key challenges in "modernizing". More importantly, we hope to illuminate the opportunities.
-
-This artifact describes our first step towards that goal.
+The architecture team interconnects the Foundation's strategically-imperative goals with the technology decisions needed to reach them. This artifact describes a prototyping exercise demonstrating the value of modern architectural patterns for knowledge systems. We also uncover and describe potentially-disruptive challenges blocking the modernization of our knowledge system.
 
 ##### To meet the Foundation's goal
 "To serve our users, we will become a platform that serves open knowledge to the world across interfaces and communities. We will build tools for allies and partners to organize and exchange free knowledge beyond Wikimedia. Our infrastructure will enable us and others to collect and use different forms of free, trusted knowledge." -- [Knowledge as a service](https://meta.wikimedia.org/wiki/Strategy/Wikimedia_movement/2017)
@@ -21,19 +21,32 @@ This artifact describes our first step towards that goal.
 - and other platforms.
 
 ### In this proof of value (PoV)
-During this PoV, we built a prototypical step towards a modern platform. Our step may be too big, or not big enough, leaving too many questions unanswered. Either way, we are purposefully triggering the discussions needed to help us discern. We end with more questions than answers, yet we are significantly more confident in the questions.
+We created a prototypical step towards a modern platform:
 
-The primarily value of this work is continuing to gather and apply the learnings from teams across the foundation.
-
-The first step is a doozy. There is no *iterative* path towards transforming a semitruck (monolith) into a small fleet of ubers (a "modern" system). The workflow needed to build an interconnected system of cars is quite different from the one keeping the truck on the road.
-
-In this experiment, we've created:
 - A tiny, experimental [modern platform](#modern-platform)
 - that can serve [collections of knowledge](#collections-of-knowledge)
 - created from [multiple trusted sources](#multiple-trusted-sources)
 - to many [product experiences](#many-product-experiences) and [other platforms](#other-platforms).
 
-We used simple wikipedia and did some limited experimentation with select English wikipedia pages. There are *many* [challenges to consider](#challenges-to-consider) before this prototype is "production ready". *Production ready was not our goal.* We are [engaging with some of those challenges next](#next-steps).
+#### The four leverage points
+However we approach it, the first step is a doozy. There is no *iterative* path towards transformation. Neither is there a lift-and-shift migration option. We need to find leverage points: capabilities in the system that we can decouple from the current day-to-day operations. As challenging as leverage points may be, to find and to change, they unlock highly-valuable opportunities. While simultaneously laying a strong and cohesive foundation for the future system.
+
+The leverage points explored in this PoV are:
+- giving shape and structure to Knowledge
+- designing inherent relationships between knowledge parts to create collections
+- building decoupled relationships between parts of the system rather than building capabilities into the software (this includes changing the choreography of essential activities)
+
+#### The big questions
+The PoV leaves many questions unanswered -- on purpose. We are *triggering cross-functional discussions and decisions needed* to discern a path forward. While we have more questions than answers, we are significantly more confident in the questions. Top four include:
+
+1. What is "just enough" structure needed for the knowledge?
+2. What infrastructure can support these patterns at scale?
+3. From a system point of view, can reading be decoupled from editing?
+4. How will modernization impact the current editing workflow?
+
+The highest-value next step is continuing to gather and apply learnings from teams across the foundation that help answer these questions.
+
+There are *many* [challenges to consider](#challenges-to-consider) before this prototype is "production ready". *Production ready was not our goal.* We are [engaging with some of those challenges next](#next-steps).
 
 If you'd like to skip right to the details, read the [implementation overview](#implementation-overview) and handy-wavy [caveats](#caveats) to see our implementation choices and [how to view the demo](#demo).
 
@@ -45,10 +58,11 @@ We drew thinking from others about emerging patterns and challenges. We also rel
 We define modern platform as interrelated capabilities relying on emerging industry patterns (see below). In the PoV and at a system level, these patterns are the implementation details. They lay the foundation for low-level interactions between knowledge sources and products that scale as the system scales.
 
 ### Patterns are the thing
-We need to focus on patterns and how to implement them. They enable us to design for emergence: create interrelated capabilities that become greater than the sum of their parts. While the parts remain stable, predictable, changeable and encapsulated. Fundamentally, we mean create the
-- parts: capabilities, things they system does)
-- the relationship between the parts (when do they need each other?)
-- and the structure of their interaction (knowledge as an universal language).
+Patterns enable us to design for emergence: create interrelated capabilities that become greater than the sum of their parts. So we focused on patterns that enable parts that are stable, predictable, changeable and encapsulated. Patterns that let us design a system by focusing on ...
+- the data model of "knowledge"
+- the parts that deliver the capabilities (things the system does)
+- the relationship between the parts
+- and the structure of their interaction
 
 The patterns we've explored include:
 
@@ -63,7 +77,7 @@ What is the structure of "knowledge" and how does it flow across the system? Bui
 
 [Working draft of our CDM](todo-edit-and-link)
 
-Essential note: Honestly, we don't know if it's humanly possible to "structure" Wikipedia content sufficiently. There are *many* questions to consider. We want to identify the Biggest Challenges so we can raise them and resolve them organizationally.
+Essential note: Honestly, we don't know if it's humanly possible to "structure" Wikipedia content sufficiently. There are *many* questions to consider. We identify the Biggest Challenges so we can raise them and resolve them organizationally.
 
 *Loose coupling*: New ways to interact with, enhance or process content (capabilities) that operate independently and are built on top of (or adjacent to) the data model.
 
@@ -80,15 +94,23 @@ Essential note: Honestly, we don't know if it's humanly possible to "structure" 
 - Save the topics associated with the parts they describe
 - Return requests for parts associated with the topic (highest-scoring sections on Physics, for example)
 - Though this list seems sequential, these activities are asynchronous
+- We used simple wikipedia and did some limited experimentation with select English wikipedia pages.
 
 TODO: Add model
 
 ### Demo
 
+For the month of January, 2020, you can access a demo instance [here]
+(TODO). The demo is:
+
+- a front end that interacts with GraphQL and the structured content store.
+- the structured content store contains content from Simple Wikipedia, updated when edits are made there.
+- topics associated with each object (page, section) from [Rosette](TODO add link).
+
 ### Caveats
 
 ## Collections of knowledge and information
-What is the shape of knowledge that can be consumed by "infinite product experiences"? Experiences that will likely control how the knowledge is displayed and how users interact with it. When we say collections, what do we mean? A page is one, predominant, collection of knowledge and information. What are the others?
+How can we design knowledge to be consumed by "infinite product experiences"? How do we enable these "experiences" to control how the knowledge is displayed and how users interact with it. When we say collections, what do we mean? A page is one, predominant, type of collection of knowledge. What are the others?
 
 ### The shape of knowledge
 During our architectural explorations, a single blocker arose again and again. At the heart of our ecosystem, the knowledge we want to share with the world isn't made for modern distributions. It exists as a "web page" made from a gigantic, tangled, monolithically-orchestrated bundle of proprietary text.
@@ -111,43 +133,53 @@ Categories are collections. Pages and parts of pages associated with a Wikidata 
 To form scalable collections, the knowledge needs cataloging. Consistency of relationships between knowledge parts makes collections consumable by nearly-infinite products and platforms. Without overtaxing the system with queries. Predictable, prebuilt relationships that don't rely on extensive fuzzy logic queries are ideal.
 
 ## Multiple trusted sources
-The PoV uses simplewikipedia as the primary knowledge / content source but the same pattern applies to any source we add. Multiple wikis, for example. As long as the platform can respond to an event sent from the source by getting the change from the source's API, it can join.
+The PoV uses simplewikipedia as the primary knowledge source. But the same pattern will apply to adding any subsequent source. There can be multiple wikipedia's, for example. The platform responds to an event sent from the source by getting the change from the source's API. As long as both are possible, a source is likely a valid option.
 
-[Rosette](TODO link) is our source for topics (what is this knowledge about?). Other sources can be added that give context. The topics from Rosette are Wikidata items. Wikidata can also be a source to enhance information about the topic.
+[Rosette](TODO link) is our source for topics, creating collections based on what the knowledge is about. Other context-creating sources can be added similarly. The topics from Rosette are Wikidata items. Wikidata can also be a source to enhance information about the topic.
 
-## Many product experiences
-When we imagine "nearly-infinite product experiences", what comes to mind? Answering that question is cross functional work happening now. For the PoV, we imagined things like:
+## Many product experiences and other platforms
+When we imagine "nearly-infinite product experiences", what comes to mind? Answering that question is cross-functional work happening now. For the PoV, we imagined things like:
+
 - product experiences requesting knowledge so they can build their own "page", or collection or context for displaying.
 - these experiences drawing from multiple sources and needing relationships that give the integrated knowledge meaning (about Barack Obama, for example)
 - a website or app about Cricket that draws people towards Wikipedia in places that aren't part of the community yet
+- any decoupled frontend experience
 
-## And other platforms
-We imagined
+For platforms, we imagined
 - big platforms who use the free knowledge getting exactly what they need (and perhaps monetizing that request)
 - interrelationships with What's App and Facebook that draw people into learning and perhaps editing
 - pushing knowledge to platforms
 
+For a deeper dive into the product experiences and platforms that are supported by modernization, see [PoV products and platforms](TODO).
+
 ## Challenges to consider
-The primary challenge as we take these steps is embracing uncertainty. We can't know how it'll all come together. We can make well-reasoned decisions about how to explore the path. Other major challenges are:
+The primary challenge is embracing uncertainty. We can't know exactly how an emergent system will emerge. We can make well-reasoned decisions while exploring the path to modernization. We can design for emergence. But this requires embracing uncertainty and making sound decisions in the midst of it.
+
+Modeling and planning for change triggers confusion and anxiety, two things that will most certainly push the system in the wrong direction (to regain status quo). This is a challenge must not be underestimated.
+
+Other major challenges include:
 
 - Ensuring the infrastructure will scale
 - Agreeing on "just enough structure" of the current page content
 - Breaking down a page into a data model that differs from the crowdsourced version
 - Versioning (across the system)
+- Understanding how creating knowledge in the "sources" interrelates with serving that knowledge everywhere
 
 ## Next steps
-The next steps are four further artifacts:
+The next steps are delivering four further artifacts:
 
-- Exploration of infrastructure (design a production version)
-- Model the editing workflow (current, so we understand the needs)
-- Editing exploration - is it possible to decouple editing from serve many of the "read" requests?
-- Continue creating the architecture repository as a space to understand and explore emerging systems patterns
+- Infrastructure exploration -- designing a production-viable version of this AWS prototype
+- Models of current editing workflows, so we understand them
+- Editing exploration - what must change in the knowledge sources in order to decouple editing from many products and platforms? Are they viable?
+- Creating the architecture repository as a space to understand and explore emerging systems patterns
 
-Success depends on:
+Teams are also creating front end prototypes demonstrating uses for these patterns. Details on which teams are not yet decided.
+
+Many branches of discussion have already begun. Their success depends on:
 - understanding the tradeoffs, especially in areas that have been philosophically off limits
 - enabling a continuous flow of informed decisions
 - cross-functional discovery and iterative step taking
 - defining aspirational terms like "modern"
 - understanding the cost
 
-By "cost", we mean estimating the financial investment, though its too soon for that analysis. We also mean articulating the time, energy and expertise required. By cost, we also mean the social and cultural changes that may be necessary to remove roadblocks. And we mean discerning ways to balance our investment, values and goals.
+By "cost", we mean estimating the financial investment, though its too soon for that analysis. We also mean articulating the time, energy and expertise required. When we say cost, we also mean the social and cultural changes that may be necessary to remove roadblocks. And discerning the balance between our values, goals and investments.
