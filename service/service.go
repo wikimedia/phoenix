@@ -154,7 +154,7 @@ func (r *RootResolver) Node(args struct {
 		return nil, nil
 	}
 
-	return &NodeResolver{node}, nil
+	return &NodeResolver{node, r.Repository}, nil
 }
 
 // PageResolver resolves a GraphQL page type
@@ -210,7 +210,7 @@ func (r *PageResolver) HasPart(args struct {
 			}
 			return nil, err
 		}
-		resolvers = append(resolvers, &NodeResolver{node})
+		resolvers = append(resolvers, &NodeResolver{node, r.repo})
 	}
 
 	return resolvers, nil
@@ -253,7 +253,8 @@ func (r *TupleResolver) Val() string {
 
 // NodeResolver resolves a GraphQL node type
 type NodeResolver struct {
-	n *common.Node
+	n    *common.Node
+	repo *storage.Repository
 }
 
 // ID resolves a node id attribute
@@ -283,6 +284,62 @@ func (r *NodeResolver) DateModified() string {
 // Unsafe resolves a node unsafe attribute
 func (r *NodeResolver) Unsafe() string {
 	return r.n.Unsafe
+}
+
+// Keywords resolves the keywords attribute of a Node
+func (r *NodeResolver) Keywords(args struct {
+	Limit  *int32
+	Offset *int32
+}) ([]*TopicResolver, error) {
+	var err error
+	var notFound *storage.ErrNotFound
+	var offset int32 = 0
+	var resolvers = make([]*TopicResolver, 0)
+	var topics []common.RelatedTopic
+
+	if args.Offset != nil {
+		offset = *args.Offset
+	}
+
+	// Fetch related topics (if any)
+	if topics, err = r.repo.GetTopics(r.n); err != nil {
+		if errors.As(err, &notFound) {
+			return resolvers, nil
+		}
+		return nil, err
+	}
+
+	for i, topic := range topics[offset:] {
+		// Honor thy limit
+		if args.Limit != nil && (int32(i)+1) > *args.Limit {
+			break
+		}
+
+		resolvers = append(resolvers, &TopicResolver{topic})
+	}
+
+	return resolvers, nil
+}
+
+// TopicResolver resolves a GraphQL RelatedTopic type
+type TopicResolver struct {
+	// This is intentionally NOT a pointer; We WANT to copy the struct during each iteration above
+	t common.RelatedTopic
+}
+
+// ID resolves a topic's ID attribute
+func (r *TopicResolver) ID() graphql.ID {
+	return graphql.ID(r.t.ID)
+}
+
+// Label resolves a topic's label
+func (r *TopicResolver) Label() string {
+	return r.t.Label
+}
+
+// Salience resolves a topic's salience
+func (r *TopicResolver) Salience() float64 {
+	return float64(r.t.Salience)
 }
 
 // Return configuration variables that are the union of defaults, and any values passed in the environment

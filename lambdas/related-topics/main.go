@@ -24,11 +24,38 @@ var (
 	s3StructuredContentBucket string
 )
 
+// ~~~~~~~~~~
+// TODO: Only a stub; Process `Node.Unsafe` to create actual related topics structure
+// ~~~~~~~~~~
+func getTopics(node *common.Node) ([]common.RelatedTopic, error) {
+	// Faked/hard-coded topic(s)
+	var topics = []common.RelatedTopic{
+		{
+			ID:       "Q1",
+			Label:    "totality consisting of space, time, matter and energy",
+			Salience: .99,
+		},
+		{
+			ID:       "Q2",
+			Label:    "third planet from the Sun in the Solar System",
+			Salience: .99,
+		},
+		{
+			ID:       "Q3",
+			Label:    "matter capable of extracting energy from the environment for replication",
+			Salience: .99,
+		},
+	}
+
+	return topics, nil
+}
+
 func handleRequest(ctx context.Context, event events.SNSEvent) {
 	for _, record := range event.Records {
 		var err error
 		var msg = &common.NodeStoredEvent{}
 		var node *common.Node
+		var topics []common.RelatedTopic
 
 		// Deserialize message
 		if err = json.Unmarshal([]byte(record.SNS.Message), msg); err != nil {
@@ -46,27 +73,10 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 		log.Debug("Processing Node.Unsafe='%.24s...'", node.Unsafe)
 
-		// ~~~~~~~~~~
-		// TODO: Process `Node.Unsafe` to create actual related topics structure
-		// ~~~~~~~~~~
-
-		// Faked/hard-coded topic(s)
-		var topics = []common.RelatedTopic{
-			{
-				ID:       "Q1",
-				Label:    "totality consisting of space, time, matter and energy",
-				Salience: .99,
-			},
-			{
-				ID:       "Q2",
-				Label:    "third planet from the Sun in the Solar System",
-				Salience: .99,
-			},
-			{
-				ID:       "Q3",
-				Label:    "matter capable of extracting energy from the environment for replication",
-				Salience: .99,
-			},
+		// Fetch related-topics
+		if topics, err = getTopics(node); err != nil {
+			log.Error("Unable to retrieve related topics for %s: %s", msg.ID, err)
+			continue
 		}
 
 		// Store related topics
