@@ -31,6 +31,7 @@ var testAbout common.Thing
 var testNode common.Node
 var testPage common.Page
 var testSource common.Source
+var testTopics []common.RelatedTopic
 
 // Initialization of test data...
 func setup() {
@@ -79,6 +80,24 @@ func setup() {
 	}
 
 	testNode.IsPartOf = append(testNode.IsPartOf, testPage.ID)
+
+	testTopics = []common.RelatedTopic{
+		{
+			ID:       "Q1",
+			Label:    "totality consisting of space, time, matter and energy",
+			Salience: .99,
+		},
+		{
+			ID:       "Q2",
+			Label:    "third planet from the Sun in the Solar System",
+			Salience: .99,
+		},
+		{
+			ID:       "Q3",
+			Label:    "matter capable of extracting energy from the environment for replication",
+			Salience: .99,
+		},
+	}
 }
 
 // MockStore is a mock implementation of S3 storage
@@ -86,6 +105,7 @@ type MockStore struct {
 	Pages  map[string]common.Page
 	Nodes  map[string]common.Node
 	Abouts map[string]common.Thing
+	Topics map[string][]common.RelatedTopic
 }
 
 // GetObject is a mock of s3.S3#GetObject
@@ -128,6 +148,18 @@ func (store *MockStore) GetObject(input *s3.GetObjectInput) (*s3.GetObjectOutput
 		}
 
 		if b, err = json.Marshal(&about); err != nil {
+			return nil, fmt.Errorf("unabled to marshal Node to JSON: %w", err)
+		}
+
+	case strings.HasPrefix(*input.Key, "/topics"):
+		var topics []common.RelatedTopic
+
+		// Not Found
+		if topics, present = store.Topics[*input.Key]; !present {
+			return nil, awserr.New(s3.ErrCodeNoSuchKey, "Not found", nil)
+		}
+
+		if b, err = json.Marshal(&topics); err != nil {
 			return nil, fmt.Errorf("unabled to marshal Node to JSON: %w", err)
 		}
 
@@ -177,6 +209,15 @@ func (store *MockStore) PutObject(input *s3.PutObjectInput) (*s3.PutObjectOutput
 
 		store.Abouts[*input.Key] = about
 
+	case strings.HasPrefix(*input.Key, "/topics"):
+		topics := []common.RelatedTopic{}
+
+		if err = json.Unmarshal(b, &topics); err != nil {
+			return nil, fmt.Errorf("unable to deserialize Thing: %w", err)
+		}
+
+		store.Topics[*input.Key] = topics
+
 	default:
 		return nil, fmt.Errorf("unrecognized key format (%s)", *input.Key)
 
@@ -195,6 +236,7 @@ func NewMockStore() *MockStore {
 		Pages:  make(map[string]common.Page),
 		Nodes:  make(map[string]common.Node),
 		Abouts: make(map[string]common.Thing),
+		Topics: make(map[string][]common.RelatedTopic),
 	}
 }
 
@@ -301,6 +343,17 @@ func TestRepository(t *testing.T) {
 		require.True(t, errors.As(err, &notFound))
 	})
 
+	// Topics
+	t.Run("PutTopics", func(t *testing.T) {
+		err := repo.PutTopics(&testNode, testTopics)
+		require.Nil(t, err)
+	})
+	t.Run("GetTopics", func(t *testing.T) {
+		topics, err := repo.GetTopics(&testNode)
+		require.Nil(t, err)
+		assert.Equal(t, testTopics, topics)
+	})
+
 	// Function(s)
 	t.Run("makePageID", func(t *testing.T) {
 		id := makePageID(&testPage)
@@ -384,7 +437,6 @@ func TestValidation(t *testing.T) {
 		s := common.Source{ID: 1, Revision: 1, TimeUUID: "61e16274-ed75-11ea-a791-9fba67228067", Authority: "s.wp.o"}
 		require.Nil(t, validateNode(&common.Node{DateModified: time.Now(), Unsafe: "<p>...</p>", Source: s}))
 		require.NotNil(t, validateNode(&common.Node{Unsafe: "<p>...</p>", Source: s}))
-		require.NotNil(t, validateNode(&common.Node{DateModified: time.Now(), Source: s}))
 		require.NotNil(t, validateNode(&common.Node{DateModified: time.Now(), Unsafe: "<p>...</p>"}))
 	})
 }

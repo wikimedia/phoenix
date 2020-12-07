@@ -14,6 +14,7 @@ LDFLAGS += -X main.s3RawBucket=$(PHX_S3_RAW_CONTENT_BUCKET)
 LDFLAGS += -X main.s3RawIncomeFolder=$(PHX_S3_RAW_CONTENT_INCOMING)
 LDFLAGS += -X main.s3RawLinkedFolder=$(PHX_S3_RAW_CONTENT_WD_LINKED)
 LDFLAGS += -X main.s3StructuredContentBucket=$(PHX_S3_STRUCTURED_CONTENT_BUCKET)
+LDFLAGS += -X main.snsNodePublished=$(PHX_SNS_NODE_PUBLISHED)
 
 
 build: clean

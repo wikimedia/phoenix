@@ -90,3 +90,10 @@ type Thing struct {
 func NewThing() *Thing {
 	return &Thing{metadata: metadata{Context: "https://schema.org", Type: "Thing"}}
 }
+
+// RelatedTopic corresponds to a Wikidata topic that relates to a Node's content.
+type RelatedTopic struct {
+	ID       string  `json:"id"`
+	Label    string  `json:"label"`
+	Salience float32 `json:"salience"`
+}

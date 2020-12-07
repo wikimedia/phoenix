@@ -178,6 +178,25 @@ func (r *Repository) GetAbout(id string) (*common.Thing, error) {
 	return &about, nil
 }
 
+// GetTopics returns an array of RelatedTopics associated with a Node
+func (r *Repository) GetTopics(node *common.Node) ([]common.RelatedTopic, error) {
+	var data *json.Decoder
+	var err error
+	var topics []common.RelatedTopic
+
+	// Fetch
+	if data, err = r.get(topicsf(makeNodeID(node))); err != nil {
+		return nil, fmt.Errorf("Unable to retrieve related topics for %s: %w", node.ID, err)
+	}
+
+	// Deserialize JSON
+	if err = data.Decode(&topics); err != nil {
+		return nil, fmt.Errorf("Failed to deserialize JSON: %w", err)
+	}
+
+	return topics, nil
+}
+
 // PutPage stores a Page. This method generates a unique ID and returns it on success; NOTE: If
 // you assign an ID it will be overwritten.
 func (r *Repository) PutPage(page *common.Page) (string, error) {
@@ -249,6 +268,20 @@ func (r *Repository) PutAbout(thing *common.Thing) (string, error) {
 	return thing.ID, nil
 }
 
+// PutTopics stores an array of RelatedTopic objects associated with a Node
+func (r *Repository) PutTopics(node *common.Node, topics []common.RelatedTopic) error {
+	var data []byte
+	var err error
+	var id = topicsf(makeNodeID(node))
+	var metadata = map[string]*string{"type": aws.String("[]common.RelatedTopic")}
+
+	if data, err = encodeJSON(topics); err != nil {
+		return err
+	}
+
+	return r.put(id, data, metadata)
+}
+
 // DeletePage removes a Page from storage by its ID
 func (r *Repository) DeletePage(id string) {
 	// TODO: Do.
@@ -266,9 +299,10 @@ func (r *Repository) DeleteAbout(id string) {
 
 // Update encapsulates the parts of a document involved in an update of the content repository.
 type Update struct {
-	Page   common.Page
-	Nodes  []common.Node
-	Abouts map[string]common.Thing
+	Page                common.Page
+	Nodes               []common.Node
+	Abouts              map[string]common.Thing
+	PostPutNodeCallback func(common.Node) error
 }
 
 // Apply updates a document in the content repository.
@@ -310,6 +344,11 @@ func (r *Repository) Apply(update *Update) error {
 
 		update.Nodes[i].ID = id
 		update.Page.HasPart = append(update.Page.HasPart, id)
+
+		if update.PostPutNodeCallback != nil {
+			// FIXME: Should we handle the error?  Ignore it?
+			update.PostPutNodeCallback(node)
+		}
 	}
 
 	update.Page.About = make(map[string]string)
@@ -447,4 +486,8 @@ func nodef(id string) string {
 
 func aboutf(id string) string {
 	return fmt.Sprintf("/data/%s", id)
+}
+
+func topicsf(id string) string {
+	return fmt.Sprintf("/topics/%s", id)
 }

@@ -37,9 +37,16 @@ type Node {
   isPartOf: [ID!]!
   dateModified: String!
   unsafe: String!
+  keywords(limit: Int, offset: Int): [RelatedTopic]!
 }
 
 type Tuple {
   key: String!
   val: String!
+}
+
+type RelatedTopic {
+  id: ID!
+  label: String!
+  salience: Float!
 }
