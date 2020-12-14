@@ -2,3 +2,4 @@
 .vscode
 function.zip
 main
+.config.mk
