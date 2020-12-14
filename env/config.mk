@@ -90,5 +90,20 @@ PHX_DYNAMODB_PAGE_TITLES = $(PHX_PREFIX)-dynamodb-page-titles
 PHX_DYNAMODB_NODE_NAMES  = $(PHX_PREFIX)-dynamodb-node-names
 
 
+######
+# Search index resources
+######
+
+# Use ../.config.mk to specify actual credentials
+PHX_SEARCH_USERNAME = fauxuser
+PHX_SEARCH_PASSWORD = fauxpass
+
+# Elasticsearch endpoint URL
+PHX_SEARCH_ENDPOINT = "https://search-scpoc-phoenix-zti4iohw623mbsmdabsrmhybm4.us-east-2.es.amazonaws.com"
+
+
 # For internal use in ARN string formatting
 _BASE_ARN = $(shell printf "arn:aws:%%s:%s:%s:%%s" "$(PHX_DEFAULT_REGION)" "$(PHX_ACCOUNT_ID)")
+
+# Include user/developer overrides
+include ../.config.mk
