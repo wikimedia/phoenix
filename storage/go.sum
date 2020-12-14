@@ -1,9 +1,9 @@
 github.com/aws/aws-sdk-go v1.34.12 h1:7UbBEYDUa4uW0YmRnOd806MS1yoJMcaodBWDzvBShAI=
 github.com/aws/aws-sdk-go v1.34.12/go.mod h1:5zCpMtNQVjRREroY7sYe8lOMRSxkhG6MZveU8YkpAk0=
-github.com/aws/aws-sdk-go v1.36.0 h1:CscTrS+szX5iu34zk2bZrChnGO/GMtUYgMK1Xzs2hYo=
-github.com/aws/aws-sdk-go v1.36.0/go.mod h1:hcU610XS61/+aQV88ixoOzUoG7v3b31pl2zKMmprdro=
 github.com/aws/aws-sdk-go v1.36.1 h1:rDgSL20giXXu48Ycx6Qa4vWaNTVTltUl6vA73ObCSVk=
 github.com/aws/aws-sdk-go v1.36.1/go.mod h1:hcU610XS61/+aQV88ixoOzUoG7v3b31pl2zKMmprdro=
+github.com/aws/aws-sdk-go v1.36.8 h1:3nvY3Ax2RC6PN1i0OKppxjq3doHWqiYtvenLQ/oZ5jI=
+github.com/aws/aws-sdk-go v1.36.8/go.mod h1:hcU610XS61/+aQV88ixoOzUoG7v3b31pl2zKMmprdro=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -37,6 +37,10 @@ github.com/stretchr/testify v1.5.1 h1:nOGnQDM7FYENwehXlg/kFVnos3rEvtKTjRvOWSzb6H
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
 github.com/stretchr/testify v1.6.1 h1:hDPOHmpOpP40lSULcqw7IrRb/u7w6RpDC9399XyoNd0=
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
+github.com/wikimedia/phoenix/common v0.0.0-20201201202245-9b0069be3ccb h1:3rHoQTBf4aJdsCZpHvm1iOBMSK0XOEAeBBRwj6PRFfU=
+github.com/wikimedia/phoenix/common v0.0.0-20201201202245-9b0069be3ccb/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
+github.com/wikimedia/phoenix/common v0.0.0-20201207205910-f0d114bb14a4 h1:AI83FH4tHkNKiqISJ+QLv0Lm3lkwCWkDGDCnJ5Kk0JQ=
+github.com/wikimedia/phoenix/common v0.0.0-20201207205910-f0d114bb14a4/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
