@@ -100,12 +100,73 @@ TODO: Add model
 
 ### Demo
 
-For the month of January, 2020, you can access a demo instance [here]
-(TODO). The demo is:
+For the month of January, 2020, you can access a demo instance [here](https://wikimedia.github.io/phoenix/). The demo is:
+a front end that interacts with GraphQL and the structured content store.
+the structured content store contains content from Simple Wikipedia, updated when edits are made there.
+topics associated with each object (page, section) from [Rosette](https://www.rosette.com/).
+The demo provides several examples of potential behavior of the PoV.
 
-- a front end that interacts with GraphQL and the structured content store.
-- the structured content store contains content from Simple Wikipedia, updated when edits are made there.
-- topics associated with each object (page, section) from [Rosette](TODO add link).
+#### Demo: Fetch a part of a page
+This example showcases how an article that was divided into sections allows for flexibly fetching the section names, and individual sections only. When a page is chosen from the drop-down list, a GraphQL query is sent to the content store, requesting the list of section titles that are available for the article. The query sets up a request for the article name, modification date, and the name of all its parts (section titles) from the requested article and populates the second drop down.
+After the request is completed, the second drop down is populated, allowing the demo user to request a specific section. The second query sets up a request for the specific part inside the article itself. This means that the payload that is sent includes only the requested part, without receiving the complete article, and without expecting the consumer to process or manipulate the received content to present what is needed.
+
+##### GraphQL queries
+
+The queries used in this part of the demo show how easy it is to request and receive only the specific pieces of information that the consumer requires, and reduces the load of processing or manipulating the page by the consumer.
+
+**Requesting a list of sections within the article:**
+
+```
+{
+        page(name: { authority: "simple.wikipedia.org", name: "PAGE NAME"} ) {
+          name
+          dateModified
+          hasPart(offset: 0) {
+                name
+          }
+        }
+      }
+```
+
+**Requesting a specific section by name:**
+
+```
+{
+        node(name: { authority: "simple.wikipedia.org", pageName: "PAGENAME”, name: "SECTION NAME" } ) {
+          dateModified
+          name
+          unsafe
+        }
+      }
+```
+
+#### Demo: Fetch sections by topic
+(TODO: This demo isn’t implemented yet, because our topic fetching isn’t implemented.)
+
+This example shows the connection between parts (article sections) and semantic topics (wikidata items) produced by Rosette. The demo collects Rosette topics that are associated with sections and provides them in a drop-down list. Choosing a topic results in producing a GraphQL query that requests the sections that are associated with that topic, and presents them to the user. Each section then showcases the most salient topics of itself, allowing the user to explore content by wikidata topics.
+
+##### GraphQL query
+
+The query used to fetch sections by a given topic
+
+Xxxxxxxx
+
+
+The query used to fetch a specific section its top 5 most relevant topics
+
+Xxxxx
+
+#### Demo: GraphQL sandbox
+
+Finally, the demo includes a GraphQL sandbox for testing and exploring the way queries are built and the payload that they produce. The sandbox is based on [GraphiQL](https://github.com/graphql/graphiql/tree/main/packages/graphiql#readme).
+
+On the left side of the screen, the GraphQL editor allows the user to insert a custom query of their choosing, based on the available types. The user can learn what types they can request using the “Docs” popup on the top right corner of the screen.
+
+The “Docs” button opens a popup for the “Documentation explorer”, allowing the user to view the available GraphQL hierarchical entity definition, and use those to request information.
+
+Clicking on the “Execute query” button at the top left of the screen will run the query, and the resulting payload is presented at the right side of the interface.
+
+The user can also look at the history of previous queries and adjust those to experiment with the different payload results.
 
 ### Caveats
 
