@@ -118,26 +118,26 @@ The queries used in this part of the demo show how easy it is to request and rec
 
 ```
 {
-        page(name: { authority: "simple.wikipedia.org", name: "PAGE NAME"} ) {
-          name
-          dateModified
-          hasPart(offset: 0) {
-                name
-          }
-        }
-      }
+  page(name: { authority: "simple.wikipedia.org", name: "PAGE NAME"} ) {
+    name
+    dateModified
+    hasPart(offset: 0) {
+      name
+    }
+  }
+}
 ```
 
 **Requesting a specific section by name:**
 
 ```
 {
-        node(name: { authority: "simple.wikipedia.org", pageName: "PAGENAME”, name: "SECTION NAME" } ) {
-          dateModified
-          name
-          unsafe
-        }
-      }
+  node(name: { authority: "simple.wikipedia.org", pageName: "PAGENAME”, name: "SECTION NAME" } ) {
+    dateModified
+    name
+    unsafe
+  }
+}
 ```
 
 #### Demo: Fetch sections by topic
