@@ -82,6 +82,8 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 		// Store related topics
 		if err = content.PutTopics(node, topics); err != nil {
 			log.Error("Failed to store related-topics: %s", err)
+		} else {
+			// Index...
 		}
 	}
 }
