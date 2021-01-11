@@ -199,15 +199,16 @@ Essential note: Honestly, we don't know if it's humanly possible to "structure" 
 *CQRS*: Differentiating between reading and editing. In the PoV, the current structure inside of MediaWiki is left alone, it is the "trusted source". When changes happen in MW, the new system reacts by getting the necessary information and translating it into the canonical data model. This means the design works for reading but not for editing. If > 90% of the requests are for reads, can editing be a separate part of the system? We're looking at the editing workflow next.
 
 ### Leverage points
-The scope of modernization -- transforming the the world's largest reference website into the world's largest knowledge system -- is monumental. To understand where to focus our time and attention, we've identified four primary leverage points.
+The scope of modernization -- transforming the the world's largest reference website into the world's largest knowledge system -- is monumental. To understand where to focus our time and attention, we've identified three leverage points.
 
-"Folks who do systems analysis have a great belief in “leverage points.” These are places within a complex system where a small shift in one thing can produce big changes in everything." -- Donella Meado
+> "Folks who do systems analysis have a great belief in “leverage points.” These are places within a complex system where a small shift in one thing can produce big changes in everything." -- Donella Meadows
+
 However we approach it, the first step is a doozy. There is no *iterative* path towards transformation. Neither is there a lift-and-shift migration option. We need to find leverage points: capabilities in the system that we can decouple from the current day-to-day operations. As challenging as leverage points may be, to find and to change, they unlock highly-valuable opportunities. While simultaneously laying a strong and cohesive foundation for the future system.
 
 The leverage points explored in this PoV are:
-- giving shape and structure to Knowledge
-- designing inherent relationships between knowledge parts to create collections
-- building decoupled relationships between parts of the system rather than building capabilities into the software (this includes changing the choreography of essential activities)
+1.  giving shape and structure to Knowledge
+2.     designing inherent relationships between knowledge parts to create collections
+3.        building decoupled relationships between parts of the system rather than building capabilities into the software (this includes changing the choreography of essential activities)
 
 ### Big questions
 The scope of questions we need to answer, some we have not yet discovered, is equally monumental. The PoV leaves many questions unanswered -- on purpose. We are *triggering cross-functional discussions and decisions needed* to discern a path forward. While we have more questions than answers, we are significantly more confident in the questions. Top four include:
