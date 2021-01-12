@@ -32,7 +32,14 @@ To run the tests against DynamoDB (indexing tests):
 
 ### Elasticsearch
 
+Locally create the file `.config.yaml` and configure `elasticsearch_endpoint`, `elasticsearch_username`,
+and `elasticsearch_password` accordingly.
+
+    $ go test
+
+<!--
 To run the tests against Elasticsearch (indexing tests):
 
     $ curl -D - -XPUT -H 'Content-Type: application/json' -d @page_name_mapping.json http://localhost:9200/page_name; echo
     $ TESTS_USE_ELASTICSEARCH=1 go test
+-->
