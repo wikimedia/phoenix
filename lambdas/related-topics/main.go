@@ -10,18 +10,23 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/elastic/go-elasticsearch/v7"
 	"github.com/wikimedia/phoenix/common"
 	"github.com/wikimedia/phoenix/storage"
 )
 
 var (
-	content storage.Repository
-	log     *common.Logger
+	content     storage.Repository
+	log         *common.Logger
+	topicSearch storage.TopicSearch
 
 	// These values are passed in at build-time w/ -ldflags (see: Makefile)
 	awsAccount                string
 	awsRegion                 string
 	s3StructuredContentBucket string
+	// TODO: Endpoint via ldflags
+	// TODO: Username "   "
+	// TODO: Password "   "
 )
 
 // ~~~~~~~~~~
@@ -83,7 +88,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 		if err = content.PutTopics(node, topics); err != nil {
 			log.Error("Failed to store related-topics: %s", err)
 		} else {
-			// Index...
+			// TODO: Do indexing...
 		}
 	}
 }
@@ -94,6 +99,11 @@ func init() {
 		Store:  s3.New(session.New(&aws.Config{Region: aws.String(awsRegion)})),
 		Bucket: s3StructuredContentBucket,
 	}
+
+	// Build properly configured elasticsearch client
+	//elasticsearch.NewClient(elasticsearch.Config{})
+	esClient, _ := elasticsearch.NewDefaultClient()
+	topicSearch = &storage.ElasticTopicSearch{Client: esClient}
 
 	// Determine logging level
 	var level string = "ERROR"

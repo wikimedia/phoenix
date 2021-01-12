@@ -7,6 +7,7 @@ replace github.com/wikimedia/phoenix/storage => ../../storage
 require (
 	github.com/aws/aws-lambda-go v1.22.0
 	github.com/aws/aws-sdk-go v1.36.23
+	github.com/elastic/go-elasticsearch/v7 v7.10.0
 	github.com/google/uuid v1.1.4 // indirect
 	github.com/wikimedia/phoenix/common v0.0.0-20210106213327-5044c4eca381
 	github.com/wikimedia/phoenix/storage v0.0.0-20210106213327-5044c4eca381
