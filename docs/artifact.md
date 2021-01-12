@@ -34,9 +34,9 @@ by the Architecture Team
 
 # Why this artifact is valuable
 
-Architecture interconnects the Foundation's strategically-imperative goals with the system-level decisions needed to reach them. This artifact, and the prototyping exercise it describes, interconnect the Foundation's strategically-imperative goal, Knowledge as a Service, with the technology decisions needed to reach it.
+Architecture interconnects the Foundation's strategically-imperative goals with the system-level decisions needed to reach them. This artifact, and the prototype exercise it describes, interconnects the Foundation's strategically-imperative goal, Knowledge as a Service, with the technology decisions needed to reach it.
 
-This artifact also demonstrates the value of adopting modern system patterns, uncovers leverage points and describes potentially-disruptive challenges blocking mission-critical decisions.
+This artifact also demonstrates the value of modern systems patterns, uncovers leverage points (places to make impactful changes) and describes potentially-disruptive challenges blocking mission-critical decisions.
 
 # Our mission
 
@@ -58,31 +58,41 @@ We created a prototypical step towards a modern platform.
 
 # The outcome
 ## Overview
-We are [sharing a hands-on working prototype](https://wikimedia.github.io/phoenix/) and the [implementation behind it](https://github.com/wikimedia/phoenix). The goal was to create:
+Here is [a hands-on working prototype](https://wikimedia.github.io/phoenix/) and the [implementation behind it](https://github.com/wikimedia/phoenix). The goal was to create:
 
 - A tiny, experimental [modern platform](#modern-platform)
 - that can serve [collections of knowledge](#collections-of-knowledge)
 - created from [multiple trusted sources](#multiple-trusted-sources)
 - to many [product experiences and other platforms](#many-product-experiences-and-other-platforms).
 
-These have demo'd across the organization and the tiny exploration has evolved into deeper explorations across the organization, including the Core Platform Team, Product Strategy Working Group, Okapi and SDAW.
+The demo has been shared across the organization. This small experiment has evolved into deeper explorations across the organization, including the Core Platform Team, Product Strategy Working Group, Okapi and SDAW.
 
-If you'd like to skip right to the details, read the [implementation overview](#implementation-overview) and handy-wavy [caveats](#caveats) to see our implementation choices and [how to view the demo](#demo).
+If you'd like to skip right to the details, read the [implementation overview](#implementation) and handy-wavy [caveats](#caveats) or [how to view the demo](#demo).
 
-More importantly, we've begun systems analysis and laying the foundation for systems architecture -- a practice that will support the work ahead. This work includes [designing system patterns](#patterns), discovering [leverage points](#leverage-points) and identifying the [Big Questions](#big-questions).
+While we created something tangible, our essential focus is on systems analysis. We are laying the foundation for systems architecture -- a practice that will support the work ahead. This work includes [designing system patterns](#patterns), discovering [leverage points](#leverage-points) and identifying the [Big Questions](#big-questions).
 
 ## Implementation
-- Respond to an edit event triggered by MediaWiki when page content has changed
-- Retrieve the content from the source, break it down into sections and give each part a predictable structure
-- Save the page and sections as json object associated by hypermedia links (hasparts/isparts)
-- Return requests for pages and/or parts (or some of page or part)
-- Send objects for third-party topic analysis (the Rosette service returns a list of topics and their weight)
-- Save the topics associated with the parts they describe
-- Return requests for parts associated with the topic (highest-scoring sections on Physics, for example)
-- Though this list seems sequential, these activities are asynchronous
-- We used simple wikipedia and did some limited experimentation with select English wikipedia pages.
+The prototype is [built in AWS](https://docs.google.com/document/d/13ycCf8Mhxfs9K-hHXvsD2j1J8GcO4FQhKu4qCyx7fOs) using SNS messages, Lambdas written in Go, S3, GraphQL, DynamoDB and Elastic Search. It interacts with [Rosette](https://www.rosette.com/capability/topic-extractor/) to analyze the sections and return topics. - Though this list seems sequential, these activities are asynchronous.
 
-TODO: Add model
+*Event-driven workflow*
+
+Respond to a change event:
+- Respond to an event stream message sent by Simple Wikipedia when article has changed
+- Retrieve the article via the Parsoid API and save the raw result
+- Break the raw result down into sections associated by hypermedia links - a page has parts (sections), a section is part of a page. ('hasparts/isparts')
+- Save them as individual json objects with [a predictable structure](https://docs.google.com/spreadsheets/d/1ZWuczQQ0XpzCYS92PKXpIP3FM4ds0XPQyz7q9xR5GuE/edit#gid=0) using schema.org
+- Save the page title associated with the resource ID
+
+When a new file is saved:
+- Send section to Rosette via API
+- Save the list of resulting (most-salient) Wikidata Items (topics) associated with that section
+
+*Request-driven workflow*
+
+- Return requests for pages and/or sections with only the data requested
+- Return requests for sections associated with a topic 
+
+[Initial diagram](https://app.lucidchart.com/lucidchart/f283e649-cdb6-4275-9452-7114571a82e7/view?page=Q3nNnx6PpfFM#) and TODO: Add Eric's updated diagram
 
 ## Caveats
 There are *many* [challenges to consider](#challenges-to-consider) before this prototype is "production ready". *Production ready was not our goal.* We are [engaging with some of those challenges next](#next-steps).
@@ -246,7 +256,7 @@ To form scalable collections, the knowledge needs cataloging. Consistency of rel
 ## Multiple trusted sources
 The PoV uses simplewikipedia as the primary knowledge source. But the same pattern will apply to adding any subsequent source. There can be multiple wikipedia's, for example. The platform responds to an event sent from the source by getting the change from the source's API. As long as both are possible, a source is likely a valid option.
 
-[Rosette](TODO link) is our source for topics, creating collections based on what the knowledge is about. Other context-creating sources can be added similarly. The topics from Rosette are Wikidata items. Wikidata can also be a source to enhance information about the topic.
+[Rosette](https://www.rosette.com/capability/topic-extractor/) is our source for topics, creating collections based on what the knowledge is about. Other context-creating sources can be added similarly. The topics from Rosette are Wikidata items. Wikidata can also be a source to enhance information about the topic.
 
 ## Many product experiences and other platforms
 When we imagine "nearly-infinite product experiences", what comes to mind? Answering that question is cross-functional work happening now. For the PoV, we imagined things like:
