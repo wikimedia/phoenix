@@ -72,9 +72,11 @@ If you'd like to skip right to the details, read the [implementation overview](#
 While we created something tangible, our essential focus is on systems analysis. We are laying the foundation for systems architecture -- a practice that will support the work ahead. This work includes [designing system patterns](#patterns), discovering [leverage points](#leverage-points) and identifying the [Big Questions](#big-questions).
 
 ## Implementation
-The prototype is [built in AWS](https://docs.google.com/document/d/13ycCf8Mhxfs9K-hHXvsD2j1J8GcO4FQhKu4qCyx7fOs) using SNS messages, Lambdas written in Go, S3, GraphQL, DynamoDB and Elastic Search. It interacts with [Rosette](https://www.rosette.com/capability/topic-extractor/) to analyze the sections and return topics. - Though this list seems sequential, these activities are asynchronous.
+The prototype is built in AWS using SNS messages, Lambdas written in Go, S3, GraphQL, DynamoDB and Elastic Search. [See component list](https://docs.google.com/document/d/13ycCf8Mhxfs9K-hHXvsD2j1J8GcO4FQhKu4qCyx7fOs). It interacts with [Rosette](https://www.rosette.com/capability/topic-extractor/) to analyze the sections and return topics. The [repository is in github](https://github.com/wikimedia/phoenix). 
 
-*Event-driven workflow*
+Though this list seems sequential, these activities are asynchronous.
+
+### Event-driven workflow
 
 Respond to a change event:
 - Respond to an event stream message sent by Simple Wikipedia when article has changed
@@ -87,7 +89,7 @@ When a new file is saved:
 - Send section to Rosette via API
 - Save the list of resulting (most-salient) Wikidata Items (topics) associated with that section
 
-*Request-driven workflow*
+### Request-driven workflow
 
 - Return requests for pages and/or sections with only the data requested
 - Return requests for sections associated with a topic 
@@ -98,19 +100,21 @@ When a new file is saved:
 There are *many* [challenges to consider](#challenges-to-consider) before this prototype is "production ready". *Production ready was not our goal.* We are [engaging with some of those challenges next](#next-steps).
 
 ## Demo
+*For the month of February, 2020, you can access a demo instance [here](https://wikimedia.github.io/phoenix/)*. The demo is a front end that interacts with GraphQL and the structured content store. The structured content store contains content from Simple Wikipedia, updated when edits are made there. It also includes the topics associated with each object (page, section) from [Rosette](https://www.rosette.com/).
 
-For the month of January, 2020, you can access a demo instance [here](https://wikimedia.github.io/phoenix/). The demo is:
-a front end that interacts with GraphQL and the structured content store.
-the structured content store contains content from Simple Wikipedia, updated when edits are made there.
-topics associated with each object (page, section) from [Rosette](https://www.rosette.com/).
-The demo provides several examples of potential behavior of the PoV.
+The demo provides several examples of potential behavior of the PoV. You can:
+- fetch a section of an article by it's name
+- fetch the sections associated with a specific topic
+- input a GraphQL query
 
 ### Demo: Fetch a part of a page
+You can fetch a section by it's name.
+
 This example showcases how an article that was divided into sections allows for flexibly fetching the section names, and individual sections only. When a page is chosen from the drop-down list, a GraphQL query is sent to the content store, requesting the list of section titles that are available for the article. The query sets up a request for the article name, modification date, and the name of all its parts (section titles) from the requested article and populates the second drop down.
+
 After the request is completed, the second drop down is populated, allowing the demo user to request a specific section. The second query sets up a request for the specific part inside the article itself. This means that the payload that is sent includes only the requested part, without receiving the complete article, and without expecting the consumer to process or manipulate the received content to present what is needed.
 
 #### GraphQL queries
-
 The queries used in this part of the demo show how easy it is to request and receive only the specific pieces of information that the consumer requires, and reduces the load of processing or manipulating the page by the consumer.
 
 **Requesting a list of sections within the article:**
@@ -142,6 +146,8 @@ The queries used in this part of the demo show how easy it is to request and rec
 ### Demo: Fetch sections by topic
 (TODO: This demo isn’t implemented yet, because our topic fetching isn’t implemented.)
 
+You can request sections that are associated with a specific topic (Wikidata item).
+
 This example shows the connection between parts (article sections) and semantic topics (wikidata items) produced by Rosette. The demo collects Rosette topics that are associated with sections and provides them in a drop-down list. Choosing a topic results in producing a GraphQL query that requests the sections that are associated with that topic, and presents them to the user. Each section then showcases the most salient topics of itself, allowing the user to explore content by wikidata topics.
 
 #### GraphQL query
@@ -156,6 +162,7 @@ The query used to fetch a specific section its top 5 most relevant topics
 Xxxxx
 
 ### Demo: GraphQL sandbox
+You can input a GraphQL query of your own.
 
 Finally, the demo includes a GraphQL sandbox for testing and exploring the way queries are built and the payload that they produce. The sandbox is based on [GraphiQL](https://github.com/graphql/graphiql/tree/main/packages/graphiql#readme).
 
@@ -168,23 +175,23 @@ Clicking on the “Execute query” button at the top left of the screen will ru
 The user can also look at the history of previous queries and adjust those to experiment with the different payload results.
 
 # Architecting the mission
-- A [modern platform](#modern-platform)
+
+## Modern platform
+- *A [modern platform](#modern-platform)*
 - that can serve [collections of knowledge](#collections-of-knowledge)
 - created from [multiple trusted sources](#multiple-trusted-sources)
 - to many [product experiences and other platforms](#many-product-experiences-and-other-platforms).
+We've made choices about what "modern platform" means. These choices were informed by the wider world of content and knowledge systems, where others face similar challenges. We explored emerging patterns and challenges. How do you "create once, publish everywhere"? How do we *distribute* knowledge to wherever people engage with it?
 
-## Modern platform
-We've made choices about what "modern platform" means. These choices were informed by the wider world of content and knowledge systems, which are facing similar challenges. How to "create once, publish everywhere"? How do we *distribute* knowledge to wherever people engage with it?
+We also relied on 18 months of [architectural explorations](#TODO-add-link-with-links-and-summary) conducted prior to this exercise. These explorations enabled us to identify what *we* need from a "modern" platform. Some needs are in synch with the world at large and a few (essential challenges) are unique.
 
-We drew thinking from others about emerging patterns and challenges. We also relied on 18 months of [architectural explorations](#TODO-add-link-with-links-and-summary) conducted prior to this exercise. These explorations enabled us to identify what *we* need from a "modern" platform. Some needs are in synch with the world at large and a few (essential challenges) are unique.
-
-We define modern platform as interrelated capabilities relying on emerging industry patterns (see below). In the PoV and at a system level, these patterns are the implementation details. They lay the foundation for low-level interactions between knowledge sources and products that scale as the system scales.
+We define modern platform as interrelated capabilities relying on emerging industry patterns (see below). At a system level, these patterns are the implementation details. They lay the foundation for low-level interactions between knowledge sources and products that scale as the system scales. Which is essential to our mission.
 
 ### Patterns
-Patterns enable us to design for emergence: create interrelated capabilities that become greater than the sum of their parts. So we focused on patterns that enable parts that are stable, predictable, changeable and encapsulated. Patterns that let us design a system by focusing on ...
-- the data model of "knowledge"
-- the parts that deliver the capabilities (things the system does)
-- the relationship between the parts
+Patterns enable us to design for emergence: create interrelated capabilities that can become greater than the sum of their parts. We focused on patterns that enable stable, predictable, changeable and encapsulated parts. Patterns that let us design a system by focusing on:
+- the data model (the shape of) "knowledge"
+- the parts that deliver the necessary capabilities (things the system does)
+- the relationship between those parts
 - and the structure of their interaction
 
 The patterns we've explored include:
@@ -200,8 +207,6 @@ What is the structure of "knowledge" and how does it flow across the system? Bui
 
 [Working draft of our CDM](todo-edit-and-link)
 
-Essential note: Honestly, we don't know if it's humanly possible to "structure" Wikipedia content sufficiently. There are *many* questions to consider. We identify the Biggest Challenges so we can raise them and resolve them organizationally.
-
 *Loose coupling*: New ways to interact with, enhance or process content (capabilities) that operate independently and are built on top of (or adjacent to) the data model.
 
 *Event-based interactions*: activities in the system happen only when they need to happen (asynchronously) with only the information they need to accomplish their aim.
@@ -213,12 +218,14 @@ The scope of modernization -- transforming the the world's largest reference web
 
 > "Folks who do systems analysis have a great belief in “leverage points.” These are places within a complex system where a small shift in one thing can produce big changes in everything." -- Donella Meadows
 
-However we approach it, the first step is a doozy. There is no *iterative* path towards transformation. Neither is there a lift-and-shift migration option. We need to find leverage points: capabilities in the system that we can decouple from the current day-to-day operations. As challenging as leverage points may be, to find and to change, they unlock highly-valuable opportunities. While simultaneously laying a strong and cohesive foundation for the future system.
+However we approach it, the first step is a doozy. There is no *iterative* path towards transformation. Neither is there a lift-and-shift migration option. We need to find capabilities in the system that we can decouple from the current day-to-day operations. As challenging as leverage points may be to find and to change, they unlock highly-valuable opportunities. While simultaneously laying a strong and cohesive foundation for the future system.
 
 The leverage points explored in this PoV are:
-1.  giving shape and structure to Knowledge
-2.     designing inherent relationships between knowledge parts to create collections
-3.        building decoupled relationships between parts of the system rather than building capabilities into the software (this includes changing the choreography of essential activities)
+1.  [*Giving shape and structure to Knowledge*](#the-shape-of-knowledge): Honestly, we don't know if it's humanly possible to "structure" Wikipedia content sufficiently. the knowledge we want to share with the world isn't made for modern distributions. We must try. Also, knowledge is currently shaped by the context of "web page" and that doesn't fit emerging contexts.
+2.  [*Designing inherent relationships between knowledge parts to create collections*](#the-shape-of-collections): Collections are relationships developed, programatically or by editors, between pieces of knowledge. The way humans envision and plan these relationships shapes the way the knowledge is developed. The PoV pre-builds the knowledge payload (an answer to the queries) based on the relationships we know are the most valued. How would we expand this over time? 
+3.  *Building decoupled relationships between parts of the system* rather than building capabilities into the software: This includes changing the choreography of essential activities ... in many ways, the paradigm itself is changing.
+
+Exploring patterns and identifying leverage points helped us prioritize questions to explore next.
 
 ### Big questions
 The scope of questions we need to answer, some we have not yet discovered, is equally monumental. The PoV leaves many questions unanswered -- on purpose. We are *triggering cross-functional discussions and decisions needed* to discern a path forward. While we have more questions than answers, we are significantly more confident in the questions. Top four include:
@@ -231,12 +238,19 @@ The scope of questions we need to answer, some we have not yet discovered, is eq
 The highest-value next step is continuing to gather and apply learnings from teams across the foundation that help answer these questions.
 
 ## Collections of knowledge and information
-How can we design knowledge to be consumed by "infinite product experiences"? How do we enable these "experiences" to control how the knowledge is displayed and how users interact with it. When we say collections, what do we mean? A page is one, predominant, type of collection of knowledge. What are the others?
+- A [modern platform](#modern-platform)
+- *that can serve [collections of knowledge](#collections-of-knowledge)*
+- created from [multiple trusted sources](#multiple-trusted-sources)
+- to many [product experiences and other platforms](#many-product-experiences-and-other-platforms).
+
+How can we design knowledge to be consumed by "infinite product experiences"? How do we enable these "experiences" to control how the knowledge is displayed and how users interact with it? When we say collections, what do we mean? 
+
+A page is one, predominant, type of collection of knowledge. What are the others?
 
 ### The shape of knowledge
 During our architectural explorations, a single blocker arose again and again. At the heart of our ecosystem, the knowledge we want to share with the world isn't made for modern distributions. It exists as a "web page" made from a gigantic, tangled, monolithically-orchestrated bundle of proprietary text.
 
-This bundle of text has enabled *terrific* benefit to the world. The challenge is, without detangling, it won't meet the system's longterm goals in the emerging digital world.
+This bundle of text has enabled *terrific* benefit to the world. The challenge is, without detangling, it won't meet the system's long-term goals in the emerging digital world.
 
 A predictable data model is needed (to some extent) to feed multitudes of new and varied product experiences. Products and platforms that consume knowledge outside the context of MediaWiki need the knowledge structured as distributable, consumable information.
 
@@ -254,15 +268,25 @@ Categories are collections. Pages and parts of pages associated with a Wikidata 
 To form scalable collections, the knowledge needs cataloging. Consistency of relationships between knowledge parts makes collections consumable by nearly-infinite products and platforms. Without overtaxing the system with queries. Predictable, prebuilt relationships that don't rely on extensive fuzzy logic queries are ideal.
 
 ## Multiple trusted sources
-The PoV uses simplewikipedia as the primary knowledge source. But the same pattern will apply to adding any subsequent source. There can be multiple wikipedia's, for example. The platform responds to an event sent from the source by getting the change from the source's API. As long as both are possible, a source is likely a valid option.
+- A [modern platform](#modern-platform)
+- that can serve [collections of knowledge](#collections-of-knowledge)
+- *created from [multiple trusted sources](#multiple-trusted-sources)*
+- to many [product experiences and other platforms](#many-product-experiences-and-other-platforms).
 
-[Rosette](https://www.rosette.com/capability/topic-extractor/) is our source for topics, creating collections based on what the knowledge is about. Other context-creating sources can be added similarly. The topics from Rosette are Wikidata items. Wikidata can also be a source to enhance information about the topic.
+The PoV uses Simple Wikipedia as the primary knowledge source. But the same pattern will apply when adding any subsequent source. There can be multiple Wikipedia's, for example. The platform would add a service that responds to an event sent from the source and gets the change from the source's API. As long as both are possible, a source is likely a valid participant.
+
+[Rosette](https://www.rosette.com/capability/topic-extractor/) is our source for topics, creating collections based on related Wikidata items. Other context-creating sources can be added similarly. Wikidata can also be a source to enhance information about the topic.
 
 ## Many product experiences and other platforms
+- A [modern platform](#modern-platform)
+- that can serve [collections of knowledge](#collections-of-knowledge)
+- created from [multiple trusted sources](#multiple-trusted-sources)
+- *to many [product experiences and other platforms](#many-product-experiences-and-other-platforms)*.
+
 When we imagine "nearly-infinite product experiences", what comes to mind? Answering that question is cross-functional work happening now. For the PoV, we imagined things like:
 
 - product experiences requesting knowledge so they can build their own "page", or collection or context for displaying.
-- these experiences drawing from multiple sources and needing relationships that give the integrated knowledge meaning (about Barack Obama, for example)
+- these experiences drawing from multiple sources and needing relationships between them that give the knowledge meaning (everything about Barack Obama, for example)
 - a website or app about Cricket that draws people towards Wikipedia in places that aren't part of the community yet
 - any decoupled frontend experience
 
@@ -271,10 +295,10 @@ For platforms, we imagined
 - interrelationships with What's App and Facebook that draw people into learning and perhaps editing
 - pushing knowledge to platforms
 
-For a deeper dive into the product experiences and platforms that are supported by modernization, see [PoV products and platforms](TODO).
+We also imagined the Internet of Things, News and Information sources and products designed to increase engagement.
 
 # Challenges to consider
-The primary challenge is embracing uncertainty. We can't know exactly how an emergent system will emerge. We can make well-reasoned decisions while exploring the path to modernization. We can design for emergence. But this requires embracing uncertainty and making sound decisions in the midst of it.
+The primary challenge is embracing uncertainty. We can't know how this emergent system will emerge. We can make sound, well-reasoned decisions while exploring the path to modernization. We can *design* for emergence with architectural best practices. But uncertainty is our companion and we will be making sound decisions in the midst of it.
 
 Modeling and planning for change triggers confusion and anxiety, two things that will most certainly push the system in the wrong direction (to regain status quo). This is a challenge must not be underestimated.
 
@@ -289,12 +313,13 @@ Other major challenges include:
 # Next steps
 The next steps are delivering four further artifacts:
 
-- Infrastructure exploration -- designing a production-viable version of this AWS prototype
-- Models of current editing workflows, so we understand them
-- Editing exploration - what must change in the knowledge sources in order to decouple editing from many products and platforms? Are they viable?
-- Creating the architecture repository as a space to understand and explore emerging systems patterns
+- Infrastructure: designing a production-viable version of this AWS prototype.
+- Models of current editing workflows, so we understand them.
+- Exploring what changes are needed in editing in order to decouple editing from many products and platforms. Is this even possible?
+- Educating ourselves on modern system approaches.
+- Creating the architecture repository as a space to understand and explore emerging systems patterns.
 
-Teams are also creating front end prototypes demonstrating uses for these patterns. Details on which teams are not yet decided.
+Teams like Structured Data and Okapi are eploring adopting this work as part of their future plans. 
 
 Many branches of discussion have already begun. Their success depends on:
 - understanding the tradeoffs, especially in areas that have been philosophically off limits
@@ -303,4 +328,4 @@ Many branches of discussion have already begun. Their success depends on:
 - defining aspirational terms like "modern"
 - understanding the cost
 
-By "cost", we mean estimating the financial investment, though its too soon for that analysis. We also mean articulating the time, energy and expertise required. When we say cost, we also mean the social and cultural changes that may be necessary to remove roadblocks. And discerning the balance between our values, goals and investments.
+By "cost", we mean estimating the financial investment, though its too soon for that analysis. We also mean the time, energy and expertise required. We mean the social and cultural changes that may be necessary to remove roadblocks. And we mean discerning the balance between our values, goals and investments.
