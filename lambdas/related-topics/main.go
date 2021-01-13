@@ -24,9 +24,10 @@ var (
 	awsAccount                string
 	awsRegion                 string
 	s3StructuredContentBucket string
-	// TODO: Endpoint via ldflags
-	// TODO: Username "   "
-	// TODO: Password "   "
+	esEndpoint                string
+	esIndex                   string
+	esUsername                string
+	esPassword                string
 )
 
 // ~~~~~~~~~~
@@ -88,7 +89,8 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 		if err = content.PutTopics(node, topics); err != nil {
 			log.Error("Failed to store related-topics: %s", err)
 		} else {
-			// TODO: Do indexing...
+			// Update topic index
+			topicSearch.Update(node, topics)
 		}
 	}
 }
@@ -100,10 +102,14 @@ func init() {
 		Bucket: s3StructuredContentBucket,
 	}
 
-	// Build properly configured elasticsearch client
-	//elasticsearch.NewClient(elasticsearch.Config{})
-	esClient, _ := elasticsearch.NewDefaultClient()
-	topicSearch = &storage.ElasticTopicSearch{Client: esClient}
+	esClient, _ := elasticsearch.NewClient(
+		elasticsearch.Config{
+			Addresses: []string{esEndpoint},
+			Username:  esUsername,
+			Password:  esPassword,
+		},
+	)
+	topicSearch = &storage.ElasticTopicSearch{Client: esClient, IndexName: esIndex}
 
 	// Determine logging level
 	var level string = "ERROR"
