@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	elasticsearch "github.com/elastic/go-elasticsearch/v7"
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/yaml.v2"
 )
@@ -41,14 +42,27 @@ func TestTopicSearch(t *testing.T) {
 		t.FailNow()
 	}
 
-	esClient, _ := elasticsearch.NewClient(elasticsearch.Config{
+	esClient, err := elasticsearch.NewClient(elasticsearch.Config{
 		Addresses: []string{cfg.ElasticsearchEndpoint},
 		Username:  cfg.ElasticsearchUsername,
 		Password:  cfg.ElasticsearchPassword,
 	})
 
-	topicSearch = ElasticTopicSearch{Client: esClient}
-
-	err = topicSearch.Update(&testNode, testTopics)
 	require.Nil(t, err)
+
+	topicSearch = ElasticTopicSearch{Client: esClient, IndexName: "topics_test"}
+
+	t.Run("Update", func(t *testing.T) {
+		err = topicSearch.Update(&testNode, testTopics)
+		require.Nil(t, err)
+	})
+
+	// XXX: This can fail because the Update operation is race-y AF
+	t.Run("Search", func(t *testing.T) {
+		ids, err := topicSearch.Search("Q1")
+		require.Nil(t, err)
+
+		require.Len(t, ids, 1)
+		assert.Equal(t, testNode.ID, ids[0])
+	})
 }
