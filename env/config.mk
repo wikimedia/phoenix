@@ -107,6 +107,3 @@ PHX_SEARCH_IDX_TOPICS = "topics"
 
 # For internal use in ARN string formatting
 _BASE_ARN = $(shell printf "arn:aws:%%s:%s:%s:%%s" "$(PHX_DEFAULT_REGION)" "$(PHX_ACCOUNT_ID)")
-
-# Include user/developer overrides
-include ../.config.mk

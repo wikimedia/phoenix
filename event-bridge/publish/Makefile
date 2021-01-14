@@ -1,5 +1,9 @@
 
+# Repository configuration
 include ../../env/config.mk
+# User/dev overrides
+include ../../.config.mk
+
 
 BINARY  := publish
 SOURCES := publish.go
