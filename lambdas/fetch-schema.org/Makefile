@@ -1,5 +1,8 @@
 
+# Repository configuration
 include ../../env/config.mk
+# User/dev overrides
+include ../../.config.mk
 
 GOOS        := linux
 GOARCH      := amd64

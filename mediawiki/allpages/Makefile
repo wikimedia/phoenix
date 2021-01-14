@@ -1,3 +1,4 @@
+
 BINARY  := allpages
 SOURCES := allpages.go
 
