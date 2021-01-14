@@ -90,27 +90,14 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			log.Error("Failed to store related-topics: %s", err)
 		} else {
 			// Update topic index
-			topicSearch.Update(node, topics)
+			if err = topicSearch.Update(node, topics); err != nil {
+				log.Error("Failed to index related-topics: %s", err)
+			}
 		}
 	}
 }
 
 func init() {
-	// AWS S3 client obj
-	content = storage.Repository{
-		Store:  s3.New(session.New(&aws.Config{Region: aws.String(awsRegion)})),
-		Bucket: s3StructuredContentBucket,
-	}
-
-	esClient, _ := elasticsearch.NewClient(
-		elasticsearch.Config{
-			Addresses: []string{esEndpoint},
-			Username:  esUsername,
-			Password:  esPassword,
-		},
-	)
-	topicSearch = &storage.ElasticTopicSearch{Client: esClient, IndexName: esIndex}
-
 	// Determine logging level
 	var level string = "ERROR"
 	if v, ok := os.LookupEnv("LOG_LEVEL"); ok {
@@ -124,6 +111,30 @@ func init() {
 	log.Debug("AWS account ......................: %s", awsAccount)
 	log.Debug("AWS region .......................: %s", awsRegion)
 	log.Debug("S3 structured content bucket .....: %s", s3StructuredContentBucket)
+
+	// AWS S3 client obj
+	content = storage.Repository{
+		Store:  s3.New(session.New(&aws.Config{Region: aws.String(awsRegion)})),
+		Bucket: s3StructuredContentBucket,
+	}
+
+	// Elasticsearch topic indexer
+	var err error
+	var esConfig elasticsearch.Config
+	var esClient *elasticsearch.Client
+
+	esConfig = elasticsearch.Config{
+		Addresses: []string{esEndpoint},
+		Username:  esUsername,
+		Password:  esPassword,
+	}
+
+	if esClient, err = elasticsearch.NewClient(esConfig); err == nil {
+		topicSearch = &storage.ElasticTopicSearch{Client: esClient, IndexName: esIndex}
+	} else {
+		log.Error("Unable to create ElasticSearch client: %s", err)
+	}
+
 }
 
 func main() {

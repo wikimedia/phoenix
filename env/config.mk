@@ -99,10 +99,10 @@ PHX_SEARCH_USERNAME   = fauxuser
 PHX_SEARCH_PASSWORD   = fauxpass
 
 # Elasticsearch endpoint URL
-PHX_SEARCH_ENDPOINT   = "https://search-scpoc-phoenix-zti4iohw623mbsmdabsrmhybm4.us-east-2.es.amazonaws.com"
+PHX_SEARCH_ENDPOINT   = https://search-scpoc-phoenix-zti4iohw623mbsmdabsrmhybm4.us-east-2.es.amazonaws.com
 
 # Elasticsearch index name for related topics indexing
-PHX_SEARCH_IDX_TOPICS = "topics"
+PHX_SEARCH_IDX_TOPICS = topics
 
 
 # For internal use in ARN string formatting
