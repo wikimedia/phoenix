@@ -16,6 +16,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/elastic/go-elasticsearch/v7"
 	"github.com/gorilla/handlers"
 	graphql "github.com/graph-gophers/graphql-go"
 	"github.com/graph-gophers/graphql-go/relay"
@@ -33,6 +34,10 @@ var (
 	dynamoDBPageTitles string
 	dynamoDBNodeNames  string
 	s3Bucket           string
+	esEndpoint         string
+	esIndex            string
+	esUsername         string
+	esPassword         string
 )
 
 // True if err is an awserr.Error, AND its code is s3.ErrCodeNoSuchKey, false otherwise.
@@ -69,8 +74,9 @@ type NodeNameInput struct {
 
 // RootResolver is the top-level GraphQL resolver
 type RootResolver struct {
-	Repository *storage.Repository
-	Logger     *common.Logger
+	Repository  *storage.Repository
+	TopicSearch storage.TopicSearch
+	Logger      *common.Logger
 }
 
 // Page returns a Page given its ID
@@ -155,6 +161,35 @@ func (r *RootResolver) Node(args struct {
 	}
 
 	return &NodeResolver{node, r.Repository}, nil
+}
+
+// Related returns relevant Nodes for a given topic ID
+func (r *RootResolver) Related(args struct{ WID *string }) ([]*NodeResolver, error) {
+	var err error
+	var nodes []string
+	var resolvers = make([]*NodeResolver, 0)
+
+	if nodes, err = r.TopicSearch.Search(*args.WID); err != nil {
+		return nil, fmt.Errorf("Topic search failed: %w", err)
+	}
+
+	var node *common.Node
+
+	for _, nid := range nodes {
+		r.Logger.Info("Found node %s", nid)
+		if node, err = r.Repository.GetNode(nid); err != nil {
+			// If this was an error returned by S3 (it is an awserr.Error) and its code is s3.ErrCodeNoSuchKey
+			// then the object was simply not found (read: this is not an error per say).
+			if isS3NotFound(err) {
+				r.Logger.Warn("Lookup of %s failed!", nid)
+				continue
+			}
+			return nil, err
+		}
+		resolvers = append(resolvers, &NodeResolver{node, r.Repository})
+	}
+
+	return resolvers, nil
 }
 
 // PageResolver resolves a GraphQL page type
@@ -269,7 +304,7 @@ func (r *NodeResolver) Name() string {
 
 // IsPartOf resolves a node isPartOf attribute
 func (r *NodeResolver) IsPartOf() []graphql.ID {
-	parents := make([]graphql.ID, len(r.n.IsPartOf))
+	parents := make([]graphql.ID, 0)
 	for _, id := range r.n.IsPartOf {
 		parents = append(parents, graphql.ID(id))
 	}
@@ -342,8 +377,22 @@ func (r *TopicResolver) Salience() float64 {
 	return float64(r.t.Salience)
 }
 
+type config struct {
+	Region      string
+	TitlesTable string
+	NamesTable  string
+	Bucket      string
+
+	ElasticSearch struct {
+		Endpoint string
+		Index    string
+		Username string
+		Password string
+	}
+}
+
 // Return configuration variables that are the union of defaults, and any values passed in the environment
-func config() (region, titlesTable, namesTable, bucket string) {
+func getConfig() config {
 	// Retrieve environment variables
 	env := func(name string, def string) string {
 		if v := os.Getenv(name); v != "" {
@@ -352,24 +401,31 @@ func config() (region, titlesTable, namesTable, bucket string) {
 		return def
 	}
 
-	region = env("AWS_REGION", awsRegion)
-	titlesTable = env("AWS_DYNAMODB_PAGE_TITLES_TABLE", dynamoDBPageTitles)
-	namesTable = env("AWS_DYNAMODB_NODE_NAMES_TABLE", dynamoDBNodeNames)
-	bucket = env("AWS_BUCKET", s3Bucket)
+	var cfg = config{}
 
-	return region, titlesTable, namesTable, bucket
+	cfg.Region = env("AWS_REGION", awsRegion)
+	cfg.TitlesTable = env("AWS_DYNAMODB_PAGE_TITLES_TABLE", dynamoDBPageTitles)
+	cfg.NamesTable = env("AWS_DYNAMODB_NODE_NAMES_TABLE", dynamoDBNodeNames)
+	cfg.Bucket = env("AWS_BUCKET", s3Bucket)
+
+	cfg.ElasticSearch.Endpoint = env("ES_ENDPOINT", esEndpoint)
+	cfg.ElasticSearch.Index = env("ES_INDEX", esIndex)
+	cfg.ElasticSearch.Username = env("ES_USERNAME", esUsername)
+	cfg.ElasticSearch.Password = env("ES_PASSWORD", esPassword)
+
+	return cfg
 }
 
 func main() {
 	var accessLog io.Writer
 	var b []byte
+	var cfg = getConfig()
 	var err error
+	var esClient *elasticsearch.Client
 	var logger *common.Logger
 	var resolver *RootResolver
 	var schema *graphql.Schema
-
-	var region, titlesTable, namesTable, bucket = config()
-	var awsSession = session.New(&aws.Config{Region: aws.String(region)})
+	var awsSession = session.New(&aws.Config{Region: aws.String(cfg.Region)})
 
 	flag.Parse()
 
@@ -397,13 +453,25 @@ func main() {
 		os.Exit(1)
 	}
 
+	if esClient, err = elasticsearch.NewClient(
+		elasticsearch.Config{
+			Addresses: []string{cfg.ElasticSearch.Endpoint},
+			Username:  cfg.ElasticSearch.Username,
+			Password:  cfg.ElasticSearch.Password,
+		},
+	); err != nil {
+		fmt.Fprintf(os.Stderr, "Unable to create Elasticsearch client: %s", err)
+		os.Exit(1)
+	}
+
 	resolver = &RootResolver{
 		Repository: &storage.Repository{
 			Store:  s3.New(awsSession),
-			Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession), TitlesTable: titlesTable, NamesTable: namesTable},
-			Bucket: bucket,
+			Index:  &storage.DynamoDBIndex{Client: dynamodb.New(awsSession), TitlesTable: cfg.TitlesTable, NamesTable: cfg.NamesTable},
+			Bucket: cfg.Bucket,
 		},
-		Logger: logger,
+		TopicSearch: &storage.ElasticTopicSearch{Client: esClient, IndexName: cfg.ElasticSearch.Index},
+		Logger:      logger,
 	}
 
 	if schema, err = graphql.ParseSchema(string(b), resolver, graphql.UseFieldResolvers()); err != nil {

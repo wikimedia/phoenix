@@ -5,6 +5,7 @@ schema {
 type Query {
   page(id: String, name: PageNameInput): Page
   node(id: String, name: NodeNameInput): Node
+  related(wid: String): [Node]!
 }
 
 input PageNameInput {
