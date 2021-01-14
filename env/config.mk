@@ -1,7 +1,6 @@
 
-PHX_ACCOUNT_ID               = 113698225543
-PHX_DEFAULT_REGION           = us-east-2
-PHX_PREFIX                   = scpoc
+SELF_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
+include $(SELF_DIR)env.mk
 
 ######
 # SNS resources
