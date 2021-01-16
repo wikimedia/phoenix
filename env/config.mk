@@ -91,6 +91,12 @@ PHX_DYNAMODB_NODE_NAMES  = $(PHX_PREFIX)-dynamodb-node-names
 
 
 ######
+# Rosette
+######
+PHX_ROSETTE_API_KEY = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+######
 # Search index resources
 ######
 
