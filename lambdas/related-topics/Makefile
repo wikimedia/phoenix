@@ -6,7 +6,7 @@ include ../../.config.mk
 
 GOOS    := linux
 BINARY  := main
-SOURCES := main.go
+SOURCES := main.go rosette.go
 
 # Configuration
 LDFLAGS  = -X main.awsAccount=$(PHX_ACCOUNT_ID)
@@ -16,6 +16,7 @@ LDFLAGS += -X main.esEndpoint=$(PHX_SEARCH_ENDPOINT)
 LDFLAGS += -X main.esIndex=$(PHX_SEARCH_IDX_TOPICS)
 LDFLAGS += -X main.esUsername=$(PHX_SEARCH_USERNAME)
 LDFLAGS += -X main.esPassword=$(PHX_SEARCH_PASSWORD)
+LDFLAGS += -X main.rosetteAPIKey=$(PHX_ROSETTE_API_KEY)
 
 
 build: clean
