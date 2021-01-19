@@ -13,7 +13,10 @@ import (
 	"github.com/wikimedia/phoenix/common"
 )
 
-const rosetteEndpoint = "https://api.rosette.com/rest/v1/topics?redirect=true"
+const (
+	rosetteEndpoint    = "https://api.rosette.com/rest/v1/topics?redirect=true"
+	rosetteMinSalience = 0.1
+)
 
 var (
 	// Regex for matching extraneous spaces
@@ -109,7 +112,9 @@ func rosetteTopics(node *common.Node) ([]common.RelatedTopic, error) {
 	}
 
 	for _, topic := range topics.Concepts {
-		res = append(res, common.RelatedTopic{ID: topic.ConceptID, Salience: topic.Salience})
+		if topic.Salience > rosetteMinSalience {
+			res = append(res, common.RelatedTopic{ID: topic.ConceptID, Salience: topic.Salience})
+		}
 	}
 
 	return res, nil
