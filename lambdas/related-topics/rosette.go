@@ -16,6 +16,7 @@ import (
 const (
 	rosetteEndpoint    = "https://api.rosette.com/rest/v1/topics?redirect=true"
 	rosetteMinSalience = 0.1
+	rosetteMaxTopics   = 10
 )
 
 var (
@@ -111,8 +112,9 @@ func rosetteTopics(node *common.Node) ([]common.RelatedTopic, error) {
 		return nil, fmt.Errorf("failure retrieving related topics: %w", err)
 	}
 
-	for _, topic := range topics.Concepts {
-		if topic.Salience > rosetteMinSalience {
+	for i, topic := range topics.Concepts {
+		// Limit our results to those greater than a defined minimum salience, and establish an upper bound on quantity.
+		if topic.Salience > rosetteMinSalience && i < rosetteMaxTopics {
 			res = append(res, common.RelatedTopic{ID: topic.ConceptID, Salience: topic.Salience})
 		}
 	}
