@@ -6,7 +6,7 @@ include ../../.config.mk
 
 GOOS    := linux
 BINARY  := main
-SOURCES := main.go rosette.go
+SOURCES := main.go rosette.go allowlist.go
 
 # Configuration
 LDFLAGS  = -X main.awsAccount=$(PHX_ACCOUNT_ID)
