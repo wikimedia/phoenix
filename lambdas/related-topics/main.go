@@ -54,6 +54,12 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 
 		log.Debug("Processing Node.Unsafe='%.24s...'", node.Unsafe)
 
+		// Only access Rosette API for related topics if explicitly configured to.
+		if !allowed(node) {
+			log.Debug("Skipping related-topics processing per configuration for %s", node.ID)
+			continue
+		}
+
 		// Fetch related-topics
 		if topics, err = rosetteTopics(node); err != nil {
 			log.Error("Unable to retrieve related topics for %s: %s", msg.ID, err)

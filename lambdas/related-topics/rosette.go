@@ -16,6 +16,7 @@ import (
 const rosetteEndpoint = "https://api.rosette.com/rest/v1/topics?redirect=true"
 
 var (
+	// Regex for matching extraneous spaces
 	xSpace = regexp.MustCompile(`\s+`)
 )
 
