@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strconv"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/aws/aws-lambda-go/events"
@@ -63,6 +64,53 @@ func readLinkedData(s3client *s3.S3, msg *common.ChangeEvent) (*common.Thing, er
 		return nil, fmt.Errorf("Error unmarshalling JSON: %w", err)
 	}
 	return thing, nil
+}
+
+// A helper function that returns a PostPutNodeCallback function conditional on a env variable.
+func postPutNodeCallback(snsClient *sns.SNS) func(node common.Node) error {
+	var disabled = false
+
+	if env, ok := os.LookupEnv("DISABLE_PUT_NODE_CALLBACK"); ok {
+		if v, err := strconv.ParseBool(env); err == nil {
+			disabled = v
+		}
+	}
+
+	// If not disabled (read: if enabled), return a callback that will deliver a "node published" SNS message.
+	if !disabled {
+		return func(node common.Node) error {
+			var b []byte
+			var err error
+			var input *sns.PublishInput
+			var output *sns.PublishOutput
+
+			// JSON-encoded SNS message
+			if b, err = json.Marshal(common.NodeStoredEvent{ID: node.ID}); err != nil {
+				log.Error("Unable to marhsal SNS event to JSON: %s", err)
+				return fmt.Errorf("Unable to marshal SNS event to JSON: %w", err)
+			}
+
+			input = &sns.PublishInput{
+				Message:  aws.String(string(b)),
+				TopicArn: aws.String(fmt.Sprintf("arn:aws:sns:%s:%s:%s", awsRegion, awsAccount, snsNodePublished)),
+			}
+
+			// Publish to SNS
+			if output, err = snsClient.Publish(input); err != nil {
+				log.Error("Failed to publish SNS event: %s", err)
+				return fmt.Errorf("Failed to publish SNS event: %w", err)
+			}
+
+			log.Debug("Successfully published SNS message: %s (%s stored)", *output.MessageId, node.ID)
+
+			return nil
+		}
+	}
+
+	// If disabled, return a no-op callback.
+	return func(node common.Node) error {
+		return nil
+	}
 }
 
 func handleRequest(ctx context.Context, event events.SNSEvent) {
@@ -131,33 +179,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			Abouts: map[string]common.Thing{"//schema.org": *thing},
 
 			// Send events for each node published
-			PostPutNodeCallback: func(node common.Node) error {
-				var b []byte
-				var err error
-				var input *sns.PublishInput
-				var output *sns.PublishOutput
-
-				// JSON-encoded SNS message
-				if b, err = json.Marshal(common.NodeStoredEvent{ID: node.ID}); err != nil {
-					log.Error("Unable to marhsal SNS event to JSON: %s", err)
-					return fmt.Errorf("Unable to marshal SNS event to JSON: %w", err)
-				}
-
-				input = &sns.PublishInput{
-					Message:  aws.String(string(b)),
-					TopicArn: aws.String(fmt.Sprintf("arn:aws:sns:%s:%s:%s", awsRegion, awsAccount, snsNodePublished)),
-				}
-
-				// Publish to SNS
-				if output, err = snsClient.Publish(input); err != nil {
-					log.Error("Failed to publish SNS event: %s", err)
-					return fmt.Errorf("Failed to publish SNS event: %w", err)
-				}
-
-				log.Debug("Successfully published SNS message: %s (%s stored)", *output.MessageId, node.ID)
-
-				return nil
-			},
+			PostPutNodeCallback: postPutNodeCallback(snsClient),
 		})
 
 		if saveError != nil {
