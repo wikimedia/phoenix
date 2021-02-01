@@ -5,7 +5,7 @@ schema {
 type Query {
   page(id: String, name: PageNameInput): Page
   node(id: String, name: NodeNameInput): Node
-  related(wid: String): [Node]!
+  nodes(relatedTo: String): [Node]!
 }
 
 input PageNameInput {
@@ -48,6 +48,5 @@ type Tuple {
 
 type RelatedTopic {
   id: ID!
-  label: String!
   salience: Float!
 }
