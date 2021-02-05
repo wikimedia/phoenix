@@ -7,8 +7,6 @@ github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/eevans/wikimedia v0.0.0-20200608204747-9492fde223ba h1:099oEwmBfz8x9nJZSQwP5nuXWRBxDwDHThT6Z4x2w0I=
-github.com/eevans/wikimedia v0.0.0-20200608204747-9492fde223ba/go.mod h1:okp1C8EaDdmiVMB5wn10Tbfw0LJfMu6X96+5zGnVUyU=
 github.com/eevans/wikimedia v0.0.0-20210203201748-039e935ff317 h1:4TSGhxVMOf33/XyyTSbJrFcoYlYOcyXAzDQ3SnLiA70=
 github.com/eevans/wikimedia v0.0.0-20210203201748-039e935ff317/go.mod h1:YHBATjW3CRjtxmD17kLmk4i9KtA/MV86D7JjQX+8dtw=
 github.com/go-sql-driver/mysql v1.5.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
@@ -30,8 +28,6 @@ github.com/kr/text v0.2.0/go.mod h1:eLer722TekiGuMkidMxC/pM04lWEeraHUUmBw8l2grE=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
-github.com/r3labs/sse v0.0.0-20200310095403-ee05428e4d0e h1:w3ZemLxSM2hb3bHk7wjNaAAluaDQ+9WnWZQV1wcA8f4=
-github.com/r3labs/sse v0.0.0-20200310095403-ee05428e4d0e/go.mod h1:S8xSOnV3CgpNrWd0GQ/OoQfMtlg2uPRSuTzcSGrzwK8=
 github.com/r3labs/sse v0.0.0-20201126193848-34e640891548 h1:ewzX4RiFeFXl8APBmMqXBXR5CZoF/jctB71BuLg7d3s=
 github.com/r3labs/sse v0.0.0-20201126193848-34e640891548/go.mod h1:S8xSOnV3CgpNrWd0GQ/OoQfMtlg2uPRSuTzcSGrzwK8=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
