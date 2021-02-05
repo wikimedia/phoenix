@@ -1,0 +1,11 @@
+import/            @eevans
+service/           @eevans
+README.markdown    @dianamontalion @eevans @mooeypoo
+lambdas/           @eevans
+Makefile           @eevans
+common/            @eevans
+demo/              @mooeypoo
+storage/           @eevans
+event-bridge/      @eevans
+mediawiki/         @eevans
+docs/              @dianamontalion @eevans @mooeypoo
