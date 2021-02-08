@@ -65,16 +65,16 @@ Here is [a hands-on working prototype](https://wikimedia.github.io/phoenix/) and
 - created from [multiple trusted sources](#multiple-trusted-sources)
 - to many [product experiences and other platforms](#many-product-experiences-and-other-platforms).
 
-The demo has been shared across the organization. This small experiment has evolved into deeper explorations across the organization, including the Core Platform Team, Product Strategy Working Group, Okapi and SDAW.
+The demo has been shared across the organization. This small experiment has evolved into deeper, cross-functional explorations, including the Core Platform Team, Product Strategy Working Group, Okapi and SDAW.
 
-If you'd like to skip right to the details, read the [implementation overview](#implementation) and handy-wavy [caveats](#caveats) or [how to view the demo](#demo).
+If you'd like to skip right to the details, read the [implementation overview](#implementation) or [how to view the demo](#demo).
 
-While we created something tangible, our essential focus is on systems analysis. We are laying the foundation for systems architecture -- a practice that will support the work ahead. This work includes [designing system patterns](#patterns), discovering [leverage points](#leverage-points) and identifying the [Big Questions](#big-questions).
+We created something tangible, while our essential focus is on systems analysis. We are laying the foundation for systems architecture -- a practice that will support the work ahead. This work includes [designing system patterns](#patterns), discovering [leverage points](#leverage-points) and identifying the [Big Questions](#big-questions).
 
 ## Implementation
-The prototype is built in AWS using SNS messages, Lambdas written in Go, S3, GraphQL, DynamoDB and Elastic Search. [See component list](https://docs.google.com/document/d/13ycCf8Mhxfs9K-hHXvsD2j1J8GcO4FQhKu4qCyx7fOs). It interacts with [Rosette](https://www.rosette.com/capability/topic-extractor/) to analyze the sections and return topics. The [repository is in github](https://github.com/wikimedia/phoenix). 
+The prototype is built in AWS using SNS messages, Lambdas written in Go, S3, GraphQL, DynamoDB and Elastic Search. [See component list](https://docs.google.com/document/d/13ycCf8Mhxfs9K-hHXvsD2j1J8GcO4FQhKu4qCyx7fOs). It interacts with [Rosette](https://www.rosette.com/capability/topic-extractor/) to analyze the sections and return topics. The [repository is in github](https://github.com/wikimedia/phoenix).
 
-Though this list seems sequential, these activities are asynchronous.
+Though this list is written sequentially, these activities are asynchronous.
 
 ### Event-driven workflow
 
@@ -92,15 +92,19 @@ When a new file is saved:
 ### Request-driven workflow
 
 - Return requests for pages and/or sections with only the data requested
-- Return requests for sections associated with a topic 
+- Return requests for sections associated with a topic
 
 [Initial diagram](https://app.lucidchart.com/lucidchart/f283e649-cdb6-4275-9452-7114571a82e7/view?page=Q3nNnx6PpfFM#) and TODO: Add Eric's updated diagram
 
 ## Caveats
 There are *many* [challenges to consider](#challenges-to-consider) before this prototype is "production ready". *Production ready was not our goal.* We are [engaging with some of those challenges next](#next-steps).
 
+When an article changes, the topics associated with the article might also change. Which means, we need to update the Rosette topics. We could resend the article every time there is an edit but this is be highly inefficient. We did not design, as part of this exercise, a pattern for updating the topics when there is a big-enough change. First, we need to define "big enough" and also understand where the logic of "change" fits into this pattern.
+
 ## Demo
-*For the month of February, 2020, you can access a demo instance [here](https://wikimedia.github.io/phoenix/)*. The demo is a front end that interacts with GraphQL and the structured content store. The structured content store contains content from Simple Wikipedia, updated when edits are made there. It also includes the topics associated with each object (page, section) from [Rosette](https://www.rosette.com/).
+*For the month of February, 2020, you can access a demo instance [here](https://wikimedia.github.io/phoenix/)*. The data supporting this demo is Simple Wikipedia with topics from Rosette for each section (approx 500,000 nodes).
+
+The demo is a front end that interacts with GraphQL and the structured content store. The structured content store contains content from Simple Wikipedia, updated when edits are made there. It also includes the topics associated with each object (page, section) from [Rosette](https://www.rosette.com/).
 
 The demo provides several examples of potential behavior of the PoV. You can:
 - fetch a section of an article by it's name
@@ -155,7 +159,6 @@ This example shows the connection between parts (article sections) and semantic 
 The query used to fetch sections by a given topic
 
 Xxxxxxxx
-
 
 The query used to fetch a specific section its top 5 most relevant topics
 
@@ -222,7 +225,7 @@ However we approach it, the first step is a doozy. There is no *iterative* path 
 
 The leverage points explored in this PoV are:
 1.  [*Giving shape and structure to Knowledge*](#the-shape-of-knowledge): Honestly, we don't know if it's humanly possible to "structure" Wikipedia content sufficiently. the knowledge we want to share with the world isn't made for modern distributions. We must try. Also, knowledge is currently shaped by the context of "web page" and that doesn't fit emerging contexts.
-2.  [*Designing inherent relationships between knowledge parts to create collections*](#the-shape-of-collections): Collections are relationships developed, programatically or by editors, between pieces of knowledge. The way humans envision and plan these relationships shapes the way the knowledge is developed. The PoV pre-builds the knowledge payload (an answer to the queries) based on the relationships we know are the most valued. How would we expand this over time? 
+2.  [*Designing inherent relationships between knowledge parts to create collections*](#the-shape-of-collections): Collections are relationships developed, programatically or by editors, between pieces of knowledge. The way humans envision and plan these relationships shapes the way the knowledge is developed. The PoV pre-builds the knowledge payload (an answer to the queries) based on the relationships we know are the most valued. How would we expand this over time?
 3.  *Building decoupled relationships between parts of the system* rather than building capabilities into the software: This includes changing the choreography of essential activities ... in many ways, the paradigm itself is changing.
 
 Exploring patterns and identifying leverage points helped us prioritize questions to explore next.
@@ -231,8 +234,10 @@ Exploring patterns and identifying leverage points helped us prioritize question
 The scope of questions we need to answer, some we have not yet discovered, is equally monumental. The PoV leaves many questions unanswered -- on purpose. We are *triggering cross-functional discussions and decisions needed* to discern a path forward. While we have more questions than answers, we are significantly more confident in the questions. Top four include:
 
 1. What is "just enough" structure needed for the knowledge?
-2. What infrastructure can support these patterns at scale?
-3. From a system point of view, can reading be decoupled from editing?
+2. What infrastructure can support these patterns at scale in an open-source world?
+3. From a system point of view, can reading be decoupled from editing? With subquestions:
+   1. What is the tolerance for eventual consistency?
+   2. What is the tolerance for moving away from a desktop page as the system's source of truth?
 4. How will modernization impact the current editing workflow?
 
 The highest-value next step is continuing to gather and apply learnings from teams across the foundation that help answer these questions.
@@ -243,7 +248,7 @@ The highest-value next step is continuing to gather and apply learnings from tea
 - created from [multiple trusted sources](#multiple-trusted-sources)
 - to many [product experiences and other platforms](#many-product-experiences-and-other-platforms).
 
-How can we design knowledge to be consumed by "infinite product experiences"? How do we enable these "experiences" to control how the knowledge is displayed and how users interact with it? When we say collections, what do we mean? 
+How can we design knowledge to be consumed by "infinite product experiences"? How do we enable these "experiences" to control how the knowledge is displayed and how users interact with it? When we say collections, what do we mean?
 
 A page is one, predominant, type of collection of knowledge. What are the others?
 
@@ -319,7 +324,7 @@ The next steps are delivering four further artifacts:
 - Educating ourselves on modern system approaches.
 - Creating the architecture repository as a space to understand and explore emerging systems patterns.
 
-Teams like Structured Data and Okapi are eploring adopting this work as part of their future plans. 
+Teams like Structured Data and Okapi are eploring adopting this work as part of their future plans.
 
 Many branches of discussion have already begun. Their success depends on:
 - understanding the tradeoffs, especially in areas that have been philosophically off limits
