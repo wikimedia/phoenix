@@ -102,7 +102,7 @@ There are *many* [challenges to consider](#challenges-to-consider) before this p
 When an article changes, the topics associated with the article might also change. Which means, we need to update the Rosette topics. We could resend the article every time there is an edit but this is be highly inefficient. We did not design, as part of this exercise, a pattern for updating the topics when there is a big-enough change. First, we need to define "big enough" and also understand where the logic of "change" fits into this pattern.
 
 ## Demo
-*For the month of February, 2020, you can access a demo instance [here](https://wikimedia.github.io/phoenix/)*. The data supporting this demo is Simple Wikipedia with topics from Rosette for each section (approx 500,000 nodes).
+*You can access a demo instance [here](https://wikimedia.github.io/phoenix/) todo: add date range*. The data supporting this demo is Simple Wikipedia with topics from Rosette for each section (approx 500,000 nodes).
 
 The demo is a front end that interacts with GraphQL and the structured content store. The structured content store contains content from Simple Wikipedia, updated when edits are made there. It also includes the topics associated with each object (page, section) from [Rosette](https://www.rosette.com/).
 
