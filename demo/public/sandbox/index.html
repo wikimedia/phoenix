@@ -39,7 +39,7 @@
       var url = window.location.hostname === 'wikimedia.github.io' ?
         '/phoenix' : '/'
       const graphQLFetcher = graphQLParams =>
-        fetch('http://localhost:8080/query', {
+        fetch('http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080', {
           method: 'post',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(graphQLParams),
