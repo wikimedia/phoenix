@@ -145,7 +145,7 @@ export default {
       this.error = null
       return axios
         .post(
-          'http://localhost:8080/query',
+          'http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080/',
           { query },
           {
             headers: { 'Content-Type': 'application/json' }
