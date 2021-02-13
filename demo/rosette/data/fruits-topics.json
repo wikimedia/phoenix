@@ -1,0 +1,5870 @@
+{
+  "Food and drink (Q5645580)": {
+    "0.2309035": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.1619464": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.34897438": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.15579488": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.14797885": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.12427759": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.07923802": {
+      "page": "Banana",
+      "part": "Fruit"
+    },
+    "0.27727884": {
+      "page": "Banana",
+      "part": "Related pages"
+    },
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.1634945": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.13319729": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.18124489": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.08163399": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    },
+    "0.21308092": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.14739039": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.12452695": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.25079301": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.18993382": {
+      "page": "Watermelon",
+      "part": "Health"
+    },
+    "0.11313668": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.18284654": {
+      "page": "Papaya",
+      "part": "Uses"
+    },
+    "0.10027188": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.15163644": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.14632573": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.16639785": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.18037977": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.10263328": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.17718351": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.1970575": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.19544335": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.22208707": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.24080396": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.26886892": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1784687": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.20426718": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.19826949": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    },
+    "0.0783527": {
+      "page": "Mandarin orange",
+      "part": "Production volume"
+    }
+  },
+  "Agronomy (Q8227263)": {
+    "0.22595329": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.22572714": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.12562495": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.10139817": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.10901244": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.15881591": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.18124489": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.09117501": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.08760096": {
+      "page": "Pineapple",
+      "part": "Symbolism"
+    },
+    "0.17223576": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.14739039": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.12452695": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.15886439": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.16421378": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.09907969": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.13630684": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.14295068": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.11617364": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.17634677": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.08008279": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.2877927": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.31580362": {
+      "page": "Plum",
+      "part": "Cultivation"
+    },
+    "0.18129154": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.19463513": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.13115651": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    },
+    "0.28256439": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.18381346": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.26038833": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1784687": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.16298096": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.1412754": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.18616252": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.18651157": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Apple (Q89)": {
+    "0.22180632": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.13424832": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.07251045": {
+      "page": "Apple",
+      "part": "History"
+    },
+    "0.14522037": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.1118908": {
+      "page": "Apple",
+      "part": "In the United Kingdom"
+    }
+  },
+  "Malus (Q9907637)": {
+    "0.19643952": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.22572714": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.34897438": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.13245485": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    }
+  },
+  "Edible plants (Q7224176)": {
+    "0.17833374": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.17788167": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.34897438": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.13245485": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.21914913": {
+      "page": "Banana",
+      "part": "Related pages"
+    },
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.15881591": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.18124489": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.09117501": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.08760096": {
+      "page": "Pineapple",
+      "part": "Symbolism"
+    },
+    "0.16197399": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.11326537": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.11278424": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.15886439": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.14022152": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.14295068": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.16979936": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.17634677": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.08008279": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.2877927": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.2957502": {
+      "page": "Plum",
+      "part": "Cultivation"
+    },
+    "0.18129154": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.15742865": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.19463513": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.19072282": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    },
+    "0.28621659": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.20572461": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.26038833": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1784687": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.1445732": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.13043788": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.16703835": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.19826949": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    },
+    "0.0783527": {
+      "page": "Mandarin orange",
+      "part": "Production volume"
+    }
+  },
+  "Foods (Q5611149)": {
+    "0.17833374": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.34897438": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.14565832": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.27727884": {
+      "page": "Banana",
+      "part": "Related pages"
+    },
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.10748277": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.15881591": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.18124489": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.10312842": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.08760096": {
+      "page": "Pineapple",
+      "part": "Symbolism"
+    },
+    "0.16197399": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.11278424": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.15886439": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.17095679": {
+      "page": "Papaya",
+      "part": "Uses"
+    },
+    "0.10027188": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.14022152": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.14295068": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.16979936": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.17634677": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.08008279": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.2877927": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.2957502": {
+      "page": "Plum",
+      "part": "Cultivation"
+    },
+    "0.18129154": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.1970575": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.19544335": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.14166994": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    },
+    "0.28256439": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.20572461": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.26206722": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1784687": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.15541712": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.13043788": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.16703835": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.19826949": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    },
+    "0.0783527": {
+      "page": "Mandarin orange",
+      "part": "Production volume"
+    }
+  },
+  "Cuisine (Q9703849)": {
+    "0.17833374": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.34897438": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.21078664": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.27727884": {
+      "page": "Banana",
+      "part": "Related pages"
+    },
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.18124489": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.11278424": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.16421378": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.12489192": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.11170843": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.16639785": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.14521401": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.08008279": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.17718351": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.164138": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.26206722": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1784687": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.16703835": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.18651157": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    },
+    "0.0783527": {
+      "page": "Mandarin orange",
+      "part": "Production volume"
+    }
+  },
+  "Fruit (Q7134786)": {
+    "0.17833374": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.17788167": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.34897438": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.13245485": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.21914913": {
+      "page": "Banana",
+      "part": "Related pages"
+    },
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.09268823": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.15881591": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.18124489": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.09117501": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.08760096": {
+      "page": "Pineapple",
+      "part": "Symbolism"
+    },
+    "0.10186549": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.15886439": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.15858559": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.14295068": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.15569916": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.17634677": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.2877927": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.2957502": {
+      "page": "Plum",
+      "part": "Cultivation"
+    },
+    "0.18129154": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.1950745": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.19463513": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.1706389": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    },
+    "0.28621659": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.20572461": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.21828611": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1784687": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.1445732": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.13043788": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.16703835": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.19826949": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Vegan cuisine (Q8229164)": {
+    "0.17833374": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.34897438": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.13245485": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.12862884": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.21914913": {
+      "page": "Banana",
+      "part": "Related pages"
+    },
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.15881591": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.18124489": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.09117501": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.08760096": {
+      "page": "Pineapple",
+      "part": "Symbolism"
+    },
+    "0.11278424": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.15886439": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.14022152": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.14295068": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.16605174": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.17634677": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.08008279": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.26452998": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.18129154": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.15742865": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.19463513": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.12158602": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    },
+    "0.28256439": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.20572461": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.26038833": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1784687": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.1445732": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.13043788": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.16703835": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.19826949": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    },
+    "0.0783527": {
+      "page": "Mandarin orange",
+      "part": "Production volume"
+    }
+  },
+  "Ethnobotany (Q8950063)": {
+    "0.171816": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.25110525": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.09259712": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.15886439": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.14521401": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.16637832": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Biology (Q1457402)": {
+    "0.1698792": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.09418462": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.0974501": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.11248387": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    },
+    "0.10855659": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    },
+    "0.2376839": {
+      "page": "Watermelon",
+      "part": "Health"
+    },
+    "0.11245889": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.10919456": {
+      "page": "Papaya",
+      "part": "Uses"
+    },
+    "0.12601243": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.13928806": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.13037833": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    }
+  },
+  "Hobbies (Q7216601)": {
+    "0.1698792": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.09418462": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.11136136": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.11465146": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    },
+    "0.11163464": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.13367985": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.12918282": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.1151008": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.073174": {
+      "page": "Mango",
+      "part": "Mango trees"
+    },
+    "0.08625052": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.16988582": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.16421378": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.09499935": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.11309419": {
+      "page": "Papaya",
+      "part": "Uses"
+    },
+    "0.12870703": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.11844047": {
+      "page": "Strawberry",
+      "part": "Farming"
+    }
+  },
+  "Maleae (Q8602575)": {
+    "0.16601908": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.22572714": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    }
+  },
+  "Apples (Q6132343)": {
+    "0.15294532": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.17788167": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.34897438": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.13245485": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    }
+  },
+  "Agriculture (Q5658978)": {
+    "0.15066201": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.21720045": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.12383935": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.08144342": {
+      "page": "Banana",
+      "part": "Images"
+    },
+    "0.11163464": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.13084238": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.12918282": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.15800446": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.18120843": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.18791477": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.16421378": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.12514037": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.1367663": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.15718875": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.12870703": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.08179279": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.16844538": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.11680038": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.18381346": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.12694934": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.08654796": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.13691667": {
+      "page": "Strawberry",
+      "part": "Farming"
+    },
+    "0.15839039": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Crops (Q13784641)": {
+    "0.14791329": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.15881591": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.18124489": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.09117501": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.08760096": {
+      "page": "Pineapple",
+      "part": "Symbolism"
+    },
+    "0.16197399": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.12452695": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.15886439": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.12489192": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.14295068": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.11617364": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.17634677": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.08008279": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.2877927": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.2957502": {
+      "page": "Plum",
+      "part": "Cultivation"
+    },
+    "0.18129154": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.19463513": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.13115651": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    },
+    "0.28256439": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.18381346": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.26038833": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1784687": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.1445732": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.13043788": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.16703835": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.18651157": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Granny Smith (Q506040)": {
+    "0.14576831": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.12793201": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    }
+  },
+  "Outdoor recreation (Q8891812)": {
+    "0.14364721": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.10083621": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.08144342": {
+      "page": "Banana",
+      "part": "Images"
+    },
+    "0.11163464": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.11666539": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.12918282": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.1151008": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.07533177": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.16421378": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.09499935": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.12694934": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.11844047": {
+      "page": "Strawberry",
+      "part": "Farming"
+    }
+  },
+  "Natural environment (Q8419352)": {
+    "0.14364721": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.07089859": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    }
+  },
+  "Landscape architecture (Q6963287)": {
+    "0.14364721": {
+      "page": "Apple",
+      "part": "__intro__"
+    },
+    "0.08144342": {
+      "page": "Banana",
+      "part": "Images"
+    },
+    "0.11163464": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.11666539": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.12918282": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.1151008": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.07533177": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.16421378": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.09499935": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.07860327": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.12694934": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.11844047": {
+      "page": "Strawberry",
+      "part": "Farming"
+    }
+  },
+  "Plants (Q1457109)": {
+    "0.23000236": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.14214868": {
+      "page": "Apple",
+      "part": "Family"
+    },
+    "0.16336313": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.08291035": {
+      "page": "Banana",
+      "part": "Banana plant"
+    },
+    "0.08144342": {
+      "page": "Banana",
+      "part": "Images"
+    },
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.17988867": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.13569085": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.11666539": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.14161199": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.19872703": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.18611244": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.12087117": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.15800446": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.25236323": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.17558673": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.25290162": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.1136082": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.30271475": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.12805136": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.11104017": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.18361263": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.12513206": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.12261052": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.27227217": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.11741007": {
+      "page": "Plum",
+      "part": "Cultivation"
+    },
+    "0.18648292": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.15671067": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.10077834": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.20315017": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.11107259": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    },
+    "0.27302079": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.13726324": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.18658155": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.24428666": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.13043788": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.18616252": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.16735386": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Rosaceae (Q5649844)": {
+    "0.22572714": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.1751275": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.10758919": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.18336214": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.1607932": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.29008756": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.28621659": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.18302855": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    }
+  },
+  "Amygdaloideae (Q8249784)": {
+    "0.22572714": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.13415915": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.15881591": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.11877145": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.28910359": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.2957502": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Malus sieversii (Q728769)": {
+    "0.21842428": {
+      "page": "Apple",
+      "part": "Botanical information"
+    }
+  },
+  "Malus sylvestris (Q47161)": {
+    "0.18097241": {
+      "page": "Apple",
+      "part": "Botanical information"
+    }
+  },
+  "Central Asia (Q7214964)": {
+    "0.15870299": {
+      "page": "Apple",
+      "part": "Botanical information"
+    }
+  },
+  "Phytogeography (Q8879833)": {
+    "0.14754434": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.14750567": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.16244611": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.26544576": {
+      "page": "Raspberry",
+      "part": "Species"
+    }
+  },
+  "Arctic (Q8261338)": {
+    "0.14640456": {
+      "page": "Apple",
+      "part": "Botanical information"
+    }
+  },
+  "Biota (Q8300917)": {
+    "0.14543066": {
+      "page": "Apple",
+      "part": "Botanical information"
+    },
+    "0.14750567": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.15715261": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.0748388": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.23986547": {
+      "page": "Raspberry",
+      "part": "Species"
+    }
+  },
+  "Geography (Q1457673)": {
+    "0.14064358": {
+      "page": "Apple",
+      "part": "Botanical information"
+    }
+  },
+  "Domestication (Q9671654)": {
+    "0.13354772": {
+      "page": "Apple",
+      "part": "Botanical information"
+    }
+  },
+  "Alexander the Great (Q8409)": {
+    "0.07384435": {
+      "page": "Apple",
+      "part": "History"
+    }
+  },
+  "Prose Edda (Q205882)": {
+    "0.16180712": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "European mythology (Q7465300)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Odinism (Q30811312)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Scandinavia (Q7162174)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Norse paganism (Q8682038)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Early Middle Ages (Q8396468)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Viking Age (Q8209088)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Historical eras (Q5533371)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Scandinavian history (Q5640831)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Germanic paganism (Q7335967)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Norse mythology (Q6511259)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Germanic mythology (Q8490995)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Civilizations (Q6576454)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Medieval Denmark (Q8967313)": {
+    "0.14496983": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Edda (Q108652)": {
+    "0.14244334": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Languages (Q4960490)": {
+    "0.13134058": {
+      "page": "Apple",
+      "part": "In culture"
+    },
+    "0.17850538": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Cultural history (Q6638204)": {
+    "0.12576207": {
+      "page": "Apple",
+      "part": "In culture"
+    },
+    "0.12602423": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    }
+  },
+  "Germanic languages (Q8490990)": {
+    "0.12531823": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "History (Q1457595)": {
+    "0.11541108": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Spirituality (Q7478519)": {
+    "0.11499819": {
+      "page": "Apple",
+      "part": "In culture"
+    }
+  },
+  "Apple products (Q7008771)": {
+    "0.30144141": {
+      "page": "Apple",
+      "part": "Cooking"
+    }
+  },
+  "Apple production (Q25330504)": {
+    "0.30144141": {
+      "page": "Apple",
+      "part": "Cooking"
+    }
+  },
+  "Fruit production (Q25250275)": {
+    "0.30144141": {
+      "page": "Apple",
+      "part": "Cooking"
+    }
+  },
+  "Natural resources (Q8942557)": {
+    "0.27616581": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.08337053": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    },
+    "0.09633833": {
+      "page": "Banana",
+      "part": "Fruit"
+    },
+    "0.13930355": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    },
+    "0.12040466": {
+      "page": "Banana",
+      "part": "Related pages"
+    },
+    "0.09736925": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.14872778": {
+      "page": "Watermelon",
+      "part": "Health"
+    },
+    "0.12539625": {
+      "page": "Papaya",
+      "part": "Uses"
+    },
+    "0.08991544": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.14022152": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.11035883": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.13175641": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.18037977": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.10263328": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.17881827": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.24247858": {
+      "page": "Lime",
+      "part": "__intro__"
+    }
+  },
+  "Health (Q7486603)": {
+    "0.27616581": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.07923802": {
+      "page": "Banana",
+      "part": "Fruit"
+    },
+    "0.2180329": {
+      "page": "Banana",
+      "part": "Allergies"
+    },
+    "0.09736925": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.10224983": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    },
+    "0.21472533": {
+      "page": "Watermelon",
+      "part": "Health"
+    },
+    "0.1456266": {
+      "page": "Papaya",
+      "part": "Uses"
+    },
+    "0.08991544": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.14022152": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.11035883": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.13175641": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.18037977": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.10263328": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.17881827": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.26243814": {
+      "page": "Lime",
+      "part": "__intro__"
+    }
+  },
+  "Drinks (Q6543743)": {
+    "0.24836548": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.1970575": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.18529534": {
+      "page": "Lime",
+      "part": "__intro__"
+    }
+  },
+  "Apple cider (Q5977438)": {
+    "0.22205782": {
+      "page": "Apple",
+      "part": "Cooking"
+    }
+  },
+  "Cider (Q167296)": {
+    "0.20477119": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.11917752": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    }
+  },
+  "Cooking (Q6010682)": {
+    "0.19530218": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.2150039": {
+      "page": "Banana",
+      "part": "Related pages"
+    },
+    "0.10225284": {
+      "page": "Papaya",
+      "part": "Uses"
+    }
+  },
+  "Liquids (Q6273463)": {
+    "0.19282902": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.1970575": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.18529534": {
+      "page": "Lime",
+      "part": "__intro__"
+    }
+  },
+  "Natural materials (Q7195079)": {
+    "0.19246864": {
+      "page": "Apple",
+      "part": "Cooking"
+    },
+    "0.07923802": {
+      "page": "Banana",
+      "part": "Fruit"
+    },
+    "0.18124489": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.20738954": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.073174": {
+      "page": "Mango",
+      "part": "Mango trees"
+    },
+    "0.11278424": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.08953842": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.11235708": {
+      "page": "Papaya",
+      "part": "Uses"
+    },
+    "0.12489192": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.13428404": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.16792808": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.10263328": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.17718351": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.16200683": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.18813361": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.24385939": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1784687": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.08654796": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.18514302": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.18651157": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Cider apple (Q3029797)": {
+    "0.13296667": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    }
+  },
+  "Biotechnology (Q7214254)": {
+    "0.10612992": {
+      "page": "Apple",
+      "part": "Apple cultivars"
+    }
+  },
+  "Apple Day (Q4158504)": {
+    "0.15043448": {
+      "page": "Apple",
+      "part": "In the United Kingdom"
+    }
+  },
+  "United Kingdom (Q1411125)": {
+    "0.08561479": {
+      "page": "Apple",
+      "part": "In the United Kingdom"
+    }
+  },
+  "Nova Scotia (Q1952)": {
+    "0.1300505": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "North America (Q7217301)": {
+    "0.12329321": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Shenandoah Apple Blossom Festival (Q3744828)": {
+    "0.11549282": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Wenatchee, Washington (Q958596)": {
+    "0.09824033": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Canada (Q1411064)": {
+    "0.09298467": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Political history (Q7469777)": {
+    "0.09054643": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Southern United States (Q7139785)": {
+    "0.08778232": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Mid-Atlantic (Q8625493)": {
+    "0.08778232": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Virginia (Q6808450)": {
+    "0.08778232": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Kingdoms (Q9878462)": {
+    "0.08029919": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Country subdivisions (Q7339272)": {
+    "0.08013744": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Superpowers (Q7014430)": {
+    "0.08013744": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Annapolis Valley (Q564530)": {
+    "0.07962009": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Blossom (Q2047589)": {
+    "0.07762782": {
+      "page": "Apple",
+      "part": "In North America"
+    },
+    "0.09583037": {
+      "page": "Peach",
+      "part": "Description"
+    }
+  },
+  "Winchester, Virginia (Q492355)": {
+    "0.07554875": {
+      "page": "Apple",
+      "part": "In North America"
+    }
+  },
+  "Apple cultivars (Q7008761)": {
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    }
+  },
+  "Plant breeding (Q9985717)": {
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.21844696": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Domesticated plants (Q7226609)": {
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.11617364": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.15718875": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.21844696": {
+      "page": "Plum",
+      "part": "Cultivation"
+    },
+    "0.18381346": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.23481504": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    }
+  },
+  "Cultivars (Q6999392)": {
+    "0.31589064": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    },
+    "0.21844696": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Gala (apple) (Q494259)": {
+    "0.24647339": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    }
+  },
+  "Fuji (apple) (Q504893)": {
+    "0.18842338": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    }
+  },
+  "Golden Delicious (Q201996)": {
+    "0.18630031": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    }
+  },
+  "Jonagold (Q494417)": {
+    "0.10345838": {
+      "page": "Apple",
+      "part": "Varieties of apples"
+    }
+  },
+  "Maloideae (Q148737)": {
+    "0.23155871": {
+      "page": "Apple",
+      "part": "Family"
+    },
+    "0.1491871": {
+      "page": "Pear",
+      "part": "__intro__"
+    }
+  },
+  "Rosaceae (Q46299)": {
+    "0.21841323": {
+      "page": "Apple",
+      "part": "Family"
+    }
+  },
+  "Rosales (Q8682436)": {
+    "0.17475114": {
+      "page": "Apple",
+      "part": "Family"
+    },
+    "0.16674539": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.13175": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.18146867": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.18896229": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.200252": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.25659469": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.28621659": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.21146469": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    }
+  },
+  "Rosids (Q8682694)": {
+    "0.17475114": {
+      "page": "Apple",
+      "part": "Family"
+    },
+    "0.19578726": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.10882849": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.12181622": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.22714685": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.34219648": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.1609009": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.1805501": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.16381007": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.09929026": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.11334434": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.16864547": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    }
+  },
+  "Pear (Q434)": {
+    "0.12060586": {
+      "page": "Apple",
+      "part": "Family"
+    },
+    "0.08037241": {
+      "page": "Pear",
+      "part": "Description"
+    },
+    "0.08220538": {
+      "page": "Pear",
+      "part": "History"
+    },
+    "0.08411593": {
+      "page": "Pear",
+      "part": "Images"
+    }
+  },
+  "PEAR (Q568694)": {
+    "0.08190513": {
+      "page": "Apple",
+      "part": "Family"
+    },
+    "0.07277119": {
+      "page": "Pear",
+      "part": "Description"
+    },
+    "0.08545277": {
+      "page": "Pear",
+      "part": "History"
+    },
+    "0.09998401": {
+      "page": "Pear",
+      "part": "Images"
+    }
+  },
+  "Rose (Q34687)": {
+    "0.07428148": {
+      "page": "Apple",
+      "part": "Family"
+    }
+  },
+  "Plant Systematics and Evolution (Q2891391)": {
+    "0.4355717": {
+      "page": "Apple",
+      "part": "Further reading"
+    }
+  },
+  "Systematics (Q3516404)": {
+    "0.10385147": {
+      "page": "Apple",
+      "part": "Further reading"
+    }
+  },
+  "Organisms (Q5626060)": {
+    "0.07747122": {
+      "page": "Apple",
+      "part": "Further reading"
+    },
+    "0.12195019": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.10712322": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.1371672": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.17605783": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.10140609": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.07596745": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.09168477": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.16353013": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.19264585": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.10855659": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    },
+    "0.11245889": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.12601243": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.16575492": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.09091692": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.10666746": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.13536392": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    }
+  },
+  "Electronic publishing (Q7453015)": {
+    "0.16748407": {
+      "page": "Apple",
+      "part": "Other websites"
+    },
+    "0.12409625": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.10614824": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Digital technology (Q5330608)": {
+    "0.16748407": {
+      "page": "Apple",
+      "part": "Other websites"
+    },
+    "0.12409625": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.10614824": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Digital media (Q8064942)": {
+    "0.16748407": {
+      "page": "Apple",
+      "part": "Other websites"
+    },
+    "0.13198961": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.10614824": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Human communication (Q5612778)": {
+    "0.16258303": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Human–computer interaction (Q8527502)": {
+    "0.15905914": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Hypertext (Q6376066)": {
+    "0.15905914": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "World Wide Web (Q4897839)": {
+    "0.15905914": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Media technology (Q7471742)": {
+    "0.15905914": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Cultural globalization (Q7068914)": {
+    "0.15905914": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Mass media (Q1458390)": {
+    "0.15905914": {
+      "page": "Apple",
+      "part": "Other websites"
+    },
+    "0.12999453": {
+      "page": "Banana",
+      "part": "Other websites"
+    }
+  },
+  "Cyberspace (Q7215645)": {
+    "0.15905914": {
+      "page": "Apple",
+      "part": "Other websites"
+    },
+    "0.12630709": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.1225227": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Wikiversity (Q370)": {
+    "0.14738123": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Computing (Q5330456)": {
+    "0.14183025": {
+      "page": "Apple",
+      "part": "Other websites"
+    },
+    "0.1351266": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.08691994": {
+      "page": "Pear",
+      "part": "Images"
+    },
+    "0.09425783": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Information science (Q6491658)": {
+    "0.14183025": {
+      "page": "Apple",
+      "part": "Other websites"
+    },
+    "0.10614824": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Creative works (Q17537629)": {
+    "0.13714289": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Cognition (Q6553131)": {
+    "0.13396481": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Storage media (Q10160929)": {
+    "0.133619": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Websites (Q6447030)": {
+    "0.133619": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Multimedia (Q8264880)": {
+    "0.133619": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Interactive media (Q8550133)": {
+    "0.133619": {
+      "page": "Apple",
+      "part": "Other websites"
+    }
+  },
+  "Zingiberales (Q7797833)": {
+    "0.21067076": {
+      "page": "Banana",
+      "part": "__intro__"
+    }
+  },
+  "Commelinids (Q9235155)": {
+    "0.19401547": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.15264327": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    }
+  },
+  "Monocots (Q9011973)": {
+    "0.19401547": {
+      "page": "Banana",
+      "part": "__intro__"
+    }
+  },
+  "Musaceae (Q156525)": {
+    "0.18716358": {
+      "page": "Banana",
+      "part": "__intro__"
+    }
+  },
+  "Botany (Q4056905)": {
+    "0.15995892": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.08291035": {
+      "page": "Banana",
+      "part": "Banana plant"
+    },
+    "0.08144342": {
+      "page": "Banana",
+      "part": "Images"
+    },
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.11433982": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.11163464": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.11666539": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.15501758": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.18611244": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.08373163": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.15800446": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.25236323": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.11144631": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.08563258": {
+      "page": "Mango",
+      "part": "Mango trees"
+    },
+    "0.20726515": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.1136082": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.24441032": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.14451352": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.17941178": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.10565108": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.18376877": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.18648292": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.15671067": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.08681606": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.20315017": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.11107259": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    },
+    "0.2466935": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.12121531": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.18658155": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.16906223": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.08654796": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.11844047": {
+      "page": "Strawberry",
+      "part": "Farming"
+    },
+    "0.18616252": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    }
+  },
+  "Angiosperms (Q6178282)": {
+    "0.15536973": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.12749475": {
+      "page": "Pear",
+      "part": "__intro__"
+    }
+  },
+  "Banana (Q503)": {
+    "0.15154335": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.08047761": {
+      "page": "Banana",
+      "part": "Banana plant"
+    },
+    "0.08830775": {
+      "page": "Banana",
+      "part": "Fruit"
+    },
+    "0.1161475": {
+      "page": "Banana",
+      "part": "Growing and trading bananas"
+    },
+    "0.07815159": {
+      "page": "Banana",
+      "part": "Images"
+    },
+    "0.1245499": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Musa (genus) (Q8666090)": {
+    "0.15040971": {
+      "page": "Banana",
+      "part": "__intro__"
+    }
+  },
+  "Regions (Q6581383)": {
+    "0.12531417": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.08075619": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    }
+  },
+  "Industries (Q6137609)": {
+    "0.12383935": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.08312775": {
+      "page": "Banana",
+      "part": "Growing and trading bananas"
+    },
+    "0.15294499": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    },
+    "0.10138015": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.10603366": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.07243581": {
+      "page": "Mango",
+      "part": "Mango trees"
+    },
+    "0.09365571": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.14231578": {
+      "page": "Papaya",
+      "part": "Uses"
+    },
+    "0.14946354": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.17140808": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.20013816": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.08654796": {
+      "page": "Strawberry",
+      "part": "Name"
+    }
+  },
+  "Land management (Q6272900)": {
+    "0.12383935": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.08144342": {
+      "page": "Banana",
+      "part": "Images"
+    },
+    "0.10603366": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.09365571": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.12627252": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.15001847": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.08654796": {
+      "page": "Strawberry",
+      "part": "Name"
+    }
+  },
+  "Tropics (Q7214009)": {
+    "0.11073952": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.17806103": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.21828611": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.16637832": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Habitats (Q6327738)": {
+    "0.10965864": {
+      "page": "Banana",
+      "part": "__intro__"
+    }
+  },
+  "Plant taxa (Q29326749)": {
+    "0.10944447": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.1495775": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.16338102": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.10085951": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.14610016": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.1610159": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    }
+  },
+  "Ecology (Q1970530)": {
+    "0.10491982": {
+      "page": "Banana",
+      "part": "__intro__"
+    },
+    "0.25168102": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.08133482": {
+      "page": "Mango",
+      "part": "Mango trees"
+    },
+    "0.15440264": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.08625052": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.17941178": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.12513206": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.09954783": {
+      "page": "Papaya",
+      "part": "Uses"
+    },
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.07089859": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.18813361": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.08654796": {
+      "page": "Strawberry",
+      "part": "Name"
+    }
+  },
+  "Transclusion (Q1207412)": {
+    "0.08920898": {
+      "page": "Banana",
+      "part": "Banana plant"
+    },
+    "0.12441871": {
+      "page": "Pear",
+      "part": "Description"
+    },
+    "0.121564": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.08872482": {
+      "page": "Mandarin orange",
+      "part": "Production volume"
+    },
+    "0.09617999": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Herbaceous plant (Q190903)": {
+    "0.07327073": {
+      "page": "Banana",
+      "part": "Banana plant"
+    }
+  },
+  "Peel (fruit) (Q171187)": {
+    "0.07529266": {
+      "page": "Banana",
+      "part": "Fruit"
+    }
+  },
+  "Vitamin (Q34956)": {
+    "0.07411365": {
+      "page": "Banana",
+      "part": "Fruit"
+    },
+    "0.07610613": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    }
+  },
+  "Nature (Q32859972)": {
+    "0.07163378": {
+      "page": "Banana",
+      "part": "Fruit"
+    },
+    "0.13838265": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    },
+    "0.10211198": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.08881977": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.08349564": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    },
+    "0.08106895": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    },
+    "0.18012065": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.12620384": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.13006943": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.13997416": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.11423328": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.08654796": {
+      "page": "Strawberry",
+      "part": "Name"
+    }
+  },
+  "Materials (Q4057308)": {
+    "0.07163378": {
+      "page": "Banana",
+      "part": "Fruit"
+    },
+    "0.16066796": {
+      "page": "Banana",
+      "part": "Allergies"
+    },
+    "0.16670917": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    },
+    "0.1616671": {
+      "page": "Watermelon",
+      "part": "Health"
+    }
+  },
+  "Places (Q7481476)": {
+    "0.07296076": {
+      "page": "Banana",
+      "part": "Growing and trading bananas"
+    },
+    "0.16294023": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.16244611": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.09016395": {
+      "page": "Dragonfruit",
+      "part": "Benefits"
+    }
+  },
+  "Health sciences (Q6154313)": {
+    "0.21657989": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Medicine (Q9554255)": {
+    "0.21657989": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Clinical medicine (Q14916851)": {
+    "0.21657989": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Health care (Q4095844)": {
+    "0.19718551": {
+      "page": "Banana",
+      "part": "Allergies"
+    },
+    "0.08049453": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    },
+    "0.16612074": {
+      "page": "Watermelon",
+      "part": "Health"
+    }
+  },
+  "Medical specialties (Q6585042)": {
+    "0.19718551": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Allergology (Q6543379)": {
+    "0.19718551": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Immunology (Q5016550)": {
+    "0.19718551": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Latex allergy (Q1754830)": {
+    "0.196421": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Oral allergy syndrome (Q769479)": {
+    "0.18124454": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Organ systems (Q7145858)": {
+    "0.18071275": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Allergy (Q42982)": {
+    "0.1644727": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Public health (Q8790871)": {
+    "0.14528289": {
+      "page": "Banana",
+      "part": "Allergies"
+    },
+    "0.08049453": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    }
+  },
+  "Demography (Q7164495)": {
+    "0.13463346": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Epidemiology (Q5601738)": {
+    "0.13463346": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Diseases and disorders (Q7215431)": {
+    "0.13463346": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Actuarial science (Q6016889)": {
+    "0.13463346": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Anatomy (Q4095469)": {
+    "0.13171185": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Urticaria (Q187440)": {
+    "0.12308233": {
+      "page": "Banana",
+      "part": "Allergies"
+    }
+  },
+  "Consumer goods (Q7214127)": {
+    "0.17283335": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Anthropology (Q7144653)": {
+    "0.17283335": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Clothing (Q7214143)": {
+    "0.17161896": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Physical objects (Q6821165)": {
+    "0.15653592": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    },
+    "0.11659184": {
+      "page": "Mango",
+      "part": "__intro__"
+    }
+  },
+  "Manufacturing (Q6683771)": {
+    "0.15653592": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    },
+    "0.1616671": {
+      "page": "Watermelon",
+      "part": "Health"
+    }
+  },
+  "Industry (Q6528585)": {
+    "0.14456862": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Matter (Q5550631)": {
+    "0.14456862": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Production and manufacturing (Q7013216)": {
+    "0.14456862": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Human appearance (Q7149572)": {
+    "0.14380542": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Textiles (Q9139081)": {
+    "0.1430671": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Clothing industry (Q7056661)": {
+    "0.1430671": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Objects (Q6576895)": {
+    "0.13085279": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Chemical substances (Q6117552)": {
+    "0.12987411": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    },
+    "0.19902735": {
+      "page": "Watermelon",
+      "part": "Health"
+    },
+    "0.11342203": {
+      "page": "Papaya",
+      "part": "Uses"
+    }
+  },
+  "Physical universe (Q5551050)": {
+    "0.12390576": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    }
+  },
+  "Manufactured goods (Q7158693)": {
+    "0.12143352": {
+      "page": "Banana",
+      "part": "Other uses of bananas"
+    },
+    "0.19060482": {
+      "page": "Lime",
+      "part": "__intro__"
+    }
+  },
+  "Kew Gardens (Q188617)": {
+    "0.09942192": {
+      "page": "Banana",
+      "part": "Images"
+    }
+  },
+  "Environmental design (Q6698927)": {
+    "0.08144342": {
+      "page": "Banana",
+      "part": "Images"
+    },
+    "0.11163464": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.11666539": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.12918282": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.1151008": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.16421378": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.09499935": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.07860327": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.11844047": {
+      "page": "Strawberry",
+      "part": "Farming"
+    }
+  },
+  "Bitmap (Q1194708)": {
+    "0.07251315": {
+      "page": "Banana",
+      "part": "Images"
+    },
+    "0.08364686": {
+      "page": "Pear",
+      "part": "Images"
+    },
+    "0.07151203": {
+      "page": "Orange (fruit)",
+      "part": "Gallery"
+    }
+  },
+  "Banana bread (Q806097)": {
+    "0.31374836": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Staple foods (Q7464837)": {
+    "0.27727884": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Musaceae (Q8886909)": {
+    "0.21914913": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Bananas (Q6210060)": {
+    "0.21914913": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Musa (genus) (Q8647949)": {
+    "0.21914913": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Cereals (Q7038205)": {
+    "0.2150039": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Baked goods (Q7353893)": {
+    "0.2150039": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Breads (Q5827742)": {
+    "0.2150039": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Components (Q7493787)": {
+    "0.2150039": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Fermented foods (Q6013447)": {
+    "0.2150039": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Baking (Q7014493)": {
+    "0.2150039": {
+      "page": "Banana",
+      "part": "Related pages"
+    }
+  },
+  "Information technology management (Q7216128)": {
+    "0.13198961": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.07541513": {
+      "page": "Pear",
+      "part": "Images"
+    }
+  },
+  "Online services (Q7001577)": {
+    "0.12493858": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.1225227": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Information retrieval (Q8548779)": {
+    "0.12435079": {
+      "page": "Banana",
+      "part": "Other websites"
+    }
+  },
+  "Vegetarian cuisine (Q8229153)": {
+    "0.12189935": {
+      "page": "Banana",
+      "part": "Other websites"
+    },
+    "0.18124489": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.16197399": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.11278424": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.12489192": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.11170843": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.14521401": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.08008279": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.17718351": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.16200683": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.26038833": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1784687": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.16703835": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.18651157": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    },
+    "0.0783527": {
+      "page": "Mandarin orange",
+      "part": "Production volume"
+    }
+  },
+  "Core eudicots (Q8792848)": {
+    "0.19578726": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.10882849": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.21111285": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.1609009": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.1805501": {
+      "page": "Plum",
+      "part": "__intro__"
+    }
+  },
+  "Eukaryote taxa (Q28975727)": {
+    "0.15686786": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.08855277": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.16516816": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.14799937": {
+      "page": "Plum",
+      "part": "__intro__"
+    }
+  },
+  "Botanical nomenclature (Q13553621)": {
+    "0.1495775": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.10085951": {
+      "page": "Cherry",
+      "part": "__intro__"
+    }
+  },
+  "Malinae (Q6743716)": {
+    "0.14889424": {
+      "page": "Pear",
+      "part": "__intro__"
+    }
+  },
+  "Biological nomenclature (Q6961719)": {
+    "0.12697084": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.16714127": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.1013104": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.14063228": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    }
+  },
+  "Scientific terminology (Q6431034)": {
+    "0.12697084": {
+      "page": "Pear",
+      "part": "__intro__"
+    },
+    "0.09002619": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.1013104": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.13692292": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.13037833": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    }
+  },
+  "Angiosperm taxa (Q29779127)": {
+    "0.12593507": {
+      "page": "Pear",
+      "part": "__intro__"
+    }
+  },
+  "Eudicots (Q7328661)": {
+    "0.11873407": {
+      "page": "Pear",
+      "part": "__intro__"
+    }
+  },
+  "Plant taxonomy (Q6184083)": {
+    "0.11433982": {
+      "page": "Pear",
+      "part": "__intro__"
+    }
+  },
+  "Subfamilies (Q23307705)": {
+    "0.1005768": {
+      "page": "Pear",
+      "part": "__intro__"
+    }
+  },
+  "Pyrus communis (Q146281)": {
+    "0.12382233": {
+      "page": "Pear",
+      "part": "Description"
+    }
+  },
+  "Roman (name) (Q933726)": {
+    "0.07543249": {
+      "page": "Pear",
+      "part": "History"
+    }
+  },
+  "Peach (Q13189)": {
+    "0.14141424": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.13943005": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.10352623": {
+      "page": "Peach",
+      "part": "Gallery"
+    }
+  },
+  "Prunus (Q190545)": {
+    "0.13043053": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.12898278": {
+      "page": "Cherry",
+      "part": "__intro__"
+    }
+  },
+  "Peach (color) (Q5148721)": {
+    "0.11530325": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.17505313": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.12129182": {
+      "page": "Peach",
+      "part": "Pests"
+    }
+  },
+  "Landscape (Q7143080)": {
+    "0.11163464": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.11666539": {
+      "page": "Peach",
+      "part": "Description"
+    },
+    "0.12918282": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.1151008": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.16421378": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.09499935": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.12694934": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.11844047": {
+      "page": "Strawberry",
+      "part": "Farming"
+    }
+  },
+  "Language (Q1458484)": {
+    "0.0975204": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.16392546": {
+      "page": "Lychee",
+      "part": "__intro__"
+    },
+    "0.08902469": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Scientific classification (Q9659356)": {
+    "0.0975204": {
+      "page": "Peach",
+      "part": "__intro__"
+    },
+    "0.1013104": {
+      "page": "Papaya",
+      "part": "__intro__"
+    }
+  },
+  "Peach Fuzz (album) (Q3898462)": {
+    "0.11388099": {
+      "page": "Peach",
+      "part": "Description"
+    }
+  },
+  "Peach Fuzz (Q4356546)": {
+    "0.11313854": {
+      "page": "Peach",
+      "part": "Description"
+    }
+  },
+  "Afghanistan (Q889)": {
+    "0.07379944": {
+      "page": "Peach",
+      "part": "Symbolism"
+    }
+  },
+  "Peach blossom (Q640500)": {
+    "0.07213519": {
+      "page": "Peach",
+      "part": "Symbolism"
+    }
+  },
+  "Archaeplastida (Q8880281)": {
+    "0.13336009": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.08223352": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.15800446": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.09803207": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.11104017": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.0936474": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.15671067": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.08681606": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.16162492": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.2413071": {
+      "page": "Raspberry",
+      "part": "Species"
+    }
+  },
+  "Leaf curl (Q428432)": {
+    "0.10303444": {
+      "page": "Peach",
+      "part": "Pests"
+    }
+  },
+  "Plum curculio (Q2957613)": {
+    "0.0949953": {
+      "page": "Peach",
+      "part": "Pests"
+    }
+  },
+  "Eukaryotes (Q7145412)": {
+    "0.0914121": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.18611244": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.13827924": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.09803207": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.22890366": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.09741207": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.18469977": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.14421438": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.08681606": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.12121531": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.18658155": {
+      "page": "Lime",
+      "part": "Other websites"
+    }
+  },
+  "Plant morphology (Q6700082)": {
+    "0.08952595": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.18611244": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.18469977": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.18658155": {
+      "page": "Lime",
+      "part": "Other websites"
+    }
+  },
+  "Trees (Q6641172)": {
+    "0.08857506": {
+      "page": "Peach",
+      "part": "Pests"
+    },
+    "0.08563258": {
+      "page": "Mango",
+      "part": "Mango trees"
+    },
+    "0.19026234": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.18361263": {
+      "page": "Papaya",
+      "part": "Names"
+    }
+  },
+  "Dessert (Q182940)": {
+    "0.07380402": {
+      "page": "Peach",
+      "part": "Gallery"
+    }
+  },
+  "Biological classification (Q7216135)": {
+    "0.16714127": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.1013104": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.14063228": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    }
+  },
+  "Scientific nomenclature (Q8810833)": {
+    "0.16714127": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.1013104": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.14063228": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    }
+  },
+  "Biology terminology (Q7169262)": {
+    "0.16714127": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.1013104": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.14063228": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    },
+    "0.13037833": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    }
+  },
+  "Prunus (Q6627672)": {
+    "0.15881591": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.26340632": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.2957502": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Taxonomy (biology) (Q15298795)": {
+    "0.15289485": {
+      "page": "Apricot",
+      "part": "__intro__"
+    },
+    "0.13374959": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    }
+  },
+  "Prunus armeniaca (Q37453)": {
+    "0.15017189": {
+      "page": "Apricot",
+      "part": "__intro__"
+    }
+  },
+  "Techniques (Q13296244)": {
+    "0.18611244": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.17236609": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.18469977": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.18658155": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.13218424": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    }
+  },
+  "Biological interactions (Q8300766)": {
+    "0.18611244": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.18663597": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.18469977": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.18658155": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.13218424": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    }
+  },
+  "Reproduction (Q7014346)": {
+    "0.18611244": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.18663597": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.18469977": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.18658155": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.15399313": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    }
+  },
+  "Plant reproduction (Q6572493)": {
+    "0.18611244": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.17236609": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.18469977": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.18658155": {
+      "page": "Lime",
+      "part": "Other websites"
+    },
+    "0.13218424": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    }
+  },
+  "Morphology (biology) (Q8641773)": {
+    "0.18611244": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.18469977": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.18658155": {
+      "page": "Lime",
+      "part": "Other websites"
+    }
+  },
+  "Biological processes (Q6226217)": {
+    "0.18611244": {
+      "page": "Apricot",
+      "part": "Other websites"
+    },
+    "0.18663597": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.18469977": {
+      "page": "Plum",
+      "part": "Other websites"
+    },
+    "0.18658155": {
+      "page": "Lime",
+      "part": "Other websites"
+    }
+  },
+  "Cherry (Q196)": {
+    "0.11141864": {
+      "page": "Cherry",
+      "part": "__intro__"
+    }
+  },
+  "Magnoliopsida (Q1307404)": {
+    "0.10215831": {
+      "page": "Cherry",
+      "part": "__intro__"
+    },
+    "0.08940248": {
+      "page": "Mango",
+      "part": "__intro__"
+    }
+  },
+  "Poales (Q7242427)": {
+    "0.25292417": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    }
+  },
+  "Ananas bracteatus (Q588977)": {
+    "0.2437318": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    }
+  },
+  "Bromeliaceae (Q8316418)": {
+    "0.22918767": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    }
+  },
+  "Bromelioideae (Q6796362)": {
+    "0.20279189": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    }
+  },
+  "Ananas (Q8250049)": {
+    "0.17806103": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    }
+  },
+  "Pineapple (Q1493)": {
+    "0.12871099": {
+      "page": "Pineapple",
+      "part": "__intro__"
+    },
+    "0.07217731": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    },
+    "0.07519004": {
+      "page": "Pineapple",
+      "part": "Varieties"
+    },
+    "0.16466355": {
+      "page": "Pineapple",
+      "part": "Symbolism"
+    }
+  },
+  "Nutrition (Q6294036)": {
+    "0.08049453": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    },
+    "0.18608803": {
+      "page": "Watermelon",
+      "part": "Health"
+    },
+    "0.14089859": {
+      "page": "Papaya",
+      "part": "Uses"
+    }
+  },
+  "Euthenics (Q14951434)": {
+    "0.08049453": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    }
+  },
+  "Environmental health (Q6916224)": {
+    "0.08049453": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    }
+  },
+  "Social inequality (Q7023283)": {
+    "0.08049453": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    }
+  },
+  "Life sciences (Q10185120)": {
+    "0.07328398": {
+      "page": "Pineapple",
+      "part": "Benefits"
+    },
+    "0.10855659": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    },
+    "0.14031564": {
+      "page": "Watermelon",
+      "part": "Health"
+    }
+  },
+  "Hluhluwe (Q1004768)": {
+    "0.09988904": {
+      "page": "Pineapple",
+      "part": "Varieties"
+    }
+  },
+  "Asterids (Q7446528)": {
+    "0.31257146": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    }
+  },
+  "Ericales (Q8421413)": {
+    "0.31257146": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.21375319": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    }
+  },
+  "Actinidiaceae (Q7272624)": {
+    "0.27556734": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    }
+  },
+  "Vines (Q7328815)": {
+    "0.21652724": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    }
+  },
+  "Plant life-form (Q8765125)": {
+    "0.21652724": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.08410613": {
+      "page": "Papaya",
+      "part": "The plant"
+    }
+  },
+  "Actinidia (Q8220339)": {
+    "0.21652724": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    }
+  },
+  "Kiwifruit (Q13194)": {
+    "0.19909914": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.0902403": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    }
+  },
+  "Actinidia chinensis (Q163522)": {
+    "0.16773339": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    }
+  },
+  "Biodiversity hotspots (Q8300437)": {
+    "0.16197399": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    }
+  },
+  "Chinese culture (Q7135489)": {
+    "0.16197399": {
+      "page": "Kiwifruit",
+      "part": "__intro__"
+    },
+    "0.22934397": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Mangifera (Q8605438)": {
+    "0.2018063": {
+      "page": "Mango",
+      "part": "__intro__"
+    }
+  },
+  "Anacardiaceae (Q6571635)": {
+    "0.18525377": {
+      "page": "Mango",
+      "part": "__intro__"
+    }
+  },
+  "Sapindales (Q6535587)": {
+    "0.17949655": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.09929026": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.13099398": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.21828611": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.1930634": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Mango (Q169)": {
+    "0.17304099": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.0742478": {
+      "page": "Mango",
+      "part": "Mango trees"
+    }
+  },
+  "Symbols (Q6576219)": {
+    "0.1246472": {
+      "page": "Mango",
+      "part": "__intro__"
+    }
+  },
+  "India (Q1411417)": {
+    "0.12182075": {
+      "page": "Mango",
+      "part": "__intro__"
+    }
+  },
+  "Tropical fruit (Q7461140)": {
+    "0.11326537": {
+      "page": "Mango",
+      "part": "__intro__"
+    },
+    "0.13027695": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.11171202": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.12627252": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.17566788": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.21828611": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.16637832": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Mangoes (Q8605462)": {
+    "0.11326537": {
+      "page": "Mango",
+      "part": "__intro__"
+    }
+  },
+  "Alphonso (mango) (Q2663618)": {
+    "0.10062857": {
+      "page": "Mango",
+      "part": "__intro__"
+    }
+  },
+  "Mangifera indica (Q3919027)": {
+    "0.0917927": {
+      "page": "Mango",
+      "part": "__intro__"
+    }
+  },
+  "Moraceae (Q9015284)": {
+    "0.17993599": {
+      "page": "Fig",
+      "part": "__intro__"
+    }
+  },
+  "Common fig (Q36146)": {
+    "0.15398131": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.14811409": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.21613269": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    }
+  },
+  "Ficus (Q7155109)": {
+    "0.14750567": {
+      "page": "Fig",
+      "part": "__intro__"
+    }
+  },
+  "Asia (Q5610083)": {
+    "0.14750567": {
+      "page": "Fig",
+      "part": "__intro__"
+    },
+    "0.16392546": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Palearctic ecozone (Q7460119)": {
+    "0.14750567": {
+      "page": "Fig",
+      "part": "__intro__"
+    }
+  },
+  "Ficus sycomorus (Q750217)": {
+    "0.14265028": {
+      "page": "Fig",
+      "part": "__intro__"
+    }
+  },
+  "Fig wasp (Q18389921)": {
+    "0.14902233": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.17139085": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    },
+    "0.16101536": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Multiple fruit (Q3238685)": {
+    "0.11482929": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    }
+  },
+  "Veganism (Q7472970)": {
+    "0.11278424": {
+      "page": "Fig",
+      "part": "Fig fruit"
+    },
+    "0.12489192": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.11170843": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.14521401": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.08008279": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    },
+    "0.16200683": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.14837218": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.26038833": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.16703835": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.18651157": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    },
+    "0.0783527": {
+      "page": "Mandarin orange",
+      "part": "Production volume"
+    }
+  },
+  "Syconium (Q2274579)": {
+    "0.2552737": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    }
+  },
+  "Ficus (Q59798)": {
+    "0.22143327": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    }
+  },
+  "Biogeography (Q7217011)": {
+    "0.19693611": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    }
+  },
+  "Earth (Q1458521)": {
+    "0.16294023": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    }
+  },
+  "Animals (Q7157802)": {
+    "0.16016299": {
+      "page": "Fig",
+      "part": "Pollination and fig wasps"
+    }
+  },
+  "Coevolution (Q208841)": {
+    "0.13394317": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Evolutionary biology (Q6719808)": {
+    "0.10855659": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Insect ecology (Q8549626)": {
+    "0.10615122": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Hymenoptera (Q8529590)": {
+    "0.10615122": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Biological evolution (Q6966040)": {
+    "0.08356479": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Evolution (Q7153707)": {
+    "0.08356479": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Environmental social science (Q8420080)": {
+    "0.08356479": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Pollinator (Q1141466)": {
+    "0.08246291": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Science (Q1458083)": {
+    "0.08106895": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    },
+    "0.11151815": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.12255666": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.08027456": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    },
+    "0.10705706": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Wasp (Q9458574)": {
+    "0.0749754": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Conceptual systems (Q7145849)": {
+    "0.07101039": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Scientific theories (Q7036097)": {
+    "0.07101039": {
+      "page": "Fig",
+      "part": "Co-evolution"
+    }
+  },
+  "Dried fruit (Q234901)": {
+    "0.0924875": {
+      "page": "Fig",
+      "part": "Other websites"
+    }
+  },
+  "In vivo (Q141124)": {
+    "0.08744697": {
+      "page": "Fig",
+      "part": "Other websites"
+    }
+  },
+  "Cucurbitales (Q7310903)": {
+    "0.33758088": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    }
+  },
+  "Cucurbitaceae (Q7150877)": {
+    "0.30121857": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    }
+  },
+  "Citrullus lanatus (Q17507129)": {
+    "0.27647242": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    }
+  },
+  "Citrullus (Q132239)": {
+    "0.26463088": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    }
+  },
+  "Ethnobiology (Q8426090)": {
+    "0.15886439": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    }
+  },
+  "Conservation (Q7014499)": {
+    "0.15886439": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    },
+    "0.0748388": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    }
+  },
+  "Africa (Q30877577)": {
+    "0.15445577": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    }
+  },
+  "Watermelon (Q38645)": {
+    "0.14768866": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    }
+  },
+  "Cucumis (Q148758)": {
+    "0.12862": {
+      "page": "Watermelon",
+      "part": "__intro__"
+    }
+  },
+  "Lycopene (Q208130)": {
+    "0.22194731": {
+      "page": "Watermelon",
+      "part": "Health"
+    }
+  },
+  "Chemistry (Q1457474)": {
+    "0.19902735": {
+      "page": "Watermelon",
+      "part": "Health"
+    },
+    "0.12088933": {
+      "page": "Papaya",
+      "part": "Uses"
+    }
+  },
+  "Biochemistry (Q6745718)": {
+    "0.17906006": {
+      "page": "Watermelon",
+      "part": "Health"
+    }
+  },
+  "Biomolecules (Q7215429)": {
+    "0.15952003": {
+      "page": "Watermelon",
+      "part": "Health"
+    }
+  },
+  "Organic compounds (Q6807119)": {
+    "0.15952003": {
+      "page": "Watermelon",
+      "part": "Health"
+    }
+  },
+  "Natural products (Q7189987)": {
+    "0.15952003": {
+      "page": "Watermelon",
+      "part": "Health"
+    }
+  },
+  "Physiology (Q7779711)": {
+    "0.15739778": {
+      "page": "Watermelon",
+      "part": "Health"
+    },
+    "0.11630641": {
+      "page": "Papaya",
+      "part": "Uses"
+    },
+    "0.07939097": {
+      "page": "Dragonfruit",
+      "part": "Benefits"
+    }
+  },
+  "Dietetics (Q7066270)": {
+    "0.14658071": {
+      "page": "Watermelon",
+      "part": "Health"
+    },
+    "0.11041522": {
+      "page": "Papaya",
+      "part": "Uses"
+    }
+  },
+  "Dietary supplements (Q7236437)": {
+    "0.14658071": {
+      "page": "Watermelon",
+      "part": "Health"
+    },
+    "0.11041522": {
+      "page": "Papaya",
+      "part": "Uses"
+    }
+  },
+  "Antioxidant (Q133948)": {
+    "0.144532": {
+      "page": "Watermelon",
+      "part": "Health"
+    }
+  },
+  "Carica (Q1752510)": {
+    "0.18682107": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.13265765": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.19418287": {
+      "page": "Papaya",
+      "part": "Other websites"
+    }
+  },
+  "Brassicales (Q7297055)": {
+    "0.1609009": {
+      "page": "Papaya",
+      "part": "__intro__"
+    }
+  },
+  "Papaya (Q34887)": {
+    "0.14364043": {
+      "page": "Papaya",
+      "part": "__intro__"
+    },
+    "0.14218116": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.163758": {
+      "page": "Papaya",
+      "part": "Other websites"
+    }
+  },
+  "Caricaceae (Q8344329)": {
+    "0.14362719": {
+      "page": "Papaya",
+      "part": "__intro__"
+    }
+  },
+  "Carolus (genus) (Q5045294)": {
+    "0.09147616": {
+      "page": "Papaya",
+      "part": "__intro__"
+    }
+  },
+  "Holarctic (Q8520669)": {
+    "0.18361263": {
+      "page": "Papaya",
+      "part": "Names"
+    },
+    "0.22172723": {
+      "page": "Raspberry",
+      "part": "Species"
+    }
+  },
+  "Americas (Q5755299)": {
+    "0.179133": {
+      "page": "Papaya",
+      "part": "Names"
+    }
+  },
+  "Supercontinents (Q7086541)": {
+    "0.17755496": {
+      "page": "Papaya",
+      "part": "Names"
+    }
+  },
+  "Western Hemisphere (Q22154213)": {
+    "0.17755496": {
+      "page": "Papaya",
+      "part": "Names"
+    }
+  },
+  "Environmental conservation (Q6912358)": {
+    "0.16421378": {
+      "page": "Papaya",
+      "part": "Names"
+    }
+  },
+  "Earth sciences (Q1457551)": {
+    "0.09439437": {
+      "page": "Papaya",
+      "part": "The plant"
+    },
+    "0.08654796": {
+      "page": "Strawberry",
+      "part": "Name"
+    }
+  },
+  "Riboflavin (Q130365)": {
+    "0.10553984": {
+      "page": "Papaya",
+      "part": "Uses"
+    }
+  },
+  "Nutrients (Q6034434)": {
+    "0.10524351": {
+      "page": "Papaya",
+      "part": "Uses"
+    }
+  },
+  "Pharmaceutical sciences (Q8760203)": {
+    "0.10297926": {
+      "page": "Papaya",
+      "part": "Uses"
+    }
+  },
+  "Pharmacology (Q5613026)": {
+    "0.10297926": {
+      "page": "Papaya",
+      "part": "Uses"
+    }
+  },
+  "Mbox (Q285972)": {
+    "0.07079504": {
+      "page": "Papaya",
+      "part": "Other websites"
+    },
+    "0.11785843": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Pitaya (Q232755)": {
+    "0.1284118": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.08571079": {
+      "page": "Dragonfruit",
+      "part": "Benefits"
+    }
+  },
+  "Applied sciences (Q8917068)": {
+    "0.11475705": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.1586534": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    },
+    "0.20506556": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.08654796": {
+      "page": "Strawberry",
+      "part": "Name"
+    }
+  },
+  "Sustainable gardening (Q6969269)": {
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    }
+  },
+  "Garden plants (Q7215694)": {
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    },
+    "0.18381346": {
+      "page": "Lime",
+      "part": "__intro__"
+    },
+    "0.21828611": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    }
+  },
+  "Biogeochemistry (Q8300474)": {
+    "0.10337663": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    }
+  },
+  "Hylocereus (Q133960)": {
+    "0.09147779": {
+      "page": "Dragonfruit",
+      "part": "__intro__"
+    }
+  },
+  "Orange (fruit) (Q13191)": {
+    "0.12199029": {
+      "page": "Orange (fruit)",
+      "part": "__intro__"
+    },
+    "0.09866936": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.09520407": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    }
+  },
+  "Aurantioideae (Q25266064)": {
+    "0.13027695": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.11171202": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.17566788": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.21828611": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    },
+    "0.16637832": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Citrus (Q6586700)": {
+    "0.13027695": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.11171202": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.17566788": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.16637832": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Tropical agriculture (Q7028498)": {
+    "0.13027695": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.16637832": {
+      "page": "Mandarin orange",
+      "part": "__intro__"
+    }
+  },
+  "Mandarin orange (Q125337)": {
+    "0.10790069": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    }
+  },
+  "Rutaceae (Q6509907)": {
+    "0.09738716": {
+      "page": "Orange (fruit)",
+      "part": "History"
+    },
+    "0.1471129": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.11021882": {
+      "page": "Grapefruit",
+      "part": "__intro__"
+    },
+    "0.21828611": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    }
+  },
+  "Marmalade (Q5834964)": {
+    "0.14303686": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.0732809": {
+      "page": "Orange (fruit)",
+      "part": "Gallery"
+    }
+  },
+  "Citrus hybrids (Q8379570)": {
+    "0.11171202": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.14832732": {
+      "page": "Lemon",
+      "part": "__intro__"
+    },
+    "0.21828611": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    }
+  },
+  "Hybrid fruit (Q8529102)": {
+    "0.11171202": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    },
+    "0.21828611": {
+      "page": "Lime",
+      "part": "Different kinds of limes"
+    }
+  },
+  "Oranges (Q7352275)": {
+    "0.11171202": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    }
+  },
+  "Traditions (Q7131102)": {
+    "0.10960182": {
+      "page": "Orange (fruit)",
+      "part": "Traditions"
+    }
+  },
+  "Blood orange (Q303669)": {
+    "0.10236216": {
+      "page": "Orange (fruit)",
+      "part": "Gallery"
+    }
+  },
+  "Lime (fruit) (Q13195)": {
+    "0.13480788": {
+      "page": "Orange (fruit)",
+      "part": "Related pages"
+    },
+    "0.2302965": {
+      "page": "Lime",
+      "part": "__intro__"
+    }
+  },
+  "Citrus (Q81513)": {
+    "0.09903036": {
+      "page": "Orange (fruit)",
+      "part": "Other websites"
+    }
+  },
+  "Prunus domestica (Q44120)": {
+    "0.17468762": {
+      "page": "Plum",
+      "part": "__intro__"
+    }
+  },
+  "Plum (color) (Q3108722)": {
+    "0.15967044": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.14907737": {
+      "page": "Plum",
+      "part": "Cultivation"
+    },
+    "0.22010574": {
+      "page": "Plum",
+      "part": "Related pages"
+    }
+  },
+  "Plum (Q6401215)": {
+    "0.15462624": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.12118695": {
+      "page": "Plum",
+      "part": "Cultivation"
+    },
+    "0.14724243": {
+      "page": "Plum",
+      "part": "Related pages"
+    }
+  },
+  "Damson (Q149195)": {
+    "0.14214398": {
+      "page": "Plum",
+      "part": "__intro__"
+    },
+    "0.17088301": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Plums (Q8766998)": {
+    "0.2957502": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Mirabelle plum (Q149741)": {
+    "0.2191786": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Greengage (Q1283218)": {
+    "0.19543914": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Victoria plum (Q3742611)": {
+    "0.1805629": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Art materials (Q7152626)": {
+    "0.09371106": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Color schemes (Q8390670)": {
+    "0.09371106": {
+      "page": "Plum",
+      "part": "Cultivation"
+    }
+  },
+  "Fruit tree (Q904653)": {
+    "0.10229899": {
+      "page": "Plum",
+      "part": "Related pages"
+    }
+  },
+  "Passifloraceae (Q157164)": {
+    "0.1716253": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    }
+  },
+  "Malpighiales (Q5849009)": {
+    "0.16381007": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    }
+  },
+  "Passiflora (Q161185)": {
+    "0.15251091": {
+      "page": "Passionfruit",
+      "part": "__intro__"
+    }
+  },
+  "Nephelium (Q2697447)": {
+    "0.20114802": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    }
+  },
+  "Rambutan (Q476864)": {
+    "0.15031129": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    }
+  },
+  "Sapindaceae (Q8704363)": {
+    "0.08211518": {
+      "page": "Rambutan",
+      "part": "__intro__"
+    }
+  },
+  "Chinese language (Q7237538)": {
+    "0.2081552": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Mandarin Chinese (Q7237518)": {
+    "0.2081552": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Standard Chinese (Q7485045)": {
+    "0.2081552": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Tonal languages (Q6464434)": {
+    "0.2081552": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Sino-Tibetan languages (Q5822466)": {
+    "0.2081552": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "China (Q1411230)": {
+    "0.20516329": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "East Asian culture (Q8396872)": {
+    "0.20516329": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Phonetics (Q7158176)": {
+    "0.20478553": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Writing (Q7014659)": {
+    "0.19839795": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Transliteration (Q5649549)": {
+    "0.19297645": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Romanization (Q7012312)": {
+    "0.19297645": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Subtitling (Q8823596)": {
+    "0.17930533": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Transcription (linguistics) (Q8863632)": {
+    "0.17930533": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Tone (linguistics) (Q6464672)": {
+    "0.15559593": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Language families (Q7212694)": {
+    "0.15559593": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Taiwanese culture (Q7283364)": {
+    "0.15559593": {
+      "page": "Lychee",
+      "part": "__intro__"
+    }
+  },
+  "Lemon (Q500)": {
+    "0.17693236": {
+      "page": "Lemon",
+      "part": "__intro__"
+    }
+  },
+  "Alcohol (Q8234322)": {
+    "0.13802204": {
+      "page": "Lemon",
+      "part": "__intro__"
+    }
+  },
+  "Ericaceae (Q8421410)": {
+    "0.18420499": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    }
+  },
+  "North American culture (Q6971464)": {
+    "0.16429048": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    }
+  },
+  "American culture (Q5550381)": {
+    "0.16429048": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    }
+  },
+  "North American cuisine (Q7171899)": {
+    "0.15391809": {
+      "page": "Blueberry",
+      "part": "__intro__"
+    }
+  },
+  "Raspberry (Q13179)": {
+    "0.20800169": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    },
+    "0.08725941": {
+      "page": "Raspberry",
+      "part": "Plants"
+    }
+  },
+  "Raspberry (color) (Q3080423)": {
+    "0.17498714": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    }
+  },
+  "Blackberry (Q19842373)": {
+    "0.17391309": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    }
+  },
+  "Rubus (Q602740)": {
+    "0.14715865": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    }
+  },
+  "Aggregate fruit (Q4692249)": {
+    "0.08860552": {
+      "page": "Raspberry",
+      "part": "__intro__"
+    },
+    "0.16606233": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    }
+  },
+  "Berries (Q7214355)": {
+    "0.28621659": {
+      "page": "Raspberry",
+      "part": "Species"
+    }
+  },
+  "Rosoideae (Q8682737)": {
+    "0.28621659": {
+      "page": "Raspberry",
+      "part": "Species"
+    },
+    "0.15428313": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    }
+  },
+  "Rubus (Q8271954)": {
+    "0.28621659": {
+      "page": "Raspberry",
+      "part": "Species"
+    }
+  },
+  "Ecozones (Q8843780)": {
+    "0.26544576": {
+      "page": "Raspberry",
+      "part": "Species"
+    }
+  },
+  "Nearctic ecozone (Q6905549)": {
+    "0.22172723": {
+      "page": "Raspberry",
+      "part": "Species"
+    }
+  },
+  "Strawberry (Q13158)": {
+    "0.17866763": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.19466034": {
+      "page": "Strawberry",
+      "part": "Name"
+    },
+    "0.10825397": {
+      "page": "Strawberry",
+      "part": "History"
+    },
+    "0.11128876": {
+      "page": "Strawberry",
+      "part": "Farming"
+    },
+    "0.16193484": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    },
+    "0.15209623": {
+      "page": "Strawberry",
+      "part": "Related pages"
+    }
+  },
+  "Fragaria (Q745)": {
+    "0.15784311": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    },
+    "0.16418232": {
+      "page": "Strawberry",
+      "part": "Name"
+    }
+  },
+  "Antoine Nicolas Duchesne (Q586815)": {
+    "0.13532616": {
+      "page": "Strawberry",
+      "part": "__intro__"
+    }
+  },
+  "Virginia strawberry (Q978247)": {
+    "0.08121602": {
+      "page": "Strawberry",
+      "part": "History"
+    }
+  },
+  "Stolon (Q633912)": {
+    "0.1498993": {
+      "page": "Strawberry",
+      "part": "Farming"
+    }
+  },
+  "Bee (Q7391)": {
+    "0.09413335": {
+      "page": "Strawberry",
+      "part": "Farming"
+    }
+  },
+  "Achene (Q14714)": {
+    "0.17311788": {
+      "page": "Strawberry",
+      "part": "Fruit"
+    }
+  },
+  "Hwachae (Q715074)": {
+    "0.08401668": {
+      "page": "Mandarin orange",
+      "part": "Production volume"
+    }
+  },
+  "Taiwan (Q865)": {
+    "0.07126636": {
+      "page": "Mandarin orange",
+      "part": "Production volume"
+    }
+  },
+  "Wikispecies (Q13679)": {
+    "0.15352967": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Computer networking (Q17484813)": {
+    "0.1225227": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Information Age (Q7063231)": {
+    "0.10614824": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Written communication (Q6898121)": {
+    "0.10614824": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Engineering disciplines (Q5472577)": {
+    "0.10614824": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Information society (Q7157636)": {
+    "0.10614824": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Applied linguistics (Q6448947)": {
+    "0.10539914": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Computer data (Q6382652)": {
+    "0.09425783": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  },
+  "Lexicography (Q8587895)": {
+    "0.08902469": {
+      "page": "Mandarin orange",
+      "part": "Other websites"
+    }
+  }
+}
