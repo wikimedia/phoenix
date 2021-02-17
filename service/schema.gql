@@ -35,7 +35,7 @@ type Page {
 type Node {
   id: ID!
   name: String!
-  isPartOf: [ID!]!
+  isPartOf: [Page]!
   dateModified: String!
   unsafe: String!
   keywords(limit: Int, offset: Int): [RelatedTopic]!

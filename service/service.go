@@ -302,13 +302,24 @@ func (r *NodeResolver) Name() string {
 	return r.n.Name
 }
 
-// IsPartOf resolves a node isPartOf attribute
-func (r *NodeResolver) IsPartOf() []graphql.ID {
-	parents := make([]graphql.ID, 0)
+// IsPartOf resolves a page for the node's isPartOf ID
+func (r *NodeResolver) IsPartOf() ([]*PageResolver, error) {
+	var err error
+	var page *common.Page
+	var parents = make([]*PageResolver, 0)
+
 	for _, id := range r.n.IsPartOf {
-		parents = append(parents, graphql.ID(id))
+		if page, err = r.repo.GetPage(id); err != nil {
+			// If this was an error returned by S3 (it is an awserr.Error) and its code is s3.ErrCodeNoSuchKey
+			// then the object was simply not found (read: this is not an error per say).
+			if isS3NotFound(err) {
+				return nil, nil
+			}
+			return nil, err
+		}
+		parents = append(parents, &PageResolver{page, r.repo})
 	}
-	return parents
+	return parents, nil
 }
 
 // DateModified resolves a node dateModified attribute
