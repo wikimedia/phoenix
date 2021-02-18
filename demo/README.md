@@ -21,8 +21,14 @@ To develop and work on this code locally:
 1. Clone the Phoenix repo
 2. Go into the `phoenix/demo` folder
 3. Run `npm install`
-4. Run `npm run serve` 
-5. In another terminal window, run `npm run phoenix` to activate the GraphQL service
+4. Run `npm run serve` to run against the published GraphQL AWS endpoint
+
+## Development against local GraphQL service
+
+If you intend to test locally against a local instance of the GraphQL service, follow steps 1-3 above, and then:
+
+4. Run `npm run local` to run against the local GraphQL endpoint
+5. In another terminal window, run `npm run phoenix` to activate the GraphQL service locally
 
 ### Development tools
 
@@ -40,18 +46,8 @@ Compiles and minifies for production
 ```
 npm run build
 ```
+
 Production-ready files will be available in `/dist`
-
-## Deploy to Github pages
-To deploy the demo to github pages:
-
-1. Clone the Phoenix repo
-2. Go into the `phoenix/demo` folder
-3. Run `./deploy.sh`
-
-The demo will be avilable at the [Wikimedia Github Pages for the phoenix repo](https://wikimedia.github.io/phoenix).
-
-NOTE: Running that command will build the repository and then immediately push this into github. Make sure your working directory is clean.
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

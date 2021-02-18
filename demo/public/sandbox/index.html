@@ -36,10 +36,23 @@
     ></script>
 
     <script>
+      const getGraphQLEndpoint = () => {
+        switch (process.env.NODE_ENV) {
+          case 'localgraphql':
+            // Run the demo against a local run graphql service in localhost
+            return 'http://localhost:8080/query'
+          case 'production':
+            // Run the demo from the netlify /graphql redirect
+            return '/graphql'
+          default:
+            // Anything else, assume local development against aws endpoint
+            return 'http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080'
+        }
+      }
       var url = '/'
       const graphQLFetcher = graphQLParams =>
       // fetch('http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080', {
-      fetch('/graphql', {
+      fetch(getGraphQLEndpoint(), {
           method: 'post',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(graphQLParams),
