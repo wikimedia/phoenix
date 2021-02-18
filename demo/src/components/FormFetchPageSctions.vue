@@ -145,8 +145,7 @@ export default {
       this.error = null
       return axios
         .post(
-          // 'http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080',
-          '/graphql',
+          this.GRAPHQL_ENDPOINT,
           { query },
           {
             headers: { 'Content-Type': 'application/json' }
