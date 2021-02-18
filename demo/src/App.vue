@@ -27,7 +27,15 @@
             <v-icon>fa-file</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Fetch a part of a page</v-list-item-title>
+            <v-list-item-title>Page sections</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link to="/fetchbykeyword">
+          <v-list-item-action>
+            <v-icon>fa-file</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Wikidata keywords</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-subheader inset>GraphQL</v-subheader>

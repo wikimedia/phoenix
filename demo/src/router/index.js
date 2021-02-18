@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import FetchPart from '../views/FetchPart.vue'
+import FetchKeyword from '../views/FetchKeyword.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/fetchbyname',
     name: 'FetchPart',
     component: FetchPart
+  },
+  {
+    path: '/fetchbykeyword',
+    name: 'FetchKeyword',
+    component: FetchKeyword
   },
   {
     path: '/about',
