@@ -120,7 +120,7 @@ export default {
           unsafe
         }
       }`
-      console.log('fetchContent query', query)
+      // window.console.log('fetchContent query', query)
       return this.fetch(query)
         .then(res => {
           this.payload = JSON.stringify(res, null, 2)
@@ -128,7 +128,7 @@ export default {
           return res.data.data.node
         })
         .then(data => {
-          console.log('fetchContent data', data)
+          // console.log('fetchContent data', data)
           this.result = {
             title: this.pageName,
             modified: data.dateModified,
@@ -145,7 +145,8 @@ export default {
       this.error = null
       return axios
         .post(
-          'http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080/',
+          // 'http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080',
+          '/graphql',
           { query },
           {
             headers: { 'Content-Type': 'application/json' }
@@ -159,7 +160,7 @@ export default {
         })
         .catch(e => {
           this.error = e
-          console.log(e)
+          window.console.log(e)
           this.loading = false
         })
     }

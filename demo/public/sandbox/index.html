@@ -36,10 +36,10 @@
     ></script>
 
     <script>
-      var url = window.location.hostname === 'wikimedia.github.io' ?
-        '/phoenix' : '/'
+      var url = '/'
       const graphQLFetcher = graphQLParams =>
-        fetch('http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080', {
+      // fetch('http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080', {
+      fetch('/graphql', {
           method: 'post',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(graphQLParams),
