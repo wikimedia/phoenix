@@ -12,13 +12,15 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/elastic/go-elasticsearch/v7"
 	"github.com/wikimedia/phoenix/common"
+	"github.com/wikimedia/phoenix/rosette"
 	"github.com/wikimedia/phoenix/storage"
 )
 
 var (
-	content     storage.Repository
-	log         *common.Logger
-	topicSearch storage.TopicSearch
+	content          storage.Repository
+	log              *common.Logger
+	topicSearch      storage.TopicSearch
+	recommendService rosette.Rosette
 
 	// These values are passed in at build-time w/ -ldflags (see: Makefile)
 	awsAccount                string
@@ -55,7 +57,7 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 		log.Debug("Processing Node.Unsafe='%.24s...'", node.Unsafe)
 
 		// Fetch related-topics
-		if topics, err = rosetteTopics(node); err != nil {
+		if topics, err = recommendService.Topics(node); err != nil {
 			log.Error("Unable to retrieve related topics for %s: %s", msg.ID, err)
 			continue
 		}
@@ -110,6 +112,7 @@ func init() {
 		log.Error("Unable to create ElasticSearch client: %s", err)
 	}
 
+	recommendService = rosette.Rosette{APIKey: rosetteAPIKey, Logger: log}
 }
 
 func main() {

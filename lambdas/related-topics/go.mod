@@ -11,7 +11,8 @@ require (
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/jpillora/backoff v1.0.0
 	github.com/stretchr/testify v1.7.0
-	github.com/wikimedia/phoenix/common v0.0.0-20210122183222-d75f3fd4ef67
+	github.com/wikimedia/phoenix/common v0.0.0-20210122212136-06a4785bb422
+	github.com/wikimedia/phoenix/rosette v0.0.0-20210223213805-8f53ab7329f0
 	github.com/wikimedia/phoenix/storage v0.0.0-20210122183222-d75f3fd4ef67
 	golang.org/x/net v0.0.0-20210119194325-5f4716e94777 // indirect
 	golang.org/x/text v0.3.5 // indirect

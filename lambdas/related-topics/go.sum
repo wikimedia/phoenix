@@ -69,6 +69,10 @@ github.com/wikimedia/phoenix/common v0.0.0-20210113223703-1e9b4f02ef22 h1:nn/XN6
 github.com/wikimedia/phoenix/common v0.0.0-20210113223703-1e9b4f02ef22/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
 github.com/wikimedia/phoenix/common v0.0.0-20210122183222-d75f3fd4ef67 h1:MhW8DeEKygO9Z9Po8KVvBL5aFuyO+JUZ/n7AoKp3mfM=
 github.com/wikimedia/phoenix/common v0.0.0-20210122183222-d75f3fd4ef67/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
+github.com/wikimedia/phoenix/common v0.0.0-20210122212136-06a4785bb422 h1:4kgeQQDUowv8oaPo4pWMHAd7Zd2NjjWXQ6ze8BMRq54=
+github.com/wikimedia/phoenix/common v0.0.0-20210122212136-06a4785bb422/go.mod h1:TwubHK9cdsLzEpwzbXHEC4wyCsgbqISELiDGGyFPkIs=
+github.com/wikimedia/phoenix/rosette v0.0.0-20210223213805-8f53ab7329f0 h1:fjVvJpAZRI1ReN9Y+Gh2SdB9AdEeI3w3aNWYwfGuTUc=
+github.com/wikimedia/phoenix/rosette v0.0.0-20210223213805-8f53ab7329f0/go.mod h1:Dyo63TpcG8yp9XEpPS+2ZEFEmr6rsokzFwOvpYNYjoE=
 github.com/wikimedia/phoenix/storage v0.0.0-20210113223703-1e9b4f02ef22 h1:WypN5Ruzy8MwCRUI7/lCuCg09b8di5am/LWQCdqrC4E=
 github.com/wikimedia/phoenix/storage v0.0.0-20210113223703-1e9b4f02ef22/go.mod h1:Qy5y6umd1NMuuZH3syBoMVOIpo/qERMbVEiDcJCG5CQ=
 github.com/wikimedia/phoenix/storage v0.0.0-20210122183222-d75f3fd4ef67 h1:A+vKeCMdqTsHORUsmIJ2fQvRgieIbsc1xUTfd+7EEto=
