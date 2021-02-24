@@ -28,7 +28,7 @@
           </v-card-text>
           <v-card-actions>
             <v-btn
-              href="/fetchbyname"
+              link to="/fetchbyname"
               text
             >
               Try it out
@@ -43,7 +43,7 @@
           </v-card-text>
           <v-card-actions>
             <v-btn
-              href="/fetchbykeyword"
+              link to="/fetchbykeyword"
               text
             >
               Try it out
