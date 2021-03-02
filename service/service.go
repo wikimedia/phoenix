@@ -164,12 +164,12 @@ func (r *RootResolver) Node(args struct {
 }
 
 // Nodes returns relevant Nodes for a given predicate (currently only Wikidata topic ID)
-func (r *RootResolver) Nodes(args struct{ RelatedTo *string }) ([]*NodeResolver, error) {
+func (r *RootResolver) Nodes(args struct{ Keyword *string }) ([]*NodeResolver, error) {
 	var err error
 	var nodes []string
 	var resolvers = make([]*NodeResolver, 0)
 
-	if nodes, err = r.TopicSearch.Search(*args.RelatedTo); err != nil {
+	if nodes, err = r.TopicSearch.Search(*args.Keyword); err != nil {
 		return nil, fmt.Errorf("Topic search failed: %w", err)
 	}
 
