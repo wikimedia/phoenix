@@ -84,9 +84,9 @@ export default {
   methods: {
     fetchKeywordSections() {
       const query = `{
-  nodes(relatedTo: "${this.keyword}") {
+  nodes(keyword: "${this.keyword}") {
     name
-    isPartOf
+    isPartOf { name }
     unsafe
     keywords {
       id
