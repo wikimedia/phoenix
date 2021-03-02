@@ -37,14 +37,18 @@
 
     <script>
       const getGraphQLEndpoint = () => {
-        if (window.location.hostname === 'localhost') {
-            // TODO: Figure out how to allow for running against the local graphql service
-            // return 'http://localhost:8080/query'
-            // Anything else, assume local development against aws endpoint
-            return 'http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080'
-        } else {
+        if (
+          window.location.hostname === 'localhost' &&
+          window.location.port === '9090'
+        ) {
+            // This port is used for local testing to a local graphQL service
+            return 'http://localhost:8080/query'
+        } else if (window.location.hostname === 'wikimediaphoenix.netlify.app') {
             // Run the demo from the netlify /graphql redirect
             return '/graphql'
+        } else {
+            // Anything else, assume local development against aws endpoint
+            return 'http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080'
         }
       }
       var url = '/'

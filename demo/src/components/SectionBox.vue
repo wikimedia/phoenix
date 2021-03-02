@@ -8,7 +8,7 @@
         {{fixedSalience(keywordData.salience)}}
       </v-chip>
     </v-card-title>
-    <v-card-subtitle>isPartOf: <span class="sectionbox-page-name">{{sectiondata.isPartOf}}</span></v-card-subtitle>
+    <v-card-subtitle>From page: <span class="sectionbox-page-name">{{ pageTitle }}</span></v-card-subtitle>
     <v-card-text class="sectionbox-content"><slot name="content"></slot></v-card-text>
     <v-divider class="mt-2" v-if="otherKeywords.length"></v-divider>
     <v-card-subtitle>Keywords:</v-card-subtitle>
@@ -48,6 +48,9 @@ export default {
       return this.sectiondata.keywords.filter(k => {
         return k.id !== this.currKeyword
       })
+    },
+    pageTitle () {
+      return this.sectiondata.isPartOf[0].name
     }
   },
   methods: {

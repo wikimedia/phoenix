@@ -20,7 +20,7 @@
         >
         <SectionBox
           v-for="sect in sections"
-          :key="sect.name"
+          :key="sect.isPartOf[0].name + sect.name"
           :sectiondata="sect"
           :currKeyword=keyword
           @keywordClick="onSectionKeywordClicked"
