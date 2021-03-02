@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"sync/atomic"
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -23,6 +24,10 @@ import (
 	"github.com/rs/cors"
 	"github.com/wikimedia/phoenix/common"
 	"github.com/wikimedia/phoenix/storage"
+)
+
+const (
+	recursionDepth = 3
 )
 
 var (
@@ -123,7 +128,7 @@ func (r *RootResolver) Page(args struct {
 		return nil, nil
 	}
 
-	return &PageResolver{page, r.Repository}, nil
+	return &PageResolver{page, r.Repository, recursionDepth}, nil
 }
 
 // Node returns a Node given its ID
@@ -160,7 +165,7 @@ func (r *RootResolver) Node(args struct {
 		return nil, nil
 	}
 
-	return &NodeResolver{node, r.Repository}, nil
+	return &NodeResolver{node, r.Repository, recursionDepth}, nil
 }
 
 // Nodes returns relevant Nodes for a given predicate (currently only Wikidata topic ID)
@@ -186,7 +191,7 @@ func (r *RootResolver) Nodes(args struct{ Keyword *string }) ([]*NodeResolver, e
 			}
 			return nil, err
 		}
-		resolvers = append(resolvers, &NodeResolver{node, r.Repository})
+		resolvers = append(resolvers, &NodeResolver{node, r.Repository, recursionDepth})
 	}
 
 	return resolvers, nil
@@ -194,8 +199,9 @@ func (r *RootResolver) Nodes(args struct{ Keyword *string }) ([]*NodeResolver, e
 
 // PageResolver resolves a GraphQL page type
 type PageResolver struct {
-	p    *common.Page
-	repo *storage.Repository
+	p       *common.Page
+	repo    *storage.Repository
+	recurse uint32
 }
 
 // ID resolves a page id attribute
@@ -232,6 +238,13 @@ func (r *PageResolver) HasPart(args struct {
 		offset = *args.Offset
 	}
 
+	// Decrement the recursion counter
+	atomic.AddUint32(&r.recurse, ^uint32(0))
+
+	if r.recurse == 0 {
+		return nil, fmt.Errorf("max recursion reached")
+	}
+
 	// TODO: This is slow; Consider adding concurrency
 	for i, id := range r.p.HasPart[offset:] {
 		if args.Limit != nil && (int32(i)+1) > *args.Limit {
@@ -245,7 +258,7 @@ func (r *PageResolver) HasPart(args struct {
 			}
 			return nil, err
 		}
-		resolvers = append(resolvers, &NodeResolver{node, r.repo})
+		resolvers = append(resolvers, &NodeResolver{node, r.repo, r.recurse})
 	}
 
 	return resolvers, nil
@@ -288,8 +301,9 @@ func (r *TupleResolver) Val() string {
 
 // NodeResolver resolves a GraphQL node type
 type NodeResolver struct {
-	n    *common.Node
-	repo *storage.Repository
+	n       *common.Node
+	repo    *storage.Repository
+	recurse uint32
 }
 
 // ID resolves a node id attribute
@@ -302,13 +316,32 @@ func (r *NodeResolver) Name() string {
 	return r.n.Name
 }
 
-// IsPartOf resolves a node isPartOf attribute
-func (r *NodeResolver) IsPartOf() []graphql.ID {
-	parents := make([]graphql.ID, 0)
-	for _, id := range r.n.IsPartOf {
-		parents = append(parents, graphql.ID(id))
+// IsPartOf resolves a page for the node's isPartOf ID
+func (r *NodeResolver) IsPartOf() ([]*PageResolver, error) {
+	var err error
+	var page *common.Page
+	var parents = make([]*PageResolver, 0)
+
+	// Decrement the recursion counter
+	atomic.AddUint32(&r.recurse, ^uint32(0))
+
+	if r.recurse == 0 {
+		return nil, fmt.Errorf("max recursion reached")
 	}
-	return parents
+
+	// TODO: This is slow; Consider adding concurrency
+	for _, id := range r.n.IsPartOf {
+		if page, err = r.repo.GetPage(id); err != nil {
+			// If this was an error returned by S3 (it is an awserr.Error) and its code is s3.ErrCodeNoSuchKey
+			// then the object was simply not found (read: this is not an error per say).
+			if isS3NotFound(err) {
+				return nil, nil
+			}
+			return nil, err
+		}
+		parents = append(parents, &PageResolver{page, r.repo, r.recurse})
+	}
+	return parents, nil
 }
 
 // DateModified resolves a node dateModified attribute
