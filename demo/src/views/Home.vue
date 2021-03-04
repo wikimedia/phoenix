@@ -9,14 +9,14 @@
       <p>
         <a href="https://github.com/wikimedia/phoenix" target="_blank">Phoenix</a> is an experimental
         service that consumes and structures Wikimedia content. It demonstrates how the information on
-        a wiki page can be stored as a set of parts. By associating parts with relevant topics, we can
+        a wiki page can be stored as a set of parts. By associating parts with relevant keywords, we can
         create relationships between pieces of knowledge across traditional page boundaries. This site
         lets you explore these relationships using content from
         <a href="https://simple.wikipedia.org" target="_blank">Simple English Wikipedia</a>
-        and topics from <a href="https://www.wikidata.org" target="_blank">Wikidata</a>.
+        and keywords from <a href="https://www.wikidata.org" target="_blank">Wikidata</a>.
       </p>
       <b>
-        Phoenix is intended for experimental purposes only. It is not a prototype or a production-ready system.
+        Phoenix is not a production-ready system.
         The API used in this demo should be considered unstable and may change without notice.
       </b>
       <br><br>
@@ -37,7 +37,7 @@
         </v-card>
         <v-spacer></v-spacer>
         <v-card>
-          <v-card-title>Explore collections by topic</v-card-title>
+          <v-card-title>Explore collections by keyword</v-card-title>
           <v-card-text>
             Make connections across pages by searching for sections related to Wikidata items.
           </v-card-text>

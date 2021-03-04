@@ -19,10 +19,11 @@
         original articles.
       </p>
       <p>
-        Linking between sections and <a href="https://www.wikidata.org" target="_blank">Wikidata</a> topics
+        Linking between sections and keywords from <a href="https://www.wikidata.org" target="_blank">Wikidata</a>
         is provided by <a href="https://www.rosette.com/" target="_blank">Rosette</a>. Integration with Rosette
-        is intended to be a short-term feature for experimental use only. At this time, topics are not updated
-        when edits are made to the original content.
+        is intended to be a short-term feature for experimental use only. Phoenix is capable of updating keywords
+        in response to changes to the original content, but this feature is currently enabled for only a limited
+        set of content.
       </p>
       <p>
         This site connects to Phoenix using a GraphQL API. You can try out the API using the
@@ -53,11 +54,11 @@
     }
   }
 
-  # List sections related to a Wikidata topic
+  # List sections related to a Wikidata keyword
   {
-    nodes(relatedTo: "Q503") {
+    nodes(keyword: "Q503") {
       name
-      isPartOf
+      isPartOf { name }
       keywords {
         id
         salience
