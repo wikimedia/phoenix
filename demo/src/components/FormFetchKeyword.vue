@@ -1,35 +1,40 @@
 <template>
   <div id="form-fetch-keyword">
-    <v-form v-model="valid">
-      <v-container>
-        <v-row>
-          <v-select
-            v-model="keyword"
-            label="Wikidata keyword"
-            :items=keywordItems
-            autocomplete
-            @change="fetchKeywordSections"
-            required
-          ></v-select>
-        </v-row>
-      </v-container>
-    </v-form>
-    <v-alert v-show="error">{{ error }}</v-alert>
-    <v-progress-circular v-if="loading"
-      indeterminate
-      color="purple"
-    ></v-progress-circular>
+    <v-container>
+      <v-form v-model="valid">
+          <v-row>
+            <v-select
+              v-model="keyword"
+              label="Wikidata keyword"
+              :items=keywordItems
+              autocomplete
+              @change="fetchKeywordSections"
+              required
+            ></v-select>
+          </v-row>
+      </v-form>
+      <v-alert v-show="error">{{ error }}</v-alert>
+      <v-progress-circular v-if="loading"
+        indeterminate
+        color="purple"
+      ></v-progress-circular>
+      <p v-if="result" class="font-italic text-center">
+        These are the sections related to the requested keyword, with their salience percentage.<br />You can examine the network request and payload in the 'payload' tab.
+      </p>
 
-    <v-container v-if="result">
-      <v-tabs>
+      <v-tabs
+        v-if="result"
+        dark
+        background-color="primary"
+      >
         <v-tab href="#tab-section">Sections</v-tab>
         <v-tab href="#tab-payload">Payload</v-tab>
         <v-tab-item value="tab-section">
           <SectionCollection v-if="result" :keyword="keyword" :sections="result.sections" />
         </v-tab-item>
         <v-tab-item value="tab-payload">
-          <v-container v-if="payload">
             <v-card
+              v-if="payload"
               class="mx-auto"
               outlined
             >
@@ -48,9 +53,7 @@
                 <pre>{{ payload }}</pre>
               </v-card-text>
             </v-card>
-          </v-container>
         </v-tab-item>
-
       </v-tabs>
     </v-container>
   </div>
@@ -86,7 +89,11 @@ export default {
       const query = `{
   nodes(keyword: "${this.keyword}") {
     name
-    isPartOf { name }
+    id
+    isPartOf {
+      id
+      name
+    }
     unsafe
     keywords {
       id
@@ -103,6 +110,25 @@ export default {
           return res.data.data.nodes
         })
         .then(data => {
+          const normalizedID = (e) => {
+            return e.isPartOf[0].name.toLowerCase().replaceAll('_', ' ') + '|' +
+              e.name.toLowerCase().replaceAll('_', ' ')
+          }
+
+          // FIXME: Normalize; we get some dupes in the shape of 'Related pages' and 'Related_pages'
+          // from the same page (those are the same section) from the search; while that's
+          // being looked into, we will normalize this in the frontend and remove these
+          // as dupes
+          const seenKeys = {}
+          data = data.filter(entry => {
+            if (seenKeys[normalizedID(entry)]) {
+              return false
+            } else {
+              seenKeys[normalizedID(entry)] = true
+              return true
+            }
+          })
+
           this.result = {
             sections: data
           }
