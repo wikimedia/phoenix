@@ -1,8 +1,7 @@
 <template>
   <v-app id="phoenix">
     <v-navigation-drawer v-model="drawer" app clipped dark color="accent">
-      <v-list subheader>
-        <v-subheader inset>Information</v-subheader>
+      <v-list subheader dense>
         <v-list-item link to="/">
           <v-list-item-action>
             <v-icon>fa-anchor</v-icon>
@@ -17,6 +16,14 @@
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>About</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link :href="sandboxLink">
+          <v-list-item-action>
+            <v-icon>fa-flask</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>API sandbox</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -35,16 +42,7 @@
             <v-icon>fa-file</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Wikidata keywords</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-subheader inset>GraphQL</v-subheader>
-        <v-list-item link :href="sandboxLink">
-          <v-list-item-action>
-            <v-icon>fa-file</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>GraphQL Sandbox</v-list-item-title>
+            <v-list-item-title>Collections</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
