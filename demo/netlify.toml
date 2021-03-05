@@ -13,12 +13,17 @@
   # Default build command.
   command = "npm run build"
 
-[[redirects]]
-  from = "/graphql"
-  to = "http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080"
-  status = 200
+# [[redirects]]
+#  from = "/graphql"
+#  to = "http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080"
+#  status = 200
+
+# [[redirects]]
+#  from = "/*"
+#  to = "/index.html"
+#  status = 200
+
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  /graphql  http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080
+  /*        /index.html
