@@ -21,35 +21,38 @@
       </b>
       <br><br>
       <v-row>
-        <v-card>
-          <v-card-title>Get only the information you need</v-card-title>
-          <v-card-text>
-            Fetch just the part of a page that you need, without having to request the entire page.
-          </v-card-text>
-          <v-card-actions>
-            <v-btn
-              link to="/fetchbyname"
-              text
-            >
-              Try it out
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-        <v-spacer></v-spacer>
-        <v-card>
-          <v-card-title>Explore collections by keyword</v-card-title>
-          <v-card-text>
-            Make connections across pages by searching for sections related to Wikidata items.
-          </v-card-text>
-          <v-card-actions>
-            <v-btn
-              link to="/fetchbykeyword"
-              text
-            >
-              Try it out
-            </v-btn>
-          </v-card-actions>
-        </v-card>
+        <v-col cols="12" md="6" lg="6" xl="6">
+          <v-card>
+            <v-card-title>Get only the information you need</v-card-title>
+            <v-card-text>
+              Fetch just the part of a page that you need, without having to request the entire page.
+            </v-card-text>
+            <v-card-actions>
+              <v-btn
+                link to="/fetchbyname"
+                text
+              >
+                Try it out
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+        <v-col cols="12" md="6" lg="6" xl="6">
+          <v-card>
+            <v-card-title>Explore collections by keyword</v-card-title>
+            <v-card-text>
+              Make connections across pages by searching for sections related to Wikidata items.
+            </v-card-text>
+            <v-card-actions>
+              <v-btn
+                link to="/fetchbykeyword"
+                text
+              >
+                Try it out
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
       </v-row>
     </v-container>
   </div>
