@@ -6,7 +6,7 @@
         label
         large
         color="pink"
-        @click.stop="onSectionKeywordClicked(keyword)"
+        @click.stop="onKeywordInfoButtonClick(keyword)"
       >
         <v-avatar left>
           <v-icon>mdi-information</v-icon>
@@ -119,12 +119,16 @@ export default {
   },
   methods: {
     onSectionKeywordClicked(keyword) {
-      this.currWikidataItem = keyword
-      this.wikidataDialog = true
+      // Bubble up
+      this.$emit('keywordClick', keyword)
     },
     onPageInfoClicked(pageTitle) {
       this.viewPageTitle = pageTitle
       this.pageViewDialog = true
+    },
+    onKeywordInfoButtonClick(keyword) {
+      this.currWikidataItem = keyword
+      this.wikidataDialog = true
     }
   }
 }

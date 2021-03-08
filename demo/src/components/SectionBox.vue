@@ -58,7 +58,7 @@ export default {
     },
     sectionDisplayName () {
       if (this.sectiondata.name === '__intro__') {
-        return `${this.pageTitle} (lead paragraph)`
+        return `${this.pageTitle} (introduction)`
       }
       return this.sectiondata.name.replaceAll('_', ' ')
     }
