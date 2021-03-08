@@ -68,7 +68,6 @@
       }
       var url = '/'
       const graphQLFetcher = graphQLParams =>
-      // fetch('http://ec2-3-133-13-197.us-east-2.compute.amazonaws.com:8080', {
       fetch(getGraphQLEndpoint(), {
           method: 'post',
           headers: { 'Content-Type': 'application/json' },
