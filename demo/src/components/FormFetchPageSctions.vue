@@ -1,77 +1,83 @@
 <template>
   <div id="form-fetch-page">
-    <v-form v-model="valid">
-      <v-container>
-        <v-row>
-          <v-select
-            v-model="pageName"
-            label="Page name"
-            :items=pages
-            autocomplete
-            @change="fetchParts"
-            required
-          ></v-select>
-          <v-select
-            v-model="partName"
-            label="Parts"
-            :items=selectPartsItems
-            :disabled="!selectPartsItems.length"
-            :loading="loading"
-            @change="fetchContent"
-            autocomplete
-            required
-          ></v-select>
-        </v-row>
-      </v-container>
-    </v-form>
-    <v-alert v-show="error">{{ error }}</v-alert>
-    <v-progress-circular v-if="loading"
-      indeterminate
-      color="purple"
-    ></v-progress-circular>
+    <v-container>
+      <p class="font-italic text-center">
+        Search for a page in Simple English Wikipedia, and fetch a specific section directly
+      </p>
+      <v-form v-model="valid" autocomplete="off">
+          <v-row>
+            <v-col>
+              <TitleAutocomplete @chosen="onTitleChosen" />
+            </v-col>
+            <v-col>
+              <v-select
+                v-model="partName"
+                label="Sections"
+                :items=selectPartsItems
+                :disabled="!selectPartsItems.length"
+                :loading="loading"
+                @change="fetchContent"
+                autocomplete
+                required
+              ></v-select>
+            </v-col>
+          </v-row>
+      </v-form>
+      <v-alert v-show="error">{{ error }}</v-alert>
+      <v-progress-circular v-if="loading"
+        indeterminate
+        color="purple"
+        class="text-center"
+      ></v-progress-circular>
 
-    <v-container v-if="result">
-      <v-tabs>
-        <v-tab href="#tab-page">Page</v-tab>
-        <v-tab href="#tab-payload">Payload</v-tab>
-        <v-tab-item value="tab-page">
-          <PageInfo v-if="result" :pagedata="result" />
-        </v-tab-item>
-        <v-tab-item value="tab-payload">
-          <v-container v-if="payload">
-            <v-card
-              class="mx-auto"
-              outlined
-            >
-              <v-card-title class="headline">Query</v-card-title>
-              <v-card-text>
-                <pre>{{ query }}</pre>
-              </v-card-text>
-            </v-card>
-            <br />
-            <v-card
-              class="mx-auto"
-              outlined
-            >
-              <v-card-title class="headline">Payload</v-card-title>
-              <v-card-text>
-                <pre>{{ payload }}</pre>
-              </v-card-text>
-            </v-card>
-          </v-container>
-        </v-tab-item>
-      </v-tabs>
+      <div v-if="result">
+        <p class="font-italic text-center">
+          View the requested section, or examine the network request and payload.
+        </p>
+        <v-tabs
+          dark
+          background-color="primary"
+        >
+          <v-tab href="#tab-page">Section</v-tab>
+          <v-tab href="#tab-payload">Payload</v-tab>
+          <v-tab-item value="tab-page">
+            <PageInfo v-if="result" :pagedata="result" />
+          </v-tab-item>
+          <v-tab-item value="tab-payload">
+              <v-card
+                class="mx-auto"
+                outlined
+              >
+                <v-card-title class="headline">Query</v-card-title>
+                <v-card-text>
+                  <pre>{{ query }}</pre>
+                </v-card-text>
+              </v-card>
+              <br />
+              <v-card
+                class="mx-auto"
+                outlined
+              >
+                <v-card-title class="headline">Payload</v-card-title>
+                <v-card-text>
+                  <pre>{{ payload }}</pre>
+                </v-card-text>
+              </v-card>
+          </v-tab-item>
+        </v-tabs>
+      </div>
     </v-container>
   </div>
 </template>
 
 <script>
 import PageInfo from './PageInfo'
+import TitleAutocomplete from './TitleAutocomplete'
 import axios from 'axios'
 
 export default {
   name: 'FormFetchPageSctions',
-  components: { PageInfo },
+  components: { PageInfo, TitleAutocomplete },
   data: () => ({
     error: null,
     payload: null,
@@ -81,15 +87,27 @@ export default {
     loading: false,
     selectPartsItems: [],
     pageName: '',
-    partName: '',
-    pages: [
-      { text: 'Philadelphia', value: 'Philadelphia' },
-      // { text: 'Albert Einstein', value: 'Albert Einstein' },
-      { text: 'Banana', value: 'Banana' },
-      { text: 'Apple', value: 'Apple' }
-    ]
+    partName: ''
   }),
   methods: {
+    reset () {
+      this.selectPartsItems = []
+      this.partName = ''
+      this.pageName = ''
+      this.payload = null
+      this.query = null
+      this.result = null
+      this.valid = false
+    },
+    onTitleChosen (chosenTitle) {
+      console.log('chosenTitle', chosenTitle)
+      if (!chosenTitle) {
+        this.reset()
+      } else {
+        this.pageName = chosenTitle
+        this.fetchParts()
+      }
+    },
     fetchParts() {
       const query = `{
         page(name: { authority: "simple.wikipedia.org", name: "${this.pageName}"} ) {
@@ -128,7 +146,6 @@ export default {
           return res.data.data.node
         })
         .then(data => {
-          // console.log('fetchContent data', data)
           this.result = {
             title: this.pageName,
             modified: data.dateModified,

@@ -17,7 +17,7 @@
 
     <v-card
     class="mx-auto"
-    max-width="350"
+    max-width="80%"
     outlined
     >
     <v-card-text v-html="pagedata.part.content"></v-card-text>

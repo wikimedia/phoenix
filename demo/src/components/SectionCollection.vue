@@ -20,41 +20,70 @@
         >
         <SectionBox
           v-for="sect in sections"
-          :key="sect.isPartOf[0].name + sect.name"
+          :key="sect.id"
           :sectiondata="sect"
           :currKeyword=keyword
           @keywordClick="onSectionKeywordClicked"
+          @pageInfoClick="onPageInfoClicked"
         >
           <div slot="content" v-html="sect.unsafe"></div>
         </SectionBox>
       </masonry>
     </v-container>
-      <v-dialog
-        class="wikidata-dialog"
-        v-model="wikidataDialog"
-        scrollable
-        :fullscreen="$vuetify.breakpoint.smAndDown"
-      >
-        <v-card>
-          <v-card-title>
-            Wikidata item: {{currWikidataItem}}
-          </v-card-title>
-          <v-card-text class="wikidataDialog-text">
-            <iframe :src="currWikidataUrl"></iframe>
-          </v-card-text>
 
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn
-              color="primary"
-              text
-              @click="wikidataDialog = false"
-            >
-              Close
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
+    <v-dialog
+      class="wikidata-dialog"
+      v-model="wikidataDialog"
+      scrollable
+      :fullscreen="$vuetify.breakpoint.smAndDown"
+    >
+      <v-card>
+        <v-card-title>
+          Wikidata item: {{currWikidataItem}}
+        </v-card-title>
+        <v-card-text class="wikidataDialog-text">
+          <iframe :src="currWikidataUrl"></iframe>
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="wikidataDialog = false"
+          >
+            Close
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+    <v-dialog
+      class="page-dialog"
+      v-model="pageViewDialog"
+      scrollable
+      :fullscreen="$vuetify.breakpoint.smAndDown"
+    >
+      <v-card>
+        <v-card-title>
+          Wikipedia page: {{viewPageTitle}}
+        </v-card-title>
+        <v-card-text class="wikidataDialog-text">
+          <iframe :src="viewSimpleEnglishArticle"></iframe>
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="pageViewDialog = false"
+          >
+            Close
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
 
   </div>
 </template>
@@ -71,7 +100,9 @@ export default {
   },
   data: () => ({
     wikidataDialog: false,
-    currWikidataItem: null
+    pageViewDialog: false,
+    currWikidataItem: null,
+    viewPageTitle: null
   }),
   computed: {
     wikidataUrl() {
@@ -80,12 +111,20 @@ export default {
     },
     currWikidataUrl() {
       return `https://m.wikidata.org/wiki/${this.currWikidataItem}`
+    },
+    viewSimpleEnglishArticle () {
+      const urlTitle = encodeURIComponent(this.viewPageTitle)
+      return `https://simple.wikipedia.org/wiki/${urlTitle}`
     }
   },
   methods: {
     onSectionKeywordClicked(keyword) {
       this.currWikidataItem = keyword
       this.wikidataDialog = true
+    },
+    onPageInfoClicked(pageTitle) {
+      this.viewPageTitle = pageTitle
+      this.pageViewDialog = true
     }
   }
 }
