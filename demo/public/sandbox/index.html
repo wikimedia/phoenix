@@ -5,12 +5,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.23.0/theme/duotone-dark.css" />
     <style>
       #graphiql {
-        height: calc( 100vh - 1.5em );
+        height: calc( 100vh - 3em );
       }
       #phoenix {
         text-align: center;
         padding-top: 0.2em;
         background-color: #673ab7;
+        padding: 1em;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+      }
+      #phoenix-link {
+        font-size: 1.2em;
+      }
+      #phoenix-prototype {
+        text-transform: uppercase;
+        color: #fae988
       }
       #phoenix a, #phoenix a:active, #phoenix a:visited {
         text-decoration: none;
@@ -20,7 +32,10 @@
   </head>
   <body style="margin: 0;">
     <div id="graphiql"></div>
-    <div id="phoenix"><a id="phoenix-link" href="/">Back to Phoenix Demo</a></div>
+    <div id="phoenix">
+      <a id="phoenix-link" href="/">&lt; Back to Phoenix Demo</a>
+      <span id="phoenix-prototype">[ THIS IS A PROTOTYPE ]</span>
+    </div>
 
     <script
       crossorigin

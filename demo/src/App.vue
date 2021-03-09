@@ -57,6 +57,8 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Phoenix : Demo</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <span class="text-uppercase font-weight-black">This is a prototype</span>
     </v-app-bar>
 
     <v-main>
