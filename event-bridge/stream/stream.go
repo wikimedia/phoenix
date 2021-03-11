@@ -99,38 +99,41 @@ func main() {
 
 	client := common.NewChangeEventPublisher(awsAccount, awsRegion, snsTopic)
 
-	err = events.RecentChanges(func(event streams.RecentChangeEvent) {
-		var err error
-		var result *sns.PublishOutput
+	// Loop in perpetuity (or until err is not nil)
+	for err == nil {
+		err = events.RecentChanges(func(event streams.RecentChangeEvent) {
+			var err error
+			var result *sns.PublishOutput
 
-		fmt.Printf("Change event captured!\n")
-		fmt.Printf("  Title ............: %s\n", event.Title)
-		fmt.Printf("  Server name ......: %s\n", event.ServerName)
-		fmt.Printf("  Wiki .............: %s\n", event.Wiki)
-		fmt.Printf("  Namespace ........: %d\n", event.Namespace)
-		fmt.Printf("  Type .............: %s\n", event.Type)
-		fmt.Printf("  Revision .........: %d\n", event.Revision.New)
-		fmt.Printf("  Timestamp ........: %s\n", event.Meta.Dt)
+			fmt.Printf("Change event captured!\n")
+			fmt.Printf("  Title ............: %s\n", event.Title)
+			fmt.Printf("  Server name ......: %s\n", event.ServerName)
+			fmt.Printf("  Wiki .............: %s\n", event.Wiki)
+			fmt.Printf("  Namespace ........: %d\n", event.Namespace)
+			fmt.Printf("  Type .............: %s\n", event.Type)
+			fmt.Printf("  Revision .........: %d\n", event.Revision.New)
+			fmt.Printf("  Timestamp ........: %s\n", event.Meta.Dt)
 
-		// Only forward allowlisted events
-		if !list.allowed(event) {
-			fmt.Printf("  Status ...........: skipped\n")
-			return
-		}
+			// Only forward allowlisted events
+			if !list.allowed(event) {
+				fmt.Printf("  Status ...........: skipped\n")
+				return
+			}
 
-		result, err = client.Send(
-			&common.ChangeEvent{
-				ServerName: event.ServerName,
-				Title:      event.Title,
-				Revision:   event.Revision.New,
-			})
-		if err != nil {
-			fmt.Printf("Error enqueuing %s (%s)\n", event.Title, err)
-			return
-		}
+			result, err = client.Send(
+				&common.ChangeEvent{
+					ServerName: event.ServerName,
+					Title:      event.Title,
+					Revision:   event.Revision.New,
+				})
+			if err != nil {
+				fmt.Printf("Error enqueuing %s (%s)\n", event.Title, err)
+				return
+			}
 
-		fmt.Printf("  Status ...........: queued as %s\n", *result.MessageId)
-	})
+			fmt.Printf("  Status ...........: queued as %s\n", *result.MessageId)
+		})
+	}
 
 	fmt.Println()
 
