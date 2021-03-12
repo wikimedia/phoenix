@@ -11,7 +11,7 @@
         <v-avatar left>
           <v-icon>mdi-information</v-icon>
         </v-avatar>
-        <strong>Keyword: {{keyword}}</strong>
+        <strong>Keyword: {{mainKeywordLabel}}</strong>
       </v-chip>
     <v-container>
       <masonry
@@ -23,6 +23,7 @@
           :key="sect.id"
           :sectiondata="sect"
           :currKeyword=keyword
+          :keywordLabels="keywordLabels"
           @keywordClick="onSectionKeywordClicked"
           @pageInfoClick="onPageInfoClicked"
         >
@@ -96,7 +97,8 @@ export default {
   components: { SectionBox },
   props: {
     keyword: String,
-    sections: Array
+    sections: Array,
+    keywordLabels: Object
   },
   data: () => ({
     wikidataDialog: false,
@@ -105,6 +107,12 @@ export default {
     viewPageTitle: null
   }),
   computed: {
+    mainKeywordLabel() {
+      if (this.keywordLabels[this.keyword]) {
+        return `${this.keyword} (${this.keywordLabels[this.keyword]})`
+      }
+      return this.keyword
+    },
     wikidataUrl() {
       console.log('sections', this.sections)
       return `https://www.wikidata.org/wiki/${this.keyword}`

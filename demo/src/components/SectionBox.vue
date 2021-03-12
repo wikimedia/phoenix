@@ -26,7 +26,7 @@
         :key="k.id"
         @click.stop="onKeywordClick(k.id)"
       >
-        <v-icon small left>mdi-information</v-icon> {{k.id}} ({{percentSalience(k.salience)}})
+        <v-icon small left>mdi-information</v-icon> {{getKeywordLabel(k.id)}} ({{percentSalience(k.salience)}})
       </v-chip>
     </v-card-text>
   </v-card>
@@ -38,6 +38,7 @@ export default {
   props: {
     currKeyword: String,
     sectiondata: Object,
+    keywordLabels: Object,
     isPartOf: String
   },
   data: () => ({
@@ -64,6 +65,9 @@ export default {
     }
   },
   methods: {
+    getKeywordLabel(keyword) {
+      return this.keywordLabels[keyword] || keyword
+    },
     onKeywordClick(keyword) {
       this.$emit('keywordClick', keyword)
     },
