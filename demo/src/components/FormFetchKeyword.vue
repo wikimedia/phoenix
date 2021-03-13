@@ -39,7 +39,7 @@
         <v-tab href="#tab-section">Sections</v-tab>
         <v-tab href="#tab-payload">Payload</v-tab>
         <v-tab-item value="tab-section">
-          <SectionCollection v-if="result" :keyword="keyword" :sections="result.sections" @keywordClick="onKeywordClick" />
+          <SectionCollection v-if="result" :keyword="keyword" :sections="result.sections" :keywordLabels="result.keywordLabels" @keywordClick="onKeywordClick" />
         </v-tab-item>
         <v-tab-item value="tab-payload">
             <v-card
@@ -70,12 +70,14 @@
 
 <script>
 import axios from 'axios'
+import WikidataFetcher from '../tools/WikidataFetcher'
 import SectionCollection from './SectionCollection'
 
 export default {
   name: 'FormFetchKeyword',
   components: { SectionCollection },
   data: () => ({
+    wikidataFetcher: null,
     error: null,
     valid: false,
     loading: false,
@@ -94,6 +96,9 @@ export default {
       { text: 'Q4057308 (Materials)', value: 'Q4057308' }
     ]
   }),
+  created() {
+    this.wikidataFetcher = new WikidataFetcher('simple', 'en')
+  },
   methods: {
     async onKeywordClick (keyword) {
       this.loading = true
@@ -107,11 +112,10 @@ export default {
           text: keyword
         }
         // Try to get the human-readable name
-        await this.fetchWikidataItemLabel(keyword)
+        await this.fetchWikidataItemLabels(keyword)
           .then(items => {
-            const label = items[keyword].labels.en && items[keyword].labels.en.value
-            if (label) {
-              keywordModel.text = `${keyword} (${label})`
+            if (items[keyword]) {
+              keywordModel.text = `${keyword} (${items[keyword]})`
             }
           })
           .catch(err => {
@@ -144,14 +148,13 @@ export default {
   }
 }`
       this.loading = true
-      console.log('fetchKeywordSections query', query)
       return this.fetch(query)
         .then(res => {
           this.payload = JSON.stringify(res.data.data, null, 2)
           this.query = query
           return res.data.data.nodes
         })
-        .then(data => {
+        .then(async data => {
           const normalizedID = (e) => {
             return e.isPartOf[0].name.toLowerCase().replaceAll('_', ' ') + '|' +
               e.name.toLowerCase().replaceAll('_', ' ')
@@ -170,9 +173,25 @@ export default {
               return true
             }
           })
-          this.result = {
-            sections: data
-          }
+
+          // Fetch wikidata keyword names
+          const allKeywords = []
+          // get all keywords
+          data.forEach(section => {
+            section.keywords.forEach(key => {
+              if (allKeywords.indexOf(key.id) === -1) {
+                allKeywords.push(key.id)
+              }
+            })
+          })
+          // Get all names resolved
+          return this.wikidataFetcher.fetchWikidataItemLabels(allKeywords)
+            .then(keyNames => {
+              this.result = {
+                sections: data,
+                keywordLabels: keyNames
+              }
+            })
         })
         .then(data => {
           this.loading = false
@@ -191,7 +210,6 @@ export default {
           }
         )
         .then(res => {
-          console.log('res', res)
           if (res && res.data && res.data.data && (res.data.data.nodes)) {
             return res
           }
@@ -203,39 +221,8 @@ export default {
           this.loading = false
         })
     },
-    fetchWikidataItemLabel (id) {
-      id = Array.isArray(id) ? id : [id]
-
-      return axios
-        .get(
-          'https://www.wikidata.org/w/api.php',
-          {
-            params: {
-              action: 'wbgetentities',
-              props: 'labels',
-              ids: id.join('|'),
-              origin: '*',
-              format: 'json'
-            }
-          },
-          {
-            headers: {
-              'Content-Type': 'application/json; charset=UTF-8',
-              origin: '*'
-            }
-          }
-        )
-        .then(result => {
-          if (result.data.error) {
-            return Promise.reject(result.data.error)
-          }
-
-          return result.data.entities
-        })
-        .catch(error => {
-          console.log(error)
-          return {}
-        })
+    fetchWikidataItemLabels (id) {
+      return this.wikidataFetcher.fetchWikidataItemLabels(id)
     }
   }
 }
