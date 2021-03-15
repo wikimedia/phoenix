@@ -1,14 +1,19 @@
 <template>
   <v-card class="sectionbox mt-4" elevation="6">
-    <v-card-title color="blue-grey darken-2" class="sectionbox-title">
-      {{ sectionDisplayName }}
-      <v-spacer></v-spacer>
-      <v-chip outlined small color="red" class="mx-5" title="Salience">
-        <v-icon small left color="red">mdi-scale</v-icon>
-        {{percentSalience(keywordData.salience)}}
-      </v-chip>
-    </v-card-title>
-    <v-card-subtitle>
+    <v-row class="pr-10">
+      <v-col class="col-md-8">
+        <v-card-title color="blue-grey darken-2" class="sectionbox-title my-0 py-0 pr-0">
+          {{ sectionDisplayName }}
+        </v-card-title>
+      </v-col>
+      <v-col class="px-0 col-4 col-md-4">
+        <v-chip outlined small color="red" class="mx-5" title="Salience">
+          <v-icon small left color="red">mdi-scale</v-icon>
+          {{percentSalience(keywordData.salience)}}
+        </v-chip>
+      </v-col>
+    </v-row>
+    <v-card-subtitle class="pt-0">
       From page: <span class="sectionbox-page-name">{{ pageTitle }}</span>
       <v-btn small text icon class="ml-2" @click.stop="onPageInfoClick()"><v-icon >mdi-information</v-icon></v-btn>
     </v-card-subtitle>
@@ -101,6 +106,9 @@ export default {
 </script>
 
 <style lang="less">
+.v-card__title.sectionbox-title {
+  word-break: break-word;
+}
 .sectionbox-content {
   max-height: 300px;
   overflow-y: auto;
