@@ -67,8 +67,11 @@ func handleRequest(ctx context.Context, event events.SNSEvent) {
 			log.Error("Failed to store related-topics: %s", err)
 		} else {
 			// ...and then update topic index (if storage is successful)
-			if err = topicSearch.Update(node, topics); err != nil {
+			var stats *storage.UpdateStats
+			if stats, err = topicSearch.Update(node, topics); err != nil {
 				log.Error("Failed to index related-topics: %s", err)
+			} else {
+				log.Debug("Indexing stats: +%v", stats)
 			}
 		}
 	}

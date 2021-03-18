@@ -13,13 +13,15 @@ import (
 	"github.com/wikimedia/phoenix/common"
 )
 
+type UpdateStats esutil.BulkIndexerStats
+
 // TopicSearch is an interface for topic search indexing.
 type TopicSearch interface {
 	// Search queries the index for nodes matching a Wikidata ID
 	Search(qid string) ([]string, error)
 
 	// Update applies changes to the topic index
-	Update(node *common.Node, topics []common.RelatedTopic) error
+	Update(node *common.Node, topics []common.RelatedTopic) (*UpdateStats, error)
 }
 
 // ElasticTopicSearch is an Elasticsearch implementation of the TopicSearch interface.
@@ -62,19 +64,20 @@ func (t ElasticTopicSearch) Search(qid string) ([]string, error) {
 }
 
 // Update applies changes to the topic index
-func (t ElasticTopicSearch) Update(node *common.Node, topics []common.RelatedTopic) error {
+func (t ElasticTopicSearch) Update(node *common.Node, topics []common.RelatedTopic) (*UpdateStats, error) {
 	var err error
 	var indexer esutil.BulkIndexer
 	var req esapi.Request
 	var res *esapi.Response
+	var stats UpdateStats
 
 	// Delete request matching this node
 	if req, err = t.deleteRequest(node); err != nil {
-		return err
+		return nil, err
 	}
 
 	if res, err = req.Do(context.Background(), t.Client); err != nil {
-		return fmt.Errorf("Elasticsearch response error: %w", err)
+		return nil, fmt.Errorf("Elasticsearch response error: %w", err)
 	}
 
 	defer res.Body.Close()
@@ -82,13 +85,13 @@ func (t ElasticTopicSearch) Update(node *common.Node, topics []common.RelatedTop
 	if res.IsError() {
 		// 404 is normal in the case of a first update
 		if res.StatusCode != 404 {
-			return fmt.Errorf("error deleting entries for %s (status=%s)", node.ID, res.Status())
+			return nil, fmt.Errorf("error deleting entries for %s (status=%s)", node.ID, res.Status())
 		}
 	}
 
 	// Bulk index
 	if indexer, err = esutil.NewBulkIndexer(esutil.BulkIndexerConfig{Client: t.Client, Index: t.IndexName}); err != nil {
-		return fmt.Errorf("unable to create bulk indexer: %w", err)
+		return nil, fmt.Errorf("unable to create bulk indexer: %w", err)
 	}
 
 	type doc struct {
@@ -103,7 +106,7 @@ func (t ElasticTopicSearch) Update(node *common.Node, topics []common.RelatedTop
 		var data []byte
 
 		if data, err = json.Marshal(&doc{NodeID: node.ID, ID: i.ID, Salience: i.Salience}); err != nil {
-			return fmt.Errorf("failed to marshal related topic document to JSON: %w", err)
+			return nil, fmt.Errorf("failed to marshal related topic document to JSON: %w", err)
 		}
 
 		err = indexer.Add(
@@ -120,16 +123,12 @@ func (t ElasticTopicSearch) Update(node *common.Node, topics []common.RelatedTop
 	}
 
 	if err = indexer.Close(context.Background()); err != nil {
-		return fmt.Errorf("unexpected error encountered while closing the indexer %w", err)
+		return nil, fmt.Errorf("unexpected error encountered while closing the indexer %w", err)
 	}
 
-	if failed := indexer.Stats().NumFailed; failed > 0 {
-		return fmt.Errorf("%d of %d topics failed to update", failed, len(topics))
-	}
+	stats = UpdateStats(indexer.Stats())
 
-	// TODO: Consider returning stats in response?
-
-	return nil
+	return &stats, nil
 }
 
 // Convenience that returns a new DeleteByQueryRequest for the supplied Node

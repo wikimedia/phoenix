@@ -53,8 +53,17 @@ func TestTopicSearch(t *testing.T) {
 	topicSearch = ElasticTopicSearch{Client: esClient, IndexName: "topics_test"}
 
 	t.Run("Update", func(t *testing.T) {
-		err = topicSearch.Update(&testNode, testTopics)
+		var stats *UpdateStats
+		stats, err = topicSearch.Update(&testNode, testTopics)
+
 		require.Nil(t, err)
+		require.NotNil(t, stats)
+
+		var numTopics uint64 = uint64(len(testTopics))
+		assert.Equal(t, numTopics, stats.NumAdded)
+		assert.Equal(t, numTopics, stats.NumFlushed)
+		assert.Equal(t, numTopics, stats.NumIndexed)
+		assert.Equal(t, numTopics, stats.NumRequests)
 	})
 
 	// XXX: This can fail because the Update operation is race-y AF
