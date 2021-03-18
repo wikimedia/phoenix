@@ -22,8 +22,8 @@
         Linking between sections and keywords from <a href="https://www.wikidata.org" target="_blank">Wikidata</a>
         is provided by <a href="https://www.rosette.com/" target="_blank">Rosette</a>. Integration with Rosette
         is intended to be a short-term feature for experimental use only. Phoenix is capable of updating keywords
-        in response to changes to the original content, but this feature is currently enabled for only a limited
-        set of content.
+        in response to changes to the original content, but this feature is currently enabled for only a
+        <a href="https://github.com/wikimedia/phoenix/blob/master/event-bridge/stream/allowed.yaml" target="_blank">limited set of content</a>.
       </p>
       <p>
         This site connects to Phoenix using a GraphQL API. You can try out the API using the
