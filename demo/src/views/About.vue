@@ -9,7 +9,7 @@
         demonstrating the value of a structured content store. In addition to its functional capabilities,
         Phoenix explores emerging architecture patterns that will direct modernization efforts at Wikimedia.
         To learn more about Phoenix and the architecture process, read the
-        <a href="https://github.com/wikimedia/phoenix/blob/master/docs/artifact.md" target="_blank">artifact</a>.
+        <a href="https://www.mediawiki.org/wiki/Architecture_Repository/Strategy/Goals_and_initiatives/Structured_content_proof_of_value" target="_blank">artifact</a>.
       </p>
       <h2>How does it work?</h2>
       <p>
