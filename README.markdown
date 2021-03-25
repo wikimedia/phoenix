@@ -3,7 +3,7 @@ Phoenix
 ## Goal
 Explore emerging patterns for building systems that manage and distribute content<sup>[[1]](#ref1)</sup>.
 
-The jump from wiki software to modern web architecture (for example, a [reactive](https://www.reactivemanifesto.org/) system) is huge and difficult to conceptualize. Experimenting with core patterns enables us to gain insight into the possibilities and potential impossibilities.
+The jump from wiki software to modern web architecture (for example, a [reactive](https://www.reactivemanifesto.org/) system) is huge and difficult to conceptualize. Experimenting with core patterns enables us to gain insight into the possibilities and potential impossibilities. To learn more about the architecture process, read the [artifact](https://www.mediawiki.org/wiki/Architecture_Repository/Strategy/Goals_and_initiatives/Structured_content_proof_of_value).
 
 ## Primary focus
 **Canonical data modeling**<sup>[[2]](#ref2)</sup><sup>[[3]](#ref3)</sup> allows content to be understood by people, programs and machines outside the traditional boundaries of MediaWiki. And, as far as possible, allows consumers<sup>[[4]](#ref4)</sup> to request only what they need.
@@ -51,8 +51,7 @@ We've modeled a number of use cases, some in partnership with the Structured Dat
 - <a name="ref8">[8]</a>: [Event-driven architecture on English Wikipedia](https://en.wikipedia.org/wiki/Event-driven_architecture)[↩](#secondary-focus)
 - <a name="ref9">[9]</a>: Command Query Responsibility Segregation (**CQRS**) means that the data model for reading doesn't have to be the same as the model for updating.[↩](#secondary-focus)
 
-
-# Content descriptions
+## Content descriptions
 <table>
   <thead>
     <tr>

@@ -1,20 +1,4 @@
 # Glossary
 
-This page defines important terms related to Phoenix.
-
-### part/node
-A unit of knowledge smaller than a page, such as a section or a reference.
-A page is associated with one or more parts. A part is associated with one or more keywords.
-
-### keyword
-A Wikidata item. A part is associated with one or more keywords.
-Currently, Phoenix uses [Rosette](https://www.rosette.com/) to associate parts with keywords.
-
-### collection
-A set of parts related by keyword
-
-### section
-Content grouped under a heading or as an introduction before the first heading on a page
-
-### authority
-The source of truth for the latest content, such as Simple English Wikipedia
+The current version of this document lives on [mediawiki.org](https://www.mediawiki.org/wiki/Architecture_Repository/Architecture_practice/Glossary_and_toolset).
+For a historical copy, visit the [git history](https://github.com/wikimedia/phoenix/blob/15f3bec7b9e5173a69d8e819267c7053a93aa3bd/docs/glossary.md).
