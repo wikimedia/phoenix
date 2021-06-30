@@ -84,5 +84,52 @@ We've modeled a number of use cases, some in partnership with the Structured Dat
       <td nowrap><code>lambdas/merge-schema.org</code></td>
       <td>Merge JSON-LD with HTML documents, and upload to S3. Triggered when linked data is added to <code>schema.org/</code> (see <code>lambdas/fetch-schema.org</code>)</td>
     </tr>
+    <tr>
+      <td nowrap><code>iac</code></td>
+      <td>Terraform configuration for deploying all lambdas to AWS</td>
+    </tr>
   </tbody>
 </table>
+
+## Terraform IaC
+
+The `iac` directory contain a configuration for deploying lambda function to AWS.
+- First setup `~/.aws/credentials` and `~/.aws/config`.
+  This should be an [AWS API user with administrative access](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html).
+- Then provide a proper configuration in `iac/variables.tf`:
+```hcl
+variable "aws_region" {
+  description = "AWS region"
+  type        = string
+  default     = "YOUR_REGION_NAME"
+}
+
+variable "aws_profile" {
+  description = "AWS profile name"
+  type        = string
+  default     = "YOUR_PROFILE_NAME"
+}
+```
+
+- Configure an s3 bucket and DynamoDB table for storing TF state and locking it.
+  (See [Terraform s3 backend docs](https://www.terraform.io/docs/language/settings/backends/s3.html))
+- Provide proper values to TF backend configuration in `iac/main.tf`:
+
+```hcl
+terraform {
+  ...
+  backend "s3" {
+    bucket = "STATE_BUCKET_NAME"
+    key    = "iac/state"
+    region = "YOUR_REGION_NAME"
+    dynamodb_table = "LOCK_TABLE_NAME"
+    profile = "YOUR_PROFILE_NAME"
+  }
+
+```
+For more details of the usage see `iac/shared/lambda/README.md`.
+
+*IMPORTANT NOTE*: This IaC DOESN'T create any s3 buckets, SNS Topics and DynamoDB tables. 
+Please make sure all required resources have been created in the AWS management console.
+
+[Terraform CLI documentation](https://www.terraform.io/docs/cli/index.html)
